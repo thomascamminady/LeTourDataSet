@@ -1,0 +1,71 @@
+Tour de France 1909
+
+Number of stages 14
+Distance (km) 4 497
+Average speed 28.658
+
+All about year 1909
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank                  Rider                 Rider No.     Team         Times      Gap B P
+1     FRANÇOIS FABER                        5          ALCYON     37h 00' 00''
+2     GUSTAVE GARRIGOU                      6          ALCYON     57h 00' 00''
+3     JEAN ALAVOINE                         8          ALCYON     66h 00' 00''
+4     PAUL DUBOC                            7          ALCYON     70h 00' 00''
+5     CYRILLE VAN HAUWAERT                  3          ALCYON     92h 00' 00''
+6     ERNEST, DIT ''FABER ERNEST'' PAUL     161        ISOLES     95h 00' 00''
+7     CONSTANT MENAGER                      15         LE GLOBE   102h 00' 00''
+8     LOUIS TROUSSELIER                     4          ALCYON     114h 00' 00''
+9     EUGÈNE CHRISTOPHE                     144        ISOLES     139h 00' 00''
+10    ALDO BETTINI                          186        ISOLES     142h 00' 00''
+11    JULIEN MAITRON                        14         LE GLOBE   148h 00' 00''
+12    GEORGES FLEURY                        13         LE GLOBE   152h 00' 00''
+13    ALFRED FAURE                          191        ISOLES     205h 00' 00''
+14    MARIO GAJONI                          23         LEGNANO    210h 00' 00''
+15    ATTILIO ZAVATTI                       25         LEGNANO    241h 00' 00''
+16    JULES DELOFFRE                        33         NIL-SUPRA  252h 00' 00''
+17    JOSEPH HABIERRE                       154        ISOLES     296h 00' 00''
+18    ILDEBRANDO GAMBERINI                  39         FELSINA    305h 00' 00''
+19    ALFRED LE BARS                        102        ISOLES     317h 00' 00''
+20    EMILE LACHAISE                        216        ISOLES     327h 00' 00''
+21    LUCIEN LEMAN                          146        ISOLES     341h 00' 00''
+22    LÉON RABOT                            127        ISOLES     343h 00' 00''
+23    GEORGES OUDIN                         247        ISOLES     345h 00' 00''
+24    AMÉDÉE DUTIRON                        185        ISOLES     351h 00' 00''
+26    PIERRE LANGLADE                       222        ISOLES     404h 00' 00''
+27    ANGELO MAGNANOLI                      40         FELSINA    407h 00' 00''
+28    ANTOINE WATTELIER                     256        ISOLES     411h 00' 00''
+29    ALFRED VAIDIS                         155        ISOLES     450h 00' 00''
+30    HENRI ALAVOINE                        212        ISOLES     467h 00' 00''
+31    PAUL BOILLAT                          128        ISOLES     471h 00' 00''
+32    AMLETO BELLONI                        208        ISOLES     477h 00' 00''
+33    RENÉ CHAUDE                           122        ISOLES     479h 00' 00''
+34    JOSEPH LEBLANC                        238        ISOLES     481h 00' 00''
+35    AUGUSTE DENIZOT                       183        ISOLES     484h 00' 00''
+36    AUGUSTE DUFOUR                        196        ISOLES     491h 00' 00''
+37    ANTOINE FAURE                         137        ISOLES     495h 00' 00''
+38    ALBERT LAGARNIER                      103        ISOLES     518h 00' 00''
+39    RODOLPHE MEILI                        158        ISOLES     548h 00' 00''
+40    LOUIS GARDENT                         164        ISOLES     549h 00' 00''
+41    ROGER RIVIERE                         104        ISOLES     556h 00' 00''
+42    FRANÇOIS ROCHE                        235        ISOLES     561h 00' 00''
+43    LUCIEN COLIN                          175        ISOLES     569h 00' 00''
+44    ANDRÉ HERBELIN                        130        ISOLES     573h 00' 00''
+45    JEAN PERRUCA                          159        ISOLES     579h 00' 00''
+46    EUGÈNE LEROY                          108        ISOLES     596h 31' 23''
+47    CAMILLE MATHIEU                       150        ISOLES     596h 31' 23''
+48    CHARLES PONSON                        160        ISOLES     596h 31' 23''
+49    PAUL PIETROIS                         132        ISOLES     596h 31' 23''
+50    LOUIS DI MARIA                        182        ISOLES     596h 31' 23''
+51    HENRI ANTHOINE                        233        ISOLES     596h 31' 23''
+52    HENRI ORY                             156        ISOLES     596h 31' 23''
+53    ERNEST GOUJON                         232        ISOLES     596h 31' 23''
+54    ALFRED GUIDEZ                         198        ISOLES     596h 31' 23''
+55    GEORGES DEVILLY                       118        ISOLES     596h 31' 23''
+
+Next rankings

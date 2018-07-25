@@ -1,0 +1,86 @@
+Tour de France 1954
+
+Number of stages 23
+Distance (km) 4 656
+Average speed 33.229
+
+All about year 1954
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider            Rider No.         Team            Times            Gap        B P
+1    LOUISON BOBET              1          FRANCE             140h 06' 05''
+2    FERDI KUBLER               57         SUISSE             140h 21' 54''  + 00h 15' 49''
+3    FRITZ SCHAER               60         SUISSE             140h 27' 51''  + 00h 21' 46''
+4    JEAN DOTTO                 92         SUD EST            140h 34' 28''  + 00h 28' 23''
+5    JEAN MALLEJAC              86         OUEST              140h 37' 43''  + 00h 31' 38''
+6    STAN OCKERS                28         BELGIQUE           140h 52' 07''  + 00h 46' 02''
+7    LOUIS BERGAUD              112        SUD-OUEST          140h 54' 00''  + 00h 47' 55''
+8    VINCENT VITETTA            100        SUD EST            140h 57' 19''  + 00h 51' 14''
+9    JEAN BRANKART              21         BELGIQUE           140h 58' 13''  + 00h 52' 08''
+10   GILBERT BAUVIN             71         NORD EST-CENTRE    140h 58' 26''  + 00h 52' 21''
+11   NELLO LAUREDI              6          FRANCE             140h 58' 47''  + 00h 52' 42''
+12   CARLO CLERICI              51         SUISSE             141h 02' 41''  + 00h 56' 36''
+13   JEAN-APO LAZARIDES         95         SUD EST            141h 10' 08''  + 01h 04' 03''
+14   JAN NOLTEN                 13         PAYS-BAS           141h 10' 20''  + 01h 04' 15''
+15   FRANÇOIS MAHE              85         OUEST              141h 15' 08''  + 01h 09' 03''
+16   WIM VAN EST                18         PAYS-BAS           141h 15' 28''  + 01h 09' 23''
+17   GERRIT VOORTING            19         PAYS-BAS           141h 16' 25''  + 01h 10' 20''
+18   BERNARDO RUIZ              49         ESPAGNE            141h 18' 33''  + 01h 12' 28''
+19   ANTONIN ROLLAND            9          FRANCE             141h 19' 25''  + 01h 13' 20''
+20   HEIN VAN BREENEN           16         PAYS-BAS           141h 25' 15''  + 01h 19' 10''
+21   MARCEL DEMULDER            24         BELGIQUE           141h 27' 13''  + 01h 21' 08''
+22   RICHARD VAN GENECHTEN      30         BELGIQUE           141h 31' 03''  + 01h 24' 58''
+23   LUCIEN TEISSEIRE           10         FRANCE             141h 34' 57''  + 01h 28' 52''
+24   LUCIEN LAZARIDES           96         SUD EST            141h 37' 58''  + 01h 31' 53''
+25   FEDERICO BAHAMONTES        42         ESPAGNE            141h 43' 47''  + 01h 37' 42''
+26   ADOLPHE DELEDDA            3          FRANCE             141h 45' 33''  + 01h 39' 28''
+27   JEAN FORESTIER             4          FRANCE             141h 49' 53''  + 01h 43' 48''
+28   MAURICE QUENTIN            107        ILE DE FRANCE      141h 51' 19''  + 01h 45' 14''
+29   ALEXANDRE CLOSE            22         BELGIQUE           142h 02' 05''  + 01h 56' 00''
+30   WILLY KEMP                 64         LUXEMBOURG MIXTE   142h 09' 26''  + 02h 03' 21''
+31   FRANCISCO ALOMAR FLORIT    41         ESPAGNE            142h 21' 07''  + 02h 15' 02''
+32   DOMINIQUE FORLINI          104        ILE DE FRANCE      142h 24' 03''  + 02h 17' 58''
+33   JEAN LE GUILLY             106        ILE DE FRANCE      142h 25' 53''  + 02h 19' 48''
+34   RENÉ DE SMET               26         BELGIQUE           142h 34' 44''  + 02h 28' 39''
+35   RAYMOND HOORELBEKE         105        ILE DE FRANCE      142h 35' 59''  + 02h 29' 54''
+36   FRED DE BRUYNE             23         BELGIQUE           142h 38' 06''  + 02h 32' 01''
+37   ANDRÈS TROBAT              50         ESPAGNE            142h 51' 15''  + 02h 45' 10''
+38   RAOUL REMY                 8          FRANCE             142h 53' 09''  + 02h 47' 04''
+39   GEORGES MEUNIER            77         NORD EST-CENTRE    142h 55' 58''  + 02h 49' 53''
+40   JACQUES VIVIER             120        SUD-OUEST          142h 56' 26''  + 02h 50' 21''
+41   ROBERT VARNAJO             90         OUEST              143h 01' 56''  + 02h 55' 51''
+42   JOSEPH MIRANDO             97         SUD EST            143h 02' 23''  + 02h 56' 18''
+43   EMILIO RODRIGUEZ           47         ESPAGNE            143h 03' 23''  + 02h 57' 18''
+44   LUIS PEREZ                 46         ESPAGNE            143h 06' 50''  + 03h 00' 45''
+45   MANUEL RODRIGUEZ           48         ESPAGNE            143h 09' 30''  + 03h 03' 25''
+46   JEAN-MARIE CIELESKA        73         NORD EST-CENTRE    143h 12' 32''  + 03h 06' 27''
+47   HENK FAANHOF               11         PAYS-BAS           143h 15' 53''  + 03h 09' 48''
+48   JEAN CARLE                 103        ILE DE FRANCE      143h 23' 13''  + 03h 17' 08''
+49   ANDRÉ DARRIGADE            2          FRANCE             143h 24' 01''  + 03h 17' 56''
+50   REMO PIANEZZI              59         SUISSE             143h 26' 01''  + 03h 19' 56''
+51   STANISLAS BOBER            102        ILE DE FRANCE      143h 27' 07''  + 03h 21' 02''
+52   RENÉ PRIVAT                118        SUD-OUEST          143h 28' 36''  + 03h 22' 31''
+53   MARCEL GUITARD             116        SUD-OUEST          143h 30' 03''  + 03h 23' 58''
+54   SALVADOR BOTELLA           43         ESPAGNE            143h 33' 05''  + 03h 27' 00''
+55   FRANCISCO MASSIP           45         ESPAGNE            143h 35' 04''  + 03h 28' 59''
+56   EMILIO CROCI-TORTI         52         SUISSE             143h 39' 25''  + 03h 33' 20''
+57   EUGÈNE TELOTTE             80         NORD EST-CENTRE    143h 43' 46''  + 03h 37' 41''
+58   ALFRED TONELLO             110        ILE DE FRANCE      143h 44' 23''  + 03h 38' 18''
+59   PIERRE MOLINERIS           7          FRANCE             144h 15' 32''  + 04h 09' 27''
+60   GEORGES GILLES             83         OUEST              144h 21' 10''  + 04h 15' 05''
+61   FRANCIS SIGUENZA           99         SUD EST            144h 21' 14''  + 04h 15' 09''
+62   MARCEL DUSSAULT            115        SUD-OUEST          144h 24' 50''  + 04h 18' 45''
+63   ALBERT BOUVET              82         OUEST              144h 26' 11''  + 04h 20' 06''
+64   MARCEL HENDRICKX           27         BELGIQUE           144h 42' 34''  + 04h 36' 29''
+65   EMILE GUERINEL             84         OUEST              144h 46' 55''  + 04h 40' 50''
+66   JEAN BELLAY                72         NORD EST-CENTRE    144h 51' 01''  + 04h 44' 56''
+67   PHILIPPE AGUT              111        SUD-OUEST          144h 53' 26''  + 04h 47' 21''
+68   KURT SCHNEIDER             68         LUXEMBOURG MIXTE   145h 56' 17''  + 05h 50' 12''
+69   MARCEL DIERKSENS           61         LUXEMBOURG MIXTE   146h 13' 34''  + 06h 07' 29''
+
+Next rankings

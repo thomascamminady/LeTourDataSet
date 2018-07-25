@@ -1,0 +1,72 @@
+Tour de France 1957
+
+Number of stages 22
+Distance (km) 4 669
+Average speed 34.520
+
+All about year 1957
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider           Rider No.      Team           Times            Gap        B P
+1    JACQUES ANQUETIL          2          TDF 1957 FRA  135h 44' 42''
+2    MARCEL JANSSENS           15         TDF 1957 FRA  135h 59' 38''   + 00h 14' 56''
+3    ADOLF CHRISTIAN           62         TDF 1957 FRA  136h 02' 02''   + 00h 17' 20''
+4    JEAN FORESTIER            7          TDF 1957 FRA  136h 02' 44''   + 00h 18' 02''
+5    JÉSUS LORONO              45         TDF 1957 FRA  136h 04' 59''   + 00h 20' 17''
+6    GASTONE NENCINI           26         TDF 1957 FRA  136h 10' 45''   + 00h 26' 03''
+7    NINO DEFILIPPIS           24         TDF 1957 FRA  136h 12' 39''   + 00h 27' 57''
+8    PIET VAN EST              37         TDF 1957 FRA  136h 12' 52''   + 00h 28' 10''
+9    JEAN ADRIAENSSENS         11         TDF 1957 FRA  136h 18' 49''   + 00h 34' 07''
+10   JEAN DOTTO                85         TDF 1957 FRA  136h 21' 03''   + 00h 36' 21''
+11   FRANÇOIS MAHE             8          TDF 1957 FRA  136h 24' 06''   + 00h 39' 24''
+12   MARCEL ROHRBACH           98         TDF 1957 FRA  136h 27' 30''   + 00h 42' 48''
+13   FERNAND PICOT             77         TDF 1957 FRA  136h 32' 58''   + 00h 48' 16''
+14   GILBERT BAUVIN            3          TDF 1957 FRA  136h 39' 20''   + 00h 54' 38''
+15   JEAN BOBET                115        TDF 1957 FRA  136h 42' 20''   + 00h 57' 38''
+16   JO PLANCKAERT             18         TDF 1957 FRA  136h 43' 24''   + 00h 58' 42''
+17   DÉSIRÉ KETELEER           17         TDF 1957 FRA  136h 45' 08''   + 01h 00' 26''
+18   JOSEPH THOMIN             80         TDF 1957 FRA  136h 59' 10''   + 01h 14' 28''
+19   RAYMOND HOORELBEKE        117        TDF 1957 FRA  137h 00' 50''   + 01h 16' 08''
+20   ARIGO PADOVAN             27         TDF 1957 FRA  137h 07' 49''   + 01h 23' 07''
+21   MARIO TOSATO              30         TDF 1957 FRA  137h 11' 22''   + 01h 26' 40''
+22   GEORGES GAY               104        TDF 1957 FRA  137h 13' 43''   + 01h 29' 01''
+23   PIERINO BAFFI             22         TDF 1957 FRA  137h 15' 44''   + 01h 31' 02''
+24   BERNARDO RUIZ             48         TDF 1957 FRA  137h 17' 27''   + 01h 32' 45''
+25   JOSÉ DA SILVA             53         TDF 1957 FRA  137h 18' 00''   + 01h 33' 18''
+26   LOUIS BERGAUD             4          TDF 1957 FRA  137h 20' 43''   + 01h 36' 01''
+27   ANDRÉ DARRIGADE           6          TDF 1957 FRA  137h 24' 42''   + 01h 40' 00''
+28   HENRI ANGLADE             82         TDF 1957 FRA  137h 24' 42''   + 01h 40' 00''
+29   GERRIT VOORTING           38         TDF 1957 FRA  137h 39' 41''   + 01h 54' 59''
+30   MARCEL QUEHEILLE          108        TDF 1957 FRA  137h 43' 45''   + 01h 59' 03''
+31   RENÉ PRIVAT               9          TDF 1957 FRA  137h 52' 56''   + 02h 08' 14''
+32   WIM VAN EST               36         TDF 1957 FRA  137h 55' 56''   + 02h 11' 14''
+33   PIET DE JONGH             32         TDF 1957 FRA  137h 58' 49''   + 02h 14' 07''
+34   ANDRÉ LE DISSEZ           118        TDF 1957 FRA  138h 00' 17''   + 02h 15' 35''
+35   GIUSEPPE 'PINO' CERAMI    12         TDF 1957 FRA  138h 00' 27''   + 02h 15' 45''
+36   JEAN BOURLES              72         TDF 1957 FRA  138h 02' 31''   + 02h 17' 49''
+37   ANDRÉ DUPRE               103        TDF 1957 FRA  138h 03' 03''   + 02h 18' 21''
+38   MAURICE LAMPRE            107        TDF 1957 FRA  138h 03' 58''   + 02h 19' 16''
+39   ANTONIN ROLLAND           99         TDF 1957 FRA  138h 04' 24''   + 02h 19' 42''
+40   NICOLAS BARONE            111        TDF 1957 FRA  138h 05' 05''   + 02h 20' 23''
+41   PIERRE RUBY               100        TDF 1957 FRA  138h 20' 25''   + 02h 35' 43''
+42   JOSEPH GROUSSARD          74         TDF 1957 FRA  138h 20' 40''   + 02h 35' 58''
+43   JEAN STABLINSKI           10         TDF 1957 FRA  138h 21' 59''   + 02h 37' 17''
+44   MICHEL STOLKER            34         TDF 1957 FRA  138h 26' 00''   + 02h 41' 18''
+45   JOOP KERSTEN              33         TDF 1957 FRA  138h 28' 19''   + 02h 43' 37''
+46   FRANCIS PIPELIN           78         TDF 1957 FRA  138h 28' 37''   + 02h 43' 55''
+47   ROGER CHAUSSABEL          90         TDF 1957 FRA  138h 39' 51''   + 02h 55' 09''
+48   PIERRE POULINGUE          79         TDF 1957 FRA  138h 43' 44''   + 02h 59' 02''
+49   WALTER HOLENWEGER         67         TDF 1957 FRA  138h 44' 52''   + 03h 00' 10''
+50   ALBERT BOUVET             5          TDF 1957 FRA  138h 47' 13''   + 03h 02' 31''
+51   WALTER FAVRE              64         TDF 1957 FRA  138h 55' 53''   + 03h 11' 11''
+52   FRANCIS SIGUENZA          81         TDF 1957 FRA  139h 03' 17''   + 03h 18' 35''
+53   MARIO BARONI              23         TDF 1957 FRA  139h 41' 02''   + 03h 56' 20''
+55   TONY GRAESER              68         TDF 1957 FRA  140h 02' 45''   + 04h 18' 03''
+56   GUY MILLION               120        TDF 1957 FRA  140h 29' 53''   + 04h 45' 11''
+
+Next rankings

@@ -1,0 +1,41 @@
+Tour de France 1905
+
+Number of stages 11
+Distance (km) 2 994
+Average speed 27.107
+
+All about year 1905
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank               Rider               Rider No.       Team          Times      Gap B P
+1    LOUIS TROUSSELIER                 14         TDF 1905 ***   00h 00' 00''
+2    HIPPOLYTE AUCOUTURIER             13         TDF 1905 ***   00h 00' 00''
+3    JEAN-BAPTISTE DORTIGNACQ          31         TDF 1905 ***   00h 00' 00''
+4    EMILE GEORGET                     50         TDF 1905 ***   00h 00' 00''
+5    LUCIEN MAZAN DIT PETIT-BRETON     77         TDF 1905 ***   00h 00' 00''
+6    AUGUSTINN RINGEVAL                22         TDF 1905 ***   00h 00' 00''
+7    PAUL CHAUVET                      52         TDF 1905 ***   00h 00' 00''
+8    PHILIPPE PAUTRAT                  7          TDF 1905 ***   00h 00' 00''
+9    JULIEN GABORY                     21         TDF 1905 ***   00h 00' 00''
+10   JULIEN MAITRON                    54         TDF 1905 ***   00h 00' 00''
+11   ALOIS CATTEAU                     68         TDF 1905 ***   00h 00' 00''
+12   MARTIN SOULIE                     38         TDF 1905 ***   00h 00' 00''
+13   LÉON LEYGOUTTE                    5          TDF 1905 ***   00h 00' 00''
+14   CAMILLE FILY                      3          TDF 1905 ***   00h 00' 00''
+15   ANTOINE WATTELIER                 55         TDF 1905 ***   00h 00' 00''
+16   HENRI LIGNON                      9          TDF 1905 ***   00h 00' 00''
+17   MAURICE DECAUP                    76         TDF 1905 ***   00h 00' 00''
+18   MAURICE CARRERE                   23         TDF 1905 ***   00h 00' 00''
+19   GUSTAVE GUILLARME                 24         TDF 1905 ***   00h 00' 00''
+20   LUDO LOOS                         59         TDF 1905 ***   00h 00' 00''
+21   PINCHAU                           34         TDF 1905 ***   00h 00' 00''
+22   EUGÈNE VENTRESQUE                 35         TDF 1905 ***   00h 00' 00''
+23   FERNAND LALLEMENT                 32         TDF 1905 ***   00h 00' 00''
+24   CLOVIS LACROIX                    40         TDF 1905 ***   00h 00' 00''
+
+Next rankings

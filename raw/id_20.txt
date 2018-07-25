@@ -1,0 +1,57 @@
+Tour de France 1926
+
+Number of stages 17
+Distance (km) 5 745
+Average speed 24.273
+
+All about year 1926
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank            Rider           Rider No.            Team               Times            Gap        B P
+1     LUCIEN BUYSSE             2          AUTOMOTO-HUTCHINSON      238h 44' 25''
+2     NICOLAS FRANTZ            21         ALCYON-DUNLOP            240h 06' 50''  + 01h 22' 25''
+3     BARTOLOMEO AIMO           22         ALCYON-DUNLOP            240h 07' 16''  + 01h 22' 51''
+4     THÉOPHILE BEECKMAN        27         ARMOR-DUNLOP             240h 28' 19''  + 01h 43' 54''
+5     FÉLIX SELLIER             24         ALCYON-DUNLOP            240h 33' 38''  + 01h 49' 13''
+6     ALBERT DEJONGHE           13         J.B.LOUVET-WOLBER        240h 40' 40''  + 01h 56' 15''
+7     LÉON PARMENTIER           12         JEAN LOUVET-HUTCHINSON   240h 53' 45''  + 02h 09' 20''
+8     GEORGES CUVELIER          33         METEORE-WOLBER           241h 12' 57''  + 02h 28' 32''
+9     JULES BUYSSE              3          AUTOMOTO-HUTCHINSON      241h 21' 28''  + 02h 37' 03''
+10    MARCEL BIDOT              31         THOMANN-DUNLOP           241h 38' 19''  + 02h 53' 54''
+11    ODILE TAILLEU             19         J.B.LOUVET-WOLBER        241h 53' 33''  + 03h 09' 08''
+12    JOSEPH VAN DAM            6          AUTOMOTO-HUTCHINSON      242h 45' 00''  + 04h 00' 35''
+13    OMER HUYSE                5          AUTOMOTO-HUTCHINSON      242h 51' 49''  + 04h 07' 24''
+14    CAMILLE VAN DE CASTEELE   14         J.B.LOUVET-WOLBER        243h 12' 34''  + 04h 28' 09''
+15    AIMÉ DOSSCHE              9          CHRISTOPHE-HUTCHINSON    244h 07' 34''  + 05h 23' 09''
+16    EMILE HARDY               7          CHRISTOPHE-HUTCHINSON    244h 45' 55''  + 06h 01' 30''
+17    RAYMOND ENGLEBERT         26         ALCYON-DUNLOP            244h 47' 35''  + 06h 03' 10''
+18    HENRI COLLE               11         JEAN LOUVET-HUTCHINSON   245h 55' 00''  + 07h 10' 35''
+19    GEORGES DETREILLE         34         METEORE-WOLBER           246h 32' 42''  + 07h 48' 17''
+20    OMER VERMEULEN            41         METEORE-WOLBER           247h 29' 09''  + 08h 44' 44''
+21    GIOVANNI ROSSIGNOLI       172        TOURISTES ROUTIERS       247h 07' 54''  + 08h 23' 29''
+22    ALFONS STANDAERT          28         ARMOR-DUNLOP             247h 51' 57''  + 09h 07' 32''
+23    RENÉ FAURE                36         METEORE-WOLBER           248h 20' 09''  + 09h 35' 44''
+24    HENRI TOUZARD             154        TOURISTES ROUTIERS       248h 20' 59''  + 09h 36' 34''
+25    LÉON DEVOS                32         THOMANN-DUNLOP           248h 49' 48''  + 10h 05' 23''
+26    TIM MERTENS               29         LABOR-DUNLOP             249h 11' 30''  + 10h 27' 05''
+27    PAUL DUBOC                192        TOURISTES ROUTIERS       249h 15' 12''  + 10h 30' 47''
+28    LOUIS DE LANNOY           30         LABOR-DUNLOP             249h 25' 35''  + 10h 41' 10''
+29    EUGÈNE DHERS              163        TOURISTES ROUTIERS       250h 10' 41''  + 11h 26' 16''
+30    CHARLES LONGONI           152        TOURISTES ROUTIERS       250h 35' 21''  + 11h 50' 56''
+31    CHARLES MARTINET          145        TOURISTES ROUTIERS       252h 40' 58''  + 13h 56' 33''
+32    FERNAND SAIVE             39         METEORE-WOLBER           253h 44' 24''  + 14h 59' 59''
+33    MAURICE ARNOULT           153        TOURISTES ROUTIERS       254h 09' 17''  + 15h 24' 52''
+34    HENRI CATELAN             178        TOURISTES ROUTIERS       255h 37' 57''  + 16h 53' 32''
+35    MOÏSE ARROSIO             202        TOURISTES ROUTIERS       255h 56' 55''  + 17h 12' 30''
+36    FERNAND MOULET            40         METEORE-WOLBER           256h 45' 08''  + 18h 00' 43''
+38    EDOUARD TEISSEIRE         162        TOURISTES ROUTIERS       257h 58' 42''  + 19h 14' 17''
+39    HENRI FERRARA             131        TOURISTES ROUTIERS       259h 44' 47''  + 21h 00' 22''
+40    JULES GILLARD             112        TOURISTES ROUTIERS       261h 31' 59''  + 22h 47' 34''
+41    ANDRÉ DROBECQ             119        TOURISTES ROUTIERS       263h 44' 18''  + 24h 59' 53''
+
+Next rankings

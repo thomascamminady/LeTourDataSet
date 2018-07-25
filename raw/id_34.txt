@@ -1,0 +1,69 @@
+Tour de France 1947
+
+Number of stages 21
+Distance (km) 4 642
+Average speed 31.412
+
+All about year 1947
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank         Rider          Rider No.               Team                   Times            Gap        B P
+1    JEAN ROBIC             68         OUEST                           148h 11' 25''
+2    EDOUARD FACHLEITNER    43         FRANCE                          148h 15' 23''  + 00h 03' 58''
+3    PIERRE BRAMBILLA       23         ITALIE                          148h 21' 32''  + 00h 10' 07''
+4    ALDO RONCONI           27         ITALIE                          148h 22' 25''  + 00h 11' 00''
+5    RENÉ VIETTO            50         FRANCE                          148h 26' 48''  + 00h 15' 23''
+6    RAYMOND IMPANIS        4          BELGIQUE                        148h 29' 39''  + 00h 18' 14''
+7    FERMO CAMELLINI        17         PAYS-BAS/ETRANGERS DE FRANCE    148h 35' 33''  + 00h 24' 08''
+8    GIORDANO COTTUR        25         ITALIE                          149h 17' 28''  + 01h 06' 03''
+9    JEAN-MARIE GOASMAT     63         OUEST                           149h 27' 28''  + 01h 16' 03''
+10   JEAN-APO LAZARIDES     97         SUD-EST                         149h 30' 09''  + 01h 18' 44''
+11   LUCIEN TEISSEIRE       48         FRANCE                          149h 43' 41''  + 01h 32' 16''
+12   PIERRE COGAN           62         OUEST                           149h 56' 22''  + 01h 44' 57''
+13   BRIK SCHOTTE           9          BELGIQUE                        150h 08' 12''  + 01h 56' 47''
+15   JEAN DIEDERICH         38         SUISSE/LUXEMBOURG               150h 22' 08''  + 02h 10' 43''
+16   DANIEL THUAYRE         60         ILE DE FRANCE                   150h 24' 29''  + 02h 13' 04''
+17   GOTTFRIED WEILENMANN   34         SUISSE/LUXEMBOURG               150h 29' 48''  + 02h 18' 23''
+18   JEAN KIRCHEN           40         SUISSE/LUXEMBOURG               150h 31' 51''  + 02h 20' 26''
+19   PAUL GIGUET            95         SUD-EST                         150h 37' 50''  + 02h 26' 25''
+20   JEAN GOLDSCHMIT        39         SUISSE/LUXEMBOURG               150h 43' 49''  + 02h 32' 24''
+21   ALBERT BOURLON         82         CENTRE-SUD OUEST                150h 49' 43''  + 02h 38' 18''
+22   BERNARD GAUTHIER       94         SUD-EST                         151h 04' 10''  + 02h 52' 45''
+23   PRIMO VOLPI            30         ITALIE                          151h 14' 13''  + 03h 02' 48''
+24   ROGER LEVEQUE          87         CENTRE-SUD OUEST                151h 16' 29''  + 03h 05' 04''
+25   KLEBER PIOT            47         FRANCE                          151h 22' 13''  + 03h 10' 48''
+26   ANTOINE LATORRE        86         CENTRE-SUD OUEST                151h 26' 05''  + 03h 14' 40''
+27   FLORENT MATHIEU        5          BELGIQUE                        151h 27' 53''  + 03h 16' 28''
+28   RAOUL REMY             100        SUD-EST                         151h 31' 56''  + 03h 20' 31''
+29   MARIUS BONNET          91         SUD-EST                         151h 32' 45''  + 03h 21' 20''
+30   HENRI MASSAL           46         FRANCE                          151h 37' 14''  + 03h 25' 49''
+31   EGIDIO FERUGLIO        26         ITALIE                          151h 54' 29''  + 03h 43' 04''
+32   ANDRÉ DE KORVER        12         PAYS-BAS/ETRANGERS DE FRANCE    152h 08' 36''  + 03h 57' 11''
+33   ANGE LE STRAT          65         OUEST                           152h 17' 48''  + 04h 06' 23''
+34   JAAN KIRSIPUU          20         PAYS-BAS/ETRANGERS DE FRANCE    152h 18' 01''  + 04h 06' 36''
+35   LOUIS DEPREZ           74         NORD-EST                        152h 20' 54''  + 04h 09' 29''
+36   EDOUARD MULLER         59         ILE DE FRANCE                   152h 28' 53''  + 04h 17' 28''
+37   ELOI TASSIN            70         OUEST                           152h 35' 14''  + 04h 23' 49''
+38   RENÉ OREEL             7          BELGIQUE                        152h 40' 31''  + 04h 29' 06''
+39   PASCAL GNAZZO          96         SUD-EST                         152h 45' 34''  + 04h 34' 09''
+40   JOSEPH NERI            89         CENTRE-SUD OUEST                152h 47' 52''  + 04h 36' 27''
+41   RENÉ BARRET            51         ILE DE FRANCE                   152h 49' 56''  + 04h 38' 31''
+42   MAURICE MOLLIN         6          BELGIQUE                        152h 53' 52''  + 04h 42' 27''
+43   ROGER GYSELINCK        3          BELGIQUE                        152h 55' 12''  + 04h 43' 47''
+44   RAYMOND LUCAS          57         ILE DE FRANCE                   152h 56' 32''  + 04h 45' 07''
+45   JEAN BREUER            1          BELGIQUE                        152h 56' 39''  + 04h 45' 14''
+46   JEAN DE GRIBALDY       78         NORD-EST                        153h 03' 09''  + 04h 51' 44''
+47   VICTOR JOLY            19         PAYS-BAS/ETRANGERS DE FRANCE    153h 03' 43''  + 04h 52' 18''
+48   ALEXANDRE PAWLISIAK    79         NORD-EST                        153h 15' 31''  + 05h 04' 06''
+49   MAURICE DIOT           55         ILE DE FRANCE                   153h 32' 08''  + 05h 20' 43''
+50   GASTON ROUSSEAU        69         OUEST                           153h 45' 26''  + 05h 34' 01''
+51   GASTON AUDIER          71         NORD-EST                        153h 49' 20''  + 05h 37' 55''
+52   LÉO WEILENMANN         35         SUISSE/LUXEMBOURG               154h 16' 59''  + 06h 05' 34''
+53   PIETRO TARCHINI        36         SUISSE/LUXEMBOURG               155h 59' 43''  + 07h 48' 18''
+
+Next rankings

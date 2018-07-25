@@ -1,0 +1,53 @@
+Tour de France 1908
+
+Number of stages 14
+Distance (km) 4 488
+Average speed 28.740
+
+All about year 1908
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank                  Rider                 Rider No.       Team          Times      Gap B P
+1     LUCIEN MAZAN DIT PETIT-BRETON         2          TDF 1908 ***   00h 00' 00''
+2     FRANÇOIS FABER                        86         TDF 1908 ***   00h 00' 00''
+3     GEORGES PASSERIEU                     5          TDF 1908 ***   00h 00' 00''
+4     GUSTAVE GARRIGOU                      3          TDF 1908 ***   00h 00' 00''
+5     LUIGI GANNA                           135        TDF 1908 ***   00h 00' 00''
+6     GEORGES PAULMIER                      9          TDF 1908 ***   00h 00' 00''
+7     GEORGES FLEURY                        13         TDF 1908 ***   00h 00' 00''
+8     HENRI CORNET (GEBOREN JARDY)          7          TDF 1908 ***   00h 00' 00''
+9     MARCEL GODIVIER                       39         TDF 1908 ***   00h 00' 00''
+10    GIOVANNI ROSSIGNOLI                   146        TDF 1908 ***   00h 00' 00''
+11    PAUL DUBOC                            40         TDF 1908 ***   00h 00' 00''
+12    CLEMENTE CANEPARI                     157        TDF 1908 ***   00h 00' 00''
+13    OMER BEAUGENDRE                       10         TDF 1908 ***   00h 00' 00''
+14    PAUL CHAUVET                          88         TDF 1908 ***   00h 00' 00''
+15    EUGÈNE FORESTIER                      50         TDF 1908 ***   00h 00' 00''
+16    ACHILLE GERMAIN                       77         TDF 1908 ***   00h 00' 00''
+17    ANDRÉ POTTIER                         37         TDF 1908 ***   00h 00' 00''
+18    ERNEST, DIT ''FABER ERNEST'' PAUL     99         TDF 1908 ***   00h 00' 00''
+19    ALDO BETTINI                          95         TDF 1908 ***   00h 00' 00''
+20    GIOVANNI GERBI                        85         TDF 1908 ***   00h 00' 00''
+21    ALOIS CATTEAU                         45         TDF 1908 ***   00h 00' 00''
+22    MARCEAU NARCY                         54         TDF 1908 ***   00h 00' 00''
+23    MARTIN SOULIE                         42         TDF 1908 ***   00h 00' 00''
+24    FERDINAND PAYAN                       64         TDF 1908 ***   00h 00' 00''
+25    NOËL COMBELLES                        52         TDF 1908 ***   00h 00' 00''
+26    GONZALES                              82         TDF 1908 ***   00h 00' 00''
+27    ALEXANDRE BODINIER                    59         TDF 1908 ***   00h 00' 00''
+28    EDOUARD WATTELIER                     1          TDF 1908 ***   00h 00' 00''
+29    GEORGES BRONCHARD                     105        TDF 1908 ***   00h 00' 00''
+30    ROBERT LECOINTE                       72         TDF 1908 ***   00h 00' 00''
+31    ANTOINE WATTELIER                     162        TDF 1908 ***   00h 00' 00''
+32    ELOI GUICHARD                         140        TDF 1908 ***   00h 00' 00''
+33    LÉON RABOT                            68         TDF 1908 ***   00h 00' 00''
+34    JEAN DARCHE                           118        TDF 1908 ***   00h 00' 00''
+35    LOUIS DI MARIA                        103        TDF 1908 ***   00h 00' 00''
+36    HENRI ANTHOINE                        142        TDF 1908 ***   00h 00' 00''
+
+Next rankings

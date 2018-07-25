@@ -1,0 +1,66 @@
+Tour de France 1925
+
+Number of stages 18
+Distance (km) 5 440
+Average speed 24.820
+
+All about year 1925
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider            Rider No.           Team               Times            Gap        B P
+1    OTTAVIO BOTTECCHIA         1          AUTOMOTO-HUTCHINSON     219h 10' 18''
+2    LUCIEN BUYSSE              3          AUTOMOTO-HUTCHINSON     220h 04' 38''  + 00h 54' 20''
+3    BARTOLOMEO AIMO            16         ALCYON-DUNLOP           220h 06' 55''  + 00h 56' 37''
+4    NICOLAS FRANTZ             20         ALCYON-DUNLOP           220h 21' 42''  + 01h 11' 24''
+5    ALBERT DEJONGHE            14         J.B.LOUVET-POUCHOIS     220h 38' 00''  + 01h 27' 42''
+6    THÉOPHILE BEECKMAN         23         THOMANN-DUNLOP          221h 35' 01''  + 02h 24' 43''
+7    OMER HUYSE                 36         ARMOR-DUNLOP            221h 43' 56''  + 02h 33' 38''
+8    AUGUST VERDYCK             33         CHRISTOPHE-HUTCHINSON   221h 54' 54''  + 02h 44' 36''
+9    FÉLIX SELLIER              15         ALCYON-DUNLOP           221h 56' 17''  + 02h 45' 59''
+10   FEDERICO GAY               26         METEORE-WOLBER          223h 16' 21''  + 04h 06' 03''
+11   ROMAIN BELLENGER           19         ALCYON-DUNLOP           223h 36' 28''  + 04h 26' 10''
+12   ADELIN BENOIT              24         THOMANN-DUNLOP          223h 47' 32''  + 04h 37' 14''
+13   JEAN ALAVOINE              38         J.ALAVOINE-DUNLOP       223h 50' 06''  + 04h 39' 48''
+14   HECTOR MARTIN              8          J.B.LOUVET-POUCHOIS     223h 59' 02''  + 04h 48' 44''
+15   JULES BUYSSE               4          AUTOMOTO-HUTCHINSON     224h 17' 51''  + 05h 07' 33''
+16   LÉON DESPONTIN             195        TOURISTES ROUTIERS      224h 38' 25''  + 05h 28' 07''
+17   EMILE HARDY                35         CHRISTOPHE-HUTCHINSON   224h 49' 19''  + 05h 39' 01''
+18   EUGÈNE CHRISTOPHE          7          J.B.LOUVET-POUCHOIS     225h 05' 49''  + 05h 55' 31''
+19   GIOVANNI ROSSIGNOLI        208        TOURISTES ROUTIERS      225h 28' 31''  + 06h 18' 13''
+20   RAYMOND ENGLEBERT          21         LABOR-DUNLOP            225h 40' 24''  + 06h 30' 06''
+21   MICHELE GORDINI            205        TOURISTES ROUTIERS      225h 41' 58''  + 06h 31' 40''
+22   EMILE ''SENIOR'' MASSON    18         ALCYON-DUNLOP           226h 05' 36''  + 06h 55' 18''
+23   EUGÈNE DHERS               140        TOURISTES ROUTIERS      226h 44' 34''  + 07h 34' 16''
+24   HENRI TOUZARD              161        TOURISTES ROUTIERS      226h 48' 24''  + 07h 38' 06''
+25   ALFONSO PICCIN             34         CHRISTOPHE-HUTCHINSON   226h 57' 42''  + 07h 47' 24''
+26   ANGELO GREMO               25         METEORE-WOLBER          229h 05' 30''  + 09h 55' 12''
+27   GIOVANNI CANOVA            126        TOURISTES ROUTIERS      229h 35' 08''  + 10h 24' 50''
+28   ARTURO BRESCIANI           28         METEORE-WOLBER          229h 49' 01''  + 10h 38' 43''
+29   CHARLES MARTINET           129        TOURISTES ROUTIERS      231h 02' 11''  + 11h 51' 53''
+30   MAURICE ARNOULT            165        TOURISTES ROUTIERS      231h 36' 22''  + 12h 26' 04''
+31   LOUIS MOTTIAT              17         ALCYON-DUNLOP           232h 37' 12''  + 13h 26' 54''
+32   MOÏSE ARROSIO              135        TOURISTES ROUTIERS      234h 33' 35''  + 15h 23' 17''
+33   UMBERTO BERNI              193        TOURISTES ROUTIERS      234h 59' 37''  + 15h 49' 19''
+34   CHARLES ROUX               110        TOURISTES ROUTIERS      235h 09' 56''  + 15h 59' 38''
+35   ALFONS STANDAERT           22         LABOR-DUNLOP            235h 20' 37''  + 16h 10' 19''
+36   VINCENZO BIANCO            201        TOURISTES ROUTIERS      235h 23' 34''  + 16h 13' 16''
+37   CHARLES LOEW               120        TOURISTES ROUTIERS      238h 10' 28''  + 19h 00' 10''
+38   ANTOINE RIERE              112        TOURISTES ROUTIERS      238h 27' 50''  + 19h 17' 32''
+39   HENRI RUBERT               134        TOURISTES ROUTIERS      238h 49' 49''  + 19h 39' 31''
+40   CHARLES KRIER              138        TOURISTES ROUTIERS      240h 30' 58''  + 21h 20' 40''
+41   CHARLES CENTO              125        TOURISTES ROUTIERS      242h 15' 12''  + 23h 04' 54''
+42   ROGER LACOLLE              30         METEORE-WOLBER          242h 43' 12''  + 23h 32' 54''
+43   EDOUARD TEISSEIRE          136        TOURISTES ROUTIERS      244h 32' 36''  + 25h 22' 18''
+44   HENRI MIEGE                133        TOURISTES ROUTIERS      245h 01' 14''  + 25h 50' 56''
+45   EDOUARD PETRE              181        TOURISTES ROUTIERS      246h 23' 59''  + 27h 13' 41''
+46   LUCIEN PRUDHOMME           148        TOURISTES ROUTIERS      246h 28' 03''  + 27h 17' 45''
+47   ARTHUR HENDRYCKX           142        TOURISTES ROUTIERS      246h 36' 34''  + 27h 26' 16''
+48   FRANÇOIS CHEVALIER         105        TOURISTES ROUTIERS      253h 35' 02''  + 34h 24' 44''
+49   FERNAND BESNIER            143        TOURISTES ROUTIERS      255h 21' 08''  + 36h 10' 50''
+
+Next rankings

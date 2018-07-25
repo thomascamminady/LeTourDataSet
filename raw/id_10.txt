@@ -1,0 +1,58 @@
+Tour de France 1912
+
+Number of stages 15
+Distance (km) 5 289
+Average speed 27.763
+
+All about year 1912
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank               Rider               Rider No.     Team          Times      Gap B P
+1     ODIEL DEFRAEYE                   10         ALCYON      49h 00' 00''
+2     EUGÈNE CHRISTOPHE                21         ARMOR       108h 00' 00''
+3     GUSTAVE GARRIGOU                 6          ALCYON      140h 00' 00''
+4     MARCEL BUYSSE                    15         PEUGEOT     147h 00' 00''
+5     JEAN ALAVOINE                    23         ARMOR       148h 00' 00''
+6     PHILIPPE THYS                    14         PEUGEOT     148h 00' 00''
+7     HECTOR TIBERGHEN                 18         GRIFFON     149h 00' 00''
+8     HENRI DEVROYE                    40         LE GLOBE    163h 00' 00''
+9     FÉLICIEN SALMON                  12         PEUGEOT     166h 00' 00''
+10    ALFONS SPIESSENS                 27         J.B-LOUVET  167h 00' 00''
+11    LOUIS HEUSGHEM                   9          ALCYON      167h 00' 00''
+12    RENÉ VANDENBERGHE                50         THOMANN     194h 00' 00''
+13    VICENZO BORGARELLO               29         J.B-LOUVET  212h 00' 00''
+14    FRANÇOIS FABER                   31         AUTOMOTO    229h 00' 00''
+15    LOUIS ENGEL                      41         AIGLON      241h 00' 00''
+16    CHARLES DERUYTER                 13         PEUGEOT     255h 00' 00''
+17    JACQUES COOMANS                  48         THOMANN     260h 00' 00''
+18    FIRMIN LAMBOT                    39         LE GLOBE    265h 00' 00''
+19    OTTAVIO PRATESI                  198        ISOLES      304h 00' 00''
+20    CHARLES GUYOT                    45         AIGLON      309h 00' 00''
+21    JULES DELOFFRE                   156        ISOLES      320h 00' 00''
+22    GABRIEL FIGUET                   20         GRIFFON     335h 00' 00''
+23    EDOUARD LEONARD                  28         J.B-LOUVET  346h 00' 00''
+24    EUGÈNE DHERS                     32         AUTOMOTO    354h 00' 00''
+25    PIERRE-JOSEPH HEUSGHEM           38         LE GLOBE    358h 00' 00''
+26    PIERRE EVERAERT                  166        ISOLES      364h 00' 00''
+27    JULIEN MAITRON                   35         AUTOMOTO    366h 00' 00''
+28    HENRI CORNET (GEBOREN JARDY)     36         LE GLOBE    398h 00' 00''
+29    FRANÇOIS LAFOURCADE              169        ISOLES      398h 00' 00''
+30    AUGUSTINN RINGEVAL               143        ISOLES      408h 00' 00''
+31    MAURICE LELIAERT                 102        ISOLES      487h 00' 00''
+32    GEORGES OUDIN                    159        ISOLES      494h 00' 00''
+33    FERNAND COURCELLES               127        ISOLES      495h 00' 00''
+34    RAYMOND HARQUET                  136        ISOLES      512h 00' 00''
+35    EMILE DRUZ                       177        ISOLES      544h 00' 00''
+36    EMILE EIGELDINGER                145        ISOLES      545h 00' 00''
+37    CHARLES DUMONT                   202        ISOLES      546h 00' 00''
+38    HENRI ALAVOINE                   106        ISOLES      577h 00' 00''
+39    EMILE CAUDRELIER                 189        ISOLES      596h 31' 23''
+40    GASTON NEBOUX                    151        ISOLES      596h 31' 23''
+41    MAURICE DARTIGUE                 199        ISOLES      596h 31' 23''
+
+Next rankings

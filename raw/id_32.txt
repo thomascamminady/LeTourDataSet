@@ -1,0 +1,72 @@
+Tour de France 1938
+
+Number of stages 21
+Distance (km) 4 694
+Average speed 31.565
+
+All about year 1938
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider            Rider No.     Team          Times            Gap        B P
+1    GINO BARTALI               13         ITALIE      148h 29' 12''
+2    FÉLICIEN VERVAECKE         3          BELGIQUE    148h 47' 39''   + 00h 18' 27''
+3    VICTOR COSSON              45         FRANCE      148h 58' 38''   + 00h 29' 26''
+4    EDWARD VISSERS             8          BELGIQUE    149h 04' 20''   + 00h 35' 08''
+5    MATHIAS CLEMENS            67         LUXEMBOURG  149h 11' 20''   + 00h 42' 08''
+6    MARIO VICINI               19         ITALIE      149h 14' 11''   + 00h 44' 59''
+7    JULES LOWIE                7          BELGIQUE    149h 18' 08''   + 00h 48' 56''
+8    ANTONIN MAGNE              37         FRANCE      149h 18' 12''   + 00h 49' 00''
+9    MARCEL KINT                2          BELGIQUE    149h 29' 01''   + 00h 59' 49''
+10   DANTE GIANELLO             90         BLEUETS     149h 35' 59''   + 01h 06' 47''
+11   JEAN-MARIE GOASMAT         48         FRANCE      149h 36' 46''   + 01h 07' 34''
+12   ALBERTIN DISSEAUX          4          BELGIQUE    149h 41' 28''   + 01h 12' 16''
+13   ROBERT TANNEVEAU           79         CADETS      149h 43' 06''   + 01h 13' 54''
+14   SYLVÈRE MAES               1          BELGIQUE    149h 50' 23''   + 01h 21' 11''
+15   PIERRE GALLIEN             38         FRANCE      149h 53' 46''   + 01h 24' 34''
+16   MARIANO CANARDO            49         ESPAGNE     149h 56' 00''   + 01h 26' 48''
+17   FRANÇOIS NEUVILLE          9          BELGIQUE    150h 04' 55''   + 01h 35' 43''
+18   JEAN FRECHAUT              39         FRANCE      150h 06' 36''   + 01h 37' 24''
+19   RAFAËL RAMOS               51         ESPAGNE     150h 06' 52''   + 01h 37' 40''
+20   GLAUCO SERVADEI            17         ITALIE      150h 10' 50''   + 01h 41' 38''
+21   OTTO WECKERLING            36         ALLEMAGNE   150h 11' 39''   + 01h 42' 27''
+22   RAYMOND PASSAT             83         CADETS      150h 16' 31''   + 01h 47' 19''
+23   YVAN MARIE                 82         CADETS      150h 19' 01''   + 01h 49' 49''
+24   JEAN FONTENAY              81         CADETS      150h 19' 16''   + 01h 50' 04''
+25   GIORDANO COTTUR            20         ITALIE      150h 19' 20''   + 01h 50' 08''
+26   RAYMOND LOUVIOT            75         CADETS      150h 19' 33''   + 01h 50' 21''
+27   GIUSEPPE MARTANO           22         ITALIE      150h 21' 43''   + 01h 52' 31''
+28   FABIEN GALATEAU            78         CADETS      150h 21' 55''   + 01h 52' 43''
+29   JULIAN BERRENDERO          50         ESPAGNE     150h 22' 43''   + 01h 53' 31''
+30   ANDRÉ LEDUCQ               73         CADETS      150h 22' 54''   + 01h 53' 42''
+31   PAUL EGLI                  57         SUISSE      150h 29' 18''   + 02h 00' 06''
+32   ARSÈNE MERSCH              71         LUXEMBOURG  150h 32' 28''   + 02h 03' 16''
+33   VASCO BERGAMASCHI          14         ITALIE      150h 36' 19''   + 02h 07' 07''
+34   EMILE ''JUNIOR'' MASSON    6          BELGIQUE    150h 42' 51''   + 02h 13' 39''
+35   ALBERT BOURLON             87         BLEUETS     150h 47' 12''   + 02h 18' 00''
+36   LUCIEN LE GUEVEL           85         BLEUETS     150h 51' 45''   + 02h 22' 33''
+37   FRANÇOIS NEUENS            69         LUXEMBOURG  150h 52' 22''   + 02h 23' 10''
+38   ENRICO MOLLO               16         ITALIE      150h 53' 47''   + 02h 24' 35''
+39   STAN LAUWERS               12         BELGIQUE    150h 55' 40''   + 02h 26' 28''
+40   ORESTE BERNARDONI          86         BLEUETS     150h 58' 46''   + 02h 29' 34''
+41   ROBERT OUBRON              80         CADETS      151h 12' 13''   + 02h 43' 01''
+42   CAMILLE LEROY II           92         BLEUETS     151h 31' 27''   + 03h 02' 15''
+43   THÉO MIDDELKAMP            65         PAYS-BAS    151h 31' 57''   + 03h 02' 45''
+44   PIERRE JAMINET             42         FRANCE      151h 34' 52''   + 03h 05' 40''
+45   JOSEF ARENTS               31         ALLEMAGNE   151h 44' 26''   + 03h 15' 14''
+46   AUGUSTO INTROZZI           21         ITALIE      151h 48' 11''   + 03h 18' 59''
+47   BRUNO CARINI               84         CADETS      151h 50' 04''   + 03h 20' 52''
+48   ALDO BINI                  15         ITALIE      151h 50' 07''   + 03h 20' 55''
+49   JEAN MAJERUS               68         LUXEMBOURG  151h 51' 14''   + 03h 22' 02''
+50   ANTOON VAN SCHENDEL        66         PAYS-BAS    152h 01' 36''   + 03h 32' 24''
+51   RENÉ WALSCHOT              11         BELGIQUE    152h 09' 55''   + 03h 40' 43''
+52   HERBERT HAUSWALD           28         ALLEMAGNE   152h 19' 58''   + 03h 50' 46''
+53   REINHOLD WENDEL            30         ALLEMAGNE   152h 22' 09''   + 03h 52' 57''
+54   NELLO TROGGI               24         ITALIE      152h 47' 29''   + 04h 18' 17''
+55   JANUS HELLEMONS            62         PAYS-BAS    153h 31' 46''   + 05h 02' 34''
+
+Next rankings

@@ -1,0 +1,63 @@
+Tour de France 1937
+
+Number of stages 20
+Distance (km) 4 415
+Average speed 31.768
+
+All about year 1937
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank         Rider          Rider No.          Team              Times            Gap        B P
+1    ROGER LAPEBIE          32         FRANCE               138h 58' 31''
+2    MARIO VICINI           106        TOURISTES ROUTIERS   139h 05' 48''   + 00h 07' 17''
+3    LÉO AMBERG             61         SUISSE               139h 24' 44''   + 00h 26' 13''
+4    FRANCESCO CAMUSSO      20         ITALIE               139h 25' 24''   + 00h 26' 53''
+5    SYLVAIN MARCAILLOU     40         FRANCE               139h 34' 07''   + 00h 35' 36''
+6    EDWARD VISSERS         104        TOURISTES ROUTIERS   139h 36' 45''   + 00h 38' 14''
+7    PAUL CHOCQUE           31         FRANCE               140h 03' 50''   + 01h 05' 19''
+8    PIERRE GALLIEN         120        TOURISTES ROUTIERS   140h 05' 54''   + 01h 07' 23''
+9    ERICH BAUTZ            24         ALLEMAGNE            140h 06' 02''   + 01h 07' 31''
+10   JEAN FRECHAUT          118        TOURISTES ROUTIERS   140h 23' 55''   + 01h 25' 24''
+11   RODOLPHE MULLER        103        TOURISTES ROUTIERS   140h 26' 12''   + 01h 27' 41''
+12   RAYMOND PASSAT         128        TOURISTES ROUTIERS   140h 27' 19''   + 01h 28' 48''
+13   MARCEL LAURENT         124        TOURISTES ROUTIERS   140h 31' 18''   + 01h 32' 47''
+14   OSKAR THIERBACH        21         ALLEMAGNE            140h 32' 58''   + 01h 34' 27''
+15   JULIAN BERRENDERO      42         ESPAGNE              140h 33' 19''   + 01h 34' 48''
+16   GUSTAAF DELOOR         102        TOURISTES ROUTIERS   140h 34' 34''   + 01h 36' 03''
+17   VICTOR COSSON          115        TOURISTES ROUTIERS   140h 37' 26''   + 01h 38' 55''
+18   JEAN-MARIE GOASMAT     121        TOURISTES ROUTIERS   140h 38' 07''   + 01h 39' 36''
+19   SAUVEUR DUCAZEAUX      117        TOURISTES ROUTIERS   140h 39' 52''   + 01h 41' 21''
+20   ROBERT OUBRON          127        TOURISTES ROUTIERS   140h 44' 40''   + 01h 46' 09''
+21   ROBERT TANNEVEAU       39         FRANCE               140h 45' 34''   + 01h 47' 03''
+22   ADOLPHE BRAECKEVELDT   101        TOURISTES ROUTIERS   140h 51' 00''   + 01h 52' 29''
+23   HENRI PUPPO            129        TOURISTES ROUTIERS   140h 55' 09''   + 01h 56' 38''
+24   GIUSEPPE MARTANO       13         ITALIE               140h 57' 04''   + 01h 58' 33''
+25   FABIEN GALATEAU        119        TOURISTES ROUTIERS   141h 02' 51''   + 02h 04' 20''
+26   AUGUSTO INTROZZI       18         ITALIE               141h 08' 20''   + 02h 09' 49''
+27   ARSÈNE MERSCH          54         LUXEMBOURG           141h 14' 14''   + 02h 15' 43''
+28   LUDWIG GEYER           22         ALLEMAGNE            141h 15' 02''   + 02h 16' 31''
+29   PAUL EGLI              64         SUISSE               141h 27' 25''   + 02h 28' 54''
+30   MARIANO CANARDO        41         ESPAGNE              141h 33' 42''   + 02h 35' 11''
+31   ROBERT ZIMMERMANN      59         SUISSE               141h 42' 54''   + 02h 44' 23''
+32   PIERRE-MARIE CLOAREC   35         FRANCE               141h 44' 37''   + 02h 46' 06''
+33   ANTOON VAN SCHENDEL    49         PAYS-BAS             141h 51' 45''   + 02h 53' 14''
+34   GABRIEL DUBOIS         116        TOURISTES ROUTIERS   142h 10' 03''   + 03h 11' 32''
+35   JEAN GOUJON            123        TOURISTES ROUTIERS   142h 17' 47''   + 03h 19' 16''
+36   CARLO ROMANATTI        16         ITALIE               142h 18' 00''   + 03h 19' 29''
+37   HEINZ WENGLER          26         ALLEMAGNE            142h 26' 35''   + 03h 28' 04''
+38   FRANÇOIS NEUENS        57         LUXEMBOURG           142h 31' 41''   + 03h 33' 10''
+39   RENÉ PEDROLI           60         SUISSE               143h 01' 19''   + 04h 02' 48''
+40   RAYMOND LEMARIE        125        TOURISTES ROUTIERS   143h 06' 43''   + 04h 08' 12''
+41   OTTO WECKERLING        23         ALLEMAGNE            143h 17' 39''   + 04h 19' 08''
+42   BRUNO CARINI           114        TOURISTES ROUTIERS   143h 26' 13''   + 04h 27' 42''
+43   HERBERT HAUSWALD       30         ALLEMAGNE            144h 01' 40''   + 05h 03' 09''
+44   EMILE GAMARD           34         FRANCE               144h 51' 13''   + 05h 52' 42''
+45   REINHOLD WENDEL        27         ALLEMAGNE            145h 14' 00''   + 06h 15' 29''
+46   ALOÏSE KLENSCH         58         LUXEMBOURG           145h 37' 56''   + 06h 39' 25''
+
+Next rankings

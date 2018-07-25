@@ -1,0 +1,50 @@
+Tour de France 1907
+
+Number of stages 14
+Distance (km) 4 488
+Average speed 28.470
+
+All about year 1907
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank               Rider               Rider No.       Team           Times      Gap B P
+1    LUCIEN MAZAN DIT PETIT-BRETON     12         TDF 1907 ***   47h 00' 00''
+2    GUSTAVE GARRIGOU                  71         TDF 1907 ***   66h 00' 00''
+3    EMILE GEORGET                     73         TDF 1907 ***   74h 00' 00''
+4    GEORGES PASSERIEU                 70         TDF 1907 ***   85h 00' 00''
+5    FRANÇOIS BEAUGENDRE               87         TDF 1907 ***   123h 00' 00''
+6    EBERADO PAVESI                    43         TDF 1907 ***   150h 00' 00''
+7    FRANÇOIS FABER                    4          TDF 1907 ***   156h 00' 00''
+8    AUGUSTINN RINGEVAL                2          TDF 1907 ***   184h 00' 00''
+9    ALOIS CATTEAU                     89         TDF 1907 ***   189h 00' 00''
+10   FERDINAND PAYAN                   18         TDF 1907 ***   227h 00' 00''
+11   PIERRE PRIVAT                     86         TDF 1907 ***   251h 00' 00''
+12   GEORGES FLEURY                    29         TDF 1907 ***   274h 00' 00''
+13   FRANÇOIS LAFOURCADE               84         TDF 1907 ***   299h 00' 00''
+14   MARIUS VILETTE                    61         TDF 1907 ***   333h 00' 00''
+15   ALZIR VIVIER                      46         TDF 1907 ***   340h 00' 00''
+16   GASTON TUVACHE                    7          TDF 1907 ***   348h 00' 00''
+17   EUGÈNE DELHAYE                    99         TDF 1907 ***   378h 00' 00''
+18   BAPTISTE ROUX                     22         TDF 1907 ***   389h 00' 00''
+19   PHILIPPE PAUTRAT                  88         TDF 1907 ***   393h 00' 00''
+20   HENRI TIMMERMANN                  31         TDF 1907 ***   411h 00' 00''
+21   GEORGES BRONCHARD                 30         TDF 1907 ***   414h 00' 00''
+22   MARCEAU NARCY                     48         TDF 1907 ***   416h 00' 00''
+23   HONORÉ GENIN                      53         TDF 1907 ***   434h 00' 00''
+24   EDOUARD WATTELIER                 105        TDF 1907 ***   436h 00' 00''
+25   ALBERT BAUDET                     16         TDF 1907 ***   439h 00' 00''
+26   ALFRED LE BARS                    57         TDF 1907 ***   479h 00' 00''
+27   ALFRED QUENON                     65         TDF 1907 ***   487h 00' 00''
+28   LOUIS LORILLON                    39         TDF 1907 ***   491h 00' 00''
+29   RENÉ FLEURY                       109        TDF 1907 ***   495h 00' 00''
+30   OCTAVE NOEL                       83         TDF 1907 ***   505h 00' 00''
+31   ALBERT GERAUD                     104        TDF 1907 ***   515h 00' 00''
+32   MARCEL DOZOL                      24         TDF 1907 ***   522h 00' 00''
+33   ALBERT CHARTIER                   8          TDF 1907 ***   568h 00' 00''
+
+Next rankings

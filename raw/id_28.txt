@@ -1,0 +1,56 @@
+Tour de France 1934
+
+Number of stages 23
+Distance (km) 4 470
+Average speed 30.360
+
+All about year 1934
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank        Rider         Rider No.          Team              Times            Gap        B P
+1    ANTONIN MAGNE        36         FRANCE               147h 13' 58''
+2    GIUSEPPE MARTANO     9          ITALIE               147h 41' 29''   + 00h 27' 31''
+3    ROGER LAPEBIE        34         FRANCE               148h 06' 13''   + 00h 52' 15''
+4    FÉLICIEN VERVAECKE   104        TOURISTES-ROUTIERS   148h 12' 38''   + 00h 58' 40''
+5    RENÉ VIETTO          38         FRANCE               148h 13' 00''   + 00h 59' 02''
+6    AMBROGIO MORELLI     105        TOURISTES-ROUTIERS   148h 26' 00''   + 01h 12' 02''
+7    LUDWIG GEYER         26         ALLEMAGNE            148h 26' 49''   + 01h 12' 51''
+8    SYLVÈRE MAES         102        TOURISTES-ROUTIERS   148h 34' 54''   + 01h 20' 56''
+9    MARIANO CANARDO      23         SUISSE-ESPAGNE       148h 43' 00''   + 01h 29' 02''
+10   VICENTE TRUEBA       21         SUISSE-ESPAGNE       148h 54' 37''   + 01h 40' 39''
+11   GEORGES SPEICHER     33         FRANCE               149h 06' 19''   + 01h 52' 21''
+12   RAYMOND LOUVIOT      35         FRANCE               149h 17' 19''   + 02h 03' 21''
+13   EDUARDO MOLINAR      108        TOURISTES-ROUTIERS   149h 30' 50''   + 02h 16' 52''
+14   EUGENIO GESTRI       10         ITALIE               149h 35' 07''   + 02h 21' 09''
+15   ADRIANO VIGNOLI      15         ITALIE               149h 35' 56''   + 02h 21' 58''
+16   GIOVANNI CAZZULANI   13         ITALIE               149h 46' 36''   + 02h 32' 38''
+17   ALBERT BÜCHI         17         SUISSE-ESPAGNE       149h 49' 05''   + 02h 35' 07''
+18   FRANS BONDUEL        5          BELGIQUE             149h 58' 35''   + 02h 44' 37''
+19   FÉDÉRICO EZQUERRA    24         SUISSE-ESPAGNE       150h 06' 51''   + 02h 52' 53''
+20   AUGUST ERNE          20         SUISSE-ESPAGNE       150h 09' 14''   + 02h 55' 16''
+21   LÉON LEVEL           109        TOURISTES-ROUTIERS   150h 11' 39''   + 02h 57' 41''
+22   KURT STOEPEL         25         ALLEMAGNE            150h 15' 01''   + 03h 01' 03''
+23   DANTE FRANZIL        107        TOURISTES-ROUTIERS   150h 15' 36''   + 03h 01' 38''
+24   GIOVANNI GOTTI       12         ITALIE               150h 36' 28''   + 03h 22' 30''
+25   RENÉ LE GREVES       39         FRANCE               150h 40' 14''   + 03h 26' 16''
+26   THÉO HERCKENRATH     103        TOURISTES-ROUTIERS   150h 44' 49''   + 03h 30' 51''
+27   VINCENT SALAZARD     117        TOURISTES-ROUTIERS   151h 09' 27''   + 03h 55' 29''
+28   MARCEL RENAUD        113        TOURISTES-ROUTIERS   151h 11' 42''   + 03h 57' 44''
+29   ETTORE MEINI         106        TOURISTES-ROUTIERS   151h 13' 57''   + 03h 59' 59''
+30   LUCIANO MONTERO      22         SUISSE-ESPAGNE       151h 17' 13''   + 04h 03' 15''
+31   JEAN WAUTERS         101        TOURISTES-ROUTIERS   151h 40' 55''   + 04h 26' 57''
+32   ROMAIN GIJSSELS      8          BELGIQUE             151h 42' 00''   + 04h 28' 02''
+33   YVES LE GOFF         115        TOURISTES-ROUTIERS   151h 43' 28''   + 04h 29' 30''
+34   SYLVAIN MARCAILLOU   111        TOURISTES-ROUTIERS   151h 52' 45''   + 04h 38' 47''
+35   JEAN BIDOT           110        TOURISTES-ROUTIERS   151h 53' 25''   + 04h 39' 27''
+36   FABIEN GALATEAU      118        TOURISTES-ROUTIERS   152h 04' 38''   + 04h 50' 40''
+37   WILLI KUTZBACH       28         ALLEMAGNE            152h 50' 26''   + 05h 36' 28''
+38   RUDOLPH RISCH        31         ALLEMAGNE            153h 41' 43''   + 06h 27' 45''
+39   ANTONIO FOLCO        11         ITALIE               154h 29' 34''   + 07h 15' 36''
+
+Next rankings

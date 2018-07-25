@@ -1,0 +1,42 @@
+Tour de France 1913
+
+Number of stages 15
+Distance (km) 5 287
+Average speed 26.715
+
+All about year 1913
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank         Rider         Rider No.     Team         Times            Gap        B P
+1     PHILIPPE THYS        15         PEUGEOT    197h 54' 00''
+2     GUSTAVE GARRIGOU     14         PEUGEOT    198h 02' 37''   + 00h 08' 37''
+3     MARCEL BUYSSE        12         PEUGEOT    201h 24' 55''   + 03h 30' 55''
+4     FIRMIN LAMBOT        38         GRIFFON    202h 06' 45''   + 04h 12' 45''
+5     FRANÇOIS FABER       9          PEUGEOT    204h 20' 04''   + 06h 26' 04''
+6     ALFONS SPIESSENS     42         JB LOUVET  205h 51' 52''   + 07h 57' 52''
+7     EUGÈNE CHRISTOPHE    11         PEUGEOT    212h 00' 35''   + 14h 06' 35''
+8     CAMILLO BERTARELLI   169        ISOLES     214h 15' 38''   + 16h 21' 38''
+9     JOSEPH VAN DAELE     41         JB LOUVET  214h 33' 53''   + 16h 39' 53''
+10    EMILE ENGEL          16         PEUGEOT    214h 46' 34''   + 16h 52' 34''
+11    LOUIS TROUSSELIER    47         JB LOUVET  216h 05' 30''   + 18h 11' 30''
+12    JULES DELOFFRE       151        ISOLES     216h 15' 31''   + 18h 21' 31''
+13    CLEMENTE CANEPARI    45         JB LOUVET  216h 55' 13''   + 19h 01' 13''
+14    PAUL DEMAN           19         AUTOMOTO   217h 11' 02''   + 19h 17' 02''
+15    VINCENT D'HULST      116        ISOLES     218h 04' 12''   + 20h 10' 12''
+16    LOUIS PETITJEAN      199        ISOLES     219h 54' 27''   + 22h 00' 27''
+17    PAUL HOSTEIN         13         PEUGEOT    223h 35' 06''   + 25h 41' 06''
+18    MAURICE LELIAERT     113        ISOLES     224h 12' 25''   + 26h 18' 25''
+19    JEAN ALAVOINE        10         PEUGEOT    225h 37' 47''   + 27h 43' 47''
+20    GIUSEPPE CONTESINI   175        ISOLES     227h 31' 34''   + 29h 37' 34''
+21    LOUIS COLSAET        128        ISOLES     228h 40' 50''   + 30h 46' 50''
+22    LUC DE SMET          129        ISOLES     252h 38' 07''   + 54h 44' 07''
+23    CHARLES DUMONT       133        ISOLES     262h 27' 55''   + 64h 33' 55''
+24    CELIDONIO MORINI     143        ISOLES     274h 25' 47''   + 76h 31' 47''
+25    HENRI ALAVOINE       107        ISOLES     274h 49' 52''   + 76h 55' 52''
+
+Next rankings

@@ -1,0 +1,57 @@
+Tour de France 1933
+
+Number of stages 23
+Distance (km) 4 395
+Average speed 29.818
+
+All about year 1933
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank         Rider          Rider No.          Team              Times            Gap        B P
+1    GEORGES SPEICHER       36         FRANCE               147h 51' 37''
+2    LEARCO GUERRA          9          ITALIE               147h 55' 38''   + 00h 04' 01''
+3    GIUSEPPE MARTANO       115        TOURISTES-ROUTIERS   147h 56' 45''   + 00h 05' 08''
+4    GEORGES LEMAIRE        3          BELGIQUE             148h 07' 22''   + 00h 15' 45''
+5    MAURICE ARCHAMBAUD     35         FRANCE               148h 12' 59''   + 00h 21' 22''
+6    VICENTE TRUEBA         119        TOURISTES-ROUTIERS   148h 19' 04''   + 00h 27' 27''
+7    LÉON LEVEL             122        TOURISTES-ROUTIERS   148h 28' 00''   + 00h 36' 23''
+8    ANTONIN MAGNE          37         FRANCE               148h 29' 14''   + 00h 37' 37''
+9    JEAN AERTS             2          BELGIQUE             148h 35' 30''   + 00h 43' 53''
+10   KURT STOEPEL           25         ALLEMAGNE-AUTRICHE   148h 38' 05''   + 00h 46' 28''
+11   FERNAND FAYOLLE        129        TOURISTES-ROUTIERS   148h 48' 48''   + 00h 57' 11''
+12   LUDWIG GEYER           27         ALLEMAGNE-AUTRICHE   148h 49' 41''   + 00h 58' 04''
+13   ALBERT BÜCHI           17         SUISSE               149h 00' 36''   + 01h 08' 59''
+14   GASTON REBRY           5          BELGIQUE             149h 12' 53''   + 01h 21' 16''
+15   GASPARD RINALDI        136        TOURISTES-ROUTIERS   149h 20' 49''   + 01h 29' 12''
+16   EUGÈNE LE GOFF         139        TOURISTES-ROUTIERS   149h 27' 36''   + 01h 35' 59''
+17   LÉON LE CALVEZ         38         FRANCE               149h 31' 21''   + 01h 39' 44''
+18   ALFONS SCHEPERS        4          BELGIQUE             149h 32' 26''   + 01h 40' 49''
+19   RENÉ LE GREVES         40         FRANCE               149h 41' 08''   + 01h 49' 31''
+20   ALFRED BÜCHI           18         SUISSE               149h 42' 36''   + 01h 50' 59''
+21   DECIMO BETTINI         117        TOURISTES-ROUTIERS   149h 44' 28''   + 01h 52' 51''
+22   EMILE DECROIX          105        TOURISTES-ROUTIERS   149h 45' 23''   + 01h 53' 46''
+23   OSKAR THIERBACH        26         ALLEMAGNE-AUTRICHE   149h 48' 28''   + 01h 56' 51''
+24   ROBERT BRUGERE         110        TOURISTES-ROUTIERS   149h 59' 21''   + 02h 07' 44''
+25   ALFRED BULA            23         SUISSE               150h 05' 11''   + 02h 13' 34''
+26   ANTOINE DIGNEEF        101        TOURISTES-ROUTIERS   150h 08' 07''   + 02h 16' 30''
+27   GUSTAAF DELOOR         7          BELGIQUE             150h 08' 25''   + 02h 16' 48''
+28   LUIGI GIACCOBBE        15         ITALIE               150h 21' 56''   + 02h 30' 19''
+29   ROGER LAPEBIE          39         FRANCE               150h 23' 14''   + 02h 31' 37''
+30   WALTER BLATTMANN       20         SUISSE               150h 24' 12''   + 02h 32' 35''
+31   ANDRÉ LEDUCQ           34         FRANCE               150h 32' 13''   + 02h 40' 36''
+32   LÉON LOUYET            107        TOURISTES-ROUTIERS   150h 35' 11''   + 02h 43' 34''
+33   ANDRÉ GAILLOT          113        TOURISTES-ROUTIERS   150h 44' 33''   + 02h 52' 56''
+34   RENÉ BERNARD           124        TOURISTES-ROUTIERS   150h 47' 02''   + 02h 55' 25''
+35   FERNAND CORNEZ         127        TOURISTES-ROUTIERS   150h 51' 26''   + 02h 59' 49''
+36   ROGER PIPOZ            21         SUISSE               150h 57' 57''   + 03h 06' 20''
+37   PIERRE PASTORELLI      137        TOURISTES-ROUTIERS   151h 08' 19''   + 03h 16' 42''
+38   PIERRE-MARIE CLOAREC   133        TOURISTES-ROUTIERS   151h 11' 07''   + 03h 19' 30''
+39   VASCO BERGAMASCHI      13         ITALIE               151h 35' 26''   + 03h 43' 49''
+40   ERNEST NEUHARD         135        TOURISTES-ROUTIERS   151h 50' 21''   + 03h 58' 44''
+
+Next rankings

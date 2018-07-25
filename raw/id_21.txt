@@ -1,0 +1,56 @@
+Tour de France 1927
+
+Number of stages 24
+Distance (km) 5 398
+Average speed 27.224
+
+All about year 1927
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider           Rider No.          Team             Times            Gap        B P
+1    NICOLAS FRANTZ            1          ALCYON-DUNLOP        198h 16' 42''
+2    MAURICE DE WAELE          11         LABOR-DUNLOP         200h 05' 03''  + 01h 48' 21''
+3    JULIEN VERVAECKE          9          ARMOR-DUNLOP         200h 42' 28''  + 02h 25' 46''
+4    ANDRÉ LEDUCQ              7          THOMANN-DUNLOP       201h 18' 47''  + 03h 02' 05''
+5    ADELIN BENOIT             3          ALCYON-DUNLOP        203h 01' 43''  + 04h 45' 01''
+6    MARIUS GALLORINI          26         ALLELUIA-WOLBER      203h 05' 05''  + 04h 48' 23''
+7    PÉ VERHAEGEN              17         J.B.LOUVET           204h 35' 18''  + 06h 18' 36''
+8    JULIEN MOINEAU            25         ALLELUIA-WOLBER      204h 52' 59''  + 06h 36' 17''
+9    HECTOR MARTIN             14         J.B.LOUVET           205h 24' 16''  + 07h 07' 34''
+10   MAURICE GELDHOF           20         J.B.LOUVET           205h 32' 44''  + 07h 16' 02''
+11   RAYMOND DECORTE           19         J.B.LOUVET           206h 33' 54''  + 08h 17' 12''
+12   LOUIS MULLER              10         ARMOR-DUNLOP         206h 44' 31''  + 08h 27' 49''
+13   JENS DEBUSSCHERE          5          ALCYON-DUNLOP        209h 08' 38''  + 10h 51' 56''
+14   GUSTAAF VAN SLEMBROUCK    13         J.B.LOUVET           209h 18' 36''  + 11h 01' 54''
+15   PIERRE MAGNE              28         ALLELUIA-WOLBER      210h 29' 19''  + 12h 12' 37''
+16   LOUIS DE LANNOY           12         LABOR-DUNLOP         211h 44' 44''  + 13h 28' 02''
+17   JOSEPH HEMELSOET          23         J.B.LOUVET           212h 24' 50''  + 14h 08' 08''
+18   SECONDO MARTINETTO        241        TOURISTES ROUTIERS   212h 53' 44''  + 14h 37' 02''
+19   HENRI TOUZARD             150        TOURISTES ROUTIERS   213h 24' 45''  + 15h 08' 03''
+20   JOSÉ PELLETIER            228        TOURISTES ROUTIERS   214h 09' 10''  + 15h 52' 28''
+21   MAURICE ARNOULT           148        TOURISTES ROUTIERS   214h 21' 43''  + 16h 05' 01''
+22   CHARLES MARTINET          171        TOURISTES ROUTIERS   215h 10' 18''  + 16h 53' 36''
+23   ALBERT JORDENS            216        TOURISTES ROUTIERS   215h 35' 30''  + 17h 18' 48''
+24   MICHELE GORDINI           244        TOURISTES ROUTIERS   215h 37' 53''  + 17h 21' 11''
+25   GIOVANNI CANOVA           164        TOURISTES ROUTIERS   216h 09' 34''  + 17h 52' 52''
+26   ANDRÉ DEVAUCHELLE         29         ALLELUIA-WOLBER      216h 18' 52''  + 18h 02' 10''
+27   CHARLES KRIER             199        TOURISTES ROUTIERS   218h 59' 14''  + 20h 42' 32''
+28   LÉON DESPONTIN            205        TOURISTES ROUTIERS   219h 31' 44''  + 21h 15' 02''
+29   JOSEPH RIVELLA            227        TOURISTES ROUTIERS   220h 32' 08''  + 22h 15' 26''
+30   MARCEL GENDRIN            159        TOURISTES ROUTIERS   220h 38' 17''  + 22h 21' 35''
+31   OMER MAHY                 192        TOURISTES ROUTIERS   220h 45' 31''  + 22h 28' 49''
+32   GIOVANNI ROSSIGNOLI       163        TOURISTES ROUTIERS   220h 49' 00''  + 22h 32' 18''
+33   CAMILLE SEGERS            225        TOURISTES ROUTIERS   221h 10' 17''  + 22h 53' 35''
+34   EDOUARD TEISSEIRE         177        TOURISTES ROUTIERS   222h 16' 41''  + 23h 59' 59''
+35   JULES NEMPON              161        TOURISTES ROUTIERS   223h 55' 47''  + 25h 39' 05''
+36   ARMAND GOUBERT            194        TOURISTES ROUTIERS   225h 21' 09''  + 27h 04' 27''
+37   ANDRÉ DROBECQ             103        TOURISTES ROUTIERS   225h 27' 02''  + 27h 10' 20''
+38   JACQUES PFISTER           142        TOURISTES ROUTIERS   228h 20' 33''  + 30h 03' 51''
+39   PIERRE CLAES              238        TOURISTES ROUTIERS   228h 29' 01''  + 30h 12' 19''
+
+Next rankings

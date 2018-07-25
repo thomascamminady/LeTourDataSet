@@ -1,0 +1,39 @@
+Tour de France 1920
+
+Number of stages 15
+Distance (km) 5 503
+Average speed 24.072
+
+All about year 1920
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider            Rider No.      Team           Times            Gap        B P
+1    PHILIPPE THYS              15         TDF 1920 ***  228h 36' 13''
+2    HECTOR HEUSGHEM            30         TDF 1920 ***  229h 33' 34''   + 00h 57' 21''
+3    FIRMIN LAMBOT              2          TDF 1920 ***  230h 10' 43''   + 01h 34' 30''
+4    LÉON SCIEUR                13         TDF 1920 ***  230h 16' 06''   + 01h 39' 53''
+5    EMILE ''SENIOR'' MASSON    14         TDF 1920 ***  231h 28' 00''   + 02h 51' 47''
+6    LOUIS HEUSGHEM             6          TDF 1920 ***  232h 17' 00''   + 03h 40' 47''
+7    JEAN ROSSIUS               11         TDF 1920 ***  232h 26' 08''   + 03h 49' 55''
+8    HONORÉ BARTHELEMY          3          TDF 1920 ***  234h 11' 32''   + 05h 35' 19''
+9    FÉLIX GOETHALS             24         TDF 1920 ***  237h 59' 20''   + 09h 23' 07''
+10   JOSEPH VAN DAELE           8          TDF 1920 ***  239h 21' 54''   + 10h 45' 41''
+11   EUGÈNE DHERS               32         TDF 1920 ***  239h 51' 22''   + 11h 15' 09''
+12   JOSÉ PELLETIER             145        TDF 1920 ***  248h 40' 45''   + 20h 04' 32''
+13   THÉO WYNSDAU               201        TDF 1920 ***  253h 50' 15''   + 25h 14' 02''
+14   NOËL AMENC                 162        TDF 1920 ***  262h 02' 00''   + 33h 25' 47''
+15   JOSEPH MULLER              118        TDF 1920 ***  262h 25' 06''   + 33h 48' 53''
+16   HENRI FERRARA              161        TDF 1920 ***  263h 08' 40''   + 34h 32' 27''
+17   GUILLAUME CECHERELLI       115        TDF 1920 ***  277h 16' 48''   + 48h 40' 35''
+18   MARIUS MATHERON            143        TDF 1920 ***  279h 47' 17''   + 51h 11' 04''
+19   ETIENNE DORFEUILLE         112        TDF 1920 ***  281h 46' 13''   + 53h 10' 00''
+20   PIERRE HUDSYN              188        TDF 1920 ***  284h 12' 25''   + 55h 36' 12''
+21   ANDRÉ COUTTE               190        TDF 1920 ***  284h 34' 01''   + 55h 57' 48''
+22   CHARLES RABOISON           138        TDF 1920 ***  297h 36' 18''   + 69h 00' 05''
+
+Next rankings

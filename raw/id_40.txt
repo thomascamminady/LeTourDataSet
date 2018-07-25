@@ -1,0 +1,93 @@
+Tour de France 1953
+
+Number of stages 22
+Distance (km) 4 476
+Average speed 34.593
+
+All about year 1953
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank           Rider           Rider No.        Team            Times            Gap        B P
+1    LOUISON BOBET             61         FRANCE            129h 23' 25''
+2    JEAN MALLEJAC             106        OUEST             129h 37' 43''  + 00h 14' 18''
+3    GIANCARLO ASTRUA          1          ITALIE            129h 38' 26''  + 00h 15' 01''
+4    ALEXANDRE CLOSE           22         BELGIQUE          129h 41' 00''  + 00h 17' 35''
+5    WOUT WAGTMANS             58         PAYS-BAS          129h 41' 30''  + 00h 18' 05''
+6    FRITZ SCHAER              19         SUISSE            129h 42' 09''  + 00h 18' 44''
+7    ANTONIN ROLLAND           69         FRANCE            129h 46' 28''  + 00h 23' 03''
+8    NELLO LAUREDI             66         FRANCE            129h 49' 28''  + 00h 26' 03''
+9    RAPHAËL GEMINIANI         65         FRANCE            129h 50' 43''  + 00h 27' 18''
+10   FRANÇOIS MAHE             105        OUEST             129h 51' 51''  + 00h 28' 26''
+11   GINO BARTALI              3          ITALIE            129h 55' 25''  + 00h 32' 00''
+12   JOSEPH MIRANDO            95         SUD EST           130h 01' 46''  + 00h 38' 21''
+13   WIM VAN EST               57         PAYS-BAS          130h 02' 25''  + 00h 39' 00''
+14   JOSÉ SERRA                38         ESPAGNE           130h 03' 57''  + 00h 40' 32''
+15   VITTORIO MAGNI            8          ITALIE            130h 04' 12''  + 00h 40' 47''
+16   GILBERT BAUVIN            82         NORD EST-CENTRE   130h 05' 28''  + 00h 42' 03''
+17   GERRIT VOORTING           60         PAYS-BAS          130h 07' 27''  + 00h 44' 02''
+18   MARCEL ERNZER             43         LUXEMBOURG        130h 10' 06''  + 00h 46' 41''
+19   JAN NOLTEN                52         PAYS-BAS          130h 10' 54''  + 00h 47' 29''
+20   UGO ANZILE                81         NORD EST-CENTRE   130h 14' 03''  + 00h 50' 38''
+21   LUCIEN LAZARIDES          93         SUD EST           130h 15' 41''  + 00h 52' 16''
+22   VINCENZO ROSSELLO         10         ITALIE            130h 18' 12''  + 00h 54' 47''
+23   RAYMOND IMPANIS           27         BELGIQUE          130h 22' 37''  + 00h 59' 12''
+24   ANDRÈS TROBAT             39         ESPAGNE           130h 28' 00''  + 01h 04' 35''
+25   STANISLAS BOBER           71         ILE DE FRANCE     130h 31' 41''  + 01h 08' 16''
+26   LUCIEN TEISSEIRE          70         FRANCE            130h 36' 22''  + 01h 12' 57''
+27   GEORGES MEUNIER           88         NORD EST-CENTRE   130h 38' 08''  + 01h 14' 43''
+28   HILAIRE COUVREUR          23         BELGIQUE          130h 39' 29''  + 01h 16' 04''
+29   MATHIEU ''THIJS'' ROKS    53         PAYS-BAS          130h 45' 29''  + 01h 22' 04''
+30   JEAN LE GUILLY            67         FRANCE            130h 45' 40''  + 01h 22' 15''
+31   MAURICE QUENTIN           75         ILE DE FRANCE     130h 47' 40''  + 01h 24' 15''
+32   MARCEL HUBER              14         SUISSE            130h 48' 27''  + 01h 25' 02''
+33   MARTIN VAN GENEUGDEN      29         BELGIQUE          130h 53' 04''  + 01h 29' 39''
+34   RICHARD VAN GENECHTEN     30         BELGIQUE          130h 53' 42''  + 01h 30' 17''
+35   ADOLPHE DELEDDA           62         FRANCE            131h 00' 49''  + 01h 37' 24''
+36   HEIN VAN BREENEN          56         PAYS-BAS          131h 01' 06''  + 01h 37' 41''
+37   ANDRÉ DARRIGADE           114        SUD-OUEST         131h 02' 34''  + 01h 39' 09''
+38   PIERRE MOLINERIS          96         SUD EST           131h 02' 41''  + 01h 39' 16''
+39   JEAN FORESTIER            85         NORD EST-CENTRE   131h 03' 40''  + 01h 40' 15''
+40   ADRI SUYKERBUYK           55         PAYS-BAS          131h 03' 56''  + 01h 40' 31''
+41   JACQUES RENAUD            77         ILE DE FRANCE     131h 04' 07''  + 01h 40' 42''
+42   LIVIO ISOTI               7          ITALIE            131h 04' 28''  + 01h 41' 03''
+43   RENÉ DE SMET              26         BELGIQUE          131h 05' 50''  + 01h 42' 25''
+44   ROGER PONTET              109        OUEST             131h 07' 08''  + 01h 43' 43''
+45   JEAN ADRIAENSSENS         21         BELGIQUE          131h 07' 28''  + 01h 44' 03''
+46   FRANCISCO MASSIP          36         ESPAGNE           131h 08' 56''  + 01h 45' 31''
+47   ROGER WALKOWIAK           90         NORD EST-CENTRE   131h 16' 18''  + 01h 52' 53''
+48   ANTONIO GELABERT          33         ESPAGNE           131h 16' 21''  + 01h 52' 56''
+49   ALFRED TONELLO            80         ILE DE FRANCE     131h 17' 28''  + 01h 54' 03''
+50   JÉSUS LORONO              35         ESPAGNE           131h 21' 28''  + 01h 58' 03''
+51   RAOUL REMY                68         FRANCE            131h 25' 32''  + 02h 02' 07''
+52   FRED DE BRUYNE            24         BELGIQUE          131h 26' 11''  + 02h 02' 46''
+53   MARIO BARONI              2          ITALIE            131h 26' 31''  + 02h 03' 06''
+54   UMBERTO DREI              5          ITALIE            131h 35' 50''  + 02h 12' 25''
+55   JEAN DACQUAY              84         NORD EST-CENTRE   131h 35' 58''  + 02h 12' 33''
+56   GIOVANNI CORRIERI         4          ITALIE            131h 37' 30''  + 02h 14' 05''
+57   HENRI PARET               117        SUD-OUEST         131h 38' 59''  + 02h 15' 34''
+58   CLAUDE COLETTE            113        SUD-OUEST         131h 39' 43''  + 02h 16' 18''
+59   VINCENT VITETTA           99         SUD EST           131h 43' 25''  + 02h 20' 00''
+60   MAURICE DIOT              73         ILE DE FRANCE     131h 47' 34''  + 02h 24' 09''
+61   CARLO LAFRANCHI           13         SUISSE            131h 50' 13''  + 02h 26' 48''
+62   JOSEPH MORVAN             108        OUEST             131h 54' 34''  + 02h 31' 09''
+63   RENÉ ROTTA                98         SUD EST           131h 54' 49''  + 02h 31' 24''
+64   BERNARD QUENNEHEN         89         NORD EST-CENTRE   131h 55' 22''  + 02h 31' 57''
+65   ARMAND AUDAIRE            101        OUEST             131h 55' 24''  + 02h 31' 59''
+66   WILLY KEMP                48         LUXEMBOURG        132h 06' 14''  + 02h 42' 49''
+67   MAX SCHELLENBERG          20         SUISSE            132h 06' 57''  + 02h 43' 32''
+68   MARTIN METZGER            16         SUISSE            132h 19' 23''  + 02h 55' 58''
+69   SIRO BIANCHI              94         SUD EST           132h 21' 58''  + 02h 58' 33''
+70   BERNARD BULTEL            107        OUEST             132h 49' 31''  + 03h 26' 06''
+71   NORBERT ESNAULT           103        OUEST             132h 54' 46''  + 03h 31' 21''
+72   JEAN SCHMIT               50         LUXEMBOURG        132h 58' 23''  + 03h 34' 58''
+73   DALMACIO LANGARICA        37         ESPAGNE           133h 03' 24''  + 03h 39' 59''
+74   JOSÉ VIDAL PORCAR         40         ESPAGNE           133h 11' 36''  + 03h 48' 11''
+75   BERNARD GAUTHIER          64         FRANCE            133h 13' 14''  + 03h 49' 49''
+76   CLAUDE ROUER              78         ILE DE FRANCE     133h 32' 35''  + 04h 09' 10''
+
+Next rankings

@@ -1,0 +1,60 @@
+Tour de France 1948
+
+Number of stages 21
+Distance (km) 4 922
+Average speed 33.442
+
+All about year 1948
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank        Rider         Rider No.            Team                Times            Gap        B P
+1    GINO BARTALI         31         ITALIE                    147h 10' 36''
+2    BRIK SCHOTTE         9          BELGIQUE                  147h 37' 28''  + 00h 26' 52''
+3    GUY LAPEBIE          73         CENTRE-SUD OUEST          147h 40' 00''  + 00h 29' 24''
+4    LOUISON BOBET        41         FRANCE                    147h 43' 35''  + 00h 32' 59''
+5    JEAN KIRCHEN         20         PAYS-BAS/LUXEMBOURG       147h 48' 29''  + 00h 37' 53''
+6    LUCIEN TEISSEIRE     49         FRANCE                    147h 50' 53''  + 00h 40' 17''
+7    ROGER LAMBRECHT      27         INTERNATIONAUX            148h 00' 32''  + 00h 49' 56''
+8    FERMO CAMELLINI      24         INTERNATIONAUX            148h 02' 12''  + 00h 51' 36''
+9    LOUIS THIETARD       110        PARIS                     148h 05' 59''  + 00h 55' 23''
+10   RAYMOND IMPANIS      3          BELGIQUE                  148h 10' 39''  + 01h 00' 03''
+11   STAN OCKERS          6          BELGIQUE                  148h 10' 49''  + 01h 00' 13''
+12   ANDRÉ BRULE          101        PARIS                     148h 13' 06''  + 01h 02' 30''
+13   KLEBER PIOT          109        PARIS                     148h 35' 44''  + 01h 25' 08''
+14   EDWARD VAN DIJCK     10         BELGIQUE                  148h 42' 49''  + 01h 32' 13''
+15   RAPHAËL GEMINIANI    72         CENTRE-SUD OUEST          148h 50' 27''  + 01h 39' 51''
+16   JEAN ROBIC           48         FRANCE                    148h 49' 12''  + 01h 38' 36''
+17   RENÉ VIETTO          50         FRANCE                    148h 53' 24''  + 01h 42' 48''
+18   JAAN KIRSIPUU        26         INTERNATIONAUX            148h 56' 06''  + 01h 45' 30''
+19   BRUNO PASQUINI       38         ITALIE                    148h 59' 26''  + 01h 48' 50''
+20   MARCEL DUPONT        51         BELGIQUE B                149h 10' 23''  + 01h 59' 47''
+21   JEAN-APO LAZARIDES   46         FRANCE                    149h 12' 34''  + 02h 01' 58''
+22   JEAN ENGELS          52         BELGIQUE B                149h 26' 17''  + 02h 15' 41''
+23   RAOUL REMY           117        SUD-EST                   149h 26' 35''  + 02h 15' 59''
+24   BERNARD GAUTHIER     112        SUD-EST                   149h 44' 55''  + 02h 34' 19''
+25   PAUL GIGUET          47         FRANCE                    149h 48' 37''  + 02h 38' 01''
+26   GEORGES RAMOULUX     80         CENTRE-SUD OUEST          149h 53' 22''  + 02h 42' 46''
+27   PRIMO VOLPI          40         ITALIE                    149h 57' 24''  + 02h 46' 48''
+28   ROBERT CHAPATTE      102        PARIS                     150h 07' 07''  + 02h 56' 31''
+29   GIOVANNI CORRIERI    34         ITALIE                    150h 09' 46''  + 02h 59' 10''
+30   FLORENT MATHIEU      4          BELGIQUE                  150h 11' 30''  + 03h 00' 54''
+31   ATTILIO LAMBERTINI   65         ITALIE B                  150h 13' 31''  + 03h 02' 55''
+32   ALPHONSE DEVREESE    86         ILE DE FRANCE-NORD EST    150h 17' 04''  + 03h 06' 28''
+33   ANTONIO BEVILACQUA   32         ITALIE                    150h 17' 32''  + 03h 06' 56''
+34   SERIFANO BIAGIONI    33         ITALIE                    150h 18' 39''  + 03h 08' 03''
+35   PIERRE BARATIN       81         ILE DE FRANCE-NORD EST    150h 30' 20''  + 03h 19' 44''
+36   JEF JANSSEN          15         PAYS-BAS/LUXEMBOURG       150h 36' 35''  + 03h 25' 59''
+37   PAUL NERI            28         INTERNATIONAUX            150h 37' 57''  + 03h 27' 21''
+39   GEORGES MARTIN       113        SUD-EST                   150h 56' 49''  + 03h 46' 13''
+40   DANIEL THUAYRE       90         ILE DE FRANCE-NORD EST    150h 59' 49''  + 03h 49' 13''
+41   EGIDIO FERUGLIO      37         ITALIE                    151h 00' 06''  + 03h 49' 30''
+42   WIM DE RUYTER        13         PAYS-BAS/LUXEMBOURG       151h 02' 17''  + 03h 51' 41''
+43   JEAN REY             118        SUD-EST                   151h 26' 33''  + 04h 15' 57''
+44   VITTORIO SEGHEZZI    69         ITALIE B                  151h 38' 19''  + 04h 27' 43''
+
+Next rankings

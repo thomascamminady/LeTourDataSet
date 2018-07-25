@@ -1,0 +1,83 @@
+Tour de France 1951
+
+Number of stages 24
+Distance (km) 4 690
+Average speed 32.949
+
+All about year 1951
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank         Rider          Rider No.        Team             Times            Gap        B P
+1    HUGO KOBLET            3          SUISSE            142h 20' 14''
+2    RAPHAËL GEMINIANI      41         FRANCE            142h 42' 14''   + 00h 22' 00''
+3    LUCIEN LAZARIDES       45         FRANCE            142h 44' 30''   + 00h 24' 16''
+4    GINO BARTALI           13         ITALIE            142h 49' 23''   + 00h 29' 09''
+5    STAN OCKERS            32         BELGIQUE          142h 53' 07''   + 00h 32' 53''
+6    PIERRE BARBOTIN        38         FRANCE            142h 56' 54''   + 00h 36' 40''
+7    VITTORIO MAGNI         19         ITALIE            142h 59' 28''   + 00h 39' 14''
+8    GILBERT BAUVIN         98         EST-SUD EST       143h 06' 07''   + 00h 45' 53''
+9    BERNARDO RUIZ          71         ESPAGNE           143h 06' 09''   + 00h 45' 55''
+10   FAUSTO COPPI           15         ITALIE            143h 07' 05''   + 00h 46' 51''
+11   NELLO LAUREDI          43         FRANCE            143h 17' 33''   + 00h 57' 19''
+12   JEAN DIEDERICH         50         LUXEMBOURG        143h 19' 43''   + 00h 59' 29''
+13   MARCEL DEMULDER        29         BELGIQUE          143h 24' 32''   + 01h 04' 18''
+14   EDWARD VAN ENDE        34         BELGIQUE          143h 27' 32''   + 01h 07' 18''
+15   SERIFANO BIAGIONI      14         ITALIE            143h 29' 06''   + 01h 08' 52''
+16   GEORGES MEUNIER        117        OUEST-SUD OUEST   143h 33' 50''   + 01h 13' 36''
+17   ROGER DECOCK           27         BELGIQUE          143h 34' 11''   + 01h 13' 57''
+18   MARCEL VERSCHUEREN     36         BELGIQUE          143h 34' 50''   + 01h 14' 36''
+19   PIERRE COGAN           111        OUEST-SUD OUEST   143h 35' 44''   + 01h 15' 30''
+20   LOUISON BOBET          39         FRANCE            143h 44' 23''   + 01h 24' 09''
+21   JEAN-MARIE GOASMAT     113        OUEST-SUD OUEST   143h 51' 41''   + 01h 31' 27''
+22   ALOIS DE HERTOG        28         BELGIQUE          143h 55' 18''   + 01h 35' 04''
+23   JEAN DOTTO             104        EST-SUD EST       143h 56' 37''   + 01h 36' 23''
+24   GEORGES AESCHLIMANN    1          SUISSE            143h 59' 59''   + 01h 39' 45''
+25   ANDRÉ ROSSEEL          33         BELGIQUE          144h 02' 36''   + 01h 42' 22''
+26   BERNARD GAUTHIER       40         FRANCE            144h 11' 23''   + 01h 51' 09''
+27   JEAN ROBIC             84         PARIS             144h 15' 49''   + 01h 55' 35''
+28   HANS SOMMERS           6          SUISSE            144h 19' 01''   + 01h 58' 47''
+29   FRANCO FRANCHI         17         ITALIE            144h 19' 27''   + 01h 59' 13''
+30   ROGER LEVEQUE          115        OUEST-SUD OUEST   144h 22' 05''   + 02h 01' 51''
+31   LUCIEN TEISSEIRE       48         FRANCE            144h 28' 19''   + 02h 08' 05''
+32   ADOLPHE DELEDDA        103        EST-SUD EST       144h 29' 43''   + 02h 09' 29''
+33   VINCENT VITETTA        108        EST-SUD EST       144h 29' 59''   + 02h 09' 45''
+34   PAUL GIGUET            105        EST-SUD EST       144h 32' 37''   + 02h 12' 23''
+35   MARCEL HUBER           2          SUISSE            144h 33' 50''   + 02h 13' 36''
+36   PIERRE BRAMBILLA       99         EST-SUD EST       144h 38' 43''   + 02h 18' 29''
+37   LOUIS DEPREZ           88         ILE DE FRANCE     144h 45' 58''   + 02h 25' 44''
+38   ANDRÉA CARREA          16         ITALIE            144h 48' 15''   + 02h 28' 01''
+39   ROGER BUCHONNET        100        EST-SUD EST       144h 51' 47''   + 02h 31' 33''
+40   ARMAND BAEYENS         25         BELGIQUE          144h 54' 18''   + 02h 34' 04''
+41   EDOUARD MULLER         46         FRANCE            144h 55' 16''   + 02h 35' 02''
+42   HILAIRE COUVREUR       26         BELGIQUE          145h 03' 15''   + 02h 43' 01''
+43   GERMAIN DE RIJCKE      31         BELGIQUE          145h 03' 30''   + 02h 43' 16''
+44   MANUEL RODRIGUEZ       70         ESPAGNE           145h 05' 53''   + 02h 45' 39''
+45   ANDRÉ LABEYLIE         89         ILE DE FRANCE     145h 09' 52''   + 02h 49' 38''
+46   JOSEPH MIRANDO         106        EST-SUD EST       145h 10' 20''   + 02h 50' 06''
+47   LUCIANO PEZZI          22         ITALIE            145h 14' 43''   + 02h 54' 29''
+48   JOSEPH MORVAN          118        OUEST-SUD OUEST   145h 14' 52''   + 02h 54' 38''
+49   LOUIS CAPUT            75         PARIS             145h 15' 25''   + 02h 55' 11''
+50   GOTTFRIED WEILENMANN   7          SUISSE            145h 17' 29''   + 02h 57' 15''
+51   GINO SCIARDIS          96         ILE DE FRANCE     145h 25' 14''   + 03h 05' 00''
+52   ETTORE MILANO          20         ITALIE            145h 27' 17''   + 03h 07' 03''
+53   ANGELO COLINELLI       102        EST-SUD EST       145h 28' 12''   + 03h 07' 58''
+54   VIRGILIO SALIMBENI     23         ITALIE            145h 28' 37''   + 03h 08' 23''
+55   WILLY KEMP             54         LUXEMBOURG        145h 35' 16''   + 03h 15' 02''
+56   JEAN BALDASSARI        37         FRANCE            145h 36' 54''   + 03h 16' 40''
+57   ROGER WALKOWIAK        120        OUEST-SUD OUEST   145h 37' 44''   + 03h 17' 30''
+58   DALMACIO LANGARICA     67         ESPAGNE           145h 40' 38''   + 03h 20' 24''
+59   FRANCISCO MASSIP       68         ESPAGNE           145h 56' 27''   + 03h 36' 13''
+60   LÉO WEILENMANN         8          SUISSE            146h 04' 46''   + 03h 44' 32''
+61   JEAN GUEGUEN           42         FRANCE            146h 06' 01''   + 03h 45' 47''
+62   ALOIS VAN STEENKISTE   35         BELGIQUE          146h 12' 19''   + 03h 52' 05''
+63   JEAN CARLE             76         PARIS             146h 25' 07''   + 04h 04' 53''
+64   EMILE BAFFERT          97         EST-SUD EST       147h 01' 40''   + 04h 41' 26''
+65   JEAN MAYEN             125        AFRIQUE DU NORD   147h 13' 13''   + 04h 52' 59''
+66   ABDEL-KADER ZAAF       127        AFRIQUE DU NORD   147h 14' 32''   + 04h 54' 18''
+
+Next rankings

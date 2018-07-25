@@ -1,0 +1,92 @@
+Tour de France 1963
+
+Number of stages 21
+Distance (km) 4 138
+Average speed 37.092
+
+All about year 1963
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank            Rider           Rider No.                   Team                       Times            Gap       B P
+1     JACQUES ANQUETIL          1          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    113h 30' 05''
+2     FEDERICO BAHAMONTES       41         MARGNAT-PALOMA-MOTUL-DUNLOP             113h 33' 40''  + 00h 03' 35''
+3     JOSÉ PEREZ-FRANCES        77         FERRYS                                  113h 40' 19''  + 00h 10' 14''
+4     JEAN-CLAUDE LEBAUBE       7          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    113h 42' 00''  + 00h 11' 55''
+5     ARMAND DESMET             23         FAEMA-FLANDRIA                          113h 45' 05''  + 00h 15' 00''
+6     ANGELINO SOLER            29         FAEMA-FLANDRIA                          113h 45' 09''  + 00h 15' 04''
+7     RENZO FONTONA             93         I.B.A.C-MOLTENI                         113h 45' 32''  + 00h 15' 27''
+8     RAYMOND POULIDOR          17         MERCIER-BP-HUTCHINSON                   113h 46' 51''  + 00h 16' 46''
+9     HANS JUNKERMANN           35         WIELS-GROENE LEEUW                      113h 48' 58''  + 00h 18' 53''
+10    RIK VAN LOOY              88         G.B.C-LIBERTAS                          113h 49' 29''  + 00h 19' 24''
+11    HENRI ANGLADE             61         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         113h 51' 44''  + 00h 21' 39''
+12    FERNANDO MANZANEQUE       74         FERRYS                                  113h 52' 35''  + 00h 22' 30''
+13    EDDY PAUWELS              38         WIELS-GROENE LEEUW                      113h 55' 08''  + 00h 25' 03''
+14    FRANCISCO GABICA          104        KAS                                     113h 56' 49''  + 00h 26' 44''
+15    DIETER PUSCHEL            39         WIELS-GROENE LEEUW                      113h 58' 25''  + 00h 28' 20''
+16    ALAN RAMSBOTTOM           70         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         114h 00' 41''  + 00h 30' 36''
+17    MIGUEL PACHECO            106        KAS                                     114h 01' 41''  + 00h 31' 36''
+18    GRAZIANO BATTISTINI       91         I.B.A.C-MOLTENI                         114h 02' 11''  + 00h 32' 06''
+19    FRANÇOIS MAHE             69         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         114h 03' 55''  + 00h 33' 50''
+20    JEAN GAINCHE              13         MERCIER-BP-HUTCHINSON                   114h 05' 43''  + 00h 35' 38''
+21    FERDINAND BRACKE          111        PEUGEOT-BP-ENGLEBERT                    114h 09' 57''  + 00h 39' 52''
+22    VICTOR VAN SCHIL          19         MERCIER-BP-HUTCHINSON                   114h 11' 10''  + 00h 41' 05''
+23    JOS HOEVENAERS            115        PEUGEOT-BP-ENGLEBERT                    114h 12' 27''  + 00h 42' 22''
+24    ALBERTUS GELDERMANS       5          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    114h 13' 07''  + 00h 43' 02''
+25    FRANS BRANDS              22         FAEMA-FLANDRIA                          114h 15' 05''  + 00h 45' 00''
+26    HENRI DUEZ                118        PEUGEOT-BP-ENGLEBERT                    114h 19' 26''  + 00h 49' 21''
+27    ROGELIO HERNANDEZ         72         FERRYS                                  114h 24' 27''  + 00h 54' 22''
+28    JEAN DOTTO                44         MARGNAT-PALOMA-MOTUL-DUNLOP             114h 25' 12''  + 00h 55' 07''
+29    ANTONIO GOMEZ DEL MORAL   25         FAEMA-FLANDRIA                          114h 25' 46''  + 00h 55' 41''
+30    ROBERT CAZALA             12         MERCIER-BP-HUTCHINSON                   114h 26' 47''  + 00h 56' 42''
+31    GÉRARD THIELIN            10         V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    114h 27' 19''  + 00h 57' 14''
+32    ESTEBAN MARTIN            75         FERRYS                                  114h 32' 55''  + 01h 02' 50''
+33    HENRI DEWOLF              124        SOLO-TERROT-ENGLEBERT                   114h 33' 33''  + 01h 03' 28''
+34    DICK ENTHOVEN             63         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         114h 35' 31''  + 01h 05' 26''
+35    ANTONIO BERTRAN PANADES   71         FERRYS                                  114h 37' 31''  + 01h 07' 26''
+36    SÉBASTIEN ELORZA          103        KAS                                     114h 38' 40''  + 01h 08' 35''
+37    GUY IGNOLIN               6          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    114h 39' 20''  + 01h 09' 15''
+38    LUIS OTANO                48         MARGNAT-PALOMA-MOTUL-DUNLOP             114h 39' 45''  + 01h 09' 40''
+39    LUDO JANSSENS             84         G.B.C-LIBERTAS                          114h 40' 42''  + 01h 10' 37''
+40    GABRIEL MAS               76         FERRYS                                  114h 42' 30''  + 01h 12' 25''
+41    EMILIO CRUZ DIAZ          80         FERRYS                                  114h 46' 51''  + 01h 16' 46''
+42    FRANS AERENHOUTS          81         G.B.C-LIBERTAS                          114h 50' 46''  + 01h 20' 41''
+43    ANTONIO SUAREZ            30         FAEMA-FLANDRIA                          114h 52' 15''  + 01h 22' 10''
+44    GILBERT DE SMET           33         WIELS-GROENE LEEUW                      114h 55' 06''  + 01h 25' 01''
+45    GUILLAUME VAN TONGERLOO   89         G.B.C-LIBERTAS                          114h 56' 59''  + 01h 26' 54''
+46    JUAN CAMPILLO GARCIA      42         MARGNAT-PALOMA-MOTUL-DUNLOP             114h 57' 40''  + 01h 27' 35''
+47    PIERRE BEUFFEUIL          11         MERCIER-BP-HUTCHINSON                   114h 57' 58''  + 01h 27' 53''
+48    GUY EPAUD                 62         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         114h 59' 31''  + 01h 29' 26''
+49    BENONI BEHEYT             31         WIELS-GROENE LEEUW                      115h 01' 33''  + 01h 31' 28''
+50    VALENTIN URIONA           108        KAS                                     115h 02' 10''  + 01h 32' 05''
+51    JOSEPH GROUSSARD          65         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         115h 02' 13''  + 01h 32' 08''
+52    CLAUDE MATTIO             47         MARGNAT-PALOMA-MOTUL-DUNLOP             115h 02' 25''  + 01h 32' 20''
+53    LORIS GUERNIERI           59         CARPANO                                 115h 03' 39''  + 01h 33' 34''
+54    ANTONIO KARMANY           73         FERRYS                                  115h 05' 55''  + 01h 35' 50''
+55    ANTONIO BAILETTI          52         CARPANO                                 115h 06' 14''  + 01h 36' 09''
+56    MARTIN VAN GENEUGDEN      87         G.B.C-LIBERTAS                          115h 12' 44''  + 01h 42' 39''
+57    ANDRÉ FOUCHER             64         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         115h 16' 46''  + 01h 46' 41''
+58    MARCEL ONGENAE            26         FAEMA-FLANDRIA                          115h 16' 46''  + 01h 46' 41''
+59    ANATOLE NOVAK             8          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    115h 18' 29''  + 01h 48' 24''
+60    ALPHONSE HELLEMANS        14         MERCIER-BP-HUTCHINSON                   115h 23' 14''  + 01h 53' 09''
+61    SEAMUS ELLIOTT            3          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    115h 24' 55''  + 01h 54' 50''
+62    JOSEPH THOMIN             49         MARGNAT-PALOMA-MOTUL-DUNLOP             115h 26' 36''  + 01h 56' 31''
+63    PIERRE EVERAERT           4          V.C. XII-SAINT RAPHAEL-GITANE-DUNLOP    115h 28' 42''  + 01h 58' 37''
+64    GEORGES GROUSSARD         66         PELFORTH-SAUVAGE-LEJEUNE-WOLBER         115h 32' 13''  + 02h 02' 08''
+65    LOUIS PROOST              127        SOLO-TERROT-ENGLEBERT                   115h 32' 43''  + 02h 02' 38''
+66    RAYMOND IMPANIS           116        PEUGEOT-BP-ENGLEBERT                    115h 34' 55''  + 02h 04' 50''
+67    EMILE DAEMS               113        PEUGEOT-BP-ENGLEBERT                    115h 36' 51''  + 02h 06' 46''
+68    JEAN MILESI               16         MERCIER-BP-HUTCHINSON                   115h 40' 31''  + 02h 10' 26''
+69    ROBERT LELANGUE           126        SOLO-TERROT-ENGLEBERT                   115h 44' 52''  + 02h 14' 47''
+70    JEAN PAUL SIMON           117        PEUGEOT-BP-ENGLEBERT                    115h 48' 03''  + 02h 17' 58''
+71    RAUL REY                  78         FERRYS                                  115h 51' 22''  + 02h 21' 17''
+72    JEAN GRACZYK              46         MARGNAT-PALOMA-MOTUL-DUNLOP             115h 52' 36''  + 02h 22' 31''
+73    ROGER DE BREUKER          122        SOLO-TERROT-ENGLEBERT                   115h 52' 47''  + 02h 22' 42''
+74    AUGUSTE VERHAEGEN         20         MERCIER-BP-HUTCHINSON                   115h 56' 05''  + 02h 26' 00''
+76    WILLY DERBOVEN            83         G.B.C-LIBERTAS                          116h 15' 15''  + 02h 45' 10''
+
+Next rankings

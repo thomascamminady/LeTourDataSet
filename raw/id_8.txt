@@ -1,0 +1,58 @@
+Tour de France 1910
+
+Number of stages 15
+Distance (km) 4 734
+Average speed 29.099
+
+All about year 1910
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank                  Rider                 Rider No.    Team         Times      Gap B P
+1     OCTAVE LAPIZE                         4          ALCYON    63h 00' 00''
+2     FRANÇOIS FABER                        1          ALCYON    67h 00' 00''
+3     GUSTAVE GARRIGOU                      2          ALCYON    86h 00' 00''
+4     CYRILLE VAN HAUWAERT                  6          ALCYON    97h 00' 00''
+5     CHARLES CRUCHON                       113        ISOLES    119h 00' 00''
+6     CHARLES CRUPELANDT                    29         LE GLOBE  146h 00' 00''
+7     ERNEST, DIT ''FABER ERNEST'' PAUL     118        ISOLES    154h 00' 00''
+8     ANDRÉ BLAISE                          5          ALCYON    166h 00' 00''
+9     JULIEN MAITRON                        25         LE GLOBE  171h 00' 00''
+10    ALDO BETTINI                          10         ALCYON    175h 00' 00''
+11    PIERINO ALBINI                        17         LEGNANO   176h 00' 00''
+12    GEORGES PAULMIER                      23         LE GLOBE  182h 00' 00''
+13    ERNESTO AZZINI                        18         LEGNANO   194h 00' 00''
+14    FRANÇOIS LAFOURCADE                   111        ISOLES    205h 00' 00''
+15    JULES DELOFFRE                        27         LE GLOBE  213h 00' 00''
+16    HENRI CORNET (GEBOREN JARDY)          22         LE GLOBE  214h 00' 00''
+17    LUIGI AZZINI                          19         LEGNANO   220h 00' 00''
+18    CONSTANT MENAGER                      16         LEGNANO   222h 00' 00''
+19    AUGUSTINN RINGEVAL                    103        ISOLES    241h 00' 00''
+20    FRÉDÉRIC SAILLOT                      28         LE GLOBE  258h 00' 00''
+21    MAURICE PARDON                        194        ISOLES    316h 00' 00''
+22    JOSEPH LEBLANC                        102        ISOLES    346h 00' 00''
+23    GEORGES FLEURY                        129        ISOLES    357h 00' 00''
+24    JOSEPH HABIERRE                       125        ISOLES    382h 00' 00''
+25    JEAN RIOU                             128        ISOLES    399h 00' 00''
+26    AUGUSTE GUYON                         183        ISOLES    403h 00' 00''
+27    JEAN BOUILLET                         177        ISOLES    406h 00' 00''
+28    LUCIEN POTHIER                        196        ISOLES    411h 00' 00''
+29    MAURICE DECAUP                        14         LEGNANO   429h 00' 00''
+30    LUCIEN LEMAN                          112        ISOLES    433h 00' 00''
+31    GABRIEL MATHONAT                      123        ISOLES    444h 00' 00''
+32    ROBERT CHOPARD                        189        ISOLES    448h 00' 00''
+33    PIETRO GHISLOTTI                      150        ISOLES    492h 00' 00''
+34    LUCIEN ROQUEBERT                      109        ISOLES    502h 00' 00''
+35    CAMILLE BIERE                         188        ISOLES    510h 00' 00''
+36    GEORGES CAUVRY                        184        ISOLES    510h 00' 00''
+37    AUGUSTE DUFOUR                        145        ISOLES    525h 00' 00''
+38    LOUIS JOUIN                           141        ISOLES    531h 00' 00''
+39    RENÉ CHAUDE                           147        ISOLES    549h 00' 00''
+40    LOUIS PICARD                          126        ISOLES    568h 00' 00''
+41    CONSTANT COLLET                       163        ISOLES    580h 00' 00''
+
+Next rankings

@@ -1,0 +1,76 @@
+Tour de France 1929
+
+Number of stages 22
+Distance (km) 5 286
+Average speed 28.319
+
+All about year 1929
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank             Rider             Rider No.          Team             Times            Gap        B P
+1    MAURICE DE WAELE              31         AS                   186h 39' 15''
+2    GIUSEPPE PANCERA              6          AS                   187h 23' 38''  + 00h 44' 23''
+3    JEF DEMUYSERE                 5          AS                   187h 36' 25''  + 00h 57' 10''
+4    SALVADOR CARDONA BALBASTRE    21         AS                   187h 37' 01''  + 00h 57' 46''
+5    NICOLAS FRANTZ                1          AS                   187h 37' 15''  + 00h 58' 00''
+6    LOUIS DE LANNOY               19         AS                   187h 45' 24''  + 01h 06' 09''
+7    ANTONIN MAGNE                 2          AS                   187h 47' 15''  + 01h 08' 00''
+8    JULIEN VERVAECKE              37         AS                   188h 40' 52''  + 02h 01' 37''
+9    PIERRE MAGNE                  26         AS                   188h 42' 15''  + 02h 03' 00''
+10   GASTON REBRY                  43         AS                   188h 57' 04''  + 02h 17' 49''
+11   ANDRÉ LEDUCQ                  13         AS                   189h 04' 06''  + 02h 24' 51''
+12   FRANS BONDUEL                 34         AS                   189h 31' 50''  + 02h 52' 35''
+13   DÉSIRÉ LOUESSE                33         AS                   189h 42' 15''  + 03h 03' 00''
+14   BERNARD VAN RYSSELBERGHE      40         AS                   189h 45' 38''  + 03h 06' 23''
+15   RENÉ FAURE                    203        TOURISTES-ROUTIERS   190h 12' 44''  + 03h 33' 29''
+16   MARCEL BIDOT                  7          AS                   190h 20' 04''  + 03h 40' 49''
+17   ARMAND VAN BRUAENE            32         AS                   190h 51' 09''  + 04h 11' 54''
+18   LUC GOVAERTS                  27         AS                   190h 53' 39''  + 04h 14' 24''
+19   FRANCIS BOUILLET              41         AS                   191h 47' 06''  + 05h 07' 51''
+20   ERNEST NEUHARD                20         AS                   192h 24' 27''  + 05h 45' 12''
+21   OMER TAVERNE                  173        TOURISTES-ROUTIERS   192h 28' 54''  + 05h 49' 39''
+22   LÉON CHENE                    38         AS                   192h 39' 22''  + 06h 00' 07''
+23   JULES MERVIEL                 28         AS                   192h 44' 17''  + 06h 05' 02''
+24   MARIO POMPOSI                 12         AS                   192h 53' 24''  + 06h 14' 09''
+25   GEORGES LALOUP                189        TOURISTES-ROUTIERS   193h 10' 00''  + 06h 30' 45''
+26   SETTIMO INNOCENTI             18         AS                   193h 23' 08''  + 06h 43' 53''
+27   JULIEN PERRAIN                15         AS                   195h 11' 00''  + 08h 31' 45''
+28   CHARLES PELISSIER             49         AS                   195h 33' 18''  + 08h 54' 03''
+29   RENÉ BERTON                   216        TOURISTES-ROUTIERS   195h 35' 05''  + 08h 55' 50''
+30   ROGER GREGOIRE                47         AS                   196h 29' 30''  + 09h 50' 15''
+31   HECTOR DENIS                  145        TOURISTES-ROUTIERS   197h 04' 40''  + 10h 25' 25''
+32   CHARLES MARTINET              187        TOURISTES-ROUTIERS   197h 11' 15''  + 10h 32' 00''
+33   AUGUSTE ENCRINE               138        TOURISTES-ROUTIERS   198h 10' 32''  + 11h 31' 17''
+34   ALBERT JORDENS                164        TOURISTES-ROUTIERS   198h 13' 25''  + 11h 34' 10''
+35   ADRIEN PLAUTIN                118        TOURISTES-ROUTIERS   198h 16' 06''  + 11h 36' 51''
+36   JEAN PREUSS                   121        TOURISTES-ROUTIERS   198h 55' 11''  + 12h 15' 56''
+37   ALFRED HERSARD                148        TOURISTES-ROUTIERS   199h 01' 53''  + 12h 22' 38''
+38   FRANÇOIS MOREELS              182        TOURISTES-ROUTIERS   199h 17' 00''  + 12h 37' 45''
+39   HENRI TOUZARD                 111        TOURISTES-ROUTIERS   199h 20' 50''  + 12h 41' 35''
+40   ROGER LEBAS                   168        TOURISTES-ROUTIERS   199h 47' 48''  + 13h 08' 33''
+41   MARCEL MAZEYRAT               204        TOURISTES-ROUTIERS   200h 06' 05''  + 13h 26' 50''
+42   EDOUARD TEISSEIRE             153        TOURISTES-ROUTIERS   200h 29' 04''  + 13h 49' 49''
+43   GUY BARIFFI                   175        TOURISTES-ROUTIERS   200h 46' 49''  + 14h 07' 34''
+44   PAUL DELBART                  165        TOURISTES-ROUTIERS   201h 45' 31''  + 15h 06' 16''
+45   HENRI THOMAS                  191        TOURISTES-ROUTIERS   203h 05' 53''  + 16h 26' 38''
+46   ROBERT RECORDON               123        TOURISTES-ROUTIERS   203h 16' 05''  + 16h 36' 50''
+47   EUGÈNE GREAU                  179        TOURISTES-ROUTIERS   203h 29' 02''  + 16h 49' 47''
+49   BATTISTA BERARDI              127        TOURISTES-ROUTIERS   204h 43' 31''  + 18h 04' 16''
+50   GEORGES PETIT                 183        TOURISTES-ROUTIERS   206h 37' 14''  + 19h 57' 59''
+51   LAURE WERNER                  110        TOURISTES-ROUTIERS   207h 59' 32''  + 21h 20' 17''
+52   MARCEL MASSON                 149        TOURISTES-ROUTIERS   208h 32' 10''  + 21h 52' 55''
+53   HENRI PREVOST                 122        TOURISTES-ROUTIERS   208h 54' 07''  + 22h 14' 52''
+54   MARCEL GENDRIN                160        TOURISTES-ROUTIERS   209h 04' 08''  + 22h 24' 53''
+55   FRANÇOIS ONDET                132        TOURISTES-ROUTIERS   209h 09' 15''  + 22h 30' 00''
+56   CHARLES COTTALORDA            209        TOURISTES-ROUTIERS   209h 45' 28''  + 23h 06' 13''
+57   EMILE FAILLU                  210        TOURISTES-ROUTIERS   211h 30' 06''  + 24h 50' 51''
+58   PAUL DENIS                    193        TOURISTES-ROUTIERS   211h 57' 12''  + 25h 17' 57''
+59   MARCEL ILPIDE                 143        TOURISTES-ROUTIERS   212h 48' 05''  + 26h 08' 50''
+60   ANDRÉ LEGER                   137        TOURISTES-ROUTIERS   218h 17' 10''  + 31h 37' 55''
+
+Next rankings

@@ -1,0 +1,57 @@
+Tour de France 1928
+
+Number of stages 22
+Distance (km) 5 476
+Average speed 28.400
+
+All about year 1928
+
+Ranking
+Starters
+Stages
+Jersey wearers
+Stages winners
+
+Rank             Rider             Rider No.            Team               Times            Gap        B P
+1    NICOLAS FRANTZ                1          ALCYON-DUNLOP            192h 48' 58''
+2    ANDRÉ LEDUCQ                  2          ALCYON-DUNLOP            193h 39' 05''  + 00h 50' 07''
+3    MAURICE DE WAELE              3          ALCYON-DUNLOP            193h 45' 14''  + 00h 56' 16''
+4    TIM MERTENS                   10         THOMANN-DUNLOP           194h 08' 16''  + 01h 19' 18''
+5    JULIEN VERVAECKE              7          ARMOR-DUNLOP             194h 42' 30''  + 01h 53' 32''
+6    ANTONIN MAGNE                 21         ALLELUIA-WOLBER          195h 03' 00''  + 02h 14' 02''
+7    VICTOR FONTAN                 41         ELWISH-WOLBER            197h 56' 45''  + 05h 07' 47''
+8    MARCEL BIDOT                  23         ALLELUIA-WOLBER          198h 07' 26''  + 05h 18' 28''
+9    MARCEL HUOT                   27         ALLELUIA-WOLBER          198h 26' 31''  + 05h 37' 33''
+10   PIERRE MAGNE                  25         ALLELUIA-WOLBER          198h 30' 18''  + 05h 41' 20''
+11   JOSEPH MAUCLAIR               9          ARMOR-DUNLOP             198h 32' 59''  + 05h 44' 01''
+12   GASTON REBRY                  4          ALCYON-DUNLOP            198h 40' 42''  + 05h 51' 44''
+13   LOUIS DE LANNOY               8          ARMOR-DUNLOP             198h 58' 33''  + 06h 09' 35''
+14   CAMILLE VAN DE CASTEELE       18         J.B. LOUVET-HUTCHINSON   199h 50' 00''  + 07h 01' 02''
+15   SALVADOR CARDONA BALBASTRE    44         ELWISH-WOLBER            200h 20' 45''  + 07h 31' 47''
+16   PÉ VERHAEGEN                  12         J.B. LOUVET-HUTCHINSON   200h 26' 54''  + 07h 37' 56''
+17   JULIEN MOINEAU                22         ALLELUIA-WOLBER          200h 52' 21''  + 08h 03' 23''
+18   HUBERT OPPERMAN               31         RAVAT-WONDER-DUNLOP      201h 23' 23''  + 08h 34' 25''
+19   DÉSIRÉ LOUESSE                6          ALCYON-DUNLOP            202h 16' 19''  + 09h 27' 21''
+20   ODILE TAILLEU                 15         J.B. LOUVET-HUTCHINSON   203h 12' 16''  + 10h 23' 18''
+21   JEAN MOUVEROUX                45         FONTAN-WOLBER            203h 38' 51''  + 10h 49' 53''
+22   JEAN BIDOT                    24         ALLELUIA-WOLBER          203h 45' 28''  + 10h 56' 30''
+23   MARCEL AUTAA                  47         FONTAN-WOLBER            204h 31' 38''  + 11h 42' 40''
+24   RAYMOND DECORTE               14         J.B. LOUVET-HUTCHINSON   205h 16' 00''  + 12h 27' 02''
+25   PAUL FILLIAT                  122        SUD-EST                  208h 40' 54''  + 15h 51' 56''
+26   RAPHAËL CALMETTE              48         FONTAN-WOLBER            208h 44' 06''  + 15h 55' 08''
+27   MAURICE ARNOULT               111        NORMANDIE                209h 14' 02''  + 16h 25' 04''
+28   HARRY WATSON                  32         RAVAT-WONDER-DUNLOP      209h 42' 30''  + 16h 53' 32''
+29   LUCIEN LAVAL                  43         ELWISH-WOLBER            209h 42' 53''  + 16h 53' 55''
+30   MARCEL COLLEU                 102        ALSACE-LORRAINE          209h 52' 59''  + 17h 04' 01''
+31   ARMAND GOUBERT                133        NORD                     211h 39' 18''  + 18h 50' 20''
+32   RENÉ HAMEL                    20         J.B. LOUVET-HUTCHINSON   211h 59' 16''  + 19h 10' 18''
+33   PAUL DELBART                  107        CHAMPAGNE                212h 40' 15''  + 19h 51' 17''
+34   FRANÇOIS HENRI                108        CHAMPAGNE                212h 51' 44''  + 20h 02' 46''
+35   FERNAND MOULET                110        CHAMPAGNE                212h 59' 19''  + 20h 10' 21''
+36   RAPHAËL DUPAU                 46         FONTAN-WOLBER            213h 36' 52''  + 20h 47' 54''
+37   FRANÇOIS MENTA                141        CÔTE D'AZUR              213h 54' 30''  + 21h 05' 32''
+38   PERCY OSBORNE                 33         RAVAT-WONDER-DUNLOP      214h 50' 47''  + 22h 01' 49''
+39   LUCIEN LANGE                  104        ALSACE-LORRAINE          216h 51' 08''  + 24h 02' 10''
+41   EDOUARD PERSIN                106        CHAMPAGNE                219h 45' 17''  + 26h 56' 19''
+
+Next rankings
