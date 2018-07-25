@@ -14,4 +14,11 @@ df <- read_csv("allriders.csv",
 )
 
 
+summary <- read_csv("summary.csv",
+                    col_types=cols(
+                      year = col_integer(),
+                      stages = col_integer(),
+                      km = col_double(),
+                      avgpace = col_double()
+                    ))
 
