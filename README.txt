@@ -1,4 +1,4 @@
-See http://www.camminady.org/every-cyclist-of-the-tour-de-france-in-a-single-csv-file/ for a description.
+See https://www.camminady.org/every-cyclist-of-the-tour-de-france-in-a-single-csv-file/ for a description.
 
 The following problems are known:
 1905 - 0
