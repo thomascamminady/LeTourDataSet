@@ -1,6 +1,11 @@
 # LeTourDataSet
 Every cyclist of the Tour de France in a single CSV file, stored in the file `Riders.csv`. 
+The columns of the CSV file are:
 
+```
+Year,Rider,Rank,Time,DistanceKilometer,PersonalAvgPace,Hours,Minutes,Seconds,Team,RiderNumber,
+ TotalSeconds,Gap,Bonus,Points,NumberStages,ListedAvgPace
+```
 
 ## How to run
 To regenerate the `Riders.csv` file execute all cells of the `main.ipynb`. This might take a couple of minutes. 
