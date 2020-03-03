@@ -1,5 +1,5 @@
 # LeTourDataSet
-Every cyclist of the Tour de France in a single CSV file
+Every cyclist of the Tour de France in a single CSV file, stored in the file `Riders.csv`. 
 
 
 ## How to run
