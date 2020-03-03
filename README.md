@@ -10,13 +10,15 @@ Year,Rider,Rank,Time,DistanceKilometer,PersonalAvgPace,Hours,Minutes,Seconds,Tea
 ## How to run
 To regenerate the `Riders.csv` file execute all cells of the `main.ipynb`. This might take a couple of minutes. 
 
+## Analysis
+The `analysis.ipynb` contains some basic analysis and visualizations of the data. For example, the distance and winner pace are shown below.
+
+![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/DistanceAndPace.png)
+
 ## How to add future years
 This file includes the date up to the 2019 tour (including). 
 To add new results, look at `view-source:https://www.letour.fr/en/history`, around line 1790,
 and add the new entry to `domainending.txt`. Then rerun the notebook.
-
-## Analysis
-The `analysis.ipynb` contains some basic analysis and visualizations of the data.
 
 ## Legacy code
 This code has been completely rewritten. The previous code, including the output, is in the `legacy/` folder. Especially `legacy/README.txt` should be read. 
