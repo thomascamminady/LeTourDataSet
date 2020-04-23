@@ -1,4 +1,5 @@
 # LeTourDataSet
+A data set on riders in the Tour de France.
 
 ## Disclaimer 
 For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
