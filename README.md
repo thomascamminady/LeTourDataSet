@@ -1,4 +1,7 @@
 # LeTourDataSet
+
+(For issues with this data set, see the Issue tab.)
+
 Every cyclist of the Tour de France in a single CSV file, stored in the file `Riders.csv`. 
 The columns of the CSV file are:
 
