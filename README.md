@@ -1,7 +1,9 @@
 # LeTourDataSet
 
-(For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.)
+## Disclaimer 
+For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
 
+## Data
 Every cyclist of the Tour de France in a single CSV file, stored in the file `Riders.csv`. 
 The columns of the CSV file are:
 
