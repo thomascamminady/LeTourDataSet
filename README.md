@@ -22,7 +22,7 @@ The `analysis.ipynb` contains some basic analysis and visualizations of the data
 ![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/DistanceAndPace.png)
 
 ## How to add future years
-This file includes the date up to the 2019 tour (including). 
+This file includes the date up to the 2020 tour (including). 
 To add new results, look at `view-source:https://www.letour.fr/en/history`, around line 1790,
 and add the new entry to `domainending.txt`. Then rerun the notebook.
 
