@@ -27,7 +27,7 @@ To add new results, look at `view-source:https://www.letour.fr/en/history`, arou
 and add the new entry to `src/domainending.txt`. Then rerun the notebook.
 
 ## Legacy code
-This code has been completely rewritten. The previous code, including the output, is in the `_legacy/` folder. Especially `_legacy/README.txt` should be read. 
+This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/camminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 
 
 
 ## License (MIT)
