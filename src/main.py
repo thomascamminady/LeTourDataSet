@@ -21,7 +21,7 @@ prefix = 'letour.fr'
 
 # %%
 with open(
-        "domainendings.txt", "r"
+        "endings/domainendings.txt", "r"
 ) as ins:  # Iterate over each year and use w3m to download t he content in HTML format
     for id, line in enumerate(ins):
         url = prefix + line

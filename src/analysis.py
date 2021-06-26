@@ -27,6 +27,6 @@ ax2.set_ylabel("Winner avg. pace (kph)", fontsize=20, color="tab:red")
 ax.set_xlabel("Year", fontsize=20)
 ax.grid("on")
 ax.set_title("Tour de France 1903 - 2020", fontsize=20)
-plt.savefig("distanceAndPace.png", dpi=100)
+plt.savefig("output/distanceAndPace.png", dpi=100)
 
 # %%

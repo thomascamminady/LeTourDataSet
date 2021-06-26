@@ -19,7 +19,7 @@ To regenerate the `data/riders.csv` file execute all cells of the `src/main.py`.
 ## Analysis
 The `src/analysis.py` contains some basic analysis and visualizations of the data. For example, the distance and winner pace are shown below.
 
-![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/src/distanceAndPace.png)
+![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/src/output/distanceAndPace.png)
 
 ## How to add future years
 This file includes the date up to the 2020 tour (including). 
