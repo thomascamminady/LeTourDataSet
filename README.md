@@ -2,7 +2,11 @@
 A data set on riders in the Tour de France.
 
 ## TL;DR
-If you use pandas, just get the data via `pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/riders.csv")`.
+If you use pandas, just get the data via:
+```python
+import pandas as pd 
+df = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/riders.csv")
+```
 
 ## Disclaimer 
 For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
