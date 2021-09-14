@@ -16,7 +16,7 @@ meantime = df.groupby("Year").agg("mean")["TotalSeconds"]
 meanpace = distance / meantime * 3600
 
 # %%
-matplotlib.rcParams.update({'font.size': 22})
+matplotlib.rcParams.update({"font.size": 22})
 fig, ax = plt.subplots(1, 1, figsize=(15, 7))
 ax.plot(year, distance, "-o", lw=3)
 ax.set_ylabel("Total distance (km)", fontsize=20, color="tab:blue")
@@ -28,5 +28,3 @@ ax.set_xlabel("Year", fontsize=20)
 ax.grid("on")
 ax.set_title("Tour de France 1903 - 2020", fontsize=20)
 plt.savefig("output/distanceAndPace.png", dpi=100)
-
-# %%

@@ -15,22 +15,23 @@ import pandas as pd
 from pathlib import Path
 
 folder = "rawhtml"
-Path(folder).mkdir(parents=True,
-                   exist_ok=True)  # Create the directory if it does not exist
-prefix = 'letour.fr'
+Path(folder).mkdir(
+    parents=True, exist_ok=True
+)  # Create the directory if it does not exist
+prefix = "letour.fr"
 
 # %%
 with open(
-        "endings/domainendings.txt", "r"
+    "endings/domainendings.txt", "r"
 ) as ins:  # Iterate over each year and use w3m to download t he content in HTML format
     for id, line in enumerate(ins):
         url = prefix + line
-        output = folder + '/id_' + str(id) + '.txt'
-        mycommand = 'w3m -dump -cols 1000 ' + url
+        output = folder + "/id_" + str(id) + ".txt"
+        mycommand = "w3m -dump -cols 1000 " + url
         result = subprocess.check_output(mycommand, shell=True)
 
         file = open(output, "w")
-        file.write(result.decode('utf-8'))
+        file.write(result.decode("utf-8"))
         file.close
 
 # %% [markdown]
@@ -39,27 +40,29 @@ with open(
 
 # %%
 keywords = [
-    "Tour de France", "TDF", "Number of stages", "Distance (km)",
-    "Average speed"
+    "Tour de France",
+    "TDF",
+    "Number of stages",
+    "Distance (km)",
+    "Average speed",
 ]
 summary = {}
 for file in os.listdir(folder):
     if file.endswith(".txt"):
-        with open(folder + "/" + file, 'r') as f:
+        with open(folder + "/" + file, "r") as f:
             content = f.read()
-            text = re.search(r'Rank .*?(Next rankings|Race)', content,
-                             re.DOTALL).group()
-            x = ("\n".join(text.split("\n")[1:-1]))
+            text = re.search(
+                r"Rank .*?(Next rankings|Race)", content, re.DOTALL
+            ).group()
+            x = "\n".join(text.split("\n")[1:-1])
             for i in range(len(text.split("\n"))):
                 if i == 0:
-                    cols = [
-                        "Rank", "Rider", "Rider No.", "Team", "Times", "Gap",
-                        "B"
-                    ]
+                    cols = ["Rank", "Rider", "Rider No.", "Team", "Times", "Gap", "B"]
                     df = pd.DataFrame(columns=cols)
                 else:
                     compressed = [
-                        y.strip(" ") for y in text.split("\n")[i].split("  ")
+                        y.strip(" ")
+                        for y in text.split("\n")[i].split("  ")
                         if not y == ""
                     ]
                     if len(compressed) == 0:
@@ -67,15 +70,19 @@ for file in os.listdir(folder):
                     if len(compressed) < 7:
                         compressed.append("")
                     df.loc[len(df)] = compressed
-        with open(folder + "/" + file, 'r') as f:
+        with open(folder + "/" + file, "r") as f:
             lines = f.readlines()
             metakws = []
             for line in lines[:10]:
                 for kw in keywords:
                     if kw in line:
                         metakws.append(
-                            line[len(kw):].strip("\n").strip(" ").replace(
-                                " ", "").replace("PROLOGUE", ""))
+                            line[len(kw) :]
+                            .strip("\n")
+                            .strip(" ")
+                            .replace(" ", "")
+                            .replace("PROLOGUE", "")
+                        )
 
             if len(metakws) == 3:
                 metakws.append(np.NaN)  # Sotimes the avg pace is missing
@@ -86,18 +93,18 @@ for file in os.listdir(folder):
             else:
                 nstages = int(nstages)
             subdict = {
-                'nstages': nstages,
+                "nstages": nstages,
                 "distance (km)": int(metakws[2]),
                 "average speed (kph)": float(metakws[3]),
-                "results": df
+                "results": df,
             }
             summary[year] = subdict
 summary = dict(sorted(summary.items()))
 
 # %%
-df = pd.DataFrame(columns=[
-    "Year", "Rank", "Rider", "Rider No.", "Team", "Times", "Gap", "B", "P"
-])
+df = pd.DataFrame(
+    columns=["Year", "Rank", "Rider", "Rider No.", "Team", "Times", "Gap", "B", "P"]
+)
 for key in summary:
     tmp = summary[key]["results"]
     tmp["Year"] = key
@@ -118,20 +125,19 @@ for key in summary:
 # Fix result types
 df["ResultType"] = "time"
 df.loc[df["Year"].isin([1905, 1906, 1908]), "ResultType"] = "null"
-df.loc[df["Year"].isin([1907, 1909, 1910, 1911, 1912]),
-       "ResultType"] = "points"
+df.loc[df["Year"].isin([1907, 1909, 1910, 1911, 1912]), "ResultType"] = "points"
 
 # %%
 # Split up time
 df = df.reset_index()
-df["Times"].apply(lambda x: re.sub('[^0-9]', ' ', str(x)).split("  "))
+df["Times"].apply(lambda x: re.sub("[^0-9]", " ", str(x)).split("  "))
 df["Hours"] = np.NaN
 df["Minutes"] = np.NaN
 df["Seconds"] = np.NaN
 
 for i in range(len(df)):
     x = df.loc[i, "Times"]
-    z = (re.sub('[^0-9]', ' ', str(x)).split("  "))
+    z = re.sub("[^0-9]", " ", str(x)).split("  ")
     if len(z) == 4:
         z = [int(zi) for zi in z[:3]]
     if len(z) < 3:
@@ -153,7 +159,7 @@ ts = np.array(tmp["TotalSeconds"])
 ts[1:] += ts[0]
 h = ts // 3600
 m = (ts - (h * 3600)) // 60
-s = (ts - (h * 3600) - m * 60)
+s = ts - (h * 3600) - m * 60
 
 df.loc[df["Year"] == 2006, "Hours"] = h
 df.loc[df["Year"] == 2006, "Minutes"] = m
@@ -183,27 +189,30 @@ df = df.rename(
         "P": "Points",
         "No. Stages": "NumberStages",
         "Listed Avg. Speed (kph)": "ListedAvgPace",
-        "kph": "PersonalAvgPace"
-    })
-df = df[[
-    "Year",
-    "Rider",
-    "Rank",
-    "Time",
-    "DistanceKilometer",
-    "PersonalAvgPace",
-    "Hours",
-    "Minutes",
-    "Seconds",
-    "Team",
-    "RiderNumber",
-    "TotalSeconds",
-    "Gap",
-    "Bonus",
-    "Points",
-    "NumberStages",
-    "ListedAvgPace",
-]]
+        "kph": "PersonalAvgPace",
+    }
+)
+df = df[
+    [
+        "Year",
+        "Rider",
+        "Rank",
+        "Time",
+        "DistanceKilometer",
+        "PersonalAvgPace",
+        "Hours",
+        "Minutes",
+        "Seconds",
+        "Team",
+        "RiderNumber",
+        "TotalSeconds",
+        "Gap",
+        "Bonus",
+        "Points",
+        "NumberStages",
+        "ListedAvgPace",
+    ]
+]
 
 # %%
 df.to_csv("../data/riders.csv")
