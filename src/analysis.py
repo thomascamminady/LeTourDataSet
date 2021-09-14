@@ -5,12 +5,15 @@ import matplotlib.pyplot as plt
 import matplotlib
 
 # %%
-df = pd.read_csv("../data/riders.csv")
+df = pd.read_csv("../data/TDF_Riders_History.csv")
 
 # %%
 year = np.unique(df["Year"])
-distance = df.groupby("Year").agg("mean")["DistanceKilometer"].values
+distance = df.groupby("Year").agg("mean")["Distance (km)"].values
 nriders = df.groupby("Year").agg("count")["Rider"]
+df["PersonalAvgPace"] = df["Distance (km)"] / (df["TotalSeconds"]/3600)
+df.loc[df["Year"]<1915,"PersonalAvgPace"] = np.nan
+
 winnerpace = df.groupby("Year").first()["PersonalAvgPace"]
 meantime = df.groupby("Year").agg("mean")["TotalSeconds"]
 meanpace = distance / meantime * 3600
