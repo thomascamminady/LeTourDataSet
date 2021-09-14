@@ -21,7 +21,7 @@ To regenerate the `data/TDF_Riders_History.csv` file, execute all cells of the `
 ## Analysis
 The `src/analysis.py` contains some basic analysis and visualizations of the data. For example, the distance and winner pace are shown below.
 
-![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/src/output/distanceAndPace.png)
+![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/distanceAndPace.png)
 
 ## Legacy code
 This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/camminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 
