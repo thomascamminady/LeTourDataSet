@@ -1,5 +1,5 @@
 # LeTourDataSet
-A data set on riders in the Tour de France.
+A data set on riders and stages in the Tour de France.
 
 ## TL;DR
 If you use `pandas`, just get the data via:
@@ -25,4 +25,3 @@ The `src/analysis.py` contains some basic analysis and visualizations of the dat
 
 ## Legacy code
 This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/camminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 
-
