@@ -1,211 +1,187 @@
 # %% [markdown]
 # # LeTour data set
-# This file downloads raw data about every rider of every Tour de France (up to including 2019). This data will then be postprocessed and stored in CSV format.
+# This file downloads raw data about every rider of every Tour de France (from 1903 up to 2021). This data will then be postprocessed and stored in CSV format.
 # Executing this notebook might take some minutes.
 # %% [markdown]
-# ## 1) Downloading pages in html format
-# First we download the raw HTML pages from the `letour.fr` website to work offline from here on. The file `domainendings.txt` stores the respective website for each year, taken with a regular expression from `view-source:https://www.letour.fr/en/history` (at around line 1050-1790).
+# ## 1) Retrieve urls for data extract
+# First we generate the urls that we need to download the raw HTML pages from the `letour.fr` website to work offline from here on. The dataframe dflink will stores the respective url for each year.
+# Take a look at `view-source:https://www.letour.fr/en/history` (at around line 1143-1890).
 
 # %%
-import os
-import subprocess
-import numpy as np
-import re
-import pandas as pd
 from pathlib import Path
 
-folder = "rawhtml"
-Path(folder).mkdir(parents=True,
-                   exist_ok=True)  # Create the directory if it does not exist
-prefix = 'letour.fr'
+import numpy as np
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
 
 # %%
-with open(
-        "endings/domainendings.txt", "r"
-) as ins:  # Iterate over each year and use w3m to download t he content in HTML format
-    for id, line in enumerate(ins):
-        url = prefix + line
-        output = folder + '/id_' + str(id) + '.txt'
-        mycommand = 'w3m -dump -cols 1000 ' + url
-        result = subprocess.check_output(mycommand, shell=True)
+PREFIX = "http://www.letour.fr"
+HISTORYPAGE = "https://www.letour.fr/en/history"
+# %%
+headers = {
+    "Accept": "text/html",
+    "User-Agent": "python-requests/1.2.0",
+    "Accept-Charset": "utf-8",
+    "accept-encoding": "deflate, br",
+}
+# %%
+resulthistpage = requests.get(HISTORYPAGE, allow_redirects=True, headers=headers)
+souphistory = BeautifulSoup(resulthistpage.text, "html.parser")
+# %%
+# Find select tag for histo links
+select_tag_histo = souphistory.find_all("button", {"class": "dateTabs__link"})
+LH = [x["data-tabs-ajax"] for x in select_tag_histo]
+dflink = pd.DataFrame({"TDFHistorylink": LH})
+dflink
+# %% [markdown]
+# ## 2) Get data from HTML pages and convert results to dataframes
+# %% [markdown]
+# ### 2.1) Create function that convert HHh mm' ss'' to seconds
+# %%
+def calcTotalSeconds(row, mode):
+    val = sum(
+        x * int(t)
+        for x, t in zip(
+            [3600, 60, 1],
+            row.replace("h", ":")
+            .replace("'", ":")
+            .replace('"', ":")
+            .replace(" ", "")
+            .replace("+", "")
+            .replace("-", "0")
+            .split(":"),
+        )
+    )
 
-        file = open(output, "w")
-        file.write(result.decode('utf-8'))
-        file.close
+    if (mode == "Gap") and val > 180000:
+        val = 0
+
+    return val
+
 
 # %% [markdown]
-# ## 2) Clean up the data
+# ### 2.2) Create a function that will retrieve elements from a source HTML page located on an input url
+
+# %%
+def getstagesNrank(i_url):
+    resultfull = requests.get(i_url, allow_redirects=True)
+    result = resultfull.text
+    resultstatus = resultfull.status_code
+
+    print(i_url + " ==> HTTP STATUS = " + str(resultstatus))
+
+    soup = BeautifulSoup(result, "html.parser")
+    h = soup.find("h3")
+    year = int(h.text[-4:])
+
+    # Find select tag
+    select_tag = soup.find("select")
+
+    # find all option tag inside select tag
+    options = select_tag.find_all("option")
+
+    cols = ["Year", "TotalTDFDistance", "Stage"]
+    lst = []
+
+    # search for stages
+    distance = soup.select("[class~=statsInfos__number]")[1].contents
+
+    # search for distance of the TDF edition
+    for option in options:
+        lst.append([year, int(distance[0].replace(" ", "")), option.text])
+
+    dfstages = pd.DataFrame(lst, columns=cols)
+
+    # Find select tag for ranking racers
+    rankingTable = soup.find("table")
+
+    dfrank = pd.read_html(str(rankingTable))[0]
+
+    dfrank["Year"] = year
+    dfrank["Distance (km)"] = int(distance[0].replace(" ", ""))
+    dfrank["Number of stages"] = len(dfstages)
+    dfrank["TotalSeconds"] = dfrank["Times"].apply(
+        lambda x: calcTotalSeconds(x, "Total")
+    )
+    dfrank["GapSeconds"] = dfrank["Gap"].apply(lambda x: calcTotalSeconds(x, "Gap"))
+
+    return dfstages, dfrank
+
+
+# %% [markdown]
+# ### 2.3) Loop on the dflink dataframe to get data from each url source
+
+# %%
+dfstagesres = []
+dfstagesrestmp = []
+dfrankres = []
+dfrankrestmp = []
+dfrankoutput = []
+
+for index, row in dflink.iterrows():
+    url = PREFIX + row["TDFHistorylink"]
+    try:
+        # if index >= 12 :  # limit from 1919 (data need to be cleaned a little bit more before that)
+        if index >= 0:  # I prefer to keep the old data for consistency.
+            dfstagesres, dfrankres = getstagesNrank(url)
+            dfstagesrestmp = dfstagesres.append(dfstagesrestmp, ignore_index=True)
+            dfrankrestmp = dfrankres.append(dfrankrestmp, ignore_index=True)
+
+    except:
+        raise
+
+
+dfstageoutput = dfstagesrestmp
+dfrankoutput = dfrankrestmp
+
+# %% [markdown]
+# ## 3) Clean up the data
 #
 
 # %%
-keywords = [
-    "Tour de France", "TDF", "Number of stages", "Distance (km)",
-    "Average speed"
-]
-summary = {}
-for file in os.listdir(folder):
-    if file.endswith(".txt"):
-        with open(folder + "/" + file, 'r') as f:
-            content = f.read()
-            text = re.search(r'Rank .*?(Next rankings|Race)', content,
-                             re.DOTALL).group()
-            x = ("\n".join(text.split("\n")[1:-1]))
-            for i in range(len(text.split("\n"))):
-                if i == 0:
-                    cols = [
-                        "Rank", "Rider", "Rider No.", "Team", "Times", "Gap",
-                        "B"
-                    ]
-                    df = pd.DataFrame(columns=cols)
-                else:
-                    compressed = [
-                        y.strip(" ") for y in text.split("\n")[i].split("  ")
-                        if not y == ""
-                    ]
-                    if len(compressed) == 0:
-                        break
-                    if len(compressed) < 7:
-                        compressed.append("")
-                    df.loc[len(df)] = compressed
-        with open(folder + "/" + file, 'r') as f:
-            lines = f.readlines()
-            metakws = []
-            for line in lines[:10]:
-                for kw in keywords:
-                    if kw in line:
-                        metakws.append(
-                            line[len(kw):].strip("\n").strip(" ").replace(
-                                " ", "").replace("PROLOGUE", ""))
-
-            if len(metakws) == 3:
-                metakws.append(np.NaN)  # Sotimes the avg pace is missing
-            year = int(metakws[0][:4])
-            nstages = metakws[1]
-            if "+" in nstages:
-                nstages = int(nstages[:2]) + 1  # Prologue was counted extra
-            else:
-                nstages = int(nstages)
-            subdict = {
-                'nstages': nstages,
-                "distance (km)": int(metakws[2]),
-                "average speed (kph)": float(metakws[3]),
-                "results": df
-            }
-            summary[year] = subdict
-summary = dict(sorted(summary.items()))
-
-# %%
-df = pd.DataFrame(columns=[
-    "Year", "Rank", "Rider", "Rider No.", "Team", "Times", "Gap", "B", "P"
-])
-for key in summary:
-    tmp = summary[key]["results"]
-    tmp["Year"] = key
-    if key in [1907, 1909, 1910, 1911, 1912]:
-        f = lambda x: x["Times"].split("h")[0]
-        tmp["P"] = tmp.apply(f, axis=1)
-        tmp["Times"] = np.NaN
-        tmp["Gap"] = np.NaN
-    else:
-        tmp["P"] = np.NaN
-    tmp["Distance (km)"] = summary[key]["distance (km)"]
-    tmp["No. Stages"] = summary[key]["nstages"]
-    tmp["Listed Avg. Speed (kph)"] = summary[key]["average speed (kph)"]
-
-    df = df.append(tmp)
-
-# %%
 # Fix result types
-df["ResultType"] = "time"
-df.loc[df["Year"].isin([1905, 1906, 1908]), "ResultType"] = "null"
-df.loc[df["Year"].isin([1907, 1909, 1910, 1911, 1912]),
-       "ResultType"] = "points"
+dfrankoutput["ResultType"] = "time"
+dfrankoutput.loc[dfrankoutput["Year"].isin([1905, 1906, 1908]), "ResultType"] = "null"
+dfrankoutput.loc[
+    dfrankoutput["Year"].isin([1907, 1909, 1910, 1911, 1912]), "ResultType"
+] = "points"
+
 
 # %%
-# Split up time
-df = df.reset_index()
-df["Times"].apply(lambda x: re.sub('[^0-9]', ' ', str(x)).split("  "))
-df["Hours"] = np.NaN
-df["Minutes"] = np.NaN
-df["Seconds"] = np.NaN
-
-for i in range(len(df)):
-    x = df.loc[i, "Times"]
-    z = (re.sub('[^0-9]', ' ', str(x)).split("  "))
-    if len(z) == 4:
-        z = [int(zi) for zi in z[:3]]
-    if len(z) < 3:
-        z = [np.NaN, np.NaN, np.NaN]
-    df.loc[i, "Hours"] = z[0]
-    df.loc[i, "Minutes"] = z[1]
-    df.loc[i, "Seconds"] = z[2]
-df["TotalSeconds"] = df["Hours"] * 3600 + df["Minutes"] * 60 + df["Seconds"]
-
-# %%
-# Fix this weird bug for e.g. year 2006
-for year in np.unique(df["Year"]):
-    tmp = df[df["Year"] == year].reset_index()
-    if tmp.loc[0]["TotalSeconds"] > tmp.loc[1]["TotalSeconds"]:
+# Fix this weird bug for e.g. year 2006 and 1997
+for year in np.unique(dfrankoutput["Year"]):
+    tmp = dfrankoutput[dfrankoutput["Year"] == year].reset_index()
+    if tmp.loc[0]["TotalSeconds"] > tmp.loc[2]["TotalSeconds"]:
         print(year)
-# Okay seems to be only for 2006
-tmp = df[df["Year"] == 2006].reset_index()
+# Okay seems to be only for 2006 and 1997
+
+
+# %%
+tmp = dfrankoutput[dfrankoutput["Year"] == 2006].reset_index()
 ts = np.array(tmp["TotalSeconds"])
-ts[1:] += ts[0]
-h = ts // 3600
-m = (ts - (h * 3600)) // 60
-s = (ts - (h * 3600) - m * 60)
+gs = np.array(tmp["GapSeconds"])
+ts[1:] = ts[0] + gs[1:]
 
-df.loc[df["Year"] == 2006, "Hours"] = h
-df.loc[df["Year"] == 2006, "Minutes"] = m
-df.loc[df["Year"] == 2006, "Seconds"] = s
-df.loc[df["Year"] == 2006, "TotalSeconds"] = ts
+dfrankoutput.loc[dfrankoutput["Year"] == 2006, "TotalSeconds"] = ts
 
-# %%
-# Get speed
-df["kph"] = df["Distance (km)"] / df["TotalSeconds"] * 3600
-df["kph"] = np.round(df["kph"], 3)
+tmp = dfrankoutput[dfrankoutput["Year"] == 1997].reset_index()
+ts = np.array(tmp["TotalSeconds"])
+gs = np.array(tmp["GapSeconds"])
+ts[1:] = ts[0] + gs[1:]
 
-# %%
-# Convert to int
-cats = ["Hours", "Minutes", "Seconds", "TotalSeconds"]
-for cat in cats:
-    df[cat] = pd.Series(df[cat], dtype=pd.Int64Dtype())
+dfrankoutput.loc[dfrankoutput["Year"] == 1997, "TotalSeconds"] = ts
+
+# %% [markdown]
+# ## 4) Write Data to CSV
 
 # %%
-# Rearrange
-df = df.drop(columns=list(df)[:1])
-df = df.rename(
-    columns={
-        "Rider No.": "RiderNumber",
-        "Times": "Time",
-        "Distance (km)": "DistanceKilometer",
-        "B": "Bonus",
-        "P": "Points",
-        "No. Stages": "NumberStages",
-        "Listed Avg. Speed (kph)": "ListedAvgPace",
-        "kph": "PersonalAvgPace"
-    })
-df = df[[
-    "Year",
-    "Rider",
-    "Rank",
-    "Time",
-    "DistanceKilometer",
-    "PersonalAvgPace",
-    "Hours",
-    "Minutes",
-    "Seconds",
-    "Team",
-    "RiderNumber",
-    "TotalSeconds",
-    "Gap",
-    "Bonus",
-    "Points",
-    "NumberStages",
-    "ListedAvgPace",
-]]
+dfrankoutput.sort_values(["Year", "Rank"], axis=0, ascending=True, inplace=True)
+dfrankoutput = dfrankoutput.reset_index(drop=True)
+dfrankoutput.to_csv("../data/TDF_Riders_History.csv")
+
 
 # %%
-df.to_csv("../data/riders.csv")
-
-# %%
+dfstageoutput.sort_values(["Year"], axis=0, ascending=True, inplace=True)
+dfstageoutput = dfstageoutput.reset_index(drop=True)
+dfstageoutput.to_csv("../data/TDF_Stages_History.csv")
