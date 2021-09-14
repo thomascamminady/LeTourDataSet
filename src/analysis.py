@@ -5,12 +5,15 @@ import matplotlib.pyplot as plt
 import matplotlib
 
 # %%
-df = pd.read_csv("../data/riders.csv")
+df = pd.read_csv("../data/TDF_Riders_History.csv")
 
 # %%
 year = np.unique(df["Year"])
-distance = df.groupby("Year").agg("mean")["DistanceKilometer"].values
+distance = df.groupby("Year").agg("mean")["Distance (km)"].values
 nriders = df.groupby("Year").agg("count")["Rider"]
+df["PersonalAvgPace"] = df["Distance (km)"] / (df["TotalSeconds"]/3600)
+df.loc[df["Year"]<1915,"PersonalAvgPace"] = np.nan
+
 winnerpace = df.groupby("Year").first()["PersonalAvgPace"]
 meantime = df.groupby("Year").agg("mean")["TotalSeconds"]
 meanpace = distance / meantime * 3600
@@ -26,7 +29,7 @@ ax2.plot(year, winnerpace, "-o", color="tab:red", lw=3)
 ax2.set_ylabel("Winner avg. pace (kph)", fontsize=20, color="tab:red")
 ax.set_xlabel("Year", fontsize=20)
 ax.grid("on")
-ax.set_title("Tour de France 1903 - 2020", fontsize=20)
+ax.set_title("Tour de France 1903 - 2021", fontsize=20)
 plt.savefig("output/distanceAndPace.png", dpi=100)
 
 # %%
