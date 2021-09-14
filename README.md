@@ -13,7 +13,7 @@ For issues with this data set, see the [Issues tab](https://github.com/camminady
 
 ## Data
 Every cyclist of the Tour de France in a single CSV file, stored in the file `data/TDF_Riders_History.csv`.
-There's also data on every stage in `TDF_Stages_History.csv`.
+There's also data on every stage in `data/TDF_Stages_History.csv`.
 
 ## How to run
 To regenerate the `data/TDF_Riders_History.csv` file, execute all cells of the `src/main.py`. This might take a couple of minutes. 
