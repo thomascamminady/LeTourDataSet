@@ -5,7 +5,8 @@ A data set on riders and stages in the Tour de France.
 If you use `pandas`, just get the data via:
 ```python
 import pandas as pd 
-df = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+url = "https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv"
+df = pd.read_csv(url)
 ```
 
 ## Disclaimer 
