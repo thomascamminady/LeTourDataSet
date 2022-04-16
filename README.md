@@ -1,5 +1,5 @@
 # LeTourDataSet
-A data set on riders and stages in the Tour de France.
+![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/distanceAndPace.png)
 
 ## TL;DR
 If you use `pandas`, just get the data via:
@@ -20,9 +20,8 @@ There's also data on every stage in `data/TDF_Stages_History.csv`.
 To regenerate the `data/TDF_Riders_History.csv` file, execute all cells of the `src/main.py`. This might take a couple of minutes. 
 
 ## Analysis
-The `src/analysis.py` contains some basic analysis and visualizations of the data. For example, the distance and winner pace are shown below.
+The `src/analysis.py` contains some basic analysis and visualizations of the data. For example, the distance and winner pace are shown above.
 
-![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/distanceAndPace.png)
 
 ## Legacy code
 This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/camminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 
