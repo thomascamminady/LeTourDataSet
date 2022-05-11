@@ -5,8 +5,8 @@
 If you use `pandas`, just get the data via:
 ```python
 import pandas as pd 
-url = "https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv"
-df = pd.read_csv(url)
+_ = "https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv"
+df = pd.read_csv(_)
 ```
 
 ## Disclaimer 
