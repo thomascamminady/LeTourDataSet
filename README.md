@@ -5,8 +5,12 @@
 If you use `pandas`, just get the data via:
 ```python
 import pandas as pd 
-_ = "https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv"
-df = pd.read_csv(_)
+df = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+```
+If you use `R` instead of `python`, you can run
+```R
+library(readr)
+df <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
 ```
 
 ## Disclaimer 
