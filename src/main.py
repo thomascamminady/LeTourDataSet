@@ -182,8 +182,6 @@ dfrankoutput.to_csv("../data/TDF_Riders_History.csv")
 
 
 # %%
-dfstageoutput.sort_values(["Stage"], axis=0, ascending=False, inplace=True)
-
 dfstageoutput.sort_values(["Year", "Stage"], axis=0, ascending=True, inplace=True)
 dfstageoutput = dfstageoutput.reset_index(drop=True)
 dfstageoutput.to_csv("../data/TDF_Stages_History.csv")
