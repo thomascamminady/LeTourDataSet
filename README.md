@@ -21,10 +21,11 @@ Every cyclist of the Tour de France in a single CSV file, stored in the file `da
 There's also data on every stage in `data/TDF_Stages_History.csv`.
 
 ## How to run
-To regenerate the `data/TDF_Riders_History.csv` file, execute all cells of the `src/main.py`. This might take a couple of minutes. 
-
-## Analysis
-The `src/analysis.py` contains some basic analysis and visualizations of the data. For example, the distance and winner pace are shown above.
+In your shell, just run these commands:
+```python
+poetry install # to install the environment
+poetry run python letourdataset/Downloader.py # get the data
+```
 
 
 ## Legacy code
