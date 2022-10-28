@@ -10,7 +10,7 @@ from Plotter import Plotter
 class Downloader:
     def __init__(
         self,
-        history_page="https://www.letour.fr/en/history",
+        history_page="https://www.letourfemmes.fr/en/history",
         headers={
             "Accept": "text/html",
             "User-Agent": "python-requests/1.2.0",
@@ -20,6 +20,7 @@ class Downloader:
     ) -> None:
 
         self._links: list[str] = self._get_urls(history_page, headers)
+        print(self._links)
 
     def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
         return [
@@ -30,11 +31,14 @@ class Downloader:
             ).find_all("button", {"class": "dateTabs__link"})
         ]
 
-    def run(self, prefix="http://www.letour.fr") -> tuple[pd.DataFrame, pd.DataFrame]:
+    def run(
+        self, prefix="http://www.letourfemmes.fr"
+    ) -> tuple[pd.DataFrame, pd.DataFrame]:
         stages_list: list[pd.DataFrame] = []
         rankings_list: list[pd.DataFrame] = []
         for link in track(self._links, "Downloading historical data..."):
             try:
+                print(link)
                 soup, year, distance = self._get_soup_year_distance(prefix + link)
                 df_stage, df_ranking = self._cleanup(
                     self._get_stages(soup, year, distance),
