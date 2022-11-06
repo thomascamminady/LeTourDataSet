@@ -1,0 +1,2345 @@
+Stages,Date,Start,Finish,Year
+Stage 1,1903-07-01,Paris,Lyon,1903
+Stage 2,1903-07-04,Lyon,Marseille,1903
+Stage 3,1903-07-08,Marseille,Toulouse,1903
+Stage 4,1903-07-12,Toulouse,Bordeaux,1903
+Stage 5,1903-07-13,Bordeaux,Nantes,1903
+Stage 6,1903-07-18,Nantes,Paris,1903
+Stage 1,1904-07-02,Paris,Lyon,1904
+Stage 2,1904-07-09,Lyon,Marseille,1904
+Stage 3,1904-07-13,Marseille,Toulouse,1904
+Stage 4,1904-07-17,Toulouse,Bordeaux,1904
+Stage 5,1904-07-20,Bordeaux,Nantes,1904
+Stage 6,1904-07-23,Ville d'Avray,Paris,1904
+Stage 1,1905-07-09,Paris,Nancy,1905
+Stage 2,1905-07-11,Nancy,Besançon,1905
+Stage 3,1905-07-14,Besançon,Grenoble,1905
+Stage 4,1905-07-16,Grenoble,Toulon,1905
+Stage 5,1905-07-18,Toulon,Nimes,1905
+Stage 6,1905-07-20,Nimes,Toulouse,1905
+Stage 7,1905-07-23,Toulouse,Bordeaux,1905
+Stage 8,1905-07-25,Bordeaux,La Rochelle,1905
+Stage 9,1905-07-27,La Rochelle,Rennes,1905
+Stage 10,1905-07-29,Rennes,Caen,1905
+Stage 11,1905-07-30,Caen,Paris,1905
+Stage 1,1906-07-04,Paris,Lille,1906
+Stage 2,1906-07-06,Douai,Nancy,1906
+Stage 3,1906-07-08,Nancy,Dijon,1906
+Stage 4,1906-07-10,Dijon,Grenoble,1906
+Stage 5,1906-07-12,Grenoble,Nice,1906
+Stage 6,1906-07-14,Nice,Marseille,1906
+Stage 7,1906-07-16,Marseille,Toulouse,1906
+Stage 8,1906-07-18,Toulouse,Bayonne,1906
+Stage 9,1906-07-20,Bayonne,Bordeaux,1906
+Stage 10,1906-07-22,Bordeaux,Nantes,1906
+Stage 11,1906-07-24,Nantes,Brest,1906
+Stage 12,1906-07-26,Brest,Caen,1906
+Stage 13.1,1906-07-29,Caen,Paris,1906
+Stage 13.2,1906-07-29,Caen,Paris,1906
+Stage 1,1907-07-08,Paris,Roubaix,1907
+Stage 2,1907-07-10,Roubaix,Metz,1907
+Stage 3,1907-07-12,Metz,Belfort,1907
+Stage 4,1907-07-14,Belfort,Lyon,1907
+Stage 5,1907-07-16,Lyon,Grenoble,1907
+Stage 6,1907-07-18,Grenoble,Nice,1907
+Stage 7,1907-07-20,Nice,Nimes,1907
+Stage 8,1907-07-22,Nimes,Toulouse,1907
+Stage 9,1907-07-24,Toulouse,Bayonne,1907
+Stage 10,1907-07-26,Bayonne,Bordeaux,1907
+Stage 11,1907-07-28,Bordeaux,Nantes,1907
+Stage 12,1907-07-30,Nantes,Brest,1907
+Stage 13,1907-08-01,Brest,Caen,1907
+Stage 14,1907-08-04,Caen,Paris,1907
+Stage 1,1908-07-13,Paris,Roubaix,1908
+Stage 2,1908-07-15,Roubaix,Metz,1908
+Stage 3,1908-07-17,Metz,Belfort,1908
+Stage 4,1908-07-19,Belfort,Lyon,1908
+Stage 5,1908-07-21,Lyon,Grenoble,1908
+Stage 6,1908-07-23,Grenoble,Nice,1908
+Stage 7,1908-07-25,Nice,Nimes,1908
+Stage 8,1908-07-27,Nimes,Toulouse,1908
+Stage 9,1908-07-29,Toulouse,Bayonne,1908
+Stage 10,1908-07-31,Bayonne,Bordeaux,1908
+Stage 11,1908-08-02,Bordeaux,Nantes,1908
+Stage 12,1908-08-04,Nantes,Brest,1908
+Stage 13,1908-08-06,Brest,Caen,1908
+Stage 14.1,1908-08-09,Caen,Paris,1908
+Stage 14.2,1908-08-09,Caen,Paris,1908
+Stage 1,1909-07-05,Paris,Roubaix,1909
+Stage 2,1909-07-07,Roubaix,Metz,1909
+Stage 3,1909-07-09,Metz,Belfort,1909
+Stage 4,1909-07-11,Belfort,Lyon,1909
+Stage 5,1909-07-13,Lyon,Grenoble,1909
+Stage 6,1909-07-15,Grenoble,Nice,1909
+Stage 7,1909-07-17,Nice,Nimes,1909
+Stage 8,1909-07-19,Nimes,Toulouse,1909
+Stage 9,1909-07-21,Toulouse,Bayonne,1909
+Stage 10,1909-07-23,Bayonne,Bordeaux,1909
+Stage 11,1909-07-25,Bordeaux,Nantes,1909
+Stage 12,1909-07-27,Nantes,Brest,1909
+Stage 13,1909-07-29,Brest,Caen,1909
+Stage 14,1909-08-01,Caen,Paris,1909
+Stage 1,1910-07-03,Paris,Roubaix,1910
+Stage 2,1910-07-05,Roubaix,Metz,1910
+Stage 3,1910-07-07,Metz,Belfort,1910
+Stage 4,1910-07-09,Belfort,Lyon,1910
+Stage 5,1910-07-11,Lyon,Grenoble,1910
+Stage 6,1910-07-13,Grenoble,Nice,1910
+Stage 7,1910-07-15,Nice,Nimes,1910
+Stage 8,1910-07-17,Nimes,Perpignan,1910
+Stage 9,1910-07-19,Perpignan,Luchon,1910
+Stage 10,1910-07-21,Luchon,Bayonne,1910
+Stage 11,1910-07-23,Bayonne,Bordeaux,1910
+Stage 12,1910-07-25,Bordeaux,Nantes,1910
+Stage 13,1910-07-27,Nantes,Brest,1910
+Stage 14,1910-07-29,Brest,Caen,1910
+Stage 15,1910-07-31,Caen,Paris,1910
+Stage 1,1911-07-02,Paris,Dunkerque,1911
+Stage 2,1911-07-04,Dunkerque,Longwy,1911
+Stage 3,1911-07-06,Longwy,Belfort,1911
+Stage 4,1911-07-08,Belfort,Chamonix,1911
+Stage 5,1911-07-10,Chamonix,Grenoble,1911
+Stage 6,1911-07-12,Grenoble,Nice,1911
+Stage 7,1911-07-14,Nice,Marseille,1911
+Stage 8,1911-07-16,Marseille,Perpignan,1911
+Stage 9,1911-07-18,Perpignan,Luchon,1911
+Stage 10,1911-07-20,Luchon,Bayonne,1911
+Stage 11,1911-07-22,Bayonne,La Rochelle,1911
+Stage 12,1911-07-23,La Rochelle,Brest,1911
+Stage 13,1911-07-26,Brest,Cherbourg-en-Cotentin,1911
+Stage 14,1911-07-28,Cherbourg-en-Cotentin,Le Havre,1911
+Stage 15,1911-07-30,Le Havre,Paris,1911
+Stage 1,1912-06-30,Paris,Dunkerque,1912
+Stage 2,1912-07-02,Dunkerque,Longwy,1912
+Stage 3,1912-07-04,Longwy,Belfort,1912
+Stage 4,1912-07-06,Belfort,Chamonix,1912
+Stage 5,1912-07-08,Chamonix,Grenoble,1912
+Stage 6,1912-07-10,Grenoble,Nice,1912
+Stage 7,1912-07-12,Nice,Marseille,1912
+Stage 8,1912-07-14,Marseille,Perpignan,1912
+Stage 9,1912-07-16,Perpignan,Luchon,1912
+Stage 10,1912-07-18,Luchon,Bayonne,1912
+Stage 11,1912-07-20,Bayonne,La Rochelle,1912
+Stage 12,1912-07-22,La Rochelle,Brest,1912
+Stage 13,1912-07-24,Brest,Cherbourg-en-Cotentin,1912
+Stage 14,1912-07-26,Cherbourg-en-Cotentin,Le Havre,1912
+Stage 15,1912-07-28,Le Havre,Paris,1912
+Stage 1,1913-06-29,Paris,Le Havre,1913
+Stage 2,1913-07-01,Le Havre,Cherbourg-en-Cotentin,1913
+Stage 3,1913-07-03,Cherbourg-en-Cotentin,Brest,1913
+Stage 4,1913-07-05,Brest,La Rochelle,1913
+Stage 5,1913-07-07,La Rochelle,Bayonne,1913
+Stage 6,1913-07-09,Bayonne,Luchon,1913
+Stage 7,1913-07-11,Luchon,Perpignan,1913
+Stage 8,1913-07-13,Perpignan,Aix en Provence,1913
+Stage 9,1913-07-15,Aix en Provence,Nice,1913
+Stage 10,1913-07-17,Nice,Grenoble,1913
+Stage 11,1913-07-19,Grenoble,Genève,1913
+Stage 12,1913-07-21,Genève,Belfort,1913
+Stage 13,1913-07-23,Belfort,Longwy,1913
+Stage 14,1913-07-25,Longwy,Dunkerque,1913
+Stage 15,1913-07-27,Dunkerque,Paris,1913
+Stage 1,1914-06-28,Paris,Le Havre,1914
+Stage 2,1914-06-30,Le Havre,Cherbourg-en-Cotentin,1914
+Stage 3,1914-07-02,Cherbourg-en-Cotentin,Brest,1914
+Stage 4,1914-07-04,Brest,La Rochelle,1914
+Stage 5,1914-07-06,La Rochelle,Bayonne,1914
+Stage 6,1914-07-08,Bayonne,Luchon,1914
+Stage 7,1914-07-10,Luchon,Perpignan,1914
+Stage 8,1914-07-12,Perpignan,Marseille,1914
+Stage 9,1914-07-14,Marseille,Nice,1914
+Stage 10,1914-07-16,Nice,Grenoble,1914
+Stage 11,1914-07-18,Grenoble,Genève,1914
+Stage 12,1914-07-20,Genève,Belfort,1914
+Stage 13,1914-07-22,Belfort,Longwy,1914
+Stage 14,1914-07-24,Longwy,Dunkerque,1914
+Stage 15,1914-07-26,Dunkerque,Paris,1914
+Stage 1,1919-06-29,Paris,Le Havre,1919
+Stage 2,1919-07-01,Le Havre,Cherbourg-en-Cotentin,1919
+Stage 3,1919-07-03,Cherbourg-en-Cotentin,Brest,1919
+Stage 4,1919-07-05,Brest,Les Sables,1919
+Stage 5,1919-07-07,Les Sables,Bayonne,1919
+Stage 6,1919-07-09,Bayonne,Luchon,1919
+Stage 7,1919-07-11,Luchon,Perpignan,1919
+Stage 8,1919-07-13,Perpignan,Marseille,1919
+Stage 9,1919-07-15,Marseille,Nice,1919
+Stage 10,1919-07-17,Nice,Grenoble,1919
+Stage 11,1919-07-19,Grenoble,Genève,1919
+Stage 12,1919-07-21,Genève,Strasbourg,1919
+Stage 13,1919-07-23,Strasbourg,Metz,1919
+Stage 14,1919-07-25,Metz,Dunkerque,1919
+Stage 15,1919-07-27,Dunkerque,Paris,1919
+Stage 1,1920-06-27,Paris,Le Havre,1920
+Stage 2,1920-06-29,Le Havre,Cherbourg-en-Cotentin,1920
+Stage 3,1920-07-01,Cherbourg-en-Cotentin,Brest,1920
+Stage 4,1920-07-03,Brest,Les Sables,1920
+Stage 5,1920-07-05,Les Sables,Bayonne,1920
+Stage 6,1920-07-07,Bayonne,Luchon,1920
+Stage 7,1920-07-09,Luchon,Perpignan,1920
+Stage 8,1920-07-11,Perpignan,Aix en Provence,1920
+Stage 9,1920-07-13,Aix en Provence,Nice,1920
+Stage 10,1920-07-15,Nice,Grenoble,1920
+Stage 11,1920-07-17,Grenoble,Gex,1920
+Stage 12,1920-07-19,Gex,Strasbourg,1920
+Stage 13,1920-07-21,Strasbourg,Metz,1920
+Stage 14,1920-07-23,Metz,Dunkerque,1920
+Stage 15,1920-07-25,Dunkerque,Paris,1920
+Stage 1,1921-06-26,Paris,Le Havre,1921
+Stage 2,1921-06-28,Le Havre,Cherbourg-en-Cotentin,1921
+Stage 3,1921-06-30,Cherbourg-en-Cotentin,Brest,1921
+Stage 4,1921-07-02,Brest,Les Sables,1921
+Stage 5,1921-07-04,Les Sables,Bayonne,1921
+Stage 6,1921-07-06,Bayonne,Luchon,1921
+Stage 7,1921-07-08,Luchon,Perpignan,1921
+Stage 8,1921-07-10,Perpignan,Toulon,1921
+Stage 9,1921-07-12,Toulon,Nice,1921
+Stage 10,1921-07-14,Nice,Grenoble,1921
+Stage 11,1921-07-16,Grenoble,Genève,1921
+Stage 12,1921-07-18,Genève,Strasbourg,1921
+Stage 13,1921-07-20,Strasbourg,Metz,1921
+Stage 14,1921-07-22,Metz,Dunkerque,1921
+Stage 15,1921-07-24,Dunkerque,Paris,1921
+Stage 1,1922-06-25,Paris,Le Havre,1922
+Stage 2,1922-06-27,Le Havre,Cherbourg-en-Cotentin,1922
+Stage 3,1922-06-29,Cherbourg-en-Cotentin,Brest,1922
+Stage 4,1922-07-01,Brest,Les Sables,1922
+Stage 5,1922-07-03,Les Sables,Bayonne,1922
+Stage 6,1922-07-05,Bayonne,Luchon,1922
+Stage 7,1922-07-07,Luchon,Perpignan,1922
+Stage 8,1922-07-09,Perpignan,Toulon,1922
+Stage 9,1922-07-11,Toulon,Nice,1922
+Stage 10,1922-07-13,Nice,Briançon,1922
+Stage 11,1922-07-15,Briançon,Genève,1922
+Stage 12,1922-07-17,Genève,Strasbourg,1922
+Stage 13,1922-07-19,Strasbourg,Metz,1922
+Stage 14,1922-07-21,Metz,Dunkerque,1922
+Stage 15,1922-07-23,Dunkerque,Paris,1922
+Stage 1,1923-06-24,Paris,Le Havre,1923
+Stage 2,1923-06-26,Le Havre,Cherbourg-en-Cotentin,1923
+Stage 3,1923-06-28,Cherbourg-en-Cotentin,Brest,1923
+Stage 4,1923-06-30,Brest,Les Sables,1923
+Stage 5,1923-07-02,Les Sables,Bayonne,1923
+Stage 6,1923-07-04,Bayonne,Luchon,1923
+Stage 7,1923-07-06,Luchon,Perpignan,1923
+Stage 8,1923-07-08,Perpignan,Toulon,1923
+Stage 9,1923-07-10,Toulon,Nice,1923
+Stage 10,1923-07-12,Nice,Briançon,1923
+Stage 11,1923-07-14,Briançon,Genève,1923
+Stage 12,1923-07-16,Genève,Strasbourg,1923
+Stage 13,1923-07-18,Strasbourg,Metz,1923
+Stage 14,1923-07-20,Metz,Dunkerque,1923
+Stage 15,1923-07-22,Dunkerque,Paris,1923
+Stage 1,1924-01-01,Paris,Le Havre,1924
+Stage 2,1924-01-01,Le Havre,Cherbourg-en-Cotentin,1924
+Stage 3,1924-01-01,Cherbourg-en-Cotentin,Brest,1924
+Stage 4,1924-01-01,Brest,Les Sables,1924
+Stage 5,1924-01-01,Les Sables,Bayonne,1924
+Stage 6,1924-01-01,Bayonne,Luchon,1924
+Stage 7,1924-01-01,Luchon,Perpignan,1924
+Stage 8,1924-01-01,Perpignan,Toulon,1924
+Stage 9,1924-01-01,Toulon,Nice,1924
+Stage 10,1924-01-01,Nice,Briançon,1924
+Stage 11,1924-01-01,Briançon,Gex,1924
+Stage 12,1924-01-01,Gex,Strasbourg,1924
+Stage 13,1924-01-01,Strasbourg,Metz,1924
+Stage 14,1924-01-01,Metz,Dunkerque,1924
+Stage 15,1924-07-20,Dunkerque,Paris,1924
+Stage 1,1925-06-21,Paris,Le Havre,1925
+Stage 2,1925-06-23,Le Havre,Cherbourg-en-Cotentin,1925
+Stage 3,1925-06-25,Cherbourg-en-Cotentin,Brest,1925
+Stage 4,1925-06-26,Brest,Vannes,1925
+Stage 5,1925-06-27,Vannes,Les Sables,1925
+Stage 6,1925-06-28,Les Sables,Bordeaux,1925
+Stage 7,1925-06-30,Bordeaux,Bayonne,1925
+Stage 8,1925-07-01,Bayonne,Luchon,1925
+Stage 9,1925-07-03,Luchon,Perpignan,1925
+Stage 10,1925-07-05,Perpignan,Nimes,1925
+Stage 11,1925-07-06,Nimes,Toulon,1925
+Stage 12,1925-07-07,Toulon,Nice,1925
+Stage 13,1925-07-09,Nice,Briançon,1925
+Stage 14,1925-07-11,Briançon,Evian-les-Bains,1925
+Stage 15,1925-07-13,Evian-les-Bains,Mulhouse,1925
+Stage 16,1925-07-15,Mulhouse,Metz,1925
+Stage 17,1925-07-17,Metz,Dunkerque,1925
+Stage 18,1925-07-19,Dunkerque,Paris,1925
+Stage 1,1926-06-20,Evian-les-Bains,Mulhouse,1926
+Stage 2,1926-06-22,Mulhouse,Metz,1926
+Stage 3,1926-06-24,Metz,Dunkerque,1926
+Stage 4,1926-06-26,Dunkerque,Le Havre,1926
+Stage 5,1926-06-28,Le Havre,Cherbourg-en-Cotentin,1926
+Stage 6,1926-06-30,Cherbourg-en-Cotentin,Brest,1926
+Stage 7,1926-07-02,Brest,Les Sables,1926
+Stage 8,1926-07-03,Les Sables,Bordeaux,1926
+Stage 9,1926-07-04,Bordeaux,Bayonne,1926
+Stage 10,1926-07-06,Bayonne,Luchon,1926
+Stage 11,1926-07-08,Luchon,Perpignan,1926
+Stage 12,1926-07-10,Perpignan,Toulon,1926
+Stage 13,1926-07-12,Toulon,Nice,1926
+Stage 14,1926-07-14,Nice,Briançon,1926
+Stage 15,1926-07-16,Briançon,Evian-les-Bains,1926
+Stage 16,1926-07-17,Evian-les-Bains,Dijon,1926
+Stage 17,1926-07-18,Dijon,Paris,1926
+Stage 1,1927-06-19,Paris,Dieppe,1927
+Stage 2,1927-06-20,Dieppe,Le Havre,1927
+Stage 3,1927-06-21,Le Havre,Caen,1927
+Stage 4,1927-06-22,Caen,Cherbourg-en-Cotentin,1927
+Stage 5,1927-06-23,Cherbourg-en-Cotentin,Dinan,1927
+Stage 6,1927-06-24,Dinan,Brest,1927
+Stage 7,1927-06-25,Brest,Vannes,1927
+Stage 8,1927-06-26,Vannes,Les Sables,1927
+Stage 9,1927-06-27,Les Sables,Bordeaux,1927
+Stage 10,1927-06-28,Bordeaux,Bayonne,1927
+Stage 11,1927-06-30,Bayonne,Luchon,1927
+Stage 12,1927-07-02,Luchon,Perpignan,1927
+Stage 13,1927-07-04,Perpignan,Marseille,1927
+Stage 14,1927-07-05,Marseille,Toulon,1927
+Stage 15,1927-07-06,Toulon,Nice,1927
+Stage 16,1927-07-08,Nice,Briançon,1927
+Stage 17,1927-07-09,Briançon,Evian-les-Bains,1927
+Stage 18,1927-07-11,Evian-les-Bains,Pontarlier,1927
+Stage 19,1927-07-12,Pontarlier,Belfort,1927
+Stage 20,1927-07-13,Belfort,Strasbourg,1927
+Stage 21,1927-07-14,Strasbourg,Metz,1927
+Stage 22,1927-07-15,Metz,Charleville-Mézières,1927
+Stage 23,1927-07-16,Charleville-Mézières,Dunkerque,1927
+Stage 24,1927-07-17,Dunkerque,Paris,1927
+Stage 1,1928-06-17,Paris,Caen,1928
+Stage 2,1928-06-18,Caen,Cherbourg-en-Cotentin,1928
+Stage 3,1928-06-19,Cherbourg-en-Cotentin,Dinan,1928
+Stage 4,1928-06-20,Dinan,Brest,1928
+Stage 5,1928-06-21,Brest,Vannes,1928
+Stage 6,1928-06-22,Vannes,Les Sables,1928
+Stage 7,1928-06-23,Les Sables,Bordeaux,1928
+Stage 8,1928-06-24,Bordeaux,Hendaye,1928
+Stage 9,1928-06-26,Hendaye,Luchon,1928
+Stage 10,1928-06-28,Luchon,Perpignan,1928
+Stage 11,1928-06-30,Perpignan,Marseille,1928
+Stage 12,1928-07-02,Marseille,Nice,1928
+Stage 13,1928-07-04,Nice,Grenoble,1928
+Stage 14,1928-07-06,Grenoble,Evian-les-Bains,1928
+Stage 15,1928-07-08,Evian-les-Bains,Pontarlier,1928
+Stage 16,1928-07-09,Pontarlier,Belfort,1928
+Stage 17,1928-07-10,Belfort,Strasbourg,1928
+Stage 18,1928-07-11,Strasbourg,Metz,1928
+Stage 19,1928-07-12,Metz,Charleville-Mézières,1928
+Stage 20,1928-07-13,Charleville-Mézières,Malo,1928
+Stage 21,1928-07-14,Malo,Dieppe,1928
+Stage 22,1928-07-15,Dieppe,Paris,1928
+Stage 1,1929-06-30,Paris,Caen,1929
+Stage 2,1929-07-01,Caen,Cherbourg-en-Cotentin,1929
+Stage 3,1929-07-02,Cherbourg-en-Cotentin,Dinan,1929
+Stage 4,1929-07-03,Dinan,Brest,1929
+Stage 5,1929-07-04,Brest,Vannes,1929
+Stage 6,1929-07-05,Vannes,Les Sables,1929
+Stage 7,1929-07-06,Les Sables,Bordeaux,1929
+Stage 8,1929-07-07,Bordeaux,Bayonne,1929
+Stage 9,1929-07-09,Bayonne,Luchon,1929
+Stage 10,1929-07-11,Luchon,Perpignan,1929
+Stage 11,1929-07-13,Perpignan,Marseille,1929
+Stage 12,1929-07-15,Marseille,Cannes,1929
+Stage 13,1929-07-16,Cannes,Nice,1929
+Stage 14,1929-07-18,Nice,Grenoble,1929
+Stage 15,1929-07-20,Grenoble,Evian-les-Bains,1929
+Stage 16,1929-07-22,Evian-les-Bains,Belfort,1929
+Stage 17,1929-07-23,Belfort,Strasbourg,1929
+Stage 18,1929-07-24,Strasbourg,Metz,1929
+Stage 19,1929-07-25,Metz,Charleville-Mézières,1929
+Stage 20,1929-07-26,Charleville-Mézières,Malo,1929
+Stage 21,1929-07-27,Malo,Dieppe,1929
+Stage 22,1929-07-28,Dieppe,Paris,1929
+Stage 1,1930-07-02,Paris,Caen,1930
+Stage 2,1930-07-03,Caen,Dinan,1930
+Stage 3,1930-07-04,Dinan,Brest,1930
+Stage 4,1930-07-05,Brest,Vannes,1930
+Stage 5,1930-07-06,Vannes,Les Sables,1930
+Stage 6,1930-07-07,Les Sables,Bordeaux,1930
+Stage 7,1930-07-08,Bordeaux,Hendaye,1930
+Stage 8,1930-07-09,Hendaye,Pau,1930
+Stage 9,1930-07-10,Pau,Luchon,1930
+Stage 10,1930-07-12,Luchon,Perpignan,1930
+Stage 11,1930-07-14,Perpignan,Montpellier,1930
+Stage 12,1930-07-15,Montpellier,Marseille,1930
+Stage 13,1930-07-16,Marseille,Cannes,1930
+Stage 14,1930-07-17,Cannes,Nice,1930
+Stage 15,1930-07-19,Nice,Grenoble,1930
+Stage 16,1930-07-21,Grenoble,Evian-les-Bains,1930
+Stage 17,1930-07-23,Evian-les-Bains,Belfort,1930
+Stage 18,1930-07-24,Belfort,Metz,1930
+Stage 19,1930-07-25,Metz,Charleville-Mézières,1930
+Stage 20,1930-07-26,Charleville-Mézières,Malo,1930
+Stage 21,1930-07-27,Malo,Paris,1930
+Stage 1,1931-06-30,Paris,Caen,1931
+Stage 2,1931-07-01,Caen,Dinan,1931
+Stage 3,1931-07-02,Dinan,Brest,1931
+Stage 4,1931-07-03,Brest,Vannes,1931
+Stage 5,1931-07-04,Vannes,Les Sables,1931
+Stage 6,1931-07-05,Les Sables,Bordeaux,1931
+Stage 7,1931-07-06,Bordeaux,Bayonne,1931
+Stage 8,1931-07-07,Bayonne,Pau,1931
+Stage 9,1931-07-08,Pau,Luchon,1931
+Stage 10,1931-07-10,Luchon,Perpignan,1931
+Stage 11,1931-07-12,Perpignan,Montpellier,1931
+Stage 12,1931-07-13,Montpellier,Marseille,1931
+Stage 13,1931-07-14,Marseille,Cannes,1931
+Stage 14,1931-07-15,Cannes,Nice,1931
+Stage 15,1931-07-17,Nice,Gap,1931
+Stage 16,1931-07-18,Gap,Grenoble,1931
+Stage 17,1931-07-19,Grenoble,Aix-les-Bains,1931
+Stage 18,1931-07-20,Aix-les-Bains,Evian-les-Bains,1931
+Stage 19,1931-07-21,Evian-les-Bains,Belfort,1931
+Stage 20,1931-07-22,Belfort,Colmar,1931
+Stage 21,1931-07-23,Colmar,Metz,1931
+Stage 22,1931-07-24,Metz,Charleville-Mézières,1931
+Stage 23,1931-07-25,Charleville-Mézières,Malo,1931
+Stage 24,1931-07-26,Malo,Paris,1931
+Stage 1,1932-07-06,Paris,Caen,1932
+Stage 2,1932-07-07,Caen,Nantes,1932
+Stage 3,1932-07-09,Nantes,Bordeaux,1932
+Stage 4,1932-07-11,Bordeaux,Pau,1932
+Stage 5,1932-07-12,Pau,Luchon,1932
+Stage 6,1932-07-14,Luchon,Perpignan,1932
+Stage 7,1932-07-16,Perpignan,Montpellier,1932
+Stage 8,1932-07-17,Montpellier,Marseille,1932
+Stage 9,1932-07-18,Marseille,Cannes,1932
+Stage 10,1932-07-19,Cannes,Nice,1932
+Stage 11,1932-07-21,Nice,Gap,1932
+Stage 12,1932-07-22,Gap,Grenoble,1932
+Stage 13,1932-07-23,Grenoble,Aix-les-Bains,1932
+Stage 14,1932-07-24,Aix-les-Bains,Evian-les-Bains,1932
+Stage 15,1932-07-25,Evian-les-Bains,Belfort,1932
+Stage 16,1932-07-26,Belfort,Strasbourg,1932
+Stage 17,1932-07-27,Strasbourg,Metz,1932
+Stage 18,1932-07-28,Metz,Charleville-Mézières,1932
+Stage 19,1932-07-29,Charleville-Mézières,Malo,1932
+Stage 20,1932-07-30,Malo,Amiens,1932
+Stage 21,1932-07-31,Amiens,Paris,1932
+Stage 1,1933-06-27,Paris,Lille,1933
+Stage 2,1933-06-28,Lille,Charleville-Mézières,1933
+Stage 3,1933-06-29,Charleville-Mézières,Metz,1933
+Stage 4,1933-06-30,Metz,Belfort,1933
+Stage 5,1933-07-01,Belfort,Evian-les-Bains,1933
+Stage 6,1933-07-03,Evian-les-Bains,Aix-les-Bains,1933
+Stage 7,1933-07-04,Aix-les-Bains,Grenoble,1933
+Stage 8,1933-07-05,Grenoble,Gap,1933
+Stage 9,1933-07-06,Gap,Digne-les-Bains,1933
+Stage 10,1933-07-07,Digne-les-Bains,Nice,1933
+Stage 11,1933-07-09,Nice,Cannes,1933
+Stage 12,1933-07-10,Cannes,Marseille,1933
+Stage 13,1933-07-11,Marseille,Montpellier,1933
+Stage 14,1933-07-12,Montpellier,Perpignan,1933
+Stage 15,1933-07-14,Perpignan,Ax-les-Thermes,1933
+Stage 16,1933-07-15,Ax-les-Thermes,Luchon,1933
+Stage 17,1933-07-16,Luchon,Tarbes,1933
+Stage 18,1933-07-17,Tarbes,Pau,1933
+Stage 19,1933-07-19,Pau,Bordeaux,1933
+Stage 20,1933-07-20,Bordeaux,La Rochelle,1933
+Stage 21,1933-07-21,La Rochelle,Rennes,1933
+Stage 22,1933-07-22,Rennes,Caen,1933
+Stage 23,1933-07-23,Caen,Paris,1933
+Stage 1,1934-07-03,Paris,Lille,1934
+Stage 2,1934-07-04,Lille,Charleville-Mézières,1934
+Stage 3,1934-07-05,Charleville-Mézières,Metz,1934
+Stage 4,1934-07-06,Metz,Belfort,1934
+Stage 5,1934-07-07,Belfort,Evian-les-Bains,1934
+Stage 6,1934-07-09,Evian-les-Bains,Aix-les-Bains,1934
+Stage 7,1934-07-10,Aix-les-Bains,Grenoble,1934
+Stage 8,1934-07-11,Grenoble,Gap,1934
+Stage 9,1934-07-12,Gap,Digne-les-Bains,1934
+Stage 10,1934-07-13,Digne-les-Bains,Nice,1934
+Stage 11,1934-07-15,Nice,Cannes,1934
+Stage 12,1934-07-16,Cannes,Marseille,1934
+Stage 13,1934-07-17,Marseille,Montpellier,1934
+Stage 14,1934-07-18,Montpellier,Perpignan,1934
+Stage 15,1934-07-20,Perpignan,Ax-les-Thermes,1934
+Stage 16,1934-07-21,Ax-les-Thermes,Luchon,1934
+Stage 17,1934-07-22,Luchon,Tarbes,1934
+Stage 18,1934-07-23,Tarbes,Pau,1934
+Stage 19,1934-07-25,Pau,Bordeaux,1934
+Stage 20,1934-07-26,Bordeaux,La Rochelle,1934
+Stage 21.1,1934-07-27,La Rochelle,La Roche-sur-Yon,1934
+Stage 21.2,1934-07-27,La Roche-sur-Yon,Nantes,1934
+Stage 22,1934-07-28,Nantes,Caen,1934
+Stage 23,1934-07-29,Caen,Paris,1934
+Stage 1,1935-07-04,Paris,Lille,1935
+Stage 2,1935-07-05,Lille,Charleville-Mézières,1935
+Stage 3,1935-07-06,Charleville-Mézières,Metz,1935
+Stage 4,1935-07-07,Metz,Belfort,1935
+Stage 5.1,1935-07-08,Belfort,Genève,1935
+Stage 5.2,1935-07-08,Genève,Evian-les-Bains,1935
+Stage 6,1935-07-10,Evian-les-Bains,Aix-les-Bains,1935
+Stage 7,1935-07-11,Aix-les-Bains,Grenoble,1935
+Stage 8,1935-07-12,Grenoble,Gap,1935
+Stage 9,1935-07-13,Gap,Digne-les-Bains,1935
+Stage 10,1935-07-14,Digne-les-Bains,Nice,1935
+Stage 11,1935-07-16,Nice,Cannes,1935
+Stage 12,1935-07-17,Cannes,Marseille,1935
+Stage 13.1,1935-07-18,Marseille,Nimes,1935
+Stage 13.2,1935-07-18,Nimes,Montpellier,1935
+Stage 14.1,1935-07-19,Montpellier,Narbonne,1935
+Stage 14.2,1935-07-19,Narbonne,Perpignan,1935
+Stage 15,1935-07-20,Perpignan,Luchon,1935
+Stage 16,1935-07-22,Luchon,Pau,1935
+Stage 17,1935-07-24,Pau,Bordeaux,1935
+Stage 18.1,1935-07-25,Bordeaux,Rochefort,1935
+Stage 18.2,1935-07-25,Rochefort,La Rochelle,1935
+Stage 19.1,1935-07-26,La Rochelle,La Roche-sur-Yon,1935
+Stage 19.2,1935-07-26,La Roche-sur-Yon,Nantes,1935
+Stage 20.1,1935-07-27,Nantes,Vire,1935
+Stage 20.2,1935-07-27,Vire,Caen,1935
+Stage 21,1935-07-28,Caen,Paris,1935
+Stage 1,1936-07-07,Paris,Lille,1936
+Stage 2,1936-07-08,Lille,Charleville-Mézières,1936
+Stage 3,1936-07-09,Charleville-Mézières,Metz,1936
+Stage 4,1936-07-10,Metz,Belfort,1936
+Stage 5,1936-07-11,Belfort,Evian-les-Bains,1936
+Stage 6,1936-07-13,Evian-les-Bains,Aix-les-Bains,1936
+Stage 7,1936-07-14,Aix-les-Bains,Grenoble,1936
+Stage 8,1936-07-15,Grenoble,Briançon,1936
+Stage 9,1936-07-16,Briançon,Digne-les-Bains,1936
+Stage 10,1936-07-18,Digne-les-Bains,Nice,1936
+Stage 11,1936-07-19,Nice,Cannes,1936
+Stage 12,1936-07-21,Cannes,Marseille,1936
+Stage 13.1,1936-07-22,Marseille,Nimes,1936
+Stage 13.2,1936-07-22,Nimes,Montpellier,1936
+Stage 14.1,1936-07-23,Montpellier,Narbonne,1936
+Stage 14.2,1936-07-23,Narbonne,Perpignan,1936
+Stage 15,1936-07-25,Perpignan,Luchon,1936
+Stage 16,1936-07-27,Luchon,Pau,1936
+Stage 17,1936-07-29,Pau,Bordeaux,1936
+Stage 18.1,1936-07-30,Bordeaux,Saintes,1936
+Stage 18.2,1936-07-30,Saintes,La Rochelle,1936
+Stage 19.1,1936-07-31,La Rochelle,La Roche-sur-Yon,1936
+Stage 19.2,1936-07-31,La Roche-sur-Yon,Cholet,1936
+Stage 19.3,1936-07-31,Cholet,Angers,1936
+Stage 20.1,1936-08-01,Angers,Vire,1936
+Stage 20.2,1936-08-01,Vire,Caen,1936
+Stage 21,1936-08-02,Caen,Paris,1936
+Stage 1,1937-06-30,Paris,Lille,1937
+Stage 2,1937-07-01,Lille,Charleville-Mézières,1937
+Stage 3,1937-07-02,Charleville-Mézières,Metz,1937
+Stage 4,1937-07-03,Metz,Belfort,1937
+Stage 5.1,1937-07-04,Belfort,Lons-le-Saunier,1937
+Stage 5.2,1937-07-04,Lons-le-Saunier,Champagnole,1937
+Stage 5.3,1937-07-04,Champagnole,Genève,1937
+Stage 6,1937-07-06,Genève,Aix-les-Bains,1937
+Stage 7,1937-07-07,Aix-les-Bains,Grenoble,1937
+Stage 8,1937-07-08,Grenoble,Briançon,1937
+Stage 9,1937-07-09,Briançon,Digne-les-Bains,1937
+Stage 10,1937-07-11,Digne-les-Bains,Nice,1937
+Stage 11.1,1937-07-13,Nice,Toulon,1937
+Stage 11.2,1937-07-13,Toulon,Marseille,1937
+Stage 12.1,1937-07-14,Marseille,Nimes,1937
+Stage 12.2,1937-07-14,Nimes,Montpellier,1937
+Stage 13.1,1937-07-15,Montpellier,Narbonne,1937
+Stage 13.2,1937-07-15,Narbonne,Perpignan,1937
+Stage 14.1,1937-07-17,Perpignan,Bourg-Madame,1937
+Stage 14.2,1937-07-17,Bourg-Madame,Ax-les-Thermes,1937
+Stage 14.3,1937-07-17,Ax-les-Thermes,Luchon,1937
+Stage 15,1937-07-19,Luchon,Pau,1937
+Stage 16,1937-07-21,Pau,Bordeaux,1937
+Stage 17.1,1937-07-22,Bordeaux,Royan,1937
+Stage 17.2,1937-07-22,Royan,Saintes,1937
+Stage 17.3,1937-07-22,Saintes,La Rochelle,1937
+Stage 18.1,1937-07-23,La Rochelle,La Roche-sur-Yon,1937
+Stage 18.2,1937-07-23,La Roche-sur-Yon,Rennes,1937
+Stage 19.1,1937-07-24,Rennes,Vire,1937
+Stage 19.2,1937-07-24,Vire,Caen,1937
+Stage 20,1937-07-25,Caen,Paris,1937
+Stage 1,1938-07-05,Paris,Caen,1938
+Stage 2,1938-07-06,Caen,Saint-Brieuc,1938
+Stage 3,1938-07-07,Saint-Brieuc,Nantes,1938
+Stage 4.1,1938-07-08,Nantes,La Roche-sur-Yon,1938
+Stage 4.2,1938-07-08,La Roche-sur-Yon,La Rochelle,1938
+Stage 4.3,1938-07-08,La Rochelle,Royan,1938
+Stage 5,1938-07-10,Royan,Bordeaux,1938
+Stage 6.1,1938-07-11,Bordeaux,Arcachon,1938
+Stage 6.2,1938-07-11,Arcachon,Bayonne,1938
+Stage 7,1938-07-12,Bayonne,Pau,1938
+Stage 8,1938-07-14,Pau,Luchon,1938
+Stage 9,1938-07-16,Luchon,Perpignan,1938
+Stage 10.1,1938-07-17,Perpignan,Narbonne,1938
+Stage 10.2,1938-07-17,Narbonne,Béziers,1938
+Stage 10.3,1938-07-17,Béziers,Montpellier,1938
+Stage 11,1938-07-18,Montpellier,Marseille,1938
+Stage 12,1938-07-19,Marseille,Cannes,1938
+Stage 13,1938-07-21,Cannes,Digne-les-Bains,1938
+Stage 14,1938-07-22,Digne-les-Bains,Briançon,1938
+Stage 15,1938-07-23,Briançon,Aix-les-Bains,1938
+Stage 16,1938-07-25,Aix-les-Bains,Besançon,1938
+Stage 17.2,1938-07-26,Belfort,Strasbourg,1938
+Stage 17.1,1938-07-26,Besançon,Belfort,1938
+Stage 18,1938-07-27,Strasbourg,Metz,1938
+Stage 19,1938-07-28,Metz,Reims,1938
+Stage 20.1,1938-07-30,Reims,Laon,1938
+Stage 20.2,1938-07-30,Laon,St-Quentin,1938
+Stage 20.3,1938-07-30,St-Quentin,Lille,1938
+Stage 21,1938-07-31,Lille,Paris,1938
+Stage 1,1939-07-10,Paris,Caen,1939
+Stage 2.1,1939-07-11,Caen,Vire,1939
+Stage 2.2,1939-07-11,Vire,Rennes,1939
+Stage 3,1939-07-12,Rennes,Brest,1939
+Stage 4,1939-07-13,Brest,Lorient,1939
+Stage 5,1939-07-14,Lorient,Nantes,1939
+Stage 6.1,1939-07-15,Nantes,La Rochelle,1939
+Stage 6.2,1939-07-15,La Rochelle,Royan,1939
+Stage 7,1939-07-17,Royan,Bordeaux,1939
+Stage 8.1,1939-07-18,Bordeaux,Salies-de-Béarn,1939
+Stage 8.2,1939-07-18,Salies-de-Béarn,Pau,1939
+Stage 9,1939-07-19,Pau,Toulouse,1939
+Stage 10.1,1939-07-21,Toulouse,Narbonne,1939
+Stage 10.2,1939-07-21,Narbonne,Béziers,1939
+Stage 10.3,1939-07-21,Béziers,Montpellier,1939
+Stage 11,1939-07-22,Montpellier,Marseille,1939
+Stage 12.1,1939-07-23,Marseille,Saint-Raphaël,1939
+Stage 12.2,1939-07-23,Saint-Raphaël,Monaco,1939
+Stage 13,1939-07-24,Monaco,Monaco,1939
+Stage 14,1939-07-25,Monaco,Digne-les-Bains,1939
+Stage 15,1939-07-26,Digne-les-Bains,Briançon,1939
+Stage 16.1,1939-07-27,Briançon,Bonneval-sur-Arc,1939
+Stage 16.2,1939-07-27,Bonneval-sur-Arc,Bourg Saint Maurice,1939
+Stage 16.3,1939-07-27,Bourg Saint Maurice,Annecy,1939
+Stage 17.1,1939-07-29,Annecy,Dole,1939
+Stage 17.2,1939-07-29,Dole,Dijon,1939
+Stage 18.1,1939-07-30,Dijon,Troyes,1939
+Stage 18.2,1939-07-30,Troyes,Paris,1939
+Stage 1,1947-06-25,Paris,Lille,1947
+Stage 2,1947-06-26,Lille,Bruxelles,1947
+Stage 3,1947-06-27,Bruxelles,Luxembourg,1947
+Stage 4,1947-06-28,Luxembourg,Strasbourg,1947
+Stage 5,1947-06-29,Strasbourg,Besançon,1947
+Stage 6,1947-07-01,Besançon,Lyon,1947
+Stage 7,1947-07-02,Lyon,Grenoble,1947
+Stage 8,1947-07-03,Grenoble,Briançon,1947
+Stage 9,1947-07-05,Briançon,Digne-les-Bains,1947
+Stage 10,1947-07-06,Digne-les-Bains,Nice,1947
+Stage 11,1947-07-08,Nice,Marseille,1947
+Stage 12,1947-07-09,Marseille,Montpellier,1947
+Stage 13,1947-07-10,Montpellier,Carcassonne,1947
+Stage 14,1947-07-11,Carcassonne,Luchon,1947
+Stage 15,1947-07-13,Luchon,Pau,1947
+Stage 16,1947-07-14,Pau,Bordeaux,1947
+Stage 17,1947-07-15,Bordeaux,Les Sables,1947
+Stage 18,1947-07-16,Les Sables,Nantes,1947
+Stage 19,1947-07-18,Vannes,Saint-Brieuc,1947
+Stage 20,1947-07-19,Saint-Brieuc,Caen,1947
+Stage 21,1947-07-20,Caen,Paris,1947
+Stage 1,1948-06-30,Paris,Trouville,1948
+Stage 2,1948-07-01,Trouville,Dinard,1948
+Stage 3,1948-07-02,Dinard,Nantes,1948
+Stage 4,1948-07-03,Nantes,La Rochelle,1948
+Stage 5,1948-07-04,La Rochelle,Bordeaux,1948
+Stage 6,1948-07-05,Bordeaux,Biarritz,1948
+Stage 7,1948-07-07,Biarritz,Lourdes,1948
+Stage 8,1948-07-08,Lourdes,Toulouse,1948
+Stage 9,1948-07-10,Toulouse,Montpellier,1948
+Stage 10,1948-07-11,Montpellier,Marseille,1948
+Stage 11,1948-07-12,Marseille,San Remo,1948
+Stage 12,1948-07-13,San Remo,Cannes,1948
+Stage 13,1948-07-15,Cannes,Briançon,1948
+Stage 14,1948-07-16,Briançon,Aix-les-Bains,1948
+Stage 15,1948-07-18,Aix-les-Bains,Lausanne,1948
+Stage 16,1948-07-19,Lausanne,Mulhouse,1948
+Stage 17,1948-07-21,Mulhouse,Strasbourg,1948
+Stage 18,1948-07-22,Strasbourg,Metz,1948
+Stage 19,1948-07-23,Metz,Liège,1948
+Stage 20,1948-07-24,Liège,Roubaix,1948
+Stage 21,1948-07-25,Roubaix,Paris,1948
+Stage 1,1949-06-30,Paris,Reims,1949
+Stage 2,1949-07-01,Reims,Bruxelles,1949
+Stage 3,1949-07-02,Bruxelles,Boulogne-sur-Mer,1949
+Stage 4,1949-07-03,Boulogne-sur-Mer,Rouen,1949
+Stage 5,1949-07-04,Rouen,Saint-Malo,1949
+Stage 6,1949-07-05,Saint-Malo,Les Sables,1949
+Stage 7,1949-07-07,Les Sables,La Rochelle,1949
+Stage 8,1949-07-08,La Rochelle,Bordeaux,1949
+Stage 9,1949-07-09,Bordeaux,Saint-Sébastien,1949
+Stage 10,1949-07-10,Saint-Sébastien,Pau,1949
+Stage 11,1949-07-12,Pau,Luchon,1949
+Stage 12,1949-07-13,Luchon,Toulouse,1949
+Stage 13,1949-07-14,Toulouse,Nimes,1949
+Stage 14,1949-07-15,Nimes,Marseille,1949
+Stage 15,1949-07-16,Marseille,Cannes,1949
+Stage 16,1949-07-18,Cannes,Briançon,1949
+Stage 17,1949-07-19,Briançon,Aoste,1949
+Stage 18,1949-07-21,Aoste,Lausanne,1949
+Stage 19,1949-07-22,Lausanne,Colmar,1949
+Stage 20,1949-07-23,Colmar,Nancy,1949
+Stage 21,1949-07-24,Nancy,Paris,1949
+Stage 1,1950-07-13,Paris,Metz,1950
+Stage 2,1950-07-14,Metz,Liège,1950
+Stage 3,1950-07-15,Liège,Lille,1950
+Stage 4,1950-07-16,Lille,Rouen,1950
+Stage 5,1950-07-17,Rouen,Dinard,1950
+Stage 6,1950-07-19,Dinard,Saint-Brieuc,1950
+Stage 7,1950-07-20,Saint-Brieuc,Angers,1950
+Stage 8,1950-07-21,Angers,Niort,1950
+Stage 9,1950-07-22,Niort,Bordeaux,1950
+Stage 10,1950-07-23,Bordeaux,Pau,1950
+Stage 11,1950-07-25,Pau,Saint Gaudens,1950
+Stage 12,1950-07-26,Saint Gaudens,Perpignan,1950
+Stage 13,1950-07-27,Perpignan,Nimes,1950
+Stage 14,1950-07-28,Nimes,Toulon,1950
+Stage 15,1950-07-29,Toulon,Menton,1950
+Stage 16,1950-07-30,Menton,Nice,1950
+Stage 17,1950-08-01,Nice,Gap,1950
+Stage 18,1950-08-02,Gap,Briançon,1950
+Stage 19,1950-08-03,Briançon,Saint-Etienne,1950
+Stage 20,1950-08-05,Saint-Etienne,Lyon,1950
+Stage 21,1950-08-06,Lyon,Dijon,1950
+Stage 22,1950-08-07,Dijon,Paris,1950
+Stage 1,1951-07-04,Metz,Reims,1951
+Stage 2,1951-07-05,Reims,Gand,1951
+Stage 3,1951-07-06,Gand,Le Tréport,1951
+Stage 4,1951-07-07,Le Tréport,Paris,1951
+Stage 5,1951-07-08,Paris,Caen,1951
+Stage 6,1951-07-09,Caen,Rennes,1951
+Stage 7,1951-07-10,La Guerche,Angers,1951
+Stage 8,1951-07-11,Angers,Limoges,1951
+Stage 9,1951-07-13,Limoges,Clermont-Ferrand,1951
+Stage 10,1951-07-14,Clermont-Ferrand,Brive-la-Gaillarde,1951
+Stage 11,1951-07-15,Brive-la-Gaillarde,Agen,1951
+Stage 12,1951-07-16,Agen,Dax,1951
+Stage 13,1951-07-17,Dax,Tarbes,1951
+Stage 14,1951-07-18,Tarbes,Luchon,1951
+Stage 15,1951-07-19,Luchon,Carcassonne,1951
+Stage 16,1951-07-20,Carcassonne,Montpellier,1951
+Stage 17,1951-07-22,Montpellier,Avignon,1951
+Stage 18,1951-07-23,Avignon,Marseille,1951
+Stage 19,1951-07-24,Marseille,Gap,1951
+Stage 20,1951-07-25,Gap,Briançon,1951
+Stage 21,1951-07-26,Briançon,Aix-les-Bains,1951
+Stage 22,1951-07-27,Aix-les-Bains,Genève,1951
+Stage 23,1951-07-28,Genève,Dijon,1951
+Stage 24,1951-07-29,Dijon,Paris,1951
+Stage 1,1952-06-25,Brest,Rennes,1952
+Stage 2,1952-06-26,Rennes,Le Mans,1952
+Stage 3,1952-06-27,Le Mans,Rouen,1952
+Stage 4,1952-06-28,Rouen,Roubaix,1952
+Stage 5,1952-06-29,Roubaix,Namur,1952
+Stage 6,1952-06-30,Namur,Metz,1952
+Stage 7,1952-07-01,Metz,Nancy,1952
+Stage 8,1952-07-02,Nancy,Mulhouse,1952
+Stage 9,1952-07-03,Mulhouse,Lausanne,1952
+Stage 10,1952-07-04,Lausanne,Alpe d'Huez,1952
+Stage 11,1952-07-06,Bourg-d'Oisans,Sestrières,1952
+Stage 12,1952-07-07,Sestrières,Monaco,1952
+Stage 13,1952-07-08,Monaco,Aix en Provence,1952
+Stage 14,1952-07-09,Aix en Provence,Avignon,1952
+Stage 15,1952-07-10,Avignon,Perpignan,1952
+Stage 16,1952-07-11,Perpignan,Toulouse,1952
+Stage 17,1952-07-13,Toulouse,Bagnères-de-Bigorre,1952
+Stage 18,1952-07-14,Bagnères-de-Bigorre,Pau,1952
+Stage 19,1952-07-15,Pau,Bordeaux,1952
+Stage 20,1952-07-16,Bordeaux,Limoges,1952
+Stage 21,1952-07-17,Limoges,Puy de Dôme,1952
+Stage 22,1952-07-18,Puy de Dôme,Vichy,1952
+Stage 23,1952-07-19,Vichy,Paris,1952
+Stage 1,1953-07-03,Strasbourg,Metz,1953
+Stage 2,1953-07-04,Metz,Liège,1953
+Stage 3,1953-07-05,Liège,Lille,1953
+Stage 4,1953-07-06,Lille,Dieppe,1953
+Stage 5,1953-07-07,Dieppe,Caen,1953
+Stage 6,1953-07-08,Caen,Le Mans,1953
+Stage 7,1953-07-09,Le Mans,Nantes,1953
+Stage 8,1953-07-10,Nantes,Bordeaux,1953
+Stage 9,1953-07-12,Bordeaux,Pau,1953
+Stage 10,1953-07-13,Pau,Cauterets,1953
+Stage 11,1953-07-14,Cauterets,Luchon,1953
+Stage 12,1953-07-15,Luchon,Albi,1953
+Stage 13,1953-07-16,Albi,Béziers,1953
+Stage 14,1953-07-17,Béziers,Nimes,1953
+Stage 15,1953-07-18,Nimes,Marseille,1953
+Stage 16,1953-07-19,Marseille,Monaco,1953
+Stage 17,1953-07-21,Monaco,Gap,1953
+Stage 18,1953-07-22,Gap,Briançon,1953
+Stage 19,1953-07-23,Briançon,Lyon,1953
+Stage 20,1953-07-24,Lyon,Saint-Etienne,1953
+Stage 21,1953-07-25,Saint-Etienne,Montluçon,1953
+Stage 22,1953-07-26,Montluçon,Paris,1953
+Stage 1,1954-07-08,Amsterdam,Anvers Brasschaat,1954
+Stage 2,1954-07-09,Anvers Brasschaat,Lille,1954
+Stage 3,1954-07-10,Lille,Rouen,1954
+Stage 4.1,1954-07-11,Rouen,Les Essarts,1954
+Stage 4.2,1954-07-11,Les Essarts,Caen,1954
+Stage 5,1954-07-12,Caen,Saint-Brieuc,1954
+Stage 6,1954-07-13,Saint-Brieuc,Brest,1954
+Stage 7,1954-07-14,Brest,Vannes,1954
+Stage 8,1954-07-15,Vannes,Angers,1954
+Stage 9,1954-07-16,Angers,Bordeaux,1954
+Stage 10,1954-07-18,Bordeaux,Bayonne,1954
+Stage 11,1954-07-19,Bayonne,Pau,1954
+Stage 12,1954-07-20,Pau,Luchon,1954
+Stage 13,1954-07-21,Luchon,Toulouse,1954
+Stage 14,1954-07-22,Toulouse,Millau,1954
+Stage 15,1954-07-23,Millau,Le Puy en Velay,1954
+Stage 16,1954-07-24,Le Puy en Velay,Lyon,1954
+Stage 17,1954-07-26,Lyon,Grenoble,1954
+Stage 18,1954-07-27,Grenoble,Briançon,1954
+Stage 19,1954-07-28,Briançon,Aix-les-Bains,1954
+Stage 20,1954-07-29,Aix-les-Bains,Besançon,1954
+Stage 21.1,1954-07-30,Besançon,Epinal,1954
+Stage 21.2,1954-07-30,Epinal,Nancy,1954
+Stage 22,1954-07-31,Nancy,Troyes,1954
+Stage 23,1954-08-01,Troyes,Paris,1954
+Stage 1.1,1955-07-07,Le Havre,Dieppe,1955
+Stage 1.2,1955-07-07,Dieppe,Dieppe,1955
+Stage 2,1955-07-08,Dieppe,Roubaix,1955
+Stage 3,1955-07-09,Roubaix,Namur,1955
+Stage 4,1955-07-10,Namur,Metz,1955
+Stage 5,1955-07-11,Metz,Colmar,1955
+Stage 6,1955-07-12,Colmar,Zurich,1955
+Stage 7,1955-07-13,Zurich,Thonon,1955
+Stage 8,1955-07-14,Thonon,Briançon,1955
+Stage 9,1955-07-15,Briançon,Monaco,1955
+Stage 10,1955-07-17,Monaco,Marseille,1955
+Stage 11,1955-07-18,Marseille,Avignon,1955
+Stage 12,1955-07-19,Avignon,Millau,1955
+Stage 13,1955-07-20,Millau,Albi,1955
+Stage 14,1955-07-21,Albi,Narbonne,1955
+Stage 15,1955-07-22,Narbonne,Ax-les-Thermes,1955
+Stage 16,1955-07-24,Ax-les-Thermes,Toulouse,1955
+Stage 17,1955-07-25,Toulouse,Saint Gaudens,1955
+Stage 18,1955-07-26,Saint Gaudens,Pau,1955
+Stage 19,1955-07-27,Pau,Bordeaux,1955
+Stage 20,1955-07-28,Bordeaux,Poitiers,1955
+Stage 21,1955-07-29,Châtellerault,Tours,1955
+Stage 22,1955-07-30,Tours,Paris,1955
+Stage 1,1956-07-05,Reims,Liège,1956
+Stage 2,1956-07-06,Liège,Lille,1956
+Stage 3.1,1956-07-07,Lille,Rouen,1956
+Stage 3.2,1956-07-07,Les Essarts,Les Essarts,1956
+Stage 4,1956-07-08,Rouen,Caen,1956
+Stage 5,1956-07-09,Caen,Saint-Malo,1956
+Stage 6,1956-07-10,Saint-Malo,Lorient,1956
+Stage 7,1956-07-11,Lorient,Angers,1956
+Stage 8,1956-07-12,Angers,La Rochelle,1956
+Stage 9,1956-07-13,La Rochelle,Bordeaux,1956
+Stage 10,1956-07-15,Bordeaux,Bayonne,1956
+Stage 11,1956-07-16,Bayonne,Pau,1956
+Stage 12,1956-07-17,Pau,Luchon,1956
+Stage 13,1956-07-18,Luchon,Toulouse,1956
+Stage 14,1956-07-19,Toulouse,Montpellier,1956
+Stage 15,1956-07-20,Montpellier,Aix en Provence,1956
+Stage 16,1956-07-22,Aix en Provence,Gap,1956
+Stage 17,1956-07-23,Gap,Turin,1956
+Stage 18,1956-07-24,Turin,Grenoble,1956
+Stage 19,1956-07-25,Grenoble,Saint-Etienne,1956
+Stage 20,1956-07-26,Saint-Etienne,Lyon,1956
+Stage 21,1956-07-27,Lyon,Montluçon,1956
+Stage 22,1956-07-28,Montluçon,Paris,1956
+Stage 1,1957-06-27,Nantes,Granville,1957
+Stage 2,1957-06-28,Granville,Caen,1957
+Stage 3.1,1957-06-29,Caen,Caen,1957
+Stage 3.2,1957-06-29,Caen,Rouen,1957
+Stage 4,1957-06-30,Rouen,Roubaix,1957
+Stage 5,1957-07-01,Roubaix,Charleroi,1957
+Stage 6,1957-07-02,Charleroi,Metz,1957
+Stage 7,1957-07-03,Metz,Colmar,1957
+Stage 8,1957-07-04,Colmar,Besançon,1957
+Stage 9,1957-07-05,Besançon,Thonon,1957
+Stage 10,1957-07-07,Thonon,Briançon,1957
+Stage 11,1957-07-08,Briançon,Cannes,1957
+Stage 12,1957-07-09,Cannes,Marseille,1957
+Stage 13,1957-07-10,Marseille,Alès,1957
+Stage 14,1957-07-11,Alès,Perpignan,1957
+Stage 15.1,1957-07-12,Perpignan,Barcelone,1957
+Stage 15.2,1957-07-12,Barcelone,Barcelone,1957
+Stage 16,1957-07-14,Barcelone,Ax-les-Thermes,1957
+Stage 17,1957-07-15,Ax-les-Thermes,Saint Gaudens,1957
+Stage 18,1957-07-16,Saint Gaudens,Pau,1957
+Stage 19,1957-07-17,Pau,Bordeaux,1957
+Stage 20,1957-07-18,Bordeaux,Libourne,1957
+Stage 21,1957-07-19,Libourne,Tours,1957
+Stage 22,1957-07-20,Tours,Paris,1957
+Stage 1,1958-06-26,Bruxelles,Gand,1958
+Stage 2,1958-06-27,Gand,Dunkerque,1958
+Stage 3,1958-06-28,Dunkerque,Le Tréport,1958
+Stage 4,1958-06-29,Le Tréport,Versailles,1958
+Stage 5,1958-06-30,Versailles,Caen,1958
+Stage 6,1958-07-01,Caen,Saint-Brieuc,1958
+Stage 7,1958-07-02,Saint-Brieuc,Brest,1958
+Stage 8,1958-07-03,Chateaulin,Chateaulin,1958
+Stage 9,1958-07-04,Quimper,Saint Nazaire,1958
+Stage 10,1958-07-05,Saint Nazaire,Royan,1958
+Stage 11,1958-07-06,Royan,Bordeaux,1958
+Stage 12,1958-07-07,Bordeaux,Dax,1958
+Stage 13,1958-07-08,Dax,Pau,1958
+Stage 14,1958-07-09,Pau,Luchon,1958
+Stage 15,1958-07-10,Luchon,Toulouse,1958
+Stage 16,1958-07-11,Toulouse,Béziers,1958
+Stage 17,1958-07-12,Béziers,Nimes,1958
+Stage 18,1958-07-13,Mont Ventoux,Mont Ventoux,1958
+Stage 19,1958-07-14,Carpentras,Gap,1958
+Stage 20,1958-07-15,Gap,Briançon,1958
+Stage 21,1958-07-16,Briançon,Aix-les-Bains,1958
+Stage 22,1958-07-17,Aix-les-Bains,Besançon,1958
+Stage 23,1958-07-18,Besançon,Dijon,1958
+Stage 24,1958-07-19,Dijon,Paris,1958
+Stage 1,1959-06-25,Mulhouse,Metz,1959
+Stage 2,1959-06-26,Metz,Namur,1959
+Stage 3,1959-06-27,Namur,Roubaix,1959
+Stage 4,1959-06-28,Roubaix,Rouen,1959
+Stage 5,1959-06-29,Rouen,Rennes,1959
+Stage 6,1959-06-30,Blain,Nantes,1959
+Stage 7,1959-07-01,Nantes,La Rochelle,1959
+Stage 8,1959-07-02,La Rochelle,Bordeaux,1959
+Stage 9,1959-07-03,Bordeaux,Bayonne,1959
+Stage 10,1959-07-05,Bayonne,Bagnères-de-Bigorre,1959
+Stage 11,1959-07-06,Bagnères-de-Bigorre,Saint Gaudens,1959
+Stage 12,1959-07-07,Saint Gaudens,Albi,1959
+Stage 13,1959-07-08,Albi,Aurillac,1959
+Stage 14,1959-07-09,Aurillac,Clermont-Ferrand,1959
+Stage 15,1959-07-10,Clermont-Ferrand,Puy de Dôme,1959
+Stage 16,1959-07-11,Clermont-Ferrand,Saint-Etienne,1959
+Stage 17,1959-07-13,Saint-Etienne,Grenoble,1959
+Stage 18,1959-07-14,Grenoble,Saint-Vincent d'Aoste,1959
+Stage 19,1959-07-15,Saint-Vincent d'Aoste,Annecy,1959
+Stage 20,1959-07-16,Annecy,Chalon-sur-Saône,1959
+Stage 21,1959-07-17,Seurre,Dijon,1959
+Stage 22,1959-07-18,Dijon,Paris,1959
+Stage 1.1,1960-06-26,Lille,Bruxelles,1960
+Stage 1.2,1960-06-26,Bruxelles,Bruxelles,1960
+Stage 2,1960-06-27,Bruxelles,Dunkerque,1960
+Stage 3,1960-06-28,Dunkerque,Dieppe,1960
+Stage 4,1960-06-29,Dieppe,Caen,1960
+Stage 5,1960-06-30,Caen,Saint-Malo,1960
+Stage 6,1960-07-01,Saint-Malo,Lorient,1960
+Stage 7,1960-07-02,Lorient,Angers,1960
+Stage 8,1960-07-03,Angers,Limoges,1960
+Stage 9,1960-07-04,Limoges,Bordeaux,1960
+Stage 10,1960-07-05,Mont de Marsan,Pau,1960
+Stage 11,1960-07-06,Pau,Luchon,1960
+Stage 12,1960-07-07,Luchon,Toulouse,1960
+Stage 13,1960-07-08,Toulouse,Millau,1960
+Stage 14,1960-07-10,Millau,Avignon,1960
+Stage 15,1960-07-11,Avignon,Gap,1960
+Stage 16,1960-07-12,Gap,Briançon,1960
+Stage 17,1960-07-13,Briançon,Aix-les-Bains,1960
+Stage 18,1960-07-14,Aix-les-Bains,Thonon,1960
+Stage 19,1960-07-15,Pontarlier,Besançon,1960
+Stage 20,1960-07-16,Besançon,Troyes,1960
+Stage 21,1960-07-17,Troyes,Paris,1960
+Stage 1.1,1961-06-25,Rouen,Versailles,1961
+Stage 1.2,1961-06-25,Versailles,Versailles,1961
+Stage 2,1961-06-26,Pontoise,Roubaix,1961
+Stage 3,1961-06-27,Roubaix,Charleroi,1961
+Stage 4,1961-06-28,Charleroi,Metz,1961
+Stage 5,1961-06-29,Metz,Strasbourg,1961
+Stage 6,1961-06-30,Strasbourg,Belfort,1961
+Stage 7,1961-07-01,Belfort,Chalon-sur-Saône,1961
+Stage 8,1961-07-02,Chalon-sur-Saône,Saint-Etienne,1961
+Stage 9,1961-07-03,Saint-Etienne,Grenoble,1961
+Stage 10,1961-07-04,Grenoble,Turin,1961
+Stage 11,1961-07-05,Turin,Antibes,1961
+Stage 12,1961-07-06,Antibes,Aix en Provence,1961
+Stage 13,1961-07-07,Aix en Provence,Montpellier,1961
+Stage 14,1961-07-09,Montpellier,Perpignan,1961
+Stage 15,1961-07-10,Perpignan,Toulouse,1961
+Stage 16,1961-07-11,Toulouse,Superbagnères,1961
+Stage 17,1961-07-12,Luchon,Pau,1961
+Stage 18,1961-07-13,Pau,Bordeaux,1961
+Stage 19,1961-07-14,Bergerac,Périgueux,1961
+Stage 20,1961-07-15,Périgueux,Tours,1961
+Stage 21,1961-07-16,Tours,Paris,1961
+Stage 1,1962-06-24,Nancy,Spa,1962
+Stage 2.1,1962-06-25,Spa,Herenthals,1962
+Stage 2.2,1962-06-25,Herenthals,Herenthals,1962
+Stage 3,1962-06-26,Bruxelles,Amiens,1962
+Stage 4,1962-06-27,Amiens,Le Havre,1962
+Stage 5,1962-06-28,Pont l'Evêque,Saint-Malo,1962
+Stage 6,1962-06-29,Dinard,Brest,1962
+Stage 7,1962-06-30,Quimper,Saint Nazaire,1962
+Stage 8.1,1962-07-01,Saint Nazaire,Luçon,1962
+Stage 8.2,1962-07-01,Luçon,La Rochelle,1962
+Stage 9,1962-07-02,La Rochelle,Bordeaux,1962
+Stage 10,1962-07-03,Bordeaux,Bayonne,1962
+Stage 11,1962-07-04,Bayonne,Pau,1962
+Stage 12,1962-07-05,Pau,Saint Gaudens,1962
+Stage 13,1962-07-06,Luchon,Superbagnères,1962
+Stage 14,1962-07-07,Luchon,Carcassonne,1962
+Stage 15,1962-07-08,Carcassonne,Montpellier,1962
+Stage 16,1962-07-09,Montpellier,Aix en Provence,1962
+Stage 17,1962-07-10,Aix en Provence,Antibes,1962
+Stage 18,1962-07-11,Antibes,Briançon,1962
+Stage 19,1962-07-12,Briançon,Aix-les-Bains,1962
+Stage 20,1962-07-13,Bourgoin,Lyon,1962
+Stage 21,1962-07-14,Lyon,Nevers,1962
+Stage 22,1962-07-15,Nevers,Paris,1962
+Stage 1,1963-06-23,Paris,Épernay,1963
+Stage 2.1,1963-06-24,Reims,Jambes,1963
+Stage 2.2,1963-06-24,Jambes,Jambes,1963
+Stage 3,1963-06-25,Jambes,Roubaix,1963
+Stage 4,1963-06-26,Roubaix,Rouen,1963
+Stage 5,1963-06-27,Rouen,Rennes,1963
+Stage 6.1,1963-06-28,Rennes,Angers,1963
+Stage 6.2,1963-06-28,Angers,Angers,1963
+Stage 7,1963-06-29,Angers,Limoges,1963
+Stage 8,1963-06-30,Limoges,Bordeaux,1963
+Stage 9,1963-07-01,Bordeaux,Pau,1963
+Stage 10,1963-07-02,Pau,Bagnères-de-Bigorre,1963
+Stage 11,1963-07-03,Bagnères-de-Bigorre,Luchon,1963
+Stage 12,1963-07-04,Luchon,Toulouse,1963
+Stage 13,1963-07-06,Toulouse,Aurillac,1963
+Stage 14,1963-07-07,Aurillac,Saint-Etienne,1963
+Stage 15,1963-07-08,Saint-Etienne,Grenoble,1963
+Stage 16,1963-07-09,Grenoble,val_d_isere,1963
+Stage 17,1963-07-10,val_d_isere,Chamonix,1963
+Stage 18,1963-07-11,Chamonix,Lons-le-Saunier,1963
+Stage 19,1963-07-12,Arbois,Besançon,1963
+Stage 20,1963-07-13,Besançon,Troyes,1963
+Stage 21,1963-07-14,Troyes,Paris,1963
+Stage 1,1964-06-22,Rennes,Lisieux,1964
+Stage 2,1964-06-23,Lisieux,Amiens,1964
+Stage 3.1,1964-06-24,Amiens,Forest,1964
+Stage 3.2,1964-06-24,Forest,Forest,1964
+Stage 4,1964-06-25,Forest,Metz,1964
+Stage 5,1964-06-26,Lunéville,Fribourg,1964
+Stage 6,1964-06-27,Fribourg,Besançon,1964
+Stage 7,1964-06-28,Champagnole,Thonon,1964
+Stage 8,1964-06-29,Thonon,Briançon,1964
+Stage 9,1964-06-30,Briançon,Monaco,1964
+Stage 10.1,1964-07-01,Monaco,Hyères,1964
+Stage 10.2,1964-07-01,Hyères,Toulon,1964
+Stage 11,1964-07-02,Toulon,Montpellier,1964
+Stage 12,1964-07-03,Montpellier,Perpignan,1964
+Stage 13,1964-07-04,Perpignan,Andorre,1964
+Stage 14,1964-07-06,Andorre,Toulouse,1964
+Stage 15,1964-07-07,Toulouse,Luchon,1964
+Stage 16,1964-07-08,Luchon,Pau,1964
+Stage 17,1964-07-09,Peyrehorade,Bayonne,1964
+Stage 18,1964-07-10,Bayonne,Bordeaux,1964
+Stage 19,1964-07-11,Bordeaux,Brive-la-Gaillarde,1964
+Stage 20,1964-07-12,Brive-la-Gaillarde,Puy de Dôme,1964
+Stage 21,1964-07-13,Clermont-Ferrand,Orléans,1964
+Stage 22.1,1964-07-14,Orléans,Versailles,1964
+Stage 22.2,1964-07-14,Versailles,Paris,1964
+Stage 1.1,1965-06-22,Cologne,Liège,1965
+Stage 1.2,1965-06-22,Liège,Liège,1965
+Stage 2,1965-06-23,Liège,Roubaix,1965
+Stage 3,1965-06-24,Roubaix,Rouen,1965
+Stage 4,1965-06-25,Caen,Saint-Brieuc,1965
+Stage 5.1,1965-06-26,Saint-Brieuc,Chateaulin,1965
+Stage 5.2,1965-06-26,Chateaulin,Chateaulin,1965
+Stage 6,1965-06-27,Quimper,La Baule,1965
+Stage 7,1965-06-28,La Baule,La Rochelle,1965
+Stage 8,1965-06-29,La Rochelle,Bordeaux,1965
+Stage 9,1965-06-30,Dax,Bagnères-de-Bigorre,1965
+Stage 10,1965-07-01,Bagnères-de-Bigorre,Ax-les-Thermes,1965
+Stage 11,1965-07-02,Ax-les-Thermes,Barcelone,1965
+Stage 12,1965-07-04,Barcelone,Perpignan,1965
+Stage 16,1965-07-04,Gap,Briançon,1965
+Stage 13,1965-07-05,Perpignan,Montpellier,1965
+Stage 14,1965-07-06,Montpellier,Mont Ventoux,1965
+Stage 15,1965-07-07,Carpentras,Gap,1965
+Stage 17,1965-07-09,Briançon,Aix-les-Bains,1965
+Stage 18,1965-07-10,Aix-les-Bains,Mont Revard,1965
+Stage 19,1965-07-11,Mont Revard,Lyon,1965
+Stage 20,1965-07-12,Lyon,Auxerre,1965
+Stage 21,1965-07-13,Auxerre,Versailles,1965
+Stage 22,1965-07-14,Versailles,Paris,1965
+Stage 1,1966-06-21,Nancy,Charleville-Mézières,1966
+Stage 2,1966-06-22,Charleville-Mézières,Tournai,1966
+Stage 3.1,1966-06-23,Tournai,Tournai,1966
+Stage 3.2,1966-06-23,Tournai,Dunkerque,1966
+Stage 4,1966-06-24,Dunkerque,Dieppe,1966
+Stage 5,1966-06-25,Dieppe,Caen,1966
+Stage 6,1966-06-26,Caen,Angers,1966
+Stage 7,1966-06-27,Angers,Royan,1966
+Stage 8,1966-06-28,Royan,Bordeaux,1966
+Stage 9,1966-06-29,Bordeaux,Bayonne,1966
+Stage 10,1966-06-30,Bayonne,Pau,1966
+Stage 11,1966-07-01,Pau,Luchon,1966
+Stage 12,1966-07-03,Luchon,Revel,1966
+Stage 13,1966-07-04,Revel,Sète,1966
+Stage 14.1,1966-07-05,Montpellier,Aubenas,1966
+Stage 14.2,1966-07-05,Aubenas,Vals-les-Bains,1966
+Stage 15,1966-07-06,Privas,Bourg-d'Oisans,1966
+Stage 16,1966-07-07,Bourg-d'Oisans,Briançon,1966
+Stage 17,1966-07-08,Briançon,Turin,1966
+Stage 18,1966-07-10,Ivrea,Chamonix,1966
+Stage 19,1966-07-11,Chamonix,Saint-Etienne,1966
+Stage 20,1966-07-12,Saint-Etienne,Montluçon,1966
+Stage 21,1966-07-13,Montluçon,Orléans,1966
+Stage 22.1,1966-07-14,Orléans,Rambouillet,1966
+Stage 22.2,1966-07-14,Rambouillet,Paris,1966
+Prologue,1967-06-29,Angers,Angers,1967
+Stage 1,1967-06-30,Angers,Saint-Malo,1967
+Stage 2,1967-07-01,Saint-Malo,Caen,1967
+Stage 3,1967-07-02,Caen,Amiens,1967
+Stage 4,1967-07-03,Amiens,Roubaix,1967
+Stage 5.1,1967-07-04,Roubaix,Jambes,1967
+Stage 5.2,1967-07-04,Jambes,Jambes,1967
+Stage 6,1967-07-05,Jambes,Metz,1967
+Stage 7,1967-07-06,Metz,Strasbourg,1967
+Stage 8,1967-07-07,Strasbourg,Ballon d'Alsace,1967
+Stage 9,1967-07-09,Belfort,Divonne,1967
+Stage 10,1967-07-10,Divonne,Briançon,1967
+Stage 11,1967-07-11,Briançon,Digne-les-Bains,1967
+Stage 12,1967-07-12,Digne-les-Bains,Marseille,1967
+Stage 13,1967-07-13,Marseille,Carpentras,1967
+Stage 14,1967-07-14,Carpentras,Sète,1967
+Stage 15,1967-07-16,Sète,Toulouse,1967
+Stage 16,1967-07-17,Toulouse,Luchon,1967
+Stage 17,1967-07-18,Luchon,Pau,1967
+Stage 18,1967-07-19,Pau,Bordeaux,1967
+Stage 19,1967-07-20,Bordeaux,Limoges,1967
+Stage 20,1967-07-21,Limoges,Puy de Dôme,1967
+Stage 21,1967-07-22,Clermont-Ferrand,Fontainebleau,1967
+Stage 22.1,1967-07-23,Fontainebleau,Versailles,1967
+Stage 22.2,1967-07-23,Versailles,Paris,1967
+Prologue,1968-06-27,Vittel,Vittel,1968
+Stage 1,1968-06-28,Vittel,Esch-sur-Alzette,1968
+Stage 2,1968-06-29,Arlon,Forest,1968
+Stage 3.1,1968-06-30,Forest,Forest,1968
+Stage 3.2,1968-06-30,Forest,Roubaix,1968
+Stage 4,1968-07-01,Roubaix,Rouen,1968
+Stage 5.1,1968-07-02,Rouen,Bagnoles-de-l'Orne,1968
+Stage 5.2,1968-07-02,Bagnoles-de-l'Orne,Dinard,1968
+Stage 6,1968-07-03,Dinard,Lorient,1968
+Stage 7,1968-07-04,Lorient,Nantes,1968
+Stage 8,1968-07-05,Nantes,Royan,1968
+Stage 9,1968-07-07,Royan,Bordeaux,1968
+Stage 10,1968-07-08,Bordeaux,Bayonne,1968
+Stage 11,1968-07-09,Bayonne,Pau,1968
+Stage 12,1968-07-10,Pau,Saint Gaudens,1968
+Stage 13,1968-07-11,Saint Gaudens,Seo de Urgel,1968
+Stage 14,1968-07-12,Seo de Urgel,Canet-Plage,1968
+Stage 15,1968-07-14,Font Romeu,Albi,1968
+Stage 16,1968-07-15,Albi,Aurillac,1968
+Stage 17,1968-07-16,Aurillac,Saint-Etienne,1968
+Stage 18,1968-07-17,Saint-Etienne,Grenoble,1968
+Stage 19,1968-07-18,Grenoble,Sallanches,1968
+Stage 20,1968-07-19,Sallanches,Besançon,1968
+Stage 21,1968-07-20,Besançon,Auxerre,1968
+Stage 22.1,1968-07-21,Auxerre,Melun,1968
+Stage 22.2,1968-07-21,Melun,Paris,1968
+Prologue,1969-06-28,Roubaix,Roubaix,1969
+Stage 1.1,1969-06-29,Roubaix,Woluwé-Saint-Pierre,1969
+Stage 1.2,1969-06-29,Woluwé-Saint-Pierre,Woluwé-Saint-Pierre,1969
+Stage 2,1969-06-30,Woluwé-Saint-Pierre,Maastricht,1969
+Stage 3,1969-07-01,Maastricht,Charleville-Mézières,1969
+Stage 4,1969-07-02,Charleville-Mézières,Nancy,1969
+Stage 5,1969-07-03,Nancy,Mulhouse,1969
+Stage 6,1969-07-04,Mulhouse,Ballon d'Alsace,1969
+Stage 7,1969-07-05,Belfort,Divonne,1969
+Stage 8.1,1969-07-06,Divonne,Divonne,1969
+Stage 8.2,1969-07-06,Divonne,Thonon,1969
+Stage 9,1969-07-07,Thonon,Chamonix,1969
+Stage 10,1969-07-08,Chamonix,Briançon,1969
+Stage 11,1969-07-09,Briançon,Digne-les-Bains,1969
+Stage 12,1969-07-10,Digne-les-Bains,Aubagne,1969
+Stage 13,1969-07-11,Aubagne,La Grande-Motte,1969
+Stage 14,1969-07-12,La Grande-Motte,Revel,1969
+Stage 15,1969-07-13,Revel,Revel,1969
+Stage 16,1969-07-14,Castelnaudary,Luchon,1969
+Stage 17,1969-07-15,Luchon,Mourenx,1969
+Stage 18,1969-07-16,Mourenx,Bordeaux,1969
+Stage 19,1969-07-17,Libourne,Brive-la-Gaillarde,1969
+Stage 20,1969-07-18,Brive-la-Gaillarde,Puy de Dôme,1969
+Stage 21,1969-07-19,Clermont-Ferrand,Montargis,1969
+Stage 22.1,1969-07-20,Montargis,Créteil,1969
+Stage 22.2,1969-07-20,Créteil,Paris,1969
+Prologue,1970-06-26,Limoges,Limoges,1970
+Stage 1,1970-06-27,Limoges,La Rochelle,1970
+Stage 2,1970-06-28,La Rochelle,Angers,1970
+Stage 3.1,1970-06-29,Angers,Angers,1970
+Stage 3.2,1970-06-29,Angers,Rennes,1970
+Stage 4,1970-06-30,Rennes,Lisieux,1970
+Stage 5.1,1970-07-01,Lisieux,Rouen,1970
+Stage 5.2,1970-07-01,Rouen,Amiens,1970
+Stage 6,1970-07-02,Amiens,Valenciennes,1970
+Stage 7.1,1970-07-03,Valenciennes,Forest,1970
+Stage 7.2,1970-07-03,Forest,Forest,1970
+Stage 8,1970-07-04,Ciney,Feldsberg,1970
+Stage 9,1970-07-05,Sarrelouis,Mulhouse,1970
+Stage 10,1970-07-06,Belfort,Divonne,1970
+Stage 11.1,1970-07-07,Divonne,Divonne,1970
+Stage 11.2,1970-07-07,Divonne,Thonon,1970
+Stage 12,1970-07-08,Thonon,Grenoble,1970
+Stage 13,1970-07-09,Grenoble,Gap,1970
+Stage 14,1970-07-10,Gap,Mont Ventoux,1970
+Stage 15,1970-07-11,Carpentras,Montpellier,1970
+Stage 16,1970-07-12,Montpellier,Toulouse,1970
+Stage 17,1970-07-13,Toulouse,Saint Gaudens,1970
+Stage 18,1970-07-14,Saint Gaudens,La Mongie,1970
+Stage 19,1970-07-15,Bagnères-de-Bigorre,Mourenx,1970
+Stage 20.1,1970-07-16,Mourenx,Bordeaux,1970
+Stage 20.2,1970-07-16,Bordeaux,Bordeaux,1970
+Stage 21,1970-07-17,Ruffec,Tours,1970
+Stage 22,1970-07-18,Tours,Versailles,1970
+Stage 23,1970-07-19,Versailles,Paris,1970
+Prologue,1971-06-26,Mulhouse,Mulhouse,1971
+Stage 1.1,1971-06-27,Mulhouse,Bâle,1971
+Stage 1.2,1971-06-27,Bâle,Fribourg,1971
+Stage 1.3,1971-06-27,Fribourg,Mulhouse,1971
+Stage 2,1971-06-28,Mulhouse,Strasbourg,1971
+Stage 3,1971-06-29,Strasbourg,Nancy,1971
+Stage 4,1971-06-30,Nancy,Marche en Famenne,1971
+Stage 5,1971-07-01,Dinant,Roubaix,1971
+Stage 6.1,1971-07-02,Roubaix,Amiens,1971
+Stage 6.2,1971-07-02,Amiens,Le Touquet-Paris-Plage,1971
+Stage 7,1971-07-04,Rungis,Nevers,1971
+Stage 8,1971-07-05,Nevers,Puy de Dôme,1971
+Stage 9,1971-07-06,Clermont-Ferrand,Saint-Etienne,1971
+Stage 10,1971-07-07,Saint-Etienne,Grenoble,1971
+Stage 11,1971-07-08,Grenoble,Orcières-Merlette,1971
+Stage 12,1971-07-10,Orcières-Merlette,Marseille,1971
+Stage 13,1971-07-11,Albi,Albi,1971
+Stage 14,1971-07-12,Revel,Luchon,1971
+Stage 15,1971-07-13,Luchon,Superbagnères,1971
+Stage 16.1,1971-07-14,Luchon,Gourette,1971
+Stage 16.2,1971-07-14,Gourette,Pau,1971
+Stage 17,1971-07-15,Mont de Marsan,Bordeaux,1971
+Stage 18,1971-07-16,Bordeaux,Poitiers,1971
+Stage 19,1971-07-17,Blois,Versailles,1971
+Stage 20,1971-07-18,Versailles,Paris,1971
+Prologue,1972-07-01,Angers,Angers,1972
+Stage 1,1972-07-02,Angers,Saint-Brieuc,1972
+Stage 2,1972-07-03,Saint-Brieuc,La Baule,1972
+Stage 3.1,1972-07-04,Pornichet,Saint-Jean-de-Monts,1972
+Stage 3.2,1972-07-04,Merlin-Plage,Merlin-Plage,1972
+Stage 4,1972-07-05,Merlin-Plage,Royan,1972
+Stage 5.1,1972-07-06,Royan,Bordeaux,1972
+Stage 5.2,1972-07-06,Bordeaux,Bordeaux,1972
+Stage 6,1972-07-07,Bordeaux,Bayonne,1972
+Stage 7,1972-07-09,Bayonne,Pau,1972
+Stage 8,1972-07-10,Pau,Luchon,1972
+Stage 9,1972-07-11,Luchon,Colomiers,1972
+Stage 10,1972-07-12,Castres,La Grande-Motte,1972
+Stage 11,1972-07-13,Carnon,Mont Ventoux,1972
+Stage 12,1972-07-14,Carpentras,Orcières-Merlette,1972
+Stage 13,1972-07-16,Orcières-Merlette,Briançon,1972
+Stage 14.1,1972-07-17,Briançon,Valloire,1972
+Stage 14.2,1972-07-17,Valloire,Aix-les-Bains,1972
+Stage 15,1972-07-18,Aix-les-Bains,Mont Revard,1972
+Stage 16,1972-07-19,Aix-les-Bains,Pontarlier,1972
+Stage 17,1972-07-20,Pontarlier,Ballon d'Alsace,1972
+Stage 18,1972-07-21,Vesoul,Auxerre,1972
+Stage 19,1972-07-22,Auxerre,Versailles,1972
+Stage 20.1,1972-07-23,Versailles,Versailles,1972
+Stage 20.2,1972-07-23,Versailles,Paris,1972
+Prologue,1973-06-30,Scheveningen,Scheveningen,1973
+Stage 1.1,1973-07-01,Scheveningen,Rotterdam,1973
+Stage 1.2,1973-07-01,Rotterdam,Saint-Nicolas,1973
+Stage 2.1,1973-07-02,Saint-Nicolas,Saint-Nicolas,1973
+Stage 2.2,1973-07-02,Saint-Nicolas,Roubaix,1973
+Stage 3,1973-07-03,Roubaix,Reims,1973
+Stage 4,1973-07-04,Reims,Nancy,1973
+Stage 5,1973-07-05,Nancy,Mulhouse,1973
+Stage 6,1973-07-06,Belfort,Divonne,1973
+Stage 7.1,1973-07-08,Divonne,Gaillard,1973
+Stage 7.2,1973-07-08,Gaillard,Méribel,1973
+Stage 8,1973-07-09,Moûtiers,Les Orres,1973
+Stage 9,1973-07-10,Embrun,Nice,1973
+Stage 10,1973-07-11,Nice,Aubagne,1973
+Stage 11,1973-07-12,Montpellier,Argelès,1973
+Stage 12.1,1973-07-13,Perpignan,Thuir,1973
+Stage 12.2,1973-07-13,Thuir,Pyrénées 2000,1973
+Stage 13,1973-07-15,Bourg-Madame,Luchon,1973
+Stage 14,1973-07-16,Luchon,Pau,1973
+Stage 15,1973-07-17,Pau,Fleurance,1973
+Stage 16.1,1973-07-18,Fleurance,Bordeaux,1973
+Stage 16.2,1973-07-18,Bordeaux,Bordeaux,1973
+Stage 17,1973-07-19,Sainte-Foy-la-Grande,Brive-la-Gaillarde,1973
+Stage 18,1973-07-20,Brive-la-Gaillarde,Puy de Dôme,1973
+Stage 19,1973-07-21,Bourges,Versailles,1973
+Stage 20.1,1973-07-22,Versailles,Versailles,1973
+Stage 20.2,1973-07-22,Versailles,Paris,1973
+Prologue,1974-06-27,Brest,Brest,1974
+Stage 1,1974-06-28,Brest,Saint-Pol de Léon,1974
+Stage 2,1974-06-29,Plymouth,Plymouth,1974
+Stage 3,1974-06-30,Morlaix,Saint-Malo,1974
+Stage 4,1974-07-01,Saint-Malo,Caen,1974
+Stage 5,1974-07-02,Caen,Dieppe,1974
+Stage 6.1,1974-07-03,Dieppe,Harelbeke,1974
+Stage 6.2,1974-07-03,Harelbeke,Harelbeke,1974
+Stage 7,1974-07-04,Mons,Chalons-sur-Marne,1974
+Stage 8.1,1974-07-05,Chalons-sur-Marne,Chaumont,1974
+Stage 8.2,1974-07-05,Chaumont,Besançon,1974
+Stage 9,1974-07-06,Besançon,Gaillard,1974
+Stage 10,1974-07-07,Gaillard,Aix-les-Bains,1974
+Stage 11,1974-07-09,Aix-les-Bains,Serre-Chevalier,1974
+Stage 12,1974-07-10,Savines,Orange,1974
+Stage 13,1974-07-11,Avignon,Montpellier,1974
+Stage 14,1974-07-12,Lodève,Colomiers,1974
+Stage 15,1974-07-14,Colomiers,Seo de Urgel,1974
+Stage 16,1974-07-15,Seo de Urgel,Saint-Lary-Soulan Col du Portet,1974
+Stage 17,1974-07-16,Saint-Lary-Soulan Col du Portet,Col du Tourmalet,1974
+Stage 18,1974-07-17,Bagnères-de-Bigorre,Pau,1974
+Stage 19.1,1974-07-18,Pau,Bordeaux,1974
+Stage 19.2,1974-07-18,Bordeaux,Bordeaux,1974
+Stage 20,1974-07-19,Saint-Gilles-Croix-de-Vie,Nantes,1974
+Stage 21.1,1974-07-20,Vouvray,Orléans,1974
+Stage 21.2,1974-07-20,Orléans,Orléans,1974
+Stage 22,1974-07-21,Orléans,Paris,1974
+Prologue,1975-06-26,Charleroi,Charleroi,1975
+Stage 1.1,1975-06-27,Charleroi,Molenbeek,1975
+Stage 1.2,1975-06-27,Molenbeek,Roubaix,1975
+Stage 2,1975-06-28,Roubaix,Amiens,1975
+Stage 3,1975-06-29,Amiens,Versailles,1975
+Stage 4,1975-06-30,Versailles,Le Mans,1975
+Stage 5,1975-07-01,Sablé,Merlin-Plage,1975
+Stage 6,1975-07-02,Merlin-Plage,Merlin-Plage,1975
+Stage 7,1975-07-03,Saint-Gilles-Croix-de-Vie,Angoulême,1975
+Stage 8,1975-07-04,Angoulême,Bordeaux,1975
+Stage 9.1,1975-07-05,Langon,Fleurance,1975
+Stage 9.2,1975-07-05,Fleurance,Auch,1975
+Stage 10,1975-07-07,Auch,Pau,1975
+Stage 11,1975-07-08,Pau,Saint-Lary-Soulan Col du Portet,1975
+Stage 12,1975-07-09,Tarbes,Albi,1975
+Stage 13,1975-07-10,Albi,Super-Lioran,1975
+Stage 14,1975-07-11,Aurillac,Puy de Dôme,1975
+Stage 15,1975-07-13,Nice,Pra Loup,1975
+Stage 16,1975-07-14,Barcelonnette,Serre-Chevalier,1975
+Stage 17,1975-07-15,Valloire,Avoriaz,1975
+Stage 18,1975-07-16,Morzine,Châtel,1975
+Stage 19,1975-07-17,Thonon,Chalon-sur-Saône,1975
+Stage 20,1975-07-18,Pouilly-en-Auxois,Melun,1975
+Stage 21,1975-07-19,Melun,Senlis,1975
+Stage 22,1975-07-20,Paris,Paris,1975
+Prologue,1976-06-24,Merlin-Plage,Saint-Jean-de-Monts,1976
+Stage 1,1976-06-25,Merlin-Plage,Angers,1976
+Stage 2,1976-06-26,Angers,Caen,1976
+Stage 3,1976-06-27,Le Touquet-Paris-Plage,Le Touquet-Paris-Plage,1976
+Stage 4,1976-06-28,Le Touquet-Paris-Plage,Bornem,1976
+Stage 5.1,1976-06-29,Louvain,Louvain,1976
+Stage 5.2,1976-06-29,Louvain,Verviers,1976
+Stage 6,1976-06-30,Bastogne,Nancy,1976
+Stage 7,1976-07-01,Nancy,Mulhouse,1976
+Stage 8,1976-07-02,Beaulieu,Divonne,1976
+Stage 9,1976-07-04,Divonne,L'Alpe-d'Huez,1976
+Stage 10,1976-07-05,Bourg-d'Oisans,Montgenèvre,1976
+Stage 11,1976-07-06,Montgenèvre,Manosque,1976
+Stage 12,1976-07-08,Port Barcarès,Pyrénées 2000,1976
+Stage 13,1976-07-09,Font Romeu,Saint Gaudens,1976
+Stage 14,1976-07-10,Saint Gaudens,Saint-Lary-Soulan Col du Portet,1976
+Stage 15,1976-07-11,Saint-Lary-Soulan Col du Portet,Pau,1976
+Stage 16,1976-07-12,Pau,Fleurance,1976
+Stage 17,1976-07-13,Fleurance,Auch,1976
+Stage 18.1,1976-07-14,Auch,Langon,1976
+Stage 18.2,1976-07-14,Langon,Lacanau,1976
+Stage 18.3,1976-07-14,Lacanau,Bordeaux,1976
+Stage 19,1976-07-15,Sainte-Foy-la-Grande,Tulle,1976
+Stage 20,1976-07-16,Tulle,Puy de Dôme,1976
+Stage 21,1976-07-17,Montargis,Versailles,1976
+Stage 22.1,1976-07-18,Versailles,Paris,1976
+Stage 22.2,1976-07-18,Paris,Paris,1976
+Prologue,1977-06-30,Fleurance,Fleurance,1977
+Stage 1,1977-07-01,Fleurance,Auch,1977
+Stage 2,1977-07-02,Auch,Pau,1977
+Stage 3,1977-07-03,Oloron,Vitoria,1977
+Stage 4,1977-07-04,Vitoria,Seignosse,1977
+Stage 5.1,1977-07-05,Morcenx,Bordeaux,1977
+Stage 5.2,1977-07-05,Bordeaux,Bordeaux,1977
+Stage 6,1977-07-07,Bordeaux,Limoges,1977
+Stage 7.1,1977-07-08,Jaunay-Clan,Angers,1977
+Stage 7.2,1977-07-08,Angers,Angers,1977
+Stage 8,1977-07-09,Angers,Lorient,1977
+Stage 9,1977-07-10,Lorient,Rennes,1977
+Stage 10,1977-07-11,Bagnoles-de-l'Orne,Rouen,1977
+Stage 11,1977-07-12,Rouen,Roubaix,1977
+Stage 12,1977-07-13,Roubaix,Charleroi,1977
+Stage 13.1,1977-07-15,Charleroi,Fribourg,1977
+Stage 13.2,1977-07-15,Altkirch,Besançon,1977
+Stage 14,1977-07-16,Besançon,Thonon,1977
+Stage 15.1,1977-07-17,Thonon,Morzine,1977
+Stage 15.2,1977-07-17,Morzine,Avoriaz,1977
+Stage 16,1977-07-18,Morzine,Chamonix,1977
+Stage 17,1977-07-19,Chamonix,L'Alpe-d'Huez,1977
+Stage 18,1977-07-20,Voiron,Saint-Etienne,1977
+Stage 19,1977-07-21,Saint-Trivier,Dijon,1977
+Stage 20,1977-07-22,Dijon,Dijon,1977
+Stage 21,1977-07-23,Montereau,Versailles,1977
+Stage 22.1,1977-07-24,Versailles,Paris,1977
+Stage 22.2,1977-07-24,Paris,Paris,1977
+Prologue,1978-06-29,Leiden,Leiden,1978
+Stage 1.1,1978-06-30,Leiden,Saint-Willebrord,1978
+Stage 1.2,1978-06-30,Saint-Willebrord,Bruxelles,1978
+Stage 2,1978-07-01,Bruxelles,Saint-Amand-les-Eaux,1978
+Stage 3,1978-07-02,Saint-Amand-les-Eaux,Saint-Germain-en-Laye,1978
+Stage 4,1978-07-03,Evreux,Caen,1978
+Stage 5,1978-07-04,Caen,Mazé-Montgeoffroy,1978
+Stage 6,1978-07-05,Mazé-Montgeoffroy,Poitiers,1978
+Stage 7,1978-07-06,Poitiers,Bordeaux,1978
+Stage 8,1978-07-07,Saint-Emilion,Sainte-Foy-la-Grande,1978
+Stage 9,1978-07-08,Bordeaux,Biarritz,1978
+Stage 10,1978-07-10,Biarritz,Pau,1978
+Stage 11,1978-07-11,Pau,Saint-Lary-Soulan Col du Portet,1978
+Stage 12.1,1978-07-12,Tarbes,Valence d'Agen,1978
+Stage 12.2,1978-07-12,Valence d'Agen,Toulouse,1978
+Stage 13,1978-07-13,Figeac,Superbesse,1978
+Stage 14,1978-07-14,Besse-en-Ch.,Puy de Dôme,1978
+Stage 15,1978-07-15,Saint-Dier-d'Auvergne,Saint-Etienne,1978
+Stage 16,1978-07-16,Saint-Etienne,L'Alpe-d'Huez,1978
+Stage 17,1978-07-18,Grenoble,Morzine,1978
+Stage 18,1978-07-19,Morzine,Lausanne,1978
+Stage 19,1978-07-20,Lausanne,Belfort,1978
+Stage 20,1978-07-21,Metz,Nancy,1978
+Stage 21,1978-07-22,Épernay,Senlis,1978
+Stage 22,1978-07-23,Saint-Germain-en-Laye,Paris,1978
+Prologue,1979-06-27,Fleurance,Fleurance,1979
+Stage 1,1979-06-28,Fleurance,Luchon,1979
+Stage 2,1979-06-29,Luchon,Superbagnères,1979
+Stage 3,1979-06-30,Luchon,Pau,1979
+Stage 4,1979-07-01,Captieux,Bordeaux,1979
+Stage 5,1979-07-02,Neuville-de-Poitou,Angers,1979
+Stage 6,1979-07-03,Angers,Saint-Brieuc,1979
+Stage 7,1979-07-04,Saint-Hilaire du Harcouët,Deauville,1979
+Stage 8,1979-07-05,Deauville,Le Havre,1979
+Stage 9,1979-07-06,Amiens,Roubaix,1979
+Stage 10,1979-07-07,Roubaix,Bruxelles,1979
+Stage 11,1979-07-08,Bruxelles,Bruxelles,1979
+Stage 12,1979-07-09,Rochefort,Metz,1979
+Stage 13,1979-07-10,Metz,Ballon d'Alsace,1979
+Stage 14,1979-07-12,Belfort,Evian-les-Bains,1979
+Stage 15,1979-07-13,Evian-les-Bains,Avoriaz,1979
+Stage 16,1979-07-14,Morzine,Les Menuires,1979
+Stage 17,1979-07-15,Les Menuires,L'Alpe-d'Huez,1979
+Stage 18,1979-07-16,L'Alpe-d'Huez,L'Alpe-d'Huez,1979
+Stage 19,1979-07-17,Bourg-d'Oisans,Saint-Priest,1979
+Stage 20,1979-07-18,Saint-Priest,Dijon,1979
+Stage 21,1979-07-19,Dijon,Dijon,1979
+Stage 22,1979-07-20,Dijon,Auxerre,1979
+Stage 23,1979-07-21,Auxerre,Nogent-sur-Marne,1979
+Stage 24,1979-07-22,Le Perreux,Paris,1979
+Prologue,1980-06-26,Francfort,Francfort,1980
+Stage 1.1,1980-06-27,Francfort,Wiesbaden,1980
+Stage 1.2,1980-06-27,Wiesbaden,Francfort,1980
+Stage 2,1980-06-28,Francfort,Metz,1980
+Stage 3,1980-06-29,Metz,Liège,1980
+Stage 4,1980-06-30,Liège,Spa,1980
+Stage 5,1980-07-01,Liège,Lille,1980
+Stage 6,1980-07-02,Lille,Compiègne,1980
+Stage 7.1,1980-07-03,Compiègne,Beauvais,1980
+Stage 7.2,1980-07-03,Beauvais,Rouen,1980
+Stage 8,1980-07-04,Flers,Saint-Malo,1980
+Stage 9,1980-07-06,Saint-Malo,Nantes,1980
+Stage 10,1980-07-07,Rochefort,Bordeaux,1980
+Stage 11,1980-07-08,Damazan,Laplume,1980
+Stage 12,1980-07-09,Agen,Pau,1980
+Stage 13,1980-07-10,Pau,Luchon,1980
+Stage 14,1980-07-11,Lézignan-Corbières,Montpellier,1980
+Stage 15,1980-07-12,Montpellier,Martigues,1980
+Stage 16,1980-07-13,Trets,Pra Loup,1980
+Stage 17,1980-07-14,Serre-Chevalier,Morzine,1980
+Stage 18,1980-07-16,Morzine,Prapoutel,1980
+Stage 19,1980-07-17,Voreppe,Saint-Etienne,1980
+Stage 20,1980-07-18,Saint-Etienne,Saint-Etienne,1980
+Stage 21,1980-07-19,Auxerre,Fontenay-sous-Bois,1980
+Stage 22,1980-07-20,Fontenay-sous-Bois,Paris,1980
+Prologue,1981-06-25,Nice,Nice,1981
+Stage 1.1,1981-06-26,Nice,Nice,1981
+Stage 1.2,1981-06-26,Nice,Antibes,1981
+Stage 2,1981-06-27,Nice,Martigues,1981
+Stage 3,1981-06-28,Martigues,Narbonne,1981
+Stage 4,1981-06-29,Narbonne,Carcassonne,1981
+Stage 5,1981-06-30,Saint Gaudens,Saint-Lary-Soulan Col du Portet,1981
+Stage 6,1981-07-01,Nay,Pau,1981
+Stage 7,1981-07-02,Pau,Bordeaux,1981
+Stage 8,1981-07-03,Rochefort,Nantes,1981
+Stage 9,1981-07-05,Nantes,Le Mans,1981
+Stage 10,1981-07-06,Le Mans,Aulnay-sous-Bois,1981
+Stage 11,1981-07-07,Compiègne,Roubaix,1981
+Stage 12.1,1981-07-08,Roubaix,Bruxelles,1981
+Stage 12.2,1981-07-08,Bruxelles,Zolder,1981
+Stage 13,1981-07-09,Beringen,Hasselt,1981
+Stage 14,1981-07-10,Hasselt,Mulhouse,1981
+Stage 15,1981-07-11,Besançon,Thonon,1981
+Stage 16,1981-07-12,Thonon,Morzine,1981
+Stage 17,1981-07-14,Morzine,L'Alpe-d'Huez,1981
+Stage 18,1981-07-15,L'Alpe-d'Huez,Le Pleynet,1981
+Stage 19,1981-07-16,Veurey,Saint-Priest,1981
+Stage 20,1981-07-17,Saint-Priest,Saint-Priest,1981
+Stage 21,1981-07-18,Auxerre,Fontenay-sous-Bois,1981
+Stage 22,1981-07-19,Fontenay-sous-Bois,Paris,1981
+Prologue,1982-07-02,Bâle,Bâle,1982
+Stage 1,1982-07-03,Mohlin,Mohlin,1982
+Stage 2,1982-07-04,Bâle,Nancy,1982
+Stage 3,1982-07-05,Nancy,Longwy,1982
+Stage 4,1982-07-06,Beauraing,Mouscron,1982
+Stage 5,1982-07-07,Orchies,Fontaine-au-Pire,1982
+Stage 6,1982-07-08,Lille,Lille,1982
+Stage 7,1982-07-10,Cancale,Concarneau,1982
+Stage 8,1982-07-11,Concarneau,Chateaulin,1982
+Stage 9.1,1982-07-12,Lorient,Plumelec,1982
+Stage 9.2,1982-07-13,Plumelec,Nantes,1982
+Stage 10,1982-07-13,Saintes,Bordeaux,1982
+Stage 11,1982-07-14,Bordeaux,Valence d'Agen,1982
+Stage 12,1982-07-15,Fleurance,Pau,1982
+Stage 13,1982-07-16,Pau,Saint-Lary-Soulan Col du Portet,1982
+Stage 14,1982-07-18,Martigues,Martigues,1982
+Stage 15,1982-07-19,Manosque,Orcières-Merlette,1982
+Stage 16,1982-07-20,Orcières-Merlette,L'Alpe-d'Huez,1982
+Stage 17,1982-07-21,Bourg-d'Oisans,Morzine,1982
+Stage 18,1982-07-22,Morzine,Saint-Priest,1982
+Stage 19,1982-07-23,Saint-Priest,Saint-Priest,1982
+Stage 20,1982-07-24,Sens,Aulnay-sous-Bois,1982
+Stage 21,1982-07-25,Fontenay-sous-Bois,Paris,1982
+Prologue,1983-07-01,Fontenay-sous-Bois,Fontenay-sous-Bois,1983
+Stage 1,1983-07-02,Nogent-sur-Marne,Créteil,1983
+Stage 2,1983-07-03,Soissons,Fontaine-au-Pire,1983
+Stage 3,1983-07-04,Valenciennes,Roubaix,1983
+Stage 4,1983-07-05,Roubaix,Le Havre,1983
+Stage 5,1983-07-06,Le Havre,Le Mans,1983
+Stage 6,1983-07-07,Châteaubriant,Nantes,1983
+Stage 7,1983-07-08,Nantes,Ile d'Oléron,1983
+Stage 8,1983-07-09,La Rochelle,Bordeaux,1983
+Stage 9,1983-07-10,Bordeaux,Pau,1983
+Stage 10,1983-07-11,Pau,Luchon,1983
+Stage 11,1983-07-12,Luchon,Fleurance,1983
+Stage 12,1983-07-13,Fleurance,Roquefort,1983
+Stage 13,1983-07-14,Roquefort,Aurillac,1983
+Stage 14,1983-07-15,Aurillac,Issoire,1983
+Stage 15,1983-07-16,Clermont-Ferrand,Puy de Dôme,1983
+Stage 16,1983-07-17,Issoire,Saint-Etienne,1983
+Stage 17,1983-07-18,La Tour du Pin,L'Alpe-d'Huez,1983
+Stage 18,1983-07-20,Bourg-d'Oisans,Morzine,1983
+Stage 19,1983-07-21,Morzine,Avoriaz,1983
+Stage 20,1983-07-22,Morzine,Dijon,1983
+Stage 21,1983-07-23,Dijon,Dijon,1983
+Stage 22,1983-07-24,Alfortville,Paris,1983
+Prologue,1984-06-29,Montreuil,Noisy-le-Sec,1984
+Stage 1,1984-06-30,Bondy,Saint-Denis,1984
+Stage 2,1984-07-01,Bobigny,Louvroil,1984
+Stage 3,1984-07-02,Louvroil,Valenciennes,1984
+Stage 4,1984-07-02,Valenciennes,Béthune,1984
+Stage 5,1984-07-03,Béthune,Cergy-Pontoise,1984
+Stage 6,1984-07-04,Cergy-Pontoise,Alençon,1984
+Stage 7,1984-07-05,Alençon,Le Mans,1984
+Stage 8,1984-07-06,Le Mans,Nantes,1984
+Stage 9,1984-07-07,Nantes,Bordeaux,1984
+Stage 10,1984-07-08,Langon,Pau,1984
+Stage 11,1984-07-09,Pau,Guzet-Neige,1984
+Stage 12,1984-07-10,Saint-Girons,Blagnac,1984
+Stage 13,1984-07-11,Blagnac,Rodez,1984
+Stage 14,1984-07-12,Rodez,Domaine du Rouret,1984
+Stage 15,1984-07-13,Domaine du Rouret,Grenoble,1984
+Stage 16,1984-07-15,Les Echelles,La Ruchère,1984
+Stage 17,1984-07-16,Grenoble,L'Alpe-d'Huez,1984
+Stage 18,1984-07-17,Bourg-d'Oisans,La Plagne,1984
+Stage 19,1984-07-18,Aime (La Plagne),Morzine,1984
+Stage 20,1984-07-19,Morzine,Crans-Montana,1984
+Stage 21,1984-07-20,Crans-Montana,Villefranche-sur-Saône,1984
+Stage 22,1984-07-21,Villié-Morgon,Villefranche-sur-Saône,1984
+Stage 23,1984-07-22,Pantin,Paris,1984
+Prologue,1985-06-28,Plumelec,Plumelec,1985
+Stage 1,1985-06-29,Vannes,Lanester,1985
+Stage 2,1985-06-30,Lorient,Vitré,1985
+Stage 3,1985-07-01,Vitré,Fougères,1985
+Stage 4,1985-07-02,Fougères,Pont-Audemer,1985
+Stage 5,1985-07-03,Neufchatel-en-Bray,Roubaix,1985
+Stage 6,1985-07-04,Roubaix,Reims,1985
+Stage 7,1985-07-05,Reims,Nancy,1985
+Stage 8,1985-07-06,Sarrebourg,Strasbourg,1985
+Stage 9,1985-07-07,Strasbourg,Epinal,1985
+Stage 10,1985-07-08,Epinal,Pontarlier,1985
+Stage 11,1985-07-09,Pontarlier,Avoriaz,1985
+Stage 12,1985-07-10,Morzine,Lans-en-Vercors,1985
+Stage 13,1985-07-11,Lans-en-Vercors,Villard-de-Lans,1985
+Stage 14,1985-07-13,Autrans,Saint-Etienne,1985
+Stage 15,1985-07-14,Saint-Etienne,Aurillac,1985
+Stage 16,1985-07-15,Aurillac,Toulouse,1985
+Stage 17,1985-07-16,Toulouse,Luz-Ardiden,1985
+Stage 18.1,1985-07-17,Luz-Saint-Sauveur,Col d'Aubisque,1985
+Stage 18.2,1985-07-17,Laruns,Pau,1985
+Stage 19,1985-07-18,Pau,Bordeaux,1985
+Stage 20,1985-07-19,Montpon-Monesterol,Limoges,1985
+Stage 21,1985-07-20,Limoges,Lac de Vassivière,1985
+Stage 22,1985-07-21,Orléans,Paris,1985
+Prologue,1986-07-04,Boulogne-Billancourt,Boulogne-Billancourt,1986
+Stage 1,1986-07-05,Nanterre,Sceaux,1986
+Stage 2,1986-07-05,Meudon,Saint-Quentin-en-Yvelines,1986
+Stage 3,1986-07-06,Levallois-Perret,Liévin,1986
+Stage 4,1986-07-07,Liévin,Evreux,1986
+Stage 5,1986-07-08,Evreux,Villers-sur-Mer,1986
+Stage 6,1986-07-09,Villers-sur-Mer,Cherbourg-en-Cotentin,1986
+Stage 7,1986-07-10,Cherbourg-en-Cotentin,Saint-Hilaire du Harcouët,1986
+Stage 8,1986-07-11,Saint-Hilaire du Harcouët,Nantes,1986
+Stage 9,1986-07-12,Nantes,Nantes,1986
+Stage 10,1986-07-13,Nantes,Futuroscope,1986
+Stage 11,1986-07-14,Futuroscope,Bordeaux,1986
+Stage 12,1986-07-15,Bayonne,Pau,1986
+Stage 13,1986-07-16,Pau,Superbagnères,1986
+Stage 14,1986-07-17,Superbagnères,Blagnac,1986
+Stage 15,1986-07-18,Carcassonne,Nimes,1986
+Stage 16,1986-07-19,Nimes,Gap,1986
+Stage 17,1986-07-20,Gap,Serre-Chevalier,1986
+Stage 18,1986-07-21,Briançon,L'Alpe-d'Huez,1986
+Stage 19,1986-07-23,Villard-de-Lans,Saint-Etienne,1986
+Stage 20,1986-07-24,Saint-Etienne,Saint-Etienne,1986
+Stage 21,1986-07-25,Saint-Etienne,Puy de Dôme,1986
+Stage 22,1986-07-26,Clermont-Ferrand,Nevers,1986
+Stage 23,1986-07-27,Cosne,Paris,1986
+Stage 16,1986-07-16,Blagnac,Millau,1987
+Prologue,1987-07-01,Berlin,Berlin,1987
+Stage 1,1987-07-02,Berlin,Berlin,1987
+Stage 2,1987-07-02,Berlin,Berlin,1987
+Stage 3,1987-07-04,Karlsruhe,Stuttgart,1987
+Stage 4,1987-07-05,Stuttgart,Pforzheim,1987
+Stage 5,1987-07-05,Pforzheim,Strasbourg,1987
+Stage 6,1987-07-06,Strasbourg,Epinal,1987
+Stage 7,1987-07-07,Epinal,Troyes,1987
+Stage 8,1987-07-08,Troyes,Epinay-sous-Sénart,1987
+Stage 9,1987-07-09,Orléans,Renazé,1987
+Stage 10,1987-07-10,Saumur,Futuroscope,1987
+Stage 11,1987-07-11,Poitiers,Chaumeil,1987
+Stage 12,1987-07-12,Brive-la-Gaillarde,Bordeaux,1987
+Stage 13,1987-07-13,Bayonne,Pau,1987
+Stage 14,1987-07-14,Pau,Luz-Ardiden,1987
+Stage 15,1987-07-15,Tarbes,Blagnac,1987
+Stage 17,1987-07-17,Millau,Avignon,1987
+Stage 18,1987-07-19,Carpentras,Mont Ventoux,1987
+Stage 19,1987-07-20,Valréas,Villard-de-Lans,1987
+Stage 20,1987-07-21,Villard-de-Lans,L'Alpe-d'Huez,1987
+Stage 21,1987-07-22,Bourg-d'Oisans,La Plagne,1987
+Stage 22,1987-07-23,Aime (La Plagne),Morzine,1987
+Stage 23,1987-07-24,Saint Julien en Genevois,Dijon,1987
+Stage 24,1987-07-25,Dijon,Dijon,1987
+Stage 25,1987-07-26,Créteil,Paris,1987
+Prologue,1988-07-04,La Baule,La Baule,1988
+Stage 1,1988-07-04,Pontchateau,Machecoul,1988
+Stage 2,1988-07-04,La Haye Fouassière,Ancenis,1988
+Stage 3,1988-07-05,Nantes,Le Mans,1988
+Stage 4,1988-07-06,Le Mans,Evreux,1988
+Stage 5,1988-07-07,Neufchatel-en-Bray,Liévin,1988
+Stage 6,1988-07-08,Liévin,Wasquehal,1988
+Stage 7,1988-07-09,Wasquehal,Reims,1988
+Stage 8,1988-07-10,Reims,Nancy,1988
+Stage 9,1988-07-11,Nancy,Strasbourg,1988
+Stage 10,1988-07-12,Belfort,Besançon,1988
+Stage 11,1988-07-13,Besançon,Morzine,1988
+Stage 12,1988-07-14,Morzine,L'Alpe-d'Huez,1988
+Stage 13,1988-07-15,Grenoble,Villard-de-Lans,1988
+Stage 14,1988-07-17,Blagnac,Guzet-Neige,1988
+Stage 15,1988-07-18,Saint-Girons,Luz-Ardiden,1988
+Stage 16,1988-07-19,Tarbes,Pau,1988
+Stage 17,1988-07-19,Pau,Bordeaux,1988
+Stage 18,1988-07-20,Ruelle,Limoges,1988
+Stage 19,1988-07-21,Limoges,Puy de Dôme,1988
+Stage 20,1988-07-22,Clermont-Ferrand,Chalon-sur-Saône,1988
+Stage 21,1988-07-23,Santenay,Santenay,1988
+Stage 22,1988-07-24,Nemours,Paris,1988
+Prologue,1989-07-01,Luxembourg,Luxembourg,1989
+Stage 1,1989-07-02,Luxembourg,Luxembourg,1989
+Stage 2,1989-07-02,Luxembourg,Luxembourg,1989
+Stage 3,1989-07-03,Luxembourg,Spa,1989
+Stage 4,1989-07-04,Liège,Wasquehal,1989
+Stage 5,1989-07-06,Dinard,Rennes,1989
+Stage 6,1989-07-07,Rennes,Futuroscope,1989
+Stage 7,1989-07-08,Futuroscope,Bordeaux,1989
+Stage 8,1989-07-09,La Bastide d'Armagnac,Pau,1989
+Stage 9,1989-07-10,Pau,Cauterets,1989
+Stage 10,1989-07-11,Cauterets,Superbagnères,1989
+Stage 11,1989-07-12,Luchon,Blagnac,1989
+Stage 12,1989-07-13,Toulouse,Montpellier,1989
+Stage 13,1989-07-14,Montpellier,Marseille,1989
+Stage 14,1989-07-15,Marseille,Gap,1989
+Stage 15,1989-07-16,Gap,Orcières-Merlette,1989
+Stage 16,1989-07-18,Gap,Briançon,1989
+Stage 17,1989-07-19,Briançon,L'Alpe-d'Huez,1989
+Stage 18,1989-07-20,Bourg-d'Oisans,Villard-de-Lans,1989
+Stage 19,1989-07-21,Villard-de-Lans,Aix-les-Bains,1989
+Stage 20,1989-07-22,Aix-les-Bains,L'Isle d'Abeau,1989
+Stage 21,1989-07-23,Versailles,Paris,1989
+Prologue,1990-06-30,Futuroscope,Futuroscope,1990
+Stage 1,1990-07-01,Futuroscope,Futuroscope,1990
+Stage 2,1990-07-01,Futuroscope,Futuroscope,1990
+Stage 3,1990-07-02,Poitiers,Nantes,1990
+Stage 4,1990-07-03,Nantes,Mont-Saint-Michel,1990
+Stage 5,1990-07-04,Avranches,Rouen,1990
+Stage 6,1990-07-06,Sarrebourg,Vittel,1990
+Stage 7,1990-07-07,Vittel,Epinal,1990
+Stage 8,1990-07-08,Epinal,Besançon,1990
+Stage 9,1990-07-09,Besançon,Genève,1990
+Stage 10,1990-07-10,Genève,Saint-Gervais,1990
+Stage 11,1990-07-11,Saint-Gervais,L'Alpe-d'Huez,1990
+Stage 12,1990-07-12,Fontaine,Villard-de-Lans,1990
+Stage 13,1990-07-14,Villard-de-Lans,Saint-Etienne,1990
+Stage 14,1990-07-15,Le Puy en Velay,Millau,1990
+Stage 15,1990-07-16,Millau,Revel,1990
+Stage 16,1990-07-17,Blagnac,Luz-Ardiden,1990
+Stage 17,1990-07-18,Lourdes,Pau,1990
+Stage 18,1990-07-19,Pau,Bordeaux,1990
+Stage 19,1990-07-20,Castillon-la-Bataille,Limoges,1990
+Stage 20,1990-07-21,Lac de Vassivière,Lac de Vassivière,1990
+Stage 21,1990-07-22,Brétigny-sur-Orge,Paris,1990
+Prologue,1991-07-06,Lyon,Lyon,1991
+Stage 1,1991-07-07,Lyon,Lyon,1991
+Stage 2,1991-07-07,Bron,Chassieu,1991
+Stage 3,1991-07-08,Villeurbanne,Dijon,1991
+Stage 4,1991-07-09,Dijon,Reims,1991
+Stage 5,1991-07-10,Reims,Valenciennes,1991
+Stage 6,1991-07-11,Arras Citadelle,Le Havre,1991
+Stage 7,1991-07-12,Le Havre,Argentan,1991
+Stage 8,1991-07-13,Argentan,Alençon,1991
+Stage 9,1991-07-14,Alençon,Rennes,1991
+Stage 10,1991-07-15,Rennes,Quimper,1991
+Stage 11,1991-07-16,Quimper,Saint-Herblain,1991
+Stage 12,1991-07-18,Pau,Jaca,1991
+Stage 13,1991-07-19,Jaca,Val Louron,1991
+Stage 14,1991-07-20,Saint Gaudens,Castres,1991
+Stage 15,1991-07-21,Albi,Alès,1991
+Stage 16,1991-07-22,Alès,Gap,1991
+Stage 17,1991-07-23,Gap,L'Alpe-d'Huez,1991
+Stage 18,1991-07-24,Bourg-d'Oisans,Morzine,1991
+Stage 19,1991-07-25,Morzine,Aix-les-Bains,1991
+Stage 20,1991-07-26,Aix-les-Bains,Macon,1991
+Stage 21,1991-07-27,Lugny,Macon,1991
+Stage 22,1991-07-28,Melun,Paris,1991
+Prologue,1992-07-04,Saint-Sébastien,Saint-Sébastien,1992
+Stage 1,1992-07-05,Saint-Sébastien,Saint-Sébastien,1992
+Stage 2,1992-07-06,Saint-Sébastien,Pau,1992
+Stage 3,1992-07-07,Pau,Bordeaux,1992
+Stage 4,1992-07-08,Libourne,Libourne,1992
+Stage 5,1992-07-09,Nogent-sur-Oise,Wasquehal,1992
+Stage 6,1992-07-10,Roubaix,Bruxelles,1992
+Stage 7,1992-07-11,Bruxelles,Valkenburg,1992
+Stage 8,1992-07-12,Valkenburg,Coblence,1992
+Stage 9,1992-07-13,Luxembourg,Luxembourg,1992
+Stage 10,1992-07-14,Luxembourg,Strasbourg,1992
+Stage 11,1992-07-15,Strasbourg,Mulhouse,1992
+Stage 12,1992-07-17,Dole,Saint-Gervais,1992
+Stage 13,1992-07-18,Saint-Gervais,Sestrières,1992
+Stage 14,1992-07-19,Sestrières,L'Alpe-d'Huez,1992
+Stage 15,1992-07-20,Bourg-d'Oisans,Saint-Etienne,1992
+Stage 16,1992-07-21,Saint-Etienne,La Bourboule,1992
+Stage 17,1992-07-22,La Bourboule,Montluçon,1992
+Stage 18,1992-07-23,Montluçon,Tours,1992
+Stage 19,1992-07-24,Tours,Blois,1992
+Stage 20,1992-07-25,Blois,Nanterre,1992
+Stage 21,1992-07-26,La Défense,Paris,1992
+Prologue,1993-07-03,Puy-du-Fou,Puy-du-Fou,1993
+Stage 1,1993-07-04,Luçon,Les Sables,1993
+Stage 2,1993-07-05,Les Sables,Vannes,1993
+Stage 3,1993-07-06,Vannes,Dinard,1993
+Stage 4,1993-07-07,Dinard,Avranches,1993
+Stage 5,1993-07-08,Avranches,Evreux,1993
+Stage 6,1993-07-09,Evreux,Amiens,1993
+Stage 7,1993-07-10,Péronne,Chalons-sur-Marne,1993
+Stage 8,1993-07-11,Chalons-sur-Marne,Verdun,1993
+Stage 9,1993-07-12,Lac de Madine,Lac de Madine,1993
+Stage 10,1993-07-14,Villard-de-Lans,Serre-Chevalier,1993
+Stage 11,1993-07-15,Serre-Chevalier,Isola 2000,1993
+Stage 12,1993-07-16,Isola 2000,Marseille,1993
+Stage 13,1993-07-17,Marseille,Montpellier,1993
+Stage 14,1993-07-18,Montpellier,Perpignan,1993
+Stage 15,1993-07-19,Perpignan,Andorre,1993
+Stage 16,1993-07-21,Andorre,Saint-Lary-Soulan Col du Portet,1993
+Stage 17,1993-07-22,Tarbes,Pau,1993
+Stage 18,1993-07-23,Orthez,Bordeaux,1993
+Stage 19,1993-07-24,Brétigny-sur-Orge,Montlhéry,1993
+Stage 20,1993-07-25,Viry-Chatillon,Paris,1993
+Prologue,1994-07-02,Lille,Lille,1994
+Stage 1,1994-07-03,Lille,Armentieres,1994
+Stage 2,1994-07-04,Roubaix,Boulogne-sur-Mer,1994
+Stage 3,1994-07-05,Calais,Eurotunnel,1994
+Stage 4,1994-07-06,Douvres,Brighton,1994
+Stage 5,1994-07-07,Portsmouth,Portsmouth,1994
+Stage 6,1994-07-08,Cherbourg-en-Cotentin,Rennes,1994
+Stage 7,1994-07-09,Rennes,Futuroscope,1994
+Stage 8,1994-07-10,Poitiers,Trelissac,1994
+Stage 9,1994-07-11,Périgueux,Bergerac,1994
+Stage 10,1994-07-12,Bergerac,Cahors,1994
+Stage 11,1994-07-13,Cahors,Hautacam,1994
+Stage 12,1994-07-15,Hautacam,Luz-Ardiden,1994
+Stage 13,1994-07-16,Bagnères-de-Bigorre,Albi,1994
+Stage 14,1994-07-17,Castres,Montpellier,1994
+Stage 15,1994-07-18,Montpellier,Carpentras,1994
+Stage 16,1994-07-19,Valréas,L'Alpe-d'Huez,1994
+Stage 17,1994-07-20,Bourg-d'Oisans,Val Thorens,1994
+Stage 18,1994-07-21,Moûtiers,Cluses,1994
+Stage 19,1994-07-22,Cluses,Avoriaz,1994
+Stage 20,1994-07-23,Morzine,Lac Saint Point - Malbuisson,1994
+Stage 21,1994-07-24,Disneyland-Paris,Paris,1994
+Prologue,1995-07-01,Saint-Brieuc,Saint-Brieuc,1995
+Stage 1,1995-07-02,Dinan,Lannion,1995
+Stage 2,1995-07-03,Perros-Guirec,Vitré,1995
+Stage 3,1995-07-04,Mayenne,Alençon,1995
+Stage 4,1995-07-05,Alençon,Le Havre,1995
+Stage 5,1995-07-06,Fecamp,Dunkerque,1995
+Stage 6,1995-07-07,Dunkerque,Charleroi,1995
+Stage 7,1995-07-08,Charleroi,Liège,1995
+Stage 8,1995-07-09,Huy,Seraing,1995
+Stage 9,1995-07-11,le_grand_bornand,La Plagne,1995
+Stage 10,1995-07-12,Aime,L'Alpe-d'Huez,1995
+Stage 11,1995-07-13,Bourg-d'Oisans,Saint-Etienne,1995
+Stage 12,1995-07-14,Saint-Etienne,Mende,1995
+Stage 13,1995-07-15,Mende,Revel,1995
+Stage 14,1995-07-16,Saint Orens de G.,Guzet-Neige,1995
+Stage 15,1995-07-18,Saint-Girons,Cauterets,1995
+Stage 16,1995-07-19,Tarbes,Pau,1995
+Stage 17,1995-07-20,Pau,Bordeaux,1995
+Stage 18,1995-07-21,Montpon-Monesterol,Limoges,1995
+Stage 19,1995-07-22,Lac de Vassivière,Lac de Vassivière,1995
+Stage 20,1995-07-23,Sainte Geneviève des Bois,Paris,1995
+Prologue,1996-06-29,'s-Hertogenbosch,'s-Hertogenbosch,1996
+Stage 1,1996-06-30,'s-Hertogenbosch,'s-Hertogenbosch,1996
+Stage 2,1996-07-01,'s-Hertogenbosch,Wasquehal,1996
+Stage 3,1996-07-02,Wasquehal,Nogent-sur-Oise,1996
+Stage 4,1996-07-03,Soissons,Lac de Madine,1996
+Stage 5,1996-07-04,Lac de Madine,Besançon,1996
+Stage 6,1996-07-05,Arc-et-Senans,Aix-les-Bains,1996
+Stage 7,1996-07-06,Chambéry,Les Arcs,1996
+Stage 8,1996-07-07,Bourg Saint Maurice,val_d_isere,1996
+Stage 9,1996-07-08,Monetier les Bains,Sestrières,1996
+Stage 10,1996-07-09,Turin,Gap,1996
+Stage 11,1996-07-11,Gap,Valence,1996
+Stage 12,1996-07-12,Valence,Le Puy-en-Velay,1996
+Stage 13,1996-07-13,Le Puy-en-Velay,Superbesse,1996
+Stage 14,1996-07-14,Besse,Tulle,1996
+Stage 15,1996-07-15,Brive-la-Gaillarde,Villeneuve sur Lot,1996
+Stage 16,1996-07-16,Agen,Hautacam,1996
+Stage 17,1996-07-17,Argelès-Gazost,Pampelune,1996
+Stage 18,1996-07-18,Pampelune,Hendaye,1996
+Stage 19,1996-07-19,Hendaye,Bordeaux,1996
+Stage 20,1996-07-20,Bordeaux,Saint-Emilion,1996
+Stage 21,1996-07-21,Palaiseau,Paris,1996
+Prologue,1997-07-05,Rouen,Rouen,1997
+Stage 1,1997-07-06,Rouen,Forges-les-Eaux,1997
+Stage 2,1997-07-07,St Valery-en-Caux,Vire,1997
+Stage 3,1997-07-08,Vire,Plumelec,1997
+Stage 4,1997-07-09,Plumelec,Puy-du-Fou,1997
+Stage 5,1997-07-10,Chantonnay,La Châtre,1997
+Stage 6,1997-07-11,Le Blanc,Marennes,1997
+Stage 7,1997-07-12,Marennes,Bordeaux,1997
+Stage 8,1997-07-13,Sauternes,Pau,1997
+Stage 9,1997-07-14,Pau,Loudenvielle,1997
+Stage 10,1997-07-15,Luchon,Andorre,1997
+Stage 11,1997-07-16,Andorre,Perpignan,1997
+Stage 12,1997-07-18,Saint-Etienne,Saint-Etienne,1997
+Stage 13,1997-07-19,Saint-Etienne,L'Alpe-d'Huez,1997
+Stage 14,1997-07-20,Bourg-d'Oisans,Courchevel,1997
+Stage 15,1997-07-21,Courchevel,Morzine,1997
+Stage 16,1997-07-22,Morzine,Fribourg,1997
+Stage 17,1997-07-23,Fribourg,Colmar,1997
+Stage 18,1997-07-24,Colmar,Montbéliard,1997
+Stage 19,1997-07-25,Montbéliard,Dijon,1997
+Stage 20,1997-07-26,Disneyland-Paris,Disneyland-Paris,1997
+Stage 21,1997-07-27,Disneyland-Paris,Paris,1997
+Prologue,1998-07-11,Dublin,Dublin,1998
+Stage 1,1998-07-12,Dublin,Dublin,1998
+Stage 2,1998-07-13,Enniscothy,Cork,1998
+Stage 3,1998-07-14,Roscoff,Lorient,1998
+Stage 4,1998-07-15,Plouay,Cholet,1998
+Stage 5,1998-07-16,Cholet,Chateauroux,1998
+Stage 6,1998-07-17,La Châtre,Brive-la-Gaillarde,1998
+Stage 7,1998-07-18,Meyrignac l'Eglise,Corrèze,1998
+Stage 8,1998-07-19,Brive-la-Gaillarde,Montauban,1998
+Stage 9,1998-07-20,Montauban,Pau,1998
+Stage 10,1998-07-21,Pau,Luchon,1998
+Stage 11,1998-07-22,Luchon,plateau_de_beille,1998
+Stage 12,1998-07-24,Tarascon-sur-Ariège,Cap d'Agde,1998
+Stage 13,1998-07-25,Frontignan-La-Peyrade,Carpentras,1998
+Stage 14,1998-07-26,Valréas,Grenoble,1998
+Stage 15,1998-07-27,Grenoble,Les Deux Alpes,1998
+Stage 16,1998-07-28,Vizille,Albertville,1998
+Stage 17,1998-07-29,Albertville,Aix-les-Bains,1998
+Stage 18,1998-07-30,Aix-les-Bains,Neuchâtel,1998
+Stage 19,1998-07-31,La Chaux-de-Fonds,Autun,1998
+Stage 20,1998-08-01,Montceau-les-Mines,Le Creusot,1998
+Stage 21,1998-08-02,Melun,Paris,1998
+Prologue,1999-07-03,Puy-du-Fou,Puy-du-Fou,1999
+Stage 1,1999-07-04,Montaigu,Challans,1999
+Stage 2,1999-07-05,Challans,Saint Nazaire,1999
+Stage 3,1999-07-06,Nantes,Laval,1999
+Stage 4,1999-07-07,Laval,Blois,1999
+Stage 5,1999-07-08,Bonneval,Amiens,1999
+Stage 6,1999-07-09,Amiens,Maubeuge,1999
+Stage 7,1999-07-10,Avesnes-sur-Helpe,Thionville,1999
+Stage 8,1999-07-11,Metz,Metz,1999
+Stage 9,1999-07-13,le_grand_bornand,Sestrières,1999
+Stage 10,1999-07-14,Sestrières,L'Alpe-d'Huez,1999
+Stage 11,1999-07-15,Bourg-d'Oisans,Saint-Etienne,1999
+Stage 12,1999-07-16,Saint-Galmier,Saint-Flour,1999
+Stage 13,1999-07-17,Saint-Flour,Albi,1999
+Stage 14,1999-07-18,Castres,Saint Gaudens,1999
+Stage 15,1999-07-20,Saint Gaudens,Piau-Engaly,1999
+Stage 16,1999-07-21,Lannemezan,Pau,1999
+Stage 17,1999-07-22,Mourenx,Bordeaux,1999
+Stage 18,1999-07-23,Jonzac,Futuroscope,1999
+Stage 19,1999-07-24,Futuroscope,Futuroscope,1999
+Stage 20,1999-07-25,Arpajon,Paris,1999
+Stage 1,2000-07-01,Futuroscope,Futuroscope,2000
+Stage 2,2000-07-02,Futuroscope,Loudun,2000
+Stage 3,2000-07-03,Loudun,Nantes,2000
+Stage 4,2000-07-04,Nantes,Saint Nazaire,2000
+Stage 5,2000-07-05,Vannes,Vitré,2000
+Stage 6,2000-07-06,Vitré,Tours,2000
+Stage 7,2000-07-07,Tours,Limoges,2000
+Stage 8,2000-07-08,Limoges,Villeneuve sur Lot,2000
+Stage 9,2000-07-09,Agen,Dax,2000
+Stage 10,2000-07-10,Dax,Hautacam,2000
+Stage 11,2000-07-11,Bagnères-de-Bigorre,Revel,2000
+Stage 12,2000-07-13,Carpentras,Mont Ventoux,2000
+Stage 13,2000-07-14,Avignon,Draguignan,2000
+Stage 14,2000-07-15,Draguignan,Briançon,2000
+Stage 15,2000-07-16,Briançon,Courchevel,2000
+Stage 16,2000-07-18,Courchevel,Morzine,2000
+Stage 17,2000-07-19,Evian-les-Bains,Lausanne,2000
+Stage 18,2000-07-20,Lausanne,Fribourg-en-Brisgau,2000
+Stage 19,2000-07-21,Fribourg-en-Brisgau,Mulhouse,2000
+Stage 20,2000-07-22,Belfort,Troyes,2000
+Stage 21,2000-07-23,Paris,Champs-Elysées,2000
+Prologue,2001-07-07,Dunkerque,Dunkerque,2001
+Stage 1,2001-07-08,Saint-Omer,Boulogne-sur-Mer,2001
+Stage 2,2001-07-09,Calais,Anvers,2001
+Stage 3,2001-07-10,Anvers,Seraing,2001
+Stage 4,2001-07-11,Huy,Verdun,2001
+Stage 5,2001-07-12,Verdun,Bar-Le-Duc,2001
+Stage 6,2001-07-13,Commercy,Strasbourg,2001
+Stage 7,2001-07-14,Strasbourg,Colmar,2001
+Stage 8,2001-07-15,Colmar,Pontarlier,2001
+Stage 9,2001-07-16,Pontarlier,Aix-les-Bains,2001
+Stage 10,2001-07-17,Aix-les-Bains,L'Alpe-d'Huez,2001
+Stage 11,2001-07-18,Grenoble,Chamrousse,2001
+Stage 12,2001-07-20,Perpignan,Ax-les-Thermes,2001
+Stage 13,2001-07-21,Foix,Saint-Lary-Soulan Col du Portet,2001
+Stage 14,2001-07-22,Tarbes,Luz-Ardiden,2001
+Stage 15,2001-07-24,Pau,Lavaur,2001
+Stage 16,2001-07-25,Castelsarrasin,Sarran,2001
+Stage 17,2001-07-26,Brive-la-Gaillarde,Montluçon,2001
+Stage 18,2001-07-27,Montluçon,Saint-Amand-Montrond,2001
+Stage 19,2001-07-28,Orléans,Evry,2001
+Stage 20,2001-07-29,Corbeil-Essonnes,Paris,2001
+Prologue,2002-07-06,Luxembourg,Luxembourg,2002
+Stage 1,2002-07-07,Luxembourg,Luxembourg,2002
+Stage 2,2002-07-08,Luxembourg,Sarrebruck,2002
+Stage 3,2002-07-09,Metz,Reims,2002
+Stage 4,2002-07-10,Épernay,Château-Thierry,2002
+Stage 5,2002-07-11,Soissons,Rouen,2002
+Stage 6,2002-07-12,Forges-les-Eaux,Alençon,2002
+Stage 7,2002-07-12,Bagnoles-de-l'Orne,Avranches,2002
+Stage 8,2002-07-14,Saint-Martin-de-Landelles,Plouay,2002
+Stage 9,2002-07-15,Lanester,Lorient,2002
+Stage 10,2002-07-17,Bazas,Pau,2002
+Stage 11,2002-07-18,Pau,La Mongie,2002
+Stage 12,2002-07-19,Lannemezan,plateau_de_beille,2002
+Stage 13,2002-07-20,Lavelanet,Béziers,2002
+Stage 14,2002-07-21,Lodève,Mont Ventoux,2002
+Stage 15,2002-07-23,Vaison-la-Romaine,Les Deux Alpes,2002
+Stage 16,2002-07-24,Les Deux Alpes,La Plagne,2002
+Stage 17,2002-07-25,Aime,Cluses,2002
+Stage 18,2002-07-26,Cluses,Bourg-en-Bresse,2002
+Stage 19,2002-07-27,Regnier-Durette,Macon,2002
+Stage 20,2002-07-28,Melun,Paris,2002
+Prologue,2003-07-05,Paris,Paris,2003
+Stage 1,2003-07-06,Montgeron,Meaux,2003
+Stage 2,2003-07-07,La Ferté-sous-Jouarre,Sedan,2003
+Stage 3,2003-07-08,Charleville-Mézières,Saint-Dizier,2003
+Stage 4,2003-07-09,Joinville,Saint-Dizier,2003
+Stage 5,2003-07-10,Troyes,Nevers,2003
+Stage 6,2003-07-11,Nevers,Lyon,2003
+Stage 7,2003-07-12,Lyon,Morzine,2003
+Stage 8,2003-07-13,Sallanches,L'Alpe-d'Huez,2003
+Stage 9,2003-07-14,Bourg-d'Oisans,Gap,2003
+Stage 10,2003-07-15,Gap,Marseille,2003
+Stage 11,2003-07-17,Narbonne,Toulouse,2003
+Stage 12,2003-07-18,Gaillac,Cap Découverte,2003
+Stage 13,2003-07-19,Toulouse,Ax 3 Domaines,2003
+Stage 14,2003-07-20,Saint-Girons,loudenvielle_le_louron,2003
+Stage 15,2003-07-21,Bagnères-de-Bigorre,Luz-Ardiden,2003
+Stage 16,2003-07-23,Pau,Bayonne,2003
+Stage 17,2003-07-24,Dax,Bordeaux,2003
+Stage 18,2003-07-25,Bordeaux,Saint-Maixent-L'Ecole,2003
+Stage 19,2003-07-26,Pornic,Nantes,2003
+Stage 20,2003-07-27,Ville d'Avray,Paris,2003
+Prologue,2004-07-03,Liège,Liège,2004
+Stage 1,2004-07-04,Liège,Charleroi,2004
+Stage 2,2004-07-05,Charleroi,Namur,2004
+Stage 3,2004-07-06,Waterloo,Wasquehal,2004
+Stage 4,2004-07-07,Cambrai,Arras Citadelle,2004
+Stage 5,2004-07-08,Amiens,Chartres,2004
+Stage 6,2004-07-09,Bonneval,Angers,2004
+Stage 7,2004-07-10,Châteaubriant,Saint-Brieuc,2004
+Stage 8,2004-07-11,Lamballe,Quimper,2004
+Stage 9,2004-07-13,Saint-Léonard-de-Noblat,Guéret,2004
+Stage 10,2004-07-14,Limoges,Saint-Flour,2004
+Stage 11,2004-07-15,Saint-Flour,Figeac,2004
+Stage 12,2004-07-16,Castelsarrasin,La Mongie,2004
+Stage 13,2004-07-17,Lannemezan,plateau_de_beille,2004
+Stage 14,2004-07-18,Carcassonne,Nimes,2004
+Stage 15,2004-07-20,Valréas,Villard-de-Lans,2004
+Stage 16,2004-07-21,Bourg-d'Oisans,L'Alpe-d'Huez,2004
+Stage 17,2004-07-22,Bourg-d'Oisans,le_grand_bornand,2004
+Stage 18,2004-07-23,Annemasse,Lons-le-Saunier,2004
+Stage 19,2004-07-24,Besançon,Besançon,2004
+Stage 20,2004-07-25,Montereau,Paris,2004
+Stage 1,2005-07-02,Fromentine,Noirmoutier-en-l'Île,2005
+Stage 2,2005-07-03,Challans,Les Essarts,2005
+Stage 3,2005-07-04,La Châtaigneraie,Tours,2005
+Stage 4,2005-07-05,Tours,Blois,2005
+Stage 5,2005-07-06,Chambord,Montargis,2005
+Stage 6,2005-07-07,Troyes,Nancy,2005
+Stage 7,2005-07-08,Lunéville,Karlsruhe,2005
+Stage 8,2005-07-09,Pforzheim,Gérardmer,2005
+Stage 9,2005-07-10,Gérardmer,Mulhouse,2005
+Stage 10,2005-07-12,Grenoble,Courchevel,2005
+Stage 11,2005-07-13,Courchevel,Briançon,2005
+Stage 12,2005-07-14,Briançon,Digne-les-Bains,2005
+Stage 13,2005-07-15,Miramas,Montpellier,2005
+Stage 14,2005-07-16,Le Cap d'Agde,Ax 3 Domaines,2005
+Stage 15,2005-07-17,Lézat-sur-Leze,Saint-Lary-Soulan Col du Portet,2005
+Stage 16,2005-07-19,Mourenx,Pau,2005
+Stage 17,2005-07-20,Pau,Revel,2005
+Stage 18,2005-07-21,Albi,Mende,2005
+Stage 19,2005-07-22,Issoire,Le Puy-en-Velay,2005
+Stage 20,2005-07-23,Saint-Etienne,Saint-Etienne,2005
+Stage 21,2005-07-24,Corbeil-Essonnes,Paris,2005
+Prologue,2006-07-01,Strasbourg,Strasbourg,2006
+Stage 1,2006-07-02,Strasbourg,Strasbourg,2006
+Stage 2,2006-07-03,Obernai,Esch-sur-Alzette,2006
+Stage 3,2006-07-04,Esch-sur-Alzette,Valkenburg,2006
+Stage 4,2006-07-05,Huy,Saint-Quentin,2006
+Stage 5,2006-07-06,Beauvais,Caen,2006
+Stage 6,2006-07-07,Lisieux,Vitré,2006
+Stage 7,2006-07-08,Saint-Grégoire,Rennes,2006
+Stage 8,2006-07-09,Saint-Meen-le-Grand,Lorient,2006
+Stage 9,2006-07-11,Bordeaux,Dax,2006
+Stage 10,2006-07-12,Cambo-les-Bains,Pau,2006
+Stage 11,2006-07-13,Tarbes,Val d'Aran - Pla-de-Beret,2006
+Stage 12,2006-07-14,Luchon,Carcassonne,2006
+Stage 13,2006-07-15,Béziers,Montélimar,2006
+Stage 14,2006-07-16,Montélimar,Gap,2006
+Stage 15,2006-07-18,Gap,L'Alpe-d'Huez,2006
+Stage 16,2006-07-19,Bourg-d'Oisans,La Toussuire,2006
+Stage 17,2006-07-20,Saint-Jean-de-Maurienne,Morzine,2006
+Stage 18,2006-07-21,Morzine,Macon,2006
+Stage 19,2006-07-22,Le Creusot,Montceau-les-Mines,2006
+Stage 20,2006-07-23,Sceaux,Paris Champs-Élysées,2006
+Prologue,2007-07-07,Londres,Londres,2007
+Stage 1,2007-07-08,Londres,Canterbury,2007
+Stage 2,2007-07-09,Dunkerque,Gand,2007
+Stage 3,2007-07-10,Waregem,Compiègne,2007
+Stage 4,2007-07-11,villers_cotterets,Joigny,2007
+Stage 5,2007-07-12,Chablis,Autun,2007
+Stage 6,2007-07-13,semur_en_auxois,Bourg-en-Bresse,2007
+Stage 7,2007-07-14,Bourg-en-Bresse,le_grand_bornand,2007
+Stage 8,2007-07-15,le_grand_bornand,Tignes,2007
+Stage 9,2007-07-17,val_d_isere,Briançon,2007
+Stage 10,2007-07-18,Tallard,Marseille,2007
+Stage 11,2007-07-19,Marseille,Montpellier,2007
+Stage 12,2007-07-20,Montpellier,Castres,2007
+Stage 13,2007-07-21,Albi,Albi,2007
+Stage 14,2007-07-22,Mazamet,plateau_de_beille,2007
+Stage 15,2007-07-23,Foix,loudenvielle_le_louron,2007
+Stage 16,2007-07-25,Orthez,gourette_col_d_aubisque,2007
+Stage 17,2007-07-26,Pau,Castelsarrasin,2007
+Stage 18,2007-07-27,Cahors,Angoulême,2007
+Stage 19,2007-07-28,Cognac,Angoulême,2007
+Stage 20,2007-07-29,Marcoussis,Paris Champs-Élysées,2007
+Stage 1,2008-07-05,Brest,Plumelec,2008
+Stage 2,2008-07-06,Auray,Saint-Brieuc,2008
+Stage 3,2008-07-07,Saint-Malo,Nantes,2008
+Stage 4,2008-07-08,Cholet,Cholet,2008
+Stage 5,2008-07-09,Cholet,Chateauroux,2008
+Stage 6,2008-07-10,Aigurande,Super-Besse,2008
+Stage 7,2008-07-11,Brioude,Aurillac,2008
+Stage 8,2008-07-12,Figeac,Toulouse,2008
+Stage 9,2008-07-13,Toulouse,Bagnères-de-Bigorre,2008
+Stage 10,2008-07-14,Pau,Hautacam,2008
+Stage 11,2008-07-16,Lannemezan,Foix,2008
+Stage 12,2008-07-17,Lavelanet,Narbonne,2008
+Stage 13,2008-07-18,Narbonne,Nimes,2008
+Stage 14,2008-07-19,Nimes,Digne-les-Bains,2008
+Stage 15,2008-07-20,Embrun,Prato Nevoso,2008
+Stage 16,2008-07-22,Cuneo,Jausiers,2008
+Stage 17,2008-07-23,Embrun,L'Alpe-d'Huez,2008
+Stage 18,2008-07-24,Bourg-d'Oisans,Saint-Etienne,2008
+Stage 19,2008-07-25,Roanne,Montluçon,2008
+Stage 20,2008-07-26,Cérilly,Saint-Amand-Montrond,2008
+Stage 21,2008-07-27,Etampes,Paris Champs-Élysées,2008
+Stage 1,2009-07-04,Monaco,Monaco,2009
+Stage 2,2009-07-05,Monaco,Brignoles,2009
+Stage 3,2009-07-06,Marseille,La Grande-Motte,2009
+Stage 4,2009-07-07,Montpellier,Montpellier,2009
+Stage 5,2009-07-08,Le Cap d'Agde,Perpignan,2009
+Stage 6,2009-07-09,Gérone,Barcelone,2009
+Stage 7,2009-07-10,Barcelone,Andorre,2009
+Stage 8,2009-07-11,Andorre-la-Vieille,Saint-Girons,2009
+Stage 9,2009-07-12,Saint Gaudens,Tarbes,2009
+Stage 10,2009-07-14,Limoges,Issoudun,2009
+Stage 11,2009-07-15,Vatan,Saint-Fargeau,2009
+Stage 12,2009-07-16,Tonnerre,Vittel,2009
+Stage 13,2009-07-17,Vittel,Colmar,2009
+Stage 14,2009-07-18,Colmar,Besançon,2009
+Stage 15,2009-07-19,Pontarlier,Verbier,2009
+Stage 16,2009-07-21,Martigny,Bourg Saint Maurice,2009
+Stage 17,2009-07-22,Bourg Saint Maurice,le_grand_bornand,2009
+Stage 18,2009-07-23,Annecy,Annecy,2009
+Stage 19,2009-07-24,Bourgoin-Jallieu,Aubenas,2009
+Stage 20,2009-07-25,Montélimar,Mont Ventoux,2009
+Stage 21,2009-07-26,Montereau-Fault-Yonne,Paris Champs-Élysées,2009
+Prologue,2010-07-03,Rotterdam,Rotterdam,2010
+Stage 1,2010-07-04,Rotterdam,Bruxelles,2010
+Stage 2,2010-07-05,Bruxelles,Spa,2010
+Stage 3,2010-07-06,Wanze,Arenberg Porte du Hainaut,2010
+Stage 4,2010-07-07,Cambrai,Reims,2010
+Stage 5,2010-07-08,Épernay,Montargis,2010
+Stage 6,2010-07-09,Montargis,Gueugnon,2010
+Stage 7,2010-07-10,Tournus,Station des Rousses,2010
+Stage 8,2010-07-11,Station des Rousses,Morzine,2010
+Stage 9,2010-07-13,Morzine,Saint-Jean-de-Maurienne,2010
+Stage 10,2010-07-14,Chambéry,Gap,2010
+Stage 11,2010-07-15,Sisteron,Bourg-lès-Valence,2010
+Stage 12,2010-07-16,Bourg-de-Péage,Mende,2010
+Stage 13,2010-07-17,Rodez,Revel,2010
+Stage 14,2010-07-18,Revel,Ax 3 Domaines,2010
+Stage 15,2010-07-19,Pamiers,Bagnères-de-Luchon,2010
+Stage 16,2010-07-20,Bagnères-de-Luchon,Pau,2010
+Stage 17,2010-07-22,Pau,Col du Tourmalet,2010
+Stage 18,2010-07-23,Salies-de-Béarn,Bordeaux,2010
+Stage 19,2010-07-24,Bordeaux,Pauillac,2010
+Stage 20,2010-07-25,Longjumeau,Paris Champs-Élysées,2010
+Stage 1,2011-07-02,Passage du Gois,Mont des Alouettes,2011
+Stage 2,2011-07-03,Les Essarts,Les Essarts,2011
+Stage 3,2011-07-04,Olonne-sur-Mer,Redon,2011
+Stage 4,2011-07-05,Lorient,Mûr-de-Bretagne Guerlédan,2011
+Stage 5,2011-07-06,Carhaix,Cap Fréhel,2011
+Stage 6,2011-07-07,Dinan,Lisieux,2011
+Stage 7,2011-07-08,Le Mans,Chateauroux,2011
+Stage 8,2011-07-09,Aigurande,Super-Besse Sancy,2011
+Stage 9,2011-07-10,Issoire,Saint-Flour,2011
+Stage 10,2011-07-12,Aurillac,Carmaux,2011
+Stage 11,2011-07-13,Blaye-les-Mines,Lavaur,2011
+Stage 12,2011-07-14,Cugnaux,Luz-Ardiden,2011
+Stage 13,2011-07-15,Pau,Lourdes,2011
+Stage 14,2011-07-16,Saint Gaudens,plateau_de_beille,2011
+Stage 15,2011-07-17,Limoux,Montpellier,2011
+Stage 16,2011-07-19,Saint-Paul -Trois-Châteaux,Gap,2011
+Stage 17,2011-07-20,Gap,Pinerolo,2011
+Stage 18,2011-07-21,Pinerolo,Galibier Serre-Chevalier,2011
+Stage 19,2011-07-22,Modane Valfréjus,L'Alpe-d'Huez,2011
+Stage 20,2011-07-23,Grenoble,Grenoble,2011
+Stage 21,2011-07-24,Créteil,Paris Champs-Élysées,2011
+Prologue,2012-06-30,Liège,Liège,2012
+Stage 1,2012-07-01,Liège,Seraing,2012
+Stage 2,2012-07-02,Visé,Tournai,2012
+Stage 3,2012-07-03,Orchies,Boulogne-sur-Mer,2012
+Stage 4,2012-07-04,Abbeville,Rouen,2012
+Stage 5,2012-07-05,Rouen,St-Quentin,2012
+Stage 6,2012-07-06,Épernay,Metz,2012
+Stage 7,2012-07-07,Tomblaine,La Planche des Belles Filles,2012
+Stage 8,2012-07-08,Belfort,Porrentruy,2012
+Stage 9,2012-07-09,Arc-et-Senans,Besançon,2012
+Stage 10,2012-07-11,Macon,Bellegarde-sur-Valserine,2012
+Stage 11,2012-07-12,Albertville,La Toussuire,2012
+Stage 12,2012-07-13,Saint-Jean-de-Maurienne,Annonay Davézieux,2012
+Stage 13,2012-07-14,Saint-Paul -Trois-Châteaux,Le Cap d'Agde,2012
+Stage 14,2012-07-15,Limoux,Foix,2012
+Stage 15,2012-07-16,Samatan,Pau,2012
+Stage 16,2012-07-18,Pau,Bagnères-de-Luchon,2012
+Stage 17,2012-07-19,Bagnères-de-Luchon,Peyragudes,2012
+Stage 18,2012-07-20,Blagnac,Brive-la-Gaillarde,2012
+Stage 19,2012-07-21,Bonneval,Chartres,2012
+Stage 20,2012-07-22,Rambouillet,Paris Champs-Élysées,2012
+Stage 1,2013-06-29,porto_vecchio,Bastia,2013
+Stage 2,2013-06-30,Bastia,Ajaccio,2013
+Stage 3,2013-07-01,Ajaccio,Calvi,2013
+Stage 4,2013-07-02,Nice,Nice,2013
+Stage 5,2013-07-03,Cagnes-sur-Mer,Marseille,2013
+Stage 6,2013-07-04,Aix en Provence,Montpellier,2013
+Stage 7,2013-07-05,Montpellier,Albi,2013
+Stage 8,2013-07-06,Castres,Ax 3 Domaines,2013
+Stage 9,2013-07-07,Saint-Girons,Bagnères-de-Bigorre,2013
+Stage 10,2013-07-09,Saint-Gildas-des-Bois,Saint-Malo,2013
+Stage 11,2013-07-10,Avranches,Mont-Saint-Michel,2013
+Stage 12,2013-07-11,Fougères,Tours,2013
+Stage 13,2013-07-12,Tours,Saint-Amand-Montrond,2013
+Stage 14,2013-07-13,Saint-Pourçain-sur-Sioule,Lyon,2013
+Stage 15,2013-07-14,Givors,Mont Ventoux,2013
+Stage 16,2013-07-16,Vaison-la-Romaine,Gap,2013
+Stage 17,2013-07-17,Embrun,Chorges,2013
+Stage 18,2013-07-18,Gap,Alpe d'Huez,2013
+Stage 19,2013-07-19,Bourg-d'Oisans,le_grand_bornand,2013
+Stage 20,2013-07-20,Annecy,Annecy - Semnoz,2013
+Stage 21,2013-07-21,Versailles,Paris Champs-Élysées,2013
+Stage 1,2014-07-05,Leeds,Harrogate,2014
+Stage 2,2014-07-06,York,Sheffield,2014
+Stage 3,2014-07-07,Cambridge,Londres,2014
+Stage 4,2014-07-08,Le Touquet-Paris-Plage,Lille,2014
+Stage 5,2014-07-09,Ypres,Arenberg Porte du Hainaut,2014
+Stage 6,2014-07-10,Arras Citadelle,Reims,2014
+Stage 7,2014-07-11,Épernay,Nancy,2014
+Stage 8,2014-07-12,Tomblaine,Gérardmer,2014
+Stage 9,2014-07-13,Gérardmer,Mulhouse,2014
+Stage 10,2014-07-14,Mulhouse,La Planche des Belles Filles,2014
+Stage 11,2014-07-16,Besançon,Oyonnax,2014
+Stage 12,2014-07-17,Bourg-en-Bresse,Saint-Etienne,2014
+Stage 13,2014-07-18,Saint-Etienne,Chamrousse,2014
+Stage 14,2014-07-19,Grenoble,Risoul,2014
+Stage 15,2014-07-20,Tallard,Nimes,2014
+Stage 16,2014-07-22,Carcassonne,Bagnères-de-Luchon,2014
+Stage 17,2014-07-23,Saint Gaudens,Saint-Lary-Soulan Col du Portet,2014
+Stage 18,2014-07-24,Pau,Hautacam,2014
+Stage 19,2014-07-25,Maubourguet Pays du Val d'Adour,Bergerac,2014
+Stage 20,2014-07-26,Bergerac,Périgueux,2014
+Stage 21,2014-07-27,Evry,Paris Champs-Élysées,2014
+Stage 1,2015-07-04,Utrecht,Utrecht,2015
+Stage 2,2015-07-05,Utrecht,Zélande,2015
+Stage 3,2015-07-06,Anvers,Huy,2015
+Stage 4,2015-07-07,Seraing,Cambrai,2015
+Stage 5,2015-07-08,Arras Communauté Urbaine,Amiens,2015
+Stage 6,2015-07-09,Abbeville,Le Havre,2015
+Stage 7,2015-07-10,Livarot,Fougères,2015
+Stage 8,2015-07-11,Rennes,Mûr-de-Bretagne Guerlédan,2015
+Stage 9,2015-07-12,Vannes,Plumelec,2015
+Stage 10,2015-07-14,Tarbes,La Pierre-Saint-Martin,2015
+Stage 11,2015-07-15,Pau,Cauterets,2015
+Stage 12,2015-07-16,Lannemezan,plateau_de_beille,2015
+Stage 13,2015-07-17,Muret,Rodez,2015
+Stage 14,2015-07-18,Rodez,Mende,2015
+Stage 15,2015-07-19,Mende,Valence,2015
+Stage 16,2015-07-20,Bourg-de-Péage,Gap,2015
+Stage 17,2015-07-22,Digne-les-Bains,Pra Loup,2015
+Stage 18,2015-07-23,Gap,Saint-Jean-de-Maurienne,2015
+Stage 19,2015-07-24,Saint-Jean-de-Maurienne,La Toussuire,2015
+Stage 20,2015-07-25,Modane Valfréjus,Alpe d'Huez,2015
+Stage 21,2015-07-26,Sèvres - Grand Paris Seine Ouest,Paris Champs-Élysées,2015
+Stage 1,2016-07-02,Mont-Saint-Michel,Utah Beach Sainte-Marie-du-Mont,2016
+Stage 2,2016-07-03,Saint-Lô,Cherbourg-en-Cotentin,2016
+Stage 3,2016-07-04,Granville,Angers,2016
+Stage 4,2016-07-05,Saumur,Limoges,2016
+Stage 5,2016-07-06,Limoges,Le Lioran,2016
+Stage 6,2016-07-07,Arpajon-sur-Cère,Montauban,2016
+Stage 7,2016-07-08,L'Isle-Jourdain,Lac de Payolle,2016
+Stage 8,2016-07-09,Pau,Bagnères-de-Luchon,2016
+Stage 9,2016-07-10,Vielha Val d'Aran,Andorre,2016
+Stage 10,2016-07-12,Escaldes-Engordany,Revel,2016
+Stage 11,2016-07-13,Carcassonne,Montpellier,2016
+Stage 12,2016-07-14,Montpellier,Mont Ventoux,2016
+Stage 13,2016-07-15,Bourg-Saint-Andéol,La Caverne du Pont-d'Arc,2016
+Stage 14,2016-07-16,Montélimar,Villars-les-Dombes Parc des Oiseaux,2016
+Stage 15,2016-07-17,Bourg-en-Bresse,Culoz,2016
+Stage 16,2016-07-18,Moirans-en-Montagne,Berne,2016
+Stage 17,2016-07-20,Berne,Finhaut-Emosson,2016
+Stage 18,2016-07-21,Sallanches,Megève,2016
+Stage 19,2016-07-22,Albertville,Saint-Gervais Mont Blanc,2016
+Stage 20,2016-07-23,Megève,Morzine,2016
+Stage 21,2016-07-24,Chantilly,Paris Champs-Élysées,2016
+Stage 1,2017-07-01,Düsseldorf,Düsseldorf,2017
+Stage 2,2017-07-02,Düsseldorf,Liège,2017
+Stage 3,2017-07-03,Verviers,Longwy,2017
+Stage 4,2017-07-04,Mondorf-les-Bains,Vittel,2017
+Stage 5,2017-07-05,Vittel,La Planche des Belles Filles,2017
+Stage 6,2017-07-06,Vesoul,Troyes,2017
+Stage 7,2017-07-07,Troyes,Nuits-Saint-Georges,2017
+Stage 8,2017-07-08,Dole,Station des Rousses,2017
+Stage 9,2017-07-09,Nantua,Chambéry,2017
+Stage 10,2017-07-11,Périgueux,Bergerac,2017
+Stage 11,2017-07-12,Eymet,Pau,2017
+Stage 12,2017-07-13,Pau,Peyragudes,2017
+Stage 13,2017-07-14,Saint-Girons,Foix,2017
+Stage 14,2017-07-15,Blagnac,Rodez,2017
+Stage 15,2017-07-16,Laissac-Sévérac l'Église,Le Puy-en-Velay,2017
+Stage 16,2017-07-18,Le Puy-en-Velay,Romans-sur-Isère,2017
+Stage 17,2017-07-19,La Mure,Serre-Chevalier,2017
+Stage 18,2017-07-20,Briançon,Izoard,2017
+Stage 19,2017-07-21,Embrun,Salon-de-Provence,2017
+Stage 20,2017-07-22,Marseille,Marseille,2017
+Stage 21,2017-07-23,Montgeron,Paris Champs-Élysées,2017
+Stage 1,2018-07-07,Noirmoutier-en-l'Île,Fontenay-le-Comte,2018
+Stage 2,2018-07-08,Mouilleron-Saint-Germain,La Roche-sur-Yon,2018
+Stage 3,2018-07-09,Cholet,Cholet,2018
+Stage 4,2018-07-10,La Baule,Sarzeau,2018
+Stage 5,2018-07-11,Lorient,Quimper,2018
+Stage 6,2018-07-12,Brest,Mûr-de-Bretagne Guerlédan,2018
+Stage 7,2018-07-13,Fougères,Chartres,2018
+Stage 8,2018-07-14,Dreux,Amiens,2018
+Stage 9,2018-07-15,Arras Citadelle,Roubaix,2018
+Stage 10,2018-07-17,Annecy,Le Grand-Bornand,2018
+Stage 11,2018-07-18,Albertville,La Rosière Espace San Bernardo,2018
+Stage 12,2018-07-19,Bourg-Saint-Maurice Les Arcs,Alpe d'Huez,2018
+Stage 13,2018-07-20,Le Bourg d'Oisans,Valence,2018
+Stage 14,2018-07-21,Saint-Paul-Trois-Châteaux,Mende,2018
+Stage 15,2018-07-22,Millau,Carcassonne,2018
+Stage 16,2018-07-24,Carcassonne,Bagnères-de-Luchon,2018
+Stage 17,2018-07-25,Bagnères-de-Luchon,Saint-Lary-Soulan Col du Portet,2018
+Stage 18,2018-07-26,Trie-sur-Baïse,Pau,2018
+Stage 19,2018-07-27,Lourdes,Laruns,2018
+Stage 20,2018-07-28,Saint-Pée-sur-Nivelle,Espelette,2018
+Stage 21,2018-07-29,Houilles,Paris Champs-Élysées,2018
+Stage 1,2019-07-06,Bruxelles,Brussel,2019
+Stage 2,2019-07-07,Bruxelles Palais Royal,Brussel Atomium,2019
+Stage 3,2019-07-08,Binche,Épernay,2019
+Stage 4,2019-07-09,Reims,Nancy,2019
+Stage 5,2019-07-10,Saint-Dié-des-Vosges,Colmar,2019
+Stage 6,2019-07-11,Mulhouse,La Planche des Belles Filles,2019
+Stage 7,2019-07-12,Belfort,Chalon-sur-Saône,2019
+Stage 8,2019-07-13,Mâcon,Saint-Étienne,2019
+Stage 9,2019-07-14,Saint-Étienne,Brioude,2019
+Stage 10,2019-07-15,Saint-Flour,Albi,2019
+Stage 11,2019-07-17,Albi,Toulouse,2019
+Stage 12,2019-07-18,Toulouse,Bagnères-de-Bigorre,2019
+Stage 13,2019-07-19,Pau,Pau,2019
+Stage 14,2019-07-20,Tarbes,Tourmalet Barèges,2019
+Stage 15,2019-07-21,Limoux,Foix Prat d'Albis,2019
+Stage 16,2019-07-23,Nîmes,Nîmes,2019
+Stage 17,2019-07-24,Pont du Gard,Gap,2019
+Stage 18,2019-07-25,Embrun,Valloire,2019
+Stage 19,2019-07-26,Saint-Jean-de-Maurienne,Tignes,2019
+Stage 20,2019-07-27,Albertville,Val Thorens,2019
+Stage 21,2019-07-28,Rambouillet,Paris Champs-Élysées,2019
+Stage 1,2020-08-29,Nice Moyen Pays,Nice,2020
+Stage 2,2020-08-30,Nice Haut Pays,Nice,2020
+Stage 3,2020-08-31,Nice,Sisteron,2020
+Stage 4,2020-09-01,Sisteron,Orcières-Merlette,2020
+Stage 5,2020-09-02,Gap,Privas,2020
+Stage 6,2020-09-03,Le Teil,Mont Aigoual,2020
+Stage 7,2020-09-04,Millau,Lavaur,2020
+Stage 8,2020-09-05,Cazères-sur-Garonne,Loudenvielle,2020
+Stage 9,2020-09-06,Pau,Laruns,2020
+Stage 10,2020-09-08,Île d'Oléron Le Château-d'Oléron,Île de Ré Saint-Martin-de-Ré,2020
+Stage 11,2020-09-09,Châtelaillon-Plage,Poitiers,2020
+Stage 12,2020-09-10,Chauvigny,Sarran Corrèze,2020
+Stage 13,2020-09-11,Châtel-Guyon,Puy Mary Cantal,2020
+Stage 14,2020-09-12,Clermont-Ferrand,Lyon,2020
+Stage 15,2020-09-13,Lyon,Grand Colombier,2020
+Stage 16,2020-09-15,La Tour-du-Pin,Villard-de-Lans,2020
+Stage 17,2020-09-16,Grenoble,Méribel Col de la Loze,2020
+Stage 18,2020-09-17,Méribel,La Roche-sur-Foron,2020
+Stage 19,2020-09-18,Bourg-en-Bresse,Champagnole,2020
+Stage 20,2020-09-19,Lure,La Planche des Belles Filles,2020
+Stage 21,2020-09-20,Mantes-la-Jolie,Paris Champs-Élysées,2020
+Stage 1,2021-06-26,Brest,Landerneau,2021
+Stage 2,2021-06-27,Perros-Guirec,Mûr-de-Bretagne Guerlédan,2021
+Stage 3,2021-06-28,Lorient,Pontivy,2021
+Stage 4,2021-06-29,Redon,Fougères,2021
+Stage 5,2021-06-30,Changé,Laval Espace Mayenne,2021
+Stage 6,2021-07-01,Tours,Châteauroux,2021
+Stage 7,2021-07-02,Vierzon,Le Creusot,2021
+Stage 8,2021-07-03,Oyonnax,Le Grand-Bornand,2021
+Stage 9,2021-07-04,Cluses,Tignes,2021
+Stage 10,2021-07-06,Albertville,Valence,2021
+Stage 11,2021-07-07,Sorgues,Malaucène,2021
+Stage 12,2021-07-08,Saint-Paul-Trois-Châteaux,Nîmes,2021
+Stage 13,2021-07-09,Nîmes,Carcassonne,2021
+Stage 14,2021-07-10,Carcassonne,Quillan,2021
+Stage 15,2021-07-11,Céret,Andorre-la-Vieille,2021
+Stage 16,2021-07-13,Pas de la Case,Saint-Gaudens,2021
+Stage 17,2021-07-14,Muret,Saint-Lary-Soulan Col du Portet,2021
+Stage 18,2021-07-15,Pau,Luz Ardiden,2021
+Stage 19,2021-07-16,Mourenx,Libourne,2021
+Stage 20,2021-07-17,Libourne,Saint-Emilion,2021
+Stage 21,2021-07-18,Chatou,Paris Champs-Élysées,2021
+Stage 1,2022-07-01,Copenhague,Copenhague,2022
+Stage 2,2022-07-02,Roskilde,Nyborg,2022
+Stage 3,2022-07-03,Vejle,Sønderborg,2022
+Transfer 1,2022-07-04,Transfert,Transfert,2022
+Stage 4,2022-07-05,Dunkerque,Calais,2022
+Stage 5,2022-07-06,Lille Métropole,Arenberg Porte du Hainaut,2022
+Stage 6,2022-07-07,Binche,Longwy,2022
+Stage 7,2022-07-08,Tomblaine,La Super Planche des Belles Filles,2022
+Stage 8,2022-07-09,Dole,Lausanne,2022
+Stage 9,2022-07-10,Aigle,Châtel Les Portes du Soleil,2022
+Stage 10,2022-07-12,Morzine Les Portes du Soleil,Megève,2022
+Stage 11,2022-07-13,Albertville,Col du Granon Serre Chevalier,2022
+Stage 12,2022-07-14,Briançon,Alpe d'Huez,2022
+Stage 13,2022-07-15,Le Bourg d'Oisans,Saint-Étienne,2022
+Stage 14,2022-07-16,Saint-Étienne,Mende,2022
+Stage 15,2022-07-17,Rodez,Carcassonne,2022
+Stage 16,2022-07-19,Carcassonne,Foix,2022
+Stage 17,2022-07-20,Saint-Gaudens,Peyragudes,2022
+Stage 18,2022-07-21,Lourdes,Hautacam,2022
+Stage 19,2022-07-22,Castelnau-Magnoac,Cahors,2022
+Stage 20,2022-07-23,Lacapelle-Marival,Rocamadour,2022
+Stage 21,2022-07-24,Paris La Défense Arena,Paris Champs-Élysées,2022
