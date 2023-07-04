@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Le Tour de France as a CSV File",
+    "section": "",
+    "text": "LeTourDataSet"
+  },
+  {
+    "objectID": "index.html#tldr",
+    "href": "index.html#tldr",
+    "title": "Le Tour de France as a CSV File",
+    "section": "TL;DR",
+    "text": "TL;DR\nIf you use pandas, just get the data via:\nimport pandas as pd \ndf = pd.read_csv(\"https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv\")\nIf you use R instead of python, you can run:\nlibrary(readr)\ndf &lt;- read_csv(\"https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv\")"
+  },
+  {
+    "objectID": "index.html#disclaimer",
+    "href": "index.html#disclaimer",
+    "title": "Le Tour de France as a CSV File",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nFor issues with this data set, see the Issues tab. There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website."
+  },
+  {
+    "objectID": "index.html#data",
+    "href": "index.html#data",
+    "title": "Le Tour de France as a CSV File",
+    "section": "Data",
+    "text": "Data\nEvery cyclist of the Tour de France in a single CSV file, stored in the file data/TDF_Riders_History.csv. There’s also data on every stage in data/TDF_Stages_History.csv."
+  },
+  {
+    "objectID": "index.html#how-to-run",
+    "href": "index.html#how-to-run",
+    "title": "Le Tour de France as a CSV File",
+    "section": "How to run",
+    "text": "How to run\nIn your shell, just run these commands:\npoetry install # to install the environment\npoetry run python letourdataset/Downloader.py # get the data"
+  },
+  {
+    "objectID": "index.html#legacy-code",
+    "href": "index.html#legacy-code",
+    "title": "Le Tour de France as a CSV File",
+    "section": "Legacy code",
+    "text": "Legacy code\nThis code has been completely rewritten. The previous code, including the output, is in the legacy repository. Especially legacy/README.txt should be read."
+  }
+]
