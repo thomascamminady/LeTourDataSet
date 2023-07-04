@@ -163,3 +163,5 @@ cython_debug/
 
 /.quarto/
 docs/
+/.quarto/
+/_site/
