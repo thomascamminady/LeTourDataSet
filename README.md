@@ -1,4 +1,4 @@
-# LeTourDataSet
+# Le Tour de France Data Set
 
 Check out [https://www.letour.camminady.dev](https://thomascamminady.github.io/LeTourDataSet/)
 
