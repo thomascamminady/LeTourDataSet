@@ -724,8 +724,8 @@
 722,1952,4898,Stage 19 : Pau > Bordeaux
 723,1952,4898,Stage 2 : Rennes > Le Mans
 724,1952,4898,Stage 20 : Bordeaux > Limoges
-725,1952,4898,Stage 21 : Limoges > Puy-de-Dôme
-726,1952,4898,Stage 22 : Puy-de-Dôme > Vichy
+725,1952,4898,Stage 21 : Limoges > Puy de Dôme
+726,1952,4898,Stage 22 : Puy de Dôme > Vichy
 727,1952,4898,Stage 23 : Vichy > Paris
 728,1952,4898,Stage 3 : Le Mans > Rouen
 729,1952,4898,Stage 4 : Rouen > Roubaix
@@ -881,7 +881,7 @@
 879,1959,4358,Stage 12 : Saint Gaudens > Albi
 880,1959,4358,Stage 13 : Albi > Aurillac
 881,1959,4358,Stage 14 : Aurillac > Clermont-Ferrand
-882,1959,4358,Stage 15 : Clermont-Ferrand > Puy-de-Dôme
+882,1959,4358,Stage 15 : Clermont-Ferrand > Puy de Dôme
 883,1959,4358,Stage 16 : Clermont-Ferrand > Saint-Etienne
 884,1959,4358,Stage 17 : Saint-Etienne > Grenoble
 885,1959,4358,Stage 18 : Grenoble > Saint-Vincent d'Aoste
@@ -1001,7 +1001,7 @@
 999,1964,4504,Stage 18 : Bayonne > Bordeaux
 1000,1964,4504,Stage 19 : Bordeaux > Brive-la-Gaillarde
 1001,1964,4504,Stage 2 : Lisieux > Amiens
-1002,1964,4504,Stage 20 : Brive-la-Gaillarde > Puy-de-Dôme
+1002,1964,4504,Stage 20 : Brive-la-Gaillarde > Puy de Dôme
 1003,1964,4504,Stage 21 : Clermont-Ferrand > Orléans
 1004,1964,4504,Stage 22.1 : Orléans > Versailles
 1005,1964,4504,Stage 22.2 : Versailles > Paris
@@ -1075,7 +1075,7 @@
 1073,1967,4779,Stage 18 : Pau > Bordeaux
 1074,1967,4779,Stage 19 : Bordeaux > Limoges
 1075,1967,4779,Stage 2 : Saint-Malo > Caen
-1076,1967,4779,Stage 20 : Limoges > Puy-de-Dôme
+1076,1967,4779,Stage 20 : Limoges > Puy de Dôme
 1077,1967,4779,Stage 21 : Clermont-Ferrand > Fontainebleau
 1078,1967,4779,Stage 22.1 : Fontainebleau > Versailles
 1079,1967,4779,Stage 22.2 : Versailles > Paris
@@ -1127,7 +1127,7 @@
 1125,1969,4117,Stage 18 : Mourenx > Bordeaux
 1126,1969,4117,Stage 19 : Libourne > Brive-la-Gaillarde
 1127,1969,4117,Stage 2 : Woluwé-Saint-Pierre > Maastricht
-1128,1969,4117,Stage 20 : Brive-la-Gaillarde > Puy-de-Dôme
+1128,1969,4117,Stage 20 : Brive-la-Gaillarde > Puy de Dôme
 1129,1969,4117,Stage 21 : Clermont-Ferrand > Montargis
 1130,1969,4117,Stage 22.1 : Montargis > Créteil
 1131,1969,4117,Stage 22.2 : Créteil > Paris
@@ -1191,7 +1191,7 @@
 1189,1971,3608,Stage 6.1 : Roubaix > Amiens
 1190,1971,3608,Stage 6.2 : Amiens > Le Touquet-Paris-Plage
 1191,1971,3608,Stage 7 : Rungis > Nevers
-1192,1971,3608,Stage 8 : Nevers > Puy-de-Dôme
+1192,1971,3608,Stage 8 : Nevers > Puy de Dôme
 1193,1971,3608,Stage 9 : Clermont-Ferrand > Saint-Etienne
 1194,1972,3846,Prologue : Angers > Angers
 1195,1972,3846,Stage 1 : Angers > Saint-Brieuc
@@ -1231,7 +1231,7 @@
 1229,1973,4090,Stage 16.1 : Fleurance > Bordeaux
 1230,1973,4090,Stage 16.2 : Bordeaux > Bordeaux
 1231,1973,4090,Stage 17 : Sainte-Foy-la-Grande > Brive-la-Gaillarde
-1232,1973,4090,Stage 18 : Brive-la-Gaillarde > Puy-de-Dôme
+1232,1973,4090,Stage 18 : Brive-la-Gaillarde > Puy de Dôme
 1233,1973,4090,Stage 19 : Bourges > Versailles
 1234,1973,4090,Stage 2.1 : Saint-Nicolas > Saint-Nicolas
 1235,1973,4090,Stage 2.2 : Saint-Nicolas > Roubaix
@@ -1279,7 +1279,7 @@
 1277,1975,4000,Stage 11 : Pau > Saint-Lary-Soulan Col du Portet
 1278,1975,4000,Stage 12 : Tarbes > Albi
 1279,1975,4000,Stage 13 : Albi > Super-Lioran
-1280,1975,4000,Stage 14 : Aurillac > Puy-de-Dôme
+1280,1975,4000,Stage 14 : Aurillac > Puy de Dôme
 1281,1975,4000,Stage 15 : Nice > Pra Loup
 1282,1975,4000,Stage 16 : Barcelonnette > Serre-Chevalier
 1283,1975,4000,Stage 17 : Valloire > Avoriaz
@@ -1312,7 +1312,7 @@
 1310,1976,4017,Stage 18.3 : Lacanau > Bordeaux
 1311,1976,4017,Stage 19 : Sainte-Foy-la-Grande > Tulle
 1312,1976,4017,Stage 2 : Angers > Caen
-1313,1976,4017,Stage 20 : Tulle > Puy-de-Dôme
+1313,1976,4017,Stage 20 : Tulle > Puy de Dôme
 1314,1976,4017,Stage 21 : Montargis > Versailles
 1315,1976,4017,Stage 22.1 : Versailles > Paris
 1316,1976,4017,Stage 22.2 : Paris > Paris
@@ -1360,7 +1360,7 @@
 1358,1978,3908,Stage 12.1 : Tarbes > Valence d'Agen
 1359,1978,3908,Stage 12.2 : Valence d'Agen > Toulouse
 1360,1978,3908,Stage 13 : Figeac > Superbesse
-1361,1978,3908,Stage 14 : Besse-en-Ch. > Puy-de-Dôme
+1361,1978,3908,Stage 14 : Besse-en-Ch. > Puy de Dôme
 1362,1978,3908,Stage 15 : Saint-Dier-d'Auvergne > Saint-Etienne
 1363,1978,3908,Stage 16 : Saint-Etienne > L'Alpe-d'Huez
 1364,1978,3908,Stage 17 : Grenoble > Morzine
@@ -1482,7 +1482,7 @@
 1480,1983,3809,Stage 12 : Fleurance > Roquefort
 1481,1983,3809,Stage 13 : Roquefort > Aurillac
 1482,1983,3809,Stage 14 : Aurillac > Issoire
-1483,1983,3809,Stage 15 : Clermont-Ferrand > Puy-de-Dôme
+1483,1983,3809,Stage 15 : Clermont-Ferrand > Puy de Dôme
 1484,1983,3809,Stage 16 : Issoire > Saint-Etienne
 1485,1983,3809,Stage 17 : La Tour du Pin > L'Alpe-d'Huez
 1486,1983,3809,Stage 18 : Bourg-d'Oisans > Morzine
@@ -1558,9 +1558,9 @@
 1556,1986,4094,Stage 17 : Gap > Serre-Chevalier
 1557,1986,4094,Stage 18 : Briançon > L'Alpe-d'Huez
 1558,1986,4094,Stage 19 : Villard-de-Lans > Saint-Etienne
-1559,1986,4094,Stage 2 : Meudon > St-Quentin-en-Yvelines
+1559,1986,4094,Stage 2 : Meudon > Saint-Quentin-en-Yvelines
 1560,1986,4094,Stage 20 : Saint-Etienne > Saint-Etienne
-1561,1986,4094,Stage 21 : Saint-Etienne > Puy-de-Dôme
+1561,1986,4094,Stage 21 : Saint-Etienne > Puy de Dôme
 1562,1986,4094,Stage 22 : Clermont-Ferrand > Nevers
 1563,1986,4094,Stage 23 : Cosne > Paris
 1564,1986,4094,Stage 3 : Levallois-Perret > Liévin
@@ -1607,7 +1607,7 @@
 1605,1988,3286,Stage 16 : Tarbes > Pau
 1606,1988,3286,Stage 17 : Pau > Bordeaux
 1607,1988,3286,Stage 18 : Ruelle > Limoges
-1608,1988,3286,Stage 19 : Limoges > Puy-de-Dôme
+1608,1988,3286,Stage 19 : Limoges > Puy de Dôme
 1609,1988,3286,Stage 2 : La Haye Fouassière > Ancenis
 1610,1988,3286,Stage 20 : Clermont-Ferrand > Chalon-sur-Saône
 1611,1988,3286,Stage 21 : Santenay > Santenay
@@ -2205,7 +2205,7 @@
 2203,2016,3525,Stage 16 : Moirans-en-Montagne > Berne
 2204,2016,3525,Stage 17 : Berne > Finhaut-Emosson
 2205,2016,3525,Stage 18 : Sallanches > Megève
-2206,2016,3525,Stage 19 : Albertville > Saint-Gervais Mont Blanc
+2206,2016,3525,Stage 19 : Albertville > Saint-Gervais Mont-Blanc
 2207,2016,3525,Stage 2 : Saint-Lô > Cherbourg-en-Cotentin
 2208,2016,3525,Stage 20 : Megève > Morzine
 2209,2016,3525,Stage 21 : Chantilly > Paris Champs-Élysées
