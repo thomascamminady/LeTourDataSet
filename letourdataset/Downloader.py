@@ -18,7 +18,6 @@ class Downloader:
             "accept-encoding": "deflate, br",
         },
     ) -> None:
-
         self._links: list[str] = self._get_urls(history_page, headers)
 
     def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
@@ -71,7 +70,7 @@ class Downloader:
     def _get_stages(self, soup: Tag, year: int, distance: int) -> pd.DataFrame:
         select_tag = soup.find("select")
         if not isinstance(select_tag, Tag):
-            raise Exception(f"Can't find `select`.")
+            raise Exception("Can't find `select`.")
 
         df_stages = pd.DataFrame(
             [[year, distance, option.text] for option in select_tag.find_all("option")],
@@ -91,7 +90,6 @@ class Downloader:
         year: int,
         distance: int,
     ) -> tuple[pd.DataFrame, pd.DataFrame]:
-
         df_rankings["Year"] = year
         df_rankings["Distance (km)"] = distance
         df_rankings["Number of stages"] = len(df_stages)
