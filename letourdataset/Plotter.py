@@ -9,6 +9,7 @@ class Plotter:
         pass
 
     def plot(self, df: pd.DataFrame, saveas="data/TDF_Distance_And_Pace.png") -> None:
+        last_year = 2023
 
         year = np.unique(df["Year"])
         distance = df.groupby("Year")["Distance (km)"].mean(numeric_only=True).values
@@ -20,10 +21,10 @@ class Plotter:
         _, ax = plt.subplots(1, 1, figsize=(15, 7))
         ax.scatter(year, distance)  # type:ignore
 
-        ax.set_title("Tour de France 1903 - 2022", fontsize=24, color="gray")
+        ax.set_title(f"Tour de France 1903 - {last_year}", fontsize=24, color="gray")
 
         ax.set_xlabel("Year", fontsize=20, color="gray")
-        ax.set_xlim(1900, 2023)
+        ax.set_xlim(1900, last_year + 1)
         ax.set_xticks([1925, 1950, 1975, 2000])
         ax.set_xticklabels([1925, 1950, 1975, 2000], color="gray")
 
@@ -46,7 +47,7 @@ class Plotter:
         ax_twinx.text(1915, 27, "WWI", **args)
         ax_twinx.text(1940, 27, "WWII", **args)
 
-        ax_twinx.set_xlim(1900, 2023)
+        ax_twinx.set_xlim(1900, last_year + 1)
 
         ax_twinx.set_ylabel("Winner avg. pace (kph)", fontsize=20, color="tab:red")
         ax_twinx.set_ylim(20, 45)
