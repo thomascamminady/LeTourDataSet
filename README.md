@@ -2,6 +2,7 @@
 
 Data for the **Men's and Women's version** of the Tour de France.
 
+As of 2023, the data for Le Tour Femmes is available on the official [tour website](https://www.letourfemmes.fr/en). This data is now included as well.  
 
 ## TL;DR
 If you use `pandas`, just get the data via:
