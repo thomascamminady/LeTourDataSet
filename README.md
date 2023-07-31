@@ -21,13 +21,11 @@ df_women <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/
 
 As of 2023, the data for Le Tour de France Femmes avec Zwift is available on the official [tour website](https://www.letourfemmes.fr/en). This data is now included as well. To assure backward compatibility, the data for the men's and women's versions of Le Tour are stored in different files. 
 
-
-## Disclaimer 
-For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
-
 ## Data
 Every cyclist of the Tour de France in a single CSV file, stored in the file `data/TDF_Riders_History.csv`.
 There's also data on every stage in `data/TDF_Stages_History.csv`.
+
+The women's tour data is stored in files with the prefix `TDFF` (Tour de France Femmes).
 
 ## How to run
 In your shell, just run these commands:
@@ -36,6 +34,8 @@ poetry install # to install the environment
 poetry run python letourdataset/Downloader.py # get the data
 ```
 
+## Disclaimer 
+For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
 
 ## Legacy code
 This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/camminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 
