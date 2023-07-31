@@ -1,6 +1,4 @@
-# Le Tour de France Data Set
-
-As of 2023, the data for Le Tour de France Femmes avec Zwift is available on the official [tour website](https://www.letourfemmes.fr/en). This data is now included as well.  
+# Le Tour de France & Le Tour de France Femmes avec Zwift Data Set
 
 ## TL;DR
 If you use `pandas`, just get the data via:
@@ -19,7 +17,9 @@ df_women <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/
 
 ![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Distance_And_Pace.png)
 
+## Le Tour de France Femmes avec Zwift
 
+As of 2023, the data for Le Tour de France Femmes avec Zwift is available on the official [tour website](https://www.letourfemmes.fr/en). This data is now included as well. To assure backward compatibility, the data for the men's and women's versions of Le Tour are stored in different files. 
 
 
 ## Disclaimer 
