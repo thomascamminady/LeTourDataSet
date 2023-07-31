@@ -1,16 +1,21 @@
 # Le Tour de France Data Set
 
+Data for the **Men's and Women's version** of the Tour de France.
+
 
 ## TL;DR
 If you use `pandas`, just get the data via:
 ```python
 import pandas as pd 
-df = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+df_men = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+df_women = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
+
 ```
 If you use `R` instead of `python`, you can run:
 ```R
 library(readr)
-df <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+df_men <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+df_women <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
 ```
 
 ![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Distance_And_Pace.png)

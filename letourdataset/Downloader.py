@@ -143,8 +143,16 @@ class Downloader:
 
 
 if __name__ == "__main__":
-    downloader = Downloader()
-    df_rankings, df_stages = downloader.run()
+    # Men
+    downloader = Downloader(history_page="https://www.letour.fr/en/history")
+    df_rankings, df_stages = downloader.run("http://www.letour.fr")
     df_rankings.to_csv("data/TDF_Riders_History.csv")
     df_stages.to_csv("data/TDF_Stages_History.csv")
-    Plotter().plot(df_rankings)
+    Plotter().plot(df_rankings, saveas="data/TDF_Distance_And_Pace.png")
+
+    # Women
+    downloader = Downloader(history_page="https://www.letourfemmes.fr/en/history")
+    df_rankings, df_stages = downloader.run("http://www.letourfemmes.fr")
+    df_rankings.to_csv("data/TDFF_Riders_History.csv")
+    df_stages.to_csv("data/TDFF_Stages_History.csv")
+    Plotter().plot(df_rankings, saveas="data/TDFF_Distance_And_Pace.png")
