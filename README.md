@@ -1,4 +1,4 @@
-# Le Tour de France & Le Tour de France Femmes avec Zwift Data Set
+# Le Tour de France Data Set & Le Tour de France Femmes avec Zwift Data Set
 
 ## TL;DR
 If you use `pandas`, just get the data via:
