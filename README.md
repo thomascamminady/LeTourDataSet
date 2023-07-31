@@ -1,6 +1,6 @@
 # Le Tour de France Data Set
 
-As of 2023, the data for Le Tour Femmes is available on the official [tour website](https://www.letourfemmes.fr/en). This data is now included as well.  
+As of 2023, the data for Le Tour de France Femmes avec Zwift is available on the official [tour website](https://www.letourfemmes.fr/en). This data is now included as well.  
 
 ## TL;DR
 If you use `pandas`, just get the data via:
