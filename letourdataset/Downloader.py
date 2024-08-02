@@ -1,10 +1,11 @@
+import logging
+
+import numpy as np
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Tag
-import pandas as pd
-import numpy as np
-import logging
-from rich.progress import track
 from Plotter import Plotter
+from rich.progress import track
 
 
 class Downloader:
@@ -21,17 +22,37 @@ class Downloader:
         self._links: list[str] = self._get_urls(history_page, headers)
 
     def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
-        return [
-            entry["data-tabs-ajax"]
-            for entry in BeautifulSoup(
+        import re
+
+        string = str(
+            BeautifulSoup(
                 requests.get(history_page, allow_redirects=True, headers=headers).text,
                 "html.parser",
-            ).find_all("button", {"class": "dateTabs__link"})
-        ]
+            )
+        )
+
+        # Define the regular expression pattern
+        pattern = r'data-tabs-ajax="([^"]+)"'
+
+        # Use re.findall to extract all matches
+        matches = re.findall(pattern, string)
+
+        # sort in ascending year
+        matches = matches[::-1]
+        return matches
+
+    # return [
+    #     entry["data-tabs-ajax"]
+    #     for entry in BeautifulSoup(
+    #         requests.get(history_page, allow_redirects=True, headers=headers).text,
+    #         "html.parser",
+    #     ).find_all(attrs= {"class": "dateTabs__content__item js-tabs-content"})
+    # ]
 
     def run(self, prefix="http://www.letour.fr") -> tuple[pd.DataFrame, pd.DataFrame]:
         stages_list: list[pd.DataFrame] = []
         rankings_list: list[pd.DataFrame] = []
+        print(self._links)
         for link in track(self._links, "Downloading historical data..."):
             try:
                 soup, year, distance = self._get_soup_year_distance(prefix + link)
@@ -47,6 +68,8 @@ class Downloader:
                 logging.warn(link)
                 logging.warn(e)
 
+        print(stages_list)
+        print(rankings_list)
         df_stages = pd.concat(stages_list, ignore_index=True)
         df_rankings = pd.concat(rankings_list, ignore_index=True)
 
