@@ -17,8 +17,8 @@
 15,1905,2994,Stage 2 : Nancy > Besançon
 16,1905,2994,Stage 3 : Besançon > Grenoble
 17,1905,2994,Stage 4 : Grenoble > Toulon
-18,1905,2994,Stage 5 : Toulon > Nimes
-19,1905,2994,Stage 6 : Nimes > Toulouse
+18,1905,2994,Stage 5 : Toulon > Nîmes
+19,1905,2994,Stage 6 : Nîmes > Toulouse
 20,1905,2994,Stage 7 : Toulouse > Bordeaux
 21,1905,2994,Stage 8 : Bordeaux > La Rochelle
 22,1905,2994,Stage 9 : La Rochelle > Rennes
@@ -47,8 +47,8 @@
 45,1907,4488,Stage 4 : Belfort > Lyon
 46,1907,4488,Stage 5 : Lyon > Grenoble
 47,1907,4488,Stage 6 : Grenoble > Nice
-48,1907,4488,Stage 7 : Nice > Nimes
-49,1907,4488,Stage 8 : Nimes > Toulouse
+48,1907,4488,Stage 7 : Nice > Nîmes
+49,1907,4488,Stage 8 : Nîmes > Toulouse
 50,1907,4488,Stage 9 : Toulouse > Bayonne
 51,1908,4488,Stage 1 : Paris > Roubaix
 52,1908,4488,Stage 10 : Bayonne > Bordeaux
@@ -62,8 +62,8 @@
 60,1908,4488,Stage 4 : Belfort > Lyon
 61,1908,4488,Stage 5 : Lyon > Grenoble
 62,1908,4488,Stage 6 : Grenoble > Nice
-63,1908,4488,Stage 7 : Nice > Nimes
-64,1908,4488,Stage 8 : Nimes > Toulouse
+63,1908,4488,Stage 7 : Nice > Nîmes
+64,1908,4488,Stage 8 : Nîmes > Toulouse
 65,1908,4488,Stage 9 : Toulouse > Bayonne
 66,1909,4497,Stage 1 : Paris > Roubaix
 67,1909,4497,Stage 10 : Bayonne > Bordeaux
@@ -76,8 +76,8 @@
 74,1909,4497,Stage 4 : Belfort > Lyon
 75,1909,4497,Stage 5 : Lyon > Grenoble
 76,1909,4497,Stage 6 : Grenoble > Nice
-77,1909,4497,Stage 7 : Nice > Nimes
-78,1909,4497,Stage 8 : Nimes > Toulouse
+77,1909,4497,Stage 7 : Nice > Nîmes
+78,1909,4497,Stage 8 : Nîmes > Toulouse
 79,1909,4497,Stage 9 : Toulouse > Bayonne
 80,1910,4734,Stage 1 : Paris > Roubaix
 81,1910,4734,Stage 10 : Luchon > Bayonne
@@ -91,8 +91,8 @@
 89,1910,4734,Stage 4 : Belfort > Lyon
 90,1910,4734,Stage 5 : Lyon > Grenoble
 91,1910,4734,Stage 6 : Grenoble > Nice
-92,1910,4734,Stage 7 : Nice > Nimes
-93,1910,4734,Stage 8 : Nimes > Perpignan
+92,1910,4734,Stage 7 : Nice > Nîmes
+93,1910,4734,Stage 8 : Nîmes > Perpignan
 94,1910,4734,Stage 9 : Perpignan > Luchon
 95,1911,5343,Stage 1 : Paris > Dunkerque
 96,1911,5343,Stage 10 : Luchon > Bayonne
@@ -245,8 +245,8 @@
 243,1924,5425,Stage 8 : Perpignan > Toulon
 244,1924,5425,Stage 9 : Toulon > Nice
 245,1925,5440,Stage 1 : Paris > Le Havre
-246,1925,5440,Stage 10 : Perpignan > Nimes
-247,1925,5440,Stage 11 : Nimes > Toulon
+246,1925,5440,Stage 10 : Perpignan > Nîmes
+247,1925,5440,Stage 11 : Nîmes > Toulon
 248,1925,5440,Stage 12 : Toulon > Nice
 249,1925,5440,Stage 13 : Nice > Briançon
 250,1925,5440,Stage 14 : Briançon > Evian-les-Bains
@@ -464,8 +464,8 @@
 462,1935,4338,Stage 10 : Digne-les-Bains > Nice
 463,1935,4338,Stage 11 : Nice > Cannes
 464,1935,4338,Stage 12 : Cannes > Marseille
-465,1935,4338,Stage 13.1 : Marseille > Nimes
-466,1935,4338,Stage 13.2 : Nimes > Montpellier
+465,1935,4338,Stage 13.1 : Marseille > Nîmes
+466,1935,4338,Stage 13.2 : Nîmes > Montpellier
 467,1935,4338,Stage 14.1 : Montpellier > Narbonne
 468,1935,4338,Stage 14.2 : Narbonne > Perpignan
 469,1935,4338,Stage 15 : Perpignan > Luchon
@@ -491,8 +491,8 @@
 489,1936,4442,Stage 10 : Digne-les-Bains > Nice
 490,1936,4442,Stage 11 : Nice > Cannes
 491,1936,4442,Stage 12 : Cannes > Marseille
-492,1936,4442,Stage 13.1 : Marseille > Nimes
-493,1936,4442,Stage 13.2 : Nimes > Montpellier
+492,1936,4442,Stage 13.1 : Marseille > Nîmes
+493,1936,4442,Stage 13.2 : Nîmes > Montpellier
 494,1936,4442,Stage 14.1 : Montpellier > Narbonne
 495,1936,4442,Stage 14.2 : Narbonne > Perpignan
 496,1936,4442,Stage 15 : Perpignan > Luchon
@@ -518,8 +518,8 @@
 516,1937,4415,Stage 10 : Digne-les-Bains > Nice
 517,1937,4415,Stage 11.1 : Nice > Toulon
 518,1937,4415,Stage 11.2 : Toulon > Marseille
-519,1937,4415,Stage 12.1 : Marseille > Nimes
-520,1937,4415,Stage 12.2 : Nimes > Montpellier
+519,1937,4415,Stage 12.1 : Marseille > Nîmes
+520,1937,4415,Stage 12.2 : Nîmes > Montpellier
 521,1937,4415,Stage 13.1 : Montpellier > Narbonne
 522,1937,4415,Stage 13.2 : Narbonne > Perpignan
 523,1937,4415,Stage 14.1 : Perpignan > Bourg-Madame
@@ -648,8 +648,8 @@
 646,1949,4808,Stage 10 : Saint-Sébastien > Pau
 647,1949,4808,Stage 11 : Pau > Luchon
 648,1949,4808,Stage 12 : Luchon > Toulouse
-649,1949,4808,Stage 13 : Toulouse > Nimes
-650,1949,4808,Stage 14 : Nimes > Marseille
+649,1949,4808,Stage 13 : Toulouse > Nîmes
+650,1949,4808,Stage 14 : Nîmes > Marseille
 651,1949,4808,Stage 15 : Marseille > Cannes
 652,1949,4808,Stage 16 : Cannes > Briançon
 653,1949,4808,Stage 17 : Briançon > Aoste
@@ -669,8 +669,8 @@
 667,1950,4773,Stage 10 : Bordeaux > Pau
 668,1950,4773,Stage 11 : Pau > Saint Gaudens
 669,1950,4773,Stage 12 : Saint Gaudens > Perpignan
-670,1950,4773,Stage 13 : Perpignan > Nimes
-671,1950,4773,Stage 14 : Nimes > Toulon
+670,1950,4773,Stage 13 : Perpignan > Nîmes
+671,1950,4773,Stage 14 : Nîmes > Toulon
 672,1950,4773,Stage 15 : Toulon > Menton
 673,1950,4773,Stage 16 : Menton > Nice
 674,1950,4773,Stage 17 : Nice > Gap
@@ -739,8 +739,8 @@
 737,1953,4476,Stage 11 : Cauterets > Luchon
 738,1953,4476,Stage 12 : Luchon > Albi
 739,1953,4476,Stage 13 : Albi > Béziers
-740,1953,4476,Stage 14 : Béziers > Nimes
-741,1953,4476,Stage 15 : Nimes > Marseille
+740,1953,4476,Stage 14 : Béziers > Nîmes
+741,1953,4476,Stage 15 : Nîmes > Marseille
 742,1953,4476,Stage 16 : Marseille > Monaco
 743,1953,4476,Stage 17 : Monaco > Gap
 744,1953,4476,Stage 18 : Gap > Briançon
@@ -859,7 +859,7 @@
 857,1958,4319,Stage 14 : Pau > Luchon
 858,1958,4319,Stage 15 : Luchon > Toulouse
 859,1958,4319,Stage 16 : Toulouse > Béziers
-860,1958,4319,Stage 17 : Béziers > Nimes
+860,1958,4319,Stage 17 : Béziers > Nîmes
 861,1958,4319,Stage 18 : Mont Ventoux > Mont Ventoux
 862,1958,4319,Stage 19 : Carpentras > Gap
 863,1958,4319,Stage 2 : Gand > Dunkerque
@@ -1553,8 +1553,8 @@
 1551,1986,4094,Stage 12 : Bayonne > Pau
 1552,1986,4094,Stage 13 : Pau > Superbagnères
 1553,1986,4094,Stage 14 : Superbagnères > Blagnac
-1554,1986,4094,Stage 15 : Carcassonne > Nimes
-1555,1986,4094,Stage 16 : Nimes > Gap
+1554,1986,4094,Stage 15 : Carcassonne > Nîmes
+1555,1986,4094,Stage 16 : Nîmes > Gap
 1556,1986,4094,Stage 17 : Gap > Serre-Chevalier
 1557,1986,4094,Stage 18 : Briançon > L'Alpe-d'Huez
 1558,1986,4094,Stage 19 : Villard-de-Lans > Saint-Etienne
@@ -1779,7 +1779,7 @@
 1777,1996,3765,Stage 12 : Valence > Le Puy-en-Velay
 1778,1996,3765,Stage 13 : Le Puy-en-Velay > Superbesse
 1779,1996,3765,Stage 14 : Besse > Tulle
-1780,1996,3765,Stage 15 : Brive-la-Gaillarde > Villeneuve sur Lot
+1780,1996,3765,Stage 15 : Brive-la-Gaillarde > Villeneuve-sur-Lot
 1781,1996,3765,Stage 16 : Agen > Hautacam
 1782,1996,3765,Stage 17 : Argelès-Gazost > Pampelune
 1783,1996,3765,Stage 18 : Pampelune > Hendaye
@@ -1878,7 +1878,7 @@
 1876,2000,3662,Stage 5 : Vannes > Vitré
 1877,2000,3662,Stage 6 : Vitré > Tours
 1878,2000,3662,Stage 7 : Tours > Limoges
-1879,2000,3662,Stage 8 : Limoges > Villeneuve sur Lot
+1879,2000,3662,Stage 8 : Limoges > Villeneuve-sur-Lot
 1880,2000,3662,Stage 9 : Agen > Dax
 1881,2001,3458,Prologue : Dunkerque > Dunkerque
 1882,2001,3458,Stage 1 : Saint-Omer > Boulogne-sur-Mer
@@ -1949,7 +1949,7 @@
 1947,2004,3391,Stage 11 : Saint-Flour > Figeac
 1948,2004,3391,Stage 12 : Castelsarrasin > La Mongie
 1949,2004,3391,Stage 13 : Lannemezan > plateau_de_beille
-1950,2004,3391,Stage 14 : Carcassonne > Nimes
+1950,2004,3391,Stage 14 : Carcassonne > Nîmes
 1951,2004,3391,Stage 15 : Valréas > Villard-de-Lans
 1952,2004,3391,Stage 16 : Bourg-d'Oisans > L'Alpe-d'Huez
 1953,2004,3391,Stage 17 : Bourg-d'Oisans > le_grand_bornand
@@ -2031,8 +2031,8 @@
 2029,2008,3559,Stage 10 : Pau > Hautacam
 2030,2008,3559,Stage 11 : Lannemezan > Foix
 2031,2008,3559,Stage 12 : Lavelanet > Narbonne
-2032,2008,3559,Stage 13 : Narbonne > Nimes
-2033,2008,3559,Stage 14 : Nimes > Digne-les-Bains
+2032,2008,3559,Stage 13 : Narbonne > Nîmes
+2033,2008,3559,Stage 14 : Nîmes > Digne-les-Bains
 2034,2008,3559,Stage 15 : Embrun > Prato Nevoso
 2035,2008,3559,Stage 16 : Cuneo > Jausiers
 2036,2008,3559,Stage 17 : Embrun > L'Alpe-d'Huez
@@ -2159,7 +2159,7 @@
 2157,2014,3659,Stage 12 : Bourg-en-Bresse > Saint-Etienne
 2158,2014,3659,Stage 13 : Saint-Etienne > Chamrousse
 2159,2014,3659,Stage 14 : Grenoble > Risoul
-2160,2014,3659,Stage 15 : Tallard > Nimes
+2160,2014,3659,Stage 15 : Tallard > Nîmes
 2161,2014,3659,Stage 16 : Carcassonne > Bagnères-de-Luchon
 2162,2014,3659,Stage 17 : Saint Gaudens > Saint-Lary-Soulan Col du Portet
 2163,2014,3659,Stage 18 : Pau > Hautacam
@@ -2364,3 +2364,24 @@
 2362,2023,3404,Stage 7 : Mont-de-Marsan > Bordeaux
 2363,2023,3404,Stage 8 : Libourne > Limoges
 2364,2023,3404,Stage 9 : Saint-Léonard-de-Noblat > Puy de Dôme
+2365,2024,3492,Stage 1 : Florence > Rimini
+2366,2024,3492,Stage 10 : Orléans > Saint-Amand-Montrond
+2367,2024,3492,Stage 11 : Évaux-les-Bains > Le Lioran
+2368,2024,3492,Stage 12 : Aurillac > Villeneuve-sur-Lot
+2369,2024,3492,Stage 13 : Agen > Pau
+2370,2024,3492,Stage 14 : Pau > Saint-Lary-Soulan Pla d'Adet
+2371,2024,3492,Stage 15 : Loudenvielle > Plateau de Beille
+2372,2024,3492,Stage 16 : Gruissan > Nîmes
+2373,2024,3492,Stage 17 : Saint-Paul-Trois-Châteaux > Superdévoluy
+2374,2024,3492,Stage 18 : Gap > Barcelonnette
+2375,2024,3492,Stage 19 : Embrun > Isola 2000
+2376,2024,3492,Stage 2 : Cesenatico > Bologne
+2377,2024,3492,Stage 20 : Nice > Col de la Couillole
+2378,2024,3492,Stage 21 : Monaco > Nice
+2379,2024,3492,Stage 3 : Plaisance > Turin
+2380,2024,3492,Stage 4 : Pinerolo > Valloire
+2381,2024,3492,Stage 5 : Saint-Jean-de-Maurienne > Saint-Vulbas
+2382,2024,3492,Stage 6 : Mâcon > Dijon
+2383,2024,3492,Stage 7 : Nuits-Saint-Georges > Gevrey-Chambertin
+2384,2024,3492,Stage 8 : Semur-en-Auxois > Colombey-les-deux-Églises
+2385,2024,3492,Stage 9 : Troyes > Troyes
