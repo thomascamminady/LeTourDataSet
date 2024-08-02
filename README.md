@@ -1,5 +1,9 @@
 # Le Tour de France Data Set & Le Tour de France Femmes avec Zwift Data Set
 
+
+![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDF_Distance_And_Pace.png)
+
+
 ## TL;DR
 If you use `pandas`, just get the data via:
 ```python
@@ -14,8 +18,6 @@ library(readr)
 df_men <- read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
 df_women <- read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
 ```
-
-![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDF_Distance_And_Pace.png)
 
 ## Le Tour de France Femmes avec Zwift
 
