@@ -1,4 +1,5 @@
 import logging
+import re
 
 import numpy as np
 import pandas as pd
@@ -22,8 +23,6 @@ class Downloader:
         self._links: list[str] = self._get_urls(history_page, headers)
 
     def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
-        import re
-
         string = str(
             BeautifulSoup(
                 requests.get(history_page, allow_redirects=True, headers=headers).text,
@@ -101,9 +100,17 @@ class Downloader:
         )
         return df_stages
 
+    def _add_bib_number(self, soup: Tag, df_rankings: pd.DataFrame) -> pd.DataFrame:
+        # Manually add the bib numbers because they are not in the rankings table
+        bibs = re.findall(r'data-bib="([^"]+)"', str(soup))
+        bibs = [int(bib.replace("#", "")) for bib in bibs]
+        df_rankings.insert(2, "Rider No.", bibs)
+        return df_rankings
+
     def _get_rankings(self, soup: Tag) -> pd.DataFrame:
         rankingTable = soup.find("table")
         df_rankings = pd.read_html(str(rankingTable))[0]
+        self._add_bib_number(soup, df_rankings)
         return df_rankings
 
     def _cleanup(
