@@ -1,21 +1,23 @@
 # Le Tour de France Data Set & Le Tour de France Femmes avec Zwift Data Set
 
+
+![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDF_Distance_And_Pace.png)
+
+
 ## TL;DR
 If you use `pandas`, just get the data via:
 ```python
 import pandas as pd 
-df_men = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
-df_women = pd.read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
+df_men = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+df_women = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
 
 ```
 If you use `R` instead of `python`, you can run:
 ```R
 library(readr)
-df_men <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
-df_women <- read_csv("https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
+df_men <- read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDF_Riders_History.csv")
+df_women <- read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/TDFF_Riders_History.csv")
 ```
-
-![Distance and winner average pace](https://raw.githubusercontent.com/camminady/LeTourDataSet/master/data/TDF_Distance_And_Pace.png)
 
 ## Le Tour de France Femmes avec Zwift
 
@@ -35,7 +37,7 @@ poetry run python letourdataset/Downloader.py # get the data
 ```
 
 ## Disclaimer 
-For issues with this data set, see the [Issues tab](https://github.com/camminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
+For issues with this data set, see the [Issues tab](https://github.com/thomascamminady/LeTourDataSet/issues). There are some entries that are incorrect. However, so far it seems that the mistake stems from wrong data on the letour.fr website. Looking back, I should have probably scraped another website.
 
 ## Legacy code
-This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/camminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 
+This code has been completely rewritten. The previous code, including the output, is in the [legacy repository](https://github.com/thomascamminady/LeTourDataSetLegacy). Especially `legacy/README.txt` should be read. 

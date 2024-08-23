@@ -1,7 +1,7 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 
 class Plotter:
@@ -9,7 +9,7 @@ class Plotter:
         pass
 
     def plot(self, df: pd.DataFrame, saveas="data/TDF_Distance_And_Pace.png") -> None:
-        last_year = 2023
+        last_year = 2024
 
         year = np.unique(df["Year"])
         distance = df.groupby("Year")["Distance (km)"].mean(numeric_only=True).values
