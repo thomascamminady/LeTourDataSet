@@ -6,183 +6,480 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Tag
 from Plotter import Plotter
+from requests_html import AsyncHTMLSession
+from io import StringIO
+import asyncio
 from rich.progress import track
 
 
 class Downloader:
-    def __init__(
-        self,
-        history_page="https://www.letour.fr/en/history",
-        headers={
-            "Accept": "text/html",
-            "User-Agent": "python-requests/1.2.0",
-            "Accept-Charset": "utf-8",
-            "accept-encoding": "deflate, br",
-        },
-    ) -> None:
-        self._links: list[str] = self._get_urls(history_page, headers)
+	def __init__(
+		self,
+		history_page="https://www.letour.fr/en/history",
+		headers={
+			"Accept": "text/html",
+			"User-Agent": "python-requests/1.2.0",
+			"Accept-Charset": "utf-8",
+			"accept-encoding": "deflate, br",
+		},
+	) -> None:
+		self._prefix = "http://www.letour.fr"
+		self._links: list[str] = self._get_urls(history_page, headers)
+		self._ranking_types = {
+			# "Individual (General)": "itg",
+			"Individual (Stage)": "ite",
+			# "Points (General)": "ipg",
+			"Points (Stage)": "ipe",
+			# "Climber (General)": "img",
+			"Climber (Stage)": "ime",
+			# "Youth (General)": "ijg",
+			"Youth (Stage)": "ije",
+			# "Combative (General)": "icg",
+			"Combative (Stage)": "ice",
+			# "Team (General)": "etg",
+			"Team (Stage)": "ete",
+		}
 
-    def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
-        string = str(
-            BeautifulSoup(
-                requests.get(history_page, allow_redirects=True, headers=headers).text,
-                "html.parser",
-            )
-        )
+	def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
+		string = str(
+			BeautifulSoup(
+				requests.get(history_page, allow_redirects=True, headers=headers).text,
+				"html.parser",
+			)
+		)
+		pattern = r'data-tabs-ajax="([^"]+)"'
+		matches = re.findall(pattern, string)
+		matches = matches[::-1]
+		logging.debug(
+			"Matches found in the history page:\n{}".format("\n".join(matches))
+		)
+		return matches
 
-        # Define the regular expression pattern
-        pattern = r'data-tabs-ajax="([^"]+)"'
+	async def run(self) -> tuple[pd.DataFrame, pd.DataFrame]:
+		stages_list: list[pd.DataFrame] = []
+		rankings_list: list[pd.DataFrame] = []
+		all_rankings_list: list[pd.DataFrame] = []
+		logging.debug("Links:\n{}".format("\n".join(self._links)))
+		for link in track(self._links, "Downloading historical data..."):
+			try:
+				logging.info("Downloading data from {}".format(self._prefix + link))
+				soup, year, distance = self._get_soup_year_distance(self._prefix + link)
 
-        # Use re.findall to extract all matches
-        matches = re.findall(pattern, string)
+				logging.info("Parsing data from {}".format(self._prefix + link))
+				stages = self._get_stages(soup, year, distance)
+				final_rankings = self._get_rankings(soup)
 
-        # sort in ascending year
-        matches = matches[::-1]
-        return matches
+				logging.info("Fetching yearly TDF URLs from {}".format(self._prefix + link))
+				selections_urls = await self._fetch_yearly_tdf_urls(self._prefix + link)
+				intermediate_rankings = await self._get_all_rankings(
+					selections_urls["Ranking"], len(stages)
+				)
+				stages_winners = self._get_stages_winners(selections_urls["Stages winners"])
+				# teams = self._get_teams(selections_urls["Starters"])
+				jersey_wearers = self._get_jersey_wearers(selections_urls["Jersey wearers"])
 
-    # return [
-    #     entry["data-tabs-ajax"]
-    #     for entry in BeautifulSoup(
-    #         requests.get(history_page, allow_redirects=True, headers=headers).text,
-    #         "html.parser",
-    #     ).find_all(attrs= {"class": "dateTabs__content__item js-tabs-content"})
-    # ]
+				# Update the dataframe stages by merging on 'Stages' using the stages_winners dataframe and the jersey_wearers dataframe
+				stages = pd.merge(stages, stages_winners, on="Stages", how="left")
+				# Drop 'Parcours' column
+				stages = stages.drop(columns="Parcours")
+				stages = pd.merge(stages, jersey_wearers, on="Stages", how="left")
+				# Make the first letter of each word in the fields of the columns that contains 'Winner' or 'Jersey' in their names uppercase and the rest lowercase using title() method
+				cols = [
+					col
+					for col in stages.columns
+					if "winner" in col.lower() or "jersey" in col.lower()
+				]
+				stages[cols] = stages[cols].apply(lambda x: x.str.title())
+				# stages['Team'] = stages['Winner of stage'].apply(lambda x: x.split('(')[1].replace(')', ''))
+				# stages['Winner of stage'] = stages['Winner of stage'].apply(lambda x: x.split('(')[0].strip())
 
-    def run(self, prefix="http://www.letour.fr") -> tuple[pd.DataFrame, pd.DataFrame]:
-        stages_list: list[pd.DataFrame] = []
-        rankings_list: list[pd.DataFrame] = []
-        print(self._links)
-        for link in track(self._links, "Downloading historical data..."):
-            try:
-                soup, year, distance = self._get_soup_year_distance(prefix + link)
-                df_stage, df_ranking = self._cleanup(
-                    self._get_stages(soup, year, distance),
-                    self._get_rankings(soup),
-                    year,
-                    distance,
-                )
-                stages_list.append(df_stage)
-                rankings_list.append(df_ranking)
-            except Exception as e:
-                logging.warn(link)
-                logging.warn(e)
+				logging.info("Cleaning up data from {}".format(self._prefix + link))
+				df_ranking, df_all_rankings, df_stage = self._cleanup(
+					stages,
+					final_rankings,
+					intermediate_rankings,
+					year,
+					distance,
+				)
+				logging.info("Data from {} cleaned up".format(self._prefix + link))
+				stages_list.append(df_stage)
+				rankings_list.append(df_ranking)
+				all_rankings_list.append(df_all_rankings)
 
-        print(stages_list)
-        print(rankings_list)
-        df_stages = pd.concat(stages_list, ignore_index=True)
-        df_rankings = pd.concat(rankings_list, ignore_index=True)
+			except Exception as e:
+				logging.warning(link)
+				logging.warning(e)
 
-        return df_stages, df_rankings
+		logging.debug("Stage list:\n{}".format(stages_list))
+		logging.debug("Ranking list:\n{}".format(rankings_list))
+		df_stages = pd.concat(stages_list, ignore_index=True)
+		df_rankings = pd.concat(rankings_list, ignore_index=True)
+		df_all_rankings = pd.concat(all_rankings_list, ignore_index=True)
 
-    def _get_soup_year_distance(self, link: str) -> tuple[Tag, int, int]:
-        result = requests.get(link, allow_redirects=True)
-        text = result.text
-        status = result.status_code
-        logging.info(link + " ==> HTTP STATUS = " + str(status))
+		return df_stages, df_rankings, df_all_rankings
 
-        soup = BeautifulSoup(text, "html.parser")
-        year_tag = soup.find("h3")
-        if year_tag is None:
-            raise Exception("Could not parse year.")
-        year = int(year_tag.text[-4:])
-        distance = soup.select("[class~=statsInfos__number]")[1].contents
-        distance = int(str(distance[0]).replace(" ", ""))
-        return soup, year, distance
+	def _get_soup_year_distance(self, link: str) -> tuple[Tag, int, int]:
+		result = requests.get(link, allow_redirects=True)
+		text = result.text
+		status = result.status_code
+		logging.info(link + " ==> HTTP STATUS = " + str(status))
 
-    def _get_stages(self, soup: Tag, year: int, distance: int) -> pd.DataFrame:
-        select_tag = soup.find("select")
-        if not isinstance(select_tag, Tag):
-            raise Exception("Can't find `select`.")
+		soup = BeautifulSoup(text, "html.parser")
+		year_tag = soup.find("h3")
+		if year_tag is None:
+			raise Exception("Could not parse year.")
+		year = int(year_tag.text[-4:])
+		distance = soup.select("[class~=statsInfos__number]")[1].contents
+		distance = int(str(distance[0]).replace(" ", ""))
+		return soup, year, distance
 
-        df_stages = pd.DataFrame(
-            [[year, distance, option.text] for option in select_tag.find_all("option")],
-            columns=["Year", "TotalTDFDistance", "Stage"],
-        )
-        return df_stages
+	def _get_stages(self, soup: Tag, year: int, distance: int) -> pd.DataFrame:
+		select_tag = soup.find("select")
+		if not isinstance(select_tag, Tag):
+			raise Exception("Can't find `select`.")
 
-    def _add_bib_number(self, soup: Tag, df_rankings: pd.DataFrame) -> pd.DataFrame:
-        # Manually add the bib numbers because they are not in the rankings table
-        bibs = re.findall(r'data-bib="([^"]+)"', str(soup))
-        bibs = [int(bib.replace("#", "")) for bib in bibs]
-        df_rankings.insert(2, "Rider No.", bibs)
-        return df_rankings
+		df_stages = pd.DataFrame(
+			[[year, distance, option.text] for option in select_tag.find_all("option")],
+			columns=["Year", "TotalTDFDistance", "Stage"],
+		)
 
-    def _get_rankings(self, soup: Tag) -> pd.DataFrame:
-        rankingTable = soup.find("table")
-        df_rankings = pd.read_html(str(rankingTable))[0]
-        self._add_bib_number(soup, df_rankings)
-        return df_rankings
+		# For the column Stage, it is formated like 'Stage 1 : Paris > Lyon' (so "Stage [Number of stage] : [Start city] > [End city]")
+		# We will split this column into 'Stage number', 'Start city' and 'End city'
+		df_stages["Stage number"] = df_stages["Stage"].apply(
+			lambda x: int(x.split(":")[0].split(" ")[1])
+		)
+		df_stages["Start"] = df_stages["Stage"].apply(
+			lambda x: x.split(":")[1].split(">")[0].strip()
+		)
+		df_stages["End"] = df_stages["Stage"].apply(
+			lambda x: x.split(":")[1].split(">")[1].strip()
+		)
+		df_stages.drop(columns="Stage", inplace=True)
+		df_stages.rename(columns={"Stage number": "Stages"}, inplace=True)
+		df_stages = df_stages[["Year", "TotalTDFDistance", "Stages", "Start", "End"]]
+		return df_stages
 
-    def _cleanup(
-        self,
-        df_stages: pd.DataFrame,
-        df_rankings: pd.DataFrame,
-        year: int,
-        distance: int,
-    ) -> tuple[pd.DataFrame, pd.DataFrame]:
-        df_rankings["Year"] = year
-        df_rankings["Distance (km)"] = distance
-        df_rankings["Number of stages"] = len(df_stages)
-        df_rankings["TotalSeconds"] = df_rankings["Times"].apply(
-            lambda x: self._get_seconds(x, "Total")
-        )
-        df_rankings["GapSeconds"] = df_rankings["Gap"].apply(
-            lambda x: self._get_seconds(x, "Gap")
-        )
+	def _get_stages_winners(self, winners_link: str) -> pd.DataFrame:
+		response = requests.get(winners_link)
+		response.raise_for_status()
+		rank_html = response.content
+		soup = BeautifulSoup(rank_html, "html.parser")
+		stages_winners = soup.find("table")
+		html_string = str(stages_winners)
+		html_io = StringIO(html_string)
+		df_stages_winners = pd.read_html(html_io)[0]
+		df_stages_winners.drop(columns="Last km", inplace=True)
+		return df_stages_winners
 
-        # Fix result types
-        df_rankings["ResultType"] = "time"
-        null_years = [1905, 1906, 1908]
-        df_rankings.loc[df_rankings["Year"].isin(null_years), "ResultType"] = "null"
-        point_years = [1907, 1909, 1910, 1911, 1912]
-        df_rankings.loc[df_rankings["Year"].isin(point_years), "ResultType"] = "points"
+	def _get_teams(self, starters_link: str) -> pd.DataFrame:
+		response = requests.get(starters_link)
+		response.raise_for_status()
+		starter_html = response.content
+		soup = BeautifulSoup(starter_html, "html.parser")
+		competitors = []
+		team_blocks = soup.find("div", class_="list list--competitors").find_all(
+			"h3", class_="list__heading"
+		)
 
-        if year in [2006, 1997]:
-            tmp = df_rankings[df_rankings["Year"] == year].reset_index()
-            ts = np.array(tmp["TotalSeconds"])
-            gs = np.array(tmp["GapSeconds"])
-            ts[1:] = ts[0] + gs[1:]
-            df_rankings.loc[df_rankings["Year"] == year, "TotalSeconds"] = ts
+		for team_block in team_blocks:
+			team_name = team_block.text.strip()
+			list_box = team_block.find_next_sibling("div", class_="list__box")
+			competitor_items = list_box.find_all("li", class_="list__box__item")
 
-        df_rankings.sort_values(["Year", "Rank"], axis=0, ascending=True, inplace=True)
-        df_rankings = df_rankings.reset_index(drop=True)
+			for item in competitor_items:
+				bib = (
+					item.find("span", class_="bib").text
+					if item.find("span", class_="bib")
+					else None
+				)
+				name = (
+					item.find("a", class_="runner__link").text.strip()
+					if item.find("a", class_="runner__link")
+					else None
+				)
+				country = (
+					item.find("span", class_="flag js-display-lazy")[
+						"data-class"
+					].split("--")[-1]
+					if item.find("span", class_="flag js-display-lazy")
+					else None
+				)
 
-        df_stages.sort_values(["Year", "Stage"], axis=0, ascending=True, inplace=True)
-        df_stages = df_stages.reset_index(drop=True)
-        return df_rankings, df_stages
+				if bib and name:
+					competitors.append(
+						{
+							"Team": team_name,
+							"Bib": bib,
+							"Name": name,
+							"Country": country,
+						}
+					)
 
-    def _get_seconds(self, row: str, mode: str) -> int:
-        val = sum(
-            to_seconds * int(t)
-            for to_seconds, t in zip(
-                [3600, 60, 1],
-                row.replace("h", ":")
-                .replace("'", ":")
-                .replace('"', ":")
-                .replace(" ", "")
-                .replace("+", "")
-                .replace("-", "0")
-                .split(":"),
-            )
-        )
+		return pd.DataFrame(competitors)
 
-        if (mode == "Gap") and val > 180000:
-            return 0
-        else:
-            return val
+	def _get_jersey_wearers(self, jersey_link: str) -> pd.DataFrame:
+
+		response = requests.get(jersey_link)
+		response.raise_for_status()
+		jersey_html = response.content
+		soup = BeautifulSoup(jersey_html, "html.parser")
+		jersey_wearers = soup.find("table")
+		html_string = str(jersey_wearers)
+		html_io = StringIO(html_string)
+		df_jersey_wearers = pd.read_html(html_io)[0]
+		return df_jersey_wearers
+
+	def _add_bib_number(self, soup: Tag, df_rankings: pd.DataFrame) -> pd.DataFrame:
+		# Manually add the bib numbers because they are not in the rankings table
+		bibs = re.findall(r'data-bib="([^"]+)"', str(soup))
+		bibs = [int(bib.replace("#", "")) for bib in bibs]
+		df_rankings.insert(2, "Rider No.", bibs)
+		return df_rankings
+
+	def _get_rankings(self, soup: Tag) -> pd.DataFrame:
+		"""Get the rankings for a given year
+
+		Args:
+				soup (Tag): BeautifulSoup object of the ranking page
+
+		Returns:
+				pd.DataFrame: DataFrame containing the rankings for the given year
+		"""
+		rankingTable = soup.find("table")
+		html_string = str(rankingTable)
+		html_io = StringIO(html_string)
+		df_rankings = pd.read_html(html_io)[0]
+		self._add_bib_number(soup, df_rankings)
+		return df_rankings
+
+	async def _fetch_yearly_tdf_urls(self, year_url: str) -> dict[str, str]:
+		session = AsyncHTMLSession()
+		response = await session.get(year_url)
+		await response.html.arender(timeout=20)
+
+		soup = BeautifulSoup(response.html.html, "html.parser")
+
+		buttons = soup.find_all(
+			"button", class_="tabs__item btn js-tabs-nested"
+		) + soup.find_all("button", class_="tabs__item btn js-tabs-nested is-active")
+
+		selections_urls = {
+			button.get_text(strip=True): f"{self._prefix}{button['data-tabs-ajax']}"
+			for button in buttons
+		}
+
+		return selections_urls
+
+	async def _get_all_rankings(self, ranking_link: str, n_stages: int) -> pd.DataFrame:
+		"""Get all rankings for a given year. Currently implemented ranking types are 'Individual (Stage)', 'Points (Stage)', 'Climber (Stage)', 'Youth (Stage)', 'Combative (Stage)', 'Team (Stage)'
+
+		Args:
+				ranking_link (str): link to the ranking page
+				n_stages (int): number of stages in this edition of the Tour de France
+
+		Raises:
+				NotImplementedError: If the ranking type is not implemented
+
+		Returns:
+				pd.DataFrame: DataFrame containing all rankings for the given year
+		"""
+
+		df_all_stages = pd.DataFrame(
+			columns=[
+				"Stages",
+				"Ranking type",
+				"Checkpoint" "Rank",
+				"Rider",
+				"Team",
+				"Times",
+				"Points",
+				"Gap",
+				"B",
+				"P",
+			]
+		)
+
+		for stage_number in range(1, n_stages + 1):
+			for ranking_type_name, ranking_type_idx in self._ranking_types.items():
+				ranking_url = (
+					f"{ranking_link}?stage={stage_number}&type={ranking_type_idx}"
+				)
+
+				response = requests.get(ranking_url)
+				response.raise_for_status()
+				rank_html = response.content
+
+				rank_soup = BeautifulSoup(rank_html, "html.parser")
+
+				# Get the ranking table
+				ranking_table = rank_soup.find(
+					"table", {"class": "rankingTable rtable js-extend-target"}
+				)
+				rows = ranking_table.find_all("tr")
+				if len(rows) == 1:
+					print(f"No ranking for {ranking_type_name} on stage {stage_number}")
+					continue
+				rankings = []
+				for row in rows[1:]:
+					cols = row.find_all("td")
+					if "ite" in ranking_type_idx:
+						ranking = {
+							"Rank": cols[0].text.strip(),
+							"Rider": cols[1].text.strip(),
+							"Team": cols[2].text.strip(),
+							"Times": cols[3].text.strip(),
+							"Gap": cols[4].text.strip(),
+							"B": cols[5].text.strip(),
+							"P": cols[6].text.strip(),
+						}
+					elif "ipe" in ranking_type_idx:
+						checkpoint = None
+						if len(cols) == 1:
+							checkpoint = cols[0].text.strip()
+							continue
+						else:
+							ranking = {
+								"Rank": cols[0].text.strip(),
+								"Rider": cols[1].text.strip(),
+								"Team": cols[2].text.strip(),
+								"Points": cols[3].text.strip(),
+								"B": cols[4].text.strip(),
+								"Checkpoint": checkpoint,
+							}
+					elif "ime" in ranking_type_idx:
+						checkpoint = None
+						if len(cols) == 1:
+							checkpoint = cols[0].text.strip()
+							continue
+						ranking = {
+							"Rank": cols[0].text.strip(),
+							"Rider": cols[1].text.strip(),
+							"Team": cols[2].text.strip(),
+							"Points": cols[3].text.strip(),
+							"Checkpoint": checkpoint,
+						}
+					elif "ije" in ranking_type_idx or "ice" in ranking_type_idx:
+						ranking = {
+							"Rank": cols[0].text.strip(),
+							"Rider": cols[1].text.strip(),
+							"Team": cols[2].text.strip(),
+							"Times": cols[3].text.strip(),
+							"Gap": cols[4].text.strip(),
+						}
+					elif "ete" in ranking_type_idx:
+						ranking = {
+							"Rank": cols[0].text.strip(),
+							"Team": cols[1].text.strip(),
+							"Times": cols[2].text.strip(),
+							"Gap": cols[3].text.strip(),
+						}
+					else:
+						raise NotImplementedError(
+							f"Ranking type {ranking_type_name} not implemented"
+						)
+
+					rankings.append(ranking)
+				df_stage = pd.DataFrame(rankings)
+
+				df_stage["Stages"] = stage_number
+				df_stage["Ranking type"] = ranking_type_name
+
+				df_all_stages = pd.concat([df_all_stages, df_stage], ignore_index=True)
+
+		return df_all_stages
+
+	def _cleanup(
+		self,
+		df_stages: pd.DataFrame,
+		df_rankings: pd.DataFrame,
+		df_all_rankings: pd.DataFrame,
+		year: int,
+		distance: int,
+	) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+
+		# Odd years
+		point_years = [1907, 1909, 1910, 1911, 1912]
+		null_years = [1905, 1906, 1908]
+
+		df_rankings["TotalSeconds"] = df_rankings["Times"].apply(
+			lambda x: self._get_seconds(x, "Total")
+		)
+		df_rankings["GapSeconds"] = df_rankings["Gap"].apply(
+			lambda x: self._get_seconds(x, "Gap")
+		)
+
+		for df in [df_rankings, df_all_rankings]:
+			# Remainder of df_rankings.columns : 'Rank', 'Rider', 'Rider No.', 'Team', 'Times', 'Gap', 'B', 'P'
+			# Remainder of df_all_rankings.columns : 'Stages', 'Ranking type', 'CheckpointRank', 'Rider', 'Team', 'Times', 'Points', 'Gap', 'B', 'P', 'Rank', 'Checkpoint'
+			df["Year"] = year
+			df["Distance (km)"] = distance
+			df["Number of stages"] = len(df_stages)
+
+			df["ResultType"] = "time"
+			df.loc[df["Year"].isin(null_years), "ResultType"] = "null"
+			df.loc[df["Year"].isin(point_years), "ResultType"] = "points"
+
+			if year in [2006, 1997]:
+				tmp = df[df["Year"] == year].reset_index()
+				ts = np.array(tmp["TotalSeconds"])
+				gs = np.array(tmp["GapSeconds"])
+				ts[1:] = ts[0] + gs[1:]
+				df.loc[df["Year"] == year, "TotalSeconds"] = ts
+
+		df_rankings.sort_values(["Year", "Rank"], axis=0, ascending=True, inplace=True)
+		df_rankings = df_rankings.reset_index(drop=True)
+
+		df_stages.sort_values(["Year", "Stages"], axis=0, ascending=True, inplace=True)
+		df_stages = df_stages.reset_index(drop=True)
+
+		df_all_rankings.sort_values(
+			["Year", "Stages", "Ranking type", "Rank"],
+			axis=0,
+			ascending=True,
+			inplace=True,
+		)
+		df_all_rankings = df_all_rankings.reset_index(drop=True)
+
+		return df_rankings, df_all_rankings, df_stages
+
+	def _get_seconds(self, row: str, mode: str) -> int:
+		val = sum(
+			to_seconds * int(t)
+			for to_seconds, t in zip(
+				[3600, 60, 1],
+				row.replace("h", ":")
+				.replace("'", ":")
+				.replace('"', ":")
+				.replace(" ", "")
+				.replace("+", "")
+				.replace("-", "0")
+				.split(":"),
+			)
+		)
+
+		if (mode == "Gap") and val > 180000:
+			return 0
+		else:
+			return val
+
+
+async def main():
+	# Men
+	downloader = Downloader(history_page="https://www.letour.fr/en/history")
+	df_stages, df_rankings, df_all_rankings = await downloader.run()
+	df_rankings.to_csv("data/TDF_Riders_History.csv")
+	df_stages.to_csv("data/TDF_Stages_History.csv")
+	df_all_rankings.to_csv("data/TDF_All_Rankings_History.csv")
+	Plotter().plot(df_rankings, saveas="data/TDF_Distance_And_Pace.png")
+
+	# Women
+	downloader = Downloader(history_page="https://www.letourfemmes.fr/en/history")
+	df_rankings, df_stages, df_all_rankings = await downloader.run()
+	df_rankings.to_csv("data/TDFF_Riders_History.csv")
+	df_stages.to_csv("data/TDFF_Stages_History.csv")
+	df_all_rankings.to_csv("data/TDFF_All_Rankings_History.csv")
+	Plotter().plot(df_rankings, saveas="data/TDFF_Distance_And_Pace.png")
 
 
 if __name__ == "__main__":
-    # Men
-    downloader = Downloader(history_page="https://www.letour.fr/en/history")
-    df_rankings, df_stages = downloader.run("http://www.letour.fr")
-    df_rankings.to_csv("data/TDF_Riders_History.csv")
-    df_stages.to_csv("data/TDF_Stages_History.csv")
-    Plotter().plot(df_rankings, saveas="data/TDF_Distance_And_Pace.png")
-
-    # Women
-    downloader = Downloader(history_page="https://www.letourfemmes.fr/en/history")
-    df_rankings, df_stages = downloader.run("http://www.letourfemmes.fr")
-    df_rankings.to_csv("data/TDFF_Riders_History.csv")
-    df_stages.to_csv("data/TDFF_Stages_History.csv")
-    Plotter().plot(df_rankings, saveas="data/TDFF_Distance_And_Pace.png")
+	asyncio.run(main())
