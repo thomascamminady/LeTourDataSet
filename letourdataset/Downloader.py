@@ -8,9 +8,11 @@ from bs4 import BeautifulSoup, Tag
 from Plotter import Plotter
 from requests_html import AsyncHTMLSession
 from io import StringIO
+from itertools import chain
 import asyncio
+import aiohttp
 from rich.progress import track
-
+import os
 
 class Downloader:
 	def __init__(
@@ -55,60 +57,55 @@ class Downloader:
 		)
 		return matches
 
-	async def run(self) -> tuple[pd.DataFrame, pd.DataFrame]:
+	async def run(self) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
 		stages_list: list[pd.DataFrame] = []
 		rankings_list: list[pd.DataFrame] = []
 		all_rankings_list: list[pd.DataFrame] = []
 		logging.debug("Links:\n{}".format("\n".join(self._links)))
 		for link in track(self._links, "Downloading historical data..."):
-			try:
-				logging.info("Downloading data from {}".format(self._prefix + link))
-				soup, year, distance = self._get_soup_year_distance(self._prefix + link)
+			logging.info("Downloading data from {}".format(self._prefix + link))
+			soup, year, distance = self._get_soup_year_distance(self._prefix + link)
 
-				logging.info("Parsing data from {}".format(self._prefix + link))
-				stages = self._get_stages(soup, year, distance)
-				final_rankings = self._get_rankings(soup)
+			logging.info("Parsing data from {}".format(self._prefix + link))
+			stages = self._get_stages(soup, year, distance)
+			final_rankings = self._get_rankings(soup)
 
-				logging.info("Fetching yearly TDF URLs from {}".format(self._prefix + link))
-				selections_urls = await self._fetch_yearly_tdf_urls(self._prefix + link)
-				intermediate_rankings = await self._get_all_rankings(
-					selections_urls["Ranking"], len(stages)
-				)
-				stages_winners = self._get_stages_winners(selections_urls["Stages winners"])
-				# teams = self._get_teams(selections_urls["Starters"])
-				jersey_wearers = self._get_jersey_wearers(selections_urls["Jersey wearers"])
+			logging.info("Fetching yearly TDF URLs from {}".format(self._prefix + link))
+			selections_urls = await self._fetch_yearly_tdf_urls(self._prefix + link)
+			intermediate_rankings = await self._get_all_rankings(
+				selections_urls["Ranking"], list(stages["Stages"])
+			)
+			stages_winners = self._get_stages_winners(selections_urls["Stages winners"])
+			# teams = self._get_teams(selections_urls["Starters"])
+			jersey_wearers = self._get_jersey_wearers(selections_urls["Jersey wearers"])
 
-				# Update the dataframe stages by merging on 'Stages' using the stages_winners dataframe and the jersey_wearers dataframe
-				stages = pd.merge(stages, stages_winners, on="Stages", how="left")
-				# Drop 'Parcours' column
-				stages = stages.drop(columns="Parcours")
-				stages = pd.merge(stages, jersey_wearers, on="Stages", how="left")
-				# Make the first letter of each word in the fields of the columns that contains 'Winner' or 'Jersey' in their names uppercase and the rest lowercase using title() method
-				cols = [
-					col
-					for col in stages.columns
-					if "winner" in col.lower() or "jersey" in col.lower()
-				]
-				stages[cols] = stages[cols].apply(lambda x: x.str.title())
-				# stages['Team'] = stages['Winner of stage'].apply(lambda x: x.split('(')[1].replace(')', ''))
-				# stages['Winner of stage'] = stages['Winner of stage'].apply(lambda x: x.split('(')[0].strip())
+			# Update the dataframe stages by merging on 'Stages' using the stages_winners dataframe and the jersey_wearers dataframe
+			stages = pd.merge(stages, stages_winners, on="Stages", how="left")
+			# Drop 'Parcours' column
+			stages = stages.drop(columns="Parcours")
+			stages = pd.merge(stages, jersey_wearers, on="Stages", how="left")
+			# Make the first letter of each word in the fields of the columns that contains 'Winner' or 'Jersey' in their names uppercase and the rest lowercase using title() method
+			cols = [
+				col
+				for col in stages.columns
+				if "winner" in col.lower() or "jersey" in col.lower()
+			]
+			stages[cols] = stages[cols].apply(lambda x: x.str.title())
+			# stages['Team'] = stages['Winner of stage'].apply(lambda x: x.split('(')[1].replace(')', ''))
+			# stages['Winner of stage'] = stages['Winner of stage'].apply(lambda x: x.split('(')[0].strip())
 
-				logging.info("Cleaning up data from {}".format(self._prefix + link))
-				df_ranking, df_all_rankings, df_stage = self._cleanup(
-					stages,
-					final_rankings,
-					intermediate_rankings,
-					year,
-					distance,
-				)
-				logging.info("Data from {} cleaned up".format(self._prefix + link))
-				stages_list.append(df_stage)
-				rankings_list.append(df_ranking)
-				all_rankings_list.append(df_all_rankings)
-
-			except Exception as e:
-				logging.warning(link)
-				logging.warning(e)
+			logging.info("Cleaning up data from {}".format(self._prefix + link))
+			df_ranking, df_all_rankings, df_stage = self._cleanup(
+				stages,
+				final_rankings,
+				intermediate_rankings,
+				year,
+				distance,
+			)
+			logging.info("Data from {} cleaned up".format(self._prefix + link))
+			stages_list.append(df_stage)
+			rankings_list.append(df_ranking)
+			all_rankings_list.append(df_all_rankings)
 
 		logging.debug("Stage list:\n{}".format(stages_list))
 		logging.debug("Ranking list:\n{}".format(rankings_list))
@@ -145,9 +142,20 @@ class Downloader:
 
 		# For the column Stage, it is formated like 'Stage 1 : Paris > Lyon' (so "Stage [Number of stage] : [Start city] > [End city]")
 		# We will split this column into 'Stage number', 'Start city' and 'End city'
-		df_stages["Stage number"] = df_stages["Stage"].apply(
-			lambda x: int(x.split(":")[0].split(" ")[1])
-		)
+		def extract_stage_number(stage_str):
+			try:
+				return int(stage_str.split(":")[0].split(" ")[1]) # Here we use flot since in the early editions of the TDF some stages are played two times which gives for example stages 13.1 and 13.2; without this, the column should be int
+			except (IndexError, ValueError):
+				if "Prologue" in stage_str:
+					return 0  # There is a case where the stage 0 is in fact a 'prologue'
+				else:
+					try:
+						return float(stage_str.split(":")[0].split(" ")[1])
+					except (IndexError, ValueError):
+						logging.warning(f"Could not parse stage number from '{stage_str}' in year {year}.")
+						return None
+
+		df_stages["Stage number"] = df_stages["Stage"].apply(extract_stage_number)
 		df_stages["Start"] = df_stages["Stage"].apply(
 			lambda x: x.split(":")[1].split(">")[0].strip()
 		)
@@ -218,7 +226,6 @@ class Downloader:
 		return pd.DataFrame(competitors)
 
 	def _get_jersey_wearers(self, jersey_link: str) -> pd.DataFrame:
-
 		response = requests.get(jersey_link)
 		response.raise_for_status()
 		jersey_html = response.content
@@ -227,6 +234,10 @@ class Downloader:
 		html_string = str(jersey_wearers)
 		html_io = StringIO(html_string)
 		df_jersey_wearers = pd.read_html(html_io)[0]
+		df_jersey_wearers = df_jersey_wearers.dropna(axis=1, how='all')
+		cols = [col for col in df_jersey_wearers.columns if "jersey" in col.lower()]
+		# Convert the columns that contains 'jersey' in their names to string
+		df_jersey_wearers[cols] = df_jersey_wearers[cols].astype(str)
 		return df_jersey_wearers
 
 	def _add_bib_number(self, soup: Tag, df_rankings: pd.DataFrame) -> pd.DataFrame:
@@ -240,10 +251,10 @@ class Downloader:
 		"""Get the rankings for a given year
 
 		Args:
-				soup (Tag): BeautifulSoup object of the ranking page
+			soup (Tag): BeautifulSoup object of the ranking page
 
 		Returns:
-				pd.DataFrame: DataFrame containing the rankings for the given year
+			pd.DataFrame: DataFrame containing the rankings for the given year
 		"""
 		rankingTable = soup.find("table")
 		html_string = str(rankingTable)
@@ -251,6 +262,114 @@ class Downloader:
 		df_rankings = pd.read_html(html_io)[0]
 		self._add_bib_number(soup, df_rankings)
 		return df_rankings
+
+	@staticmethod
+	async def _fetch(session: aiohttp.ClientSession, url: str) -> str:
+		async with session.get(url) as response:
+			response.raise_for_status()
+			return await response.text()
+
+	async def _get_all_rankings(self, ranking_link: str, stages_numbers: list[float]) -> pd.DataFrame:
+		stages: list[dict[dict[str, str]]] = []
+		async with aiohttp.ClientSession() as session:
+			tasks = []
+			for stage_number in stages_numbers:
+				for ranking_type_name, ranking_type_idx in self._ranking_types.items():
+					ranking_url = f"{ranking_link}?stage={stage_number}&type={ranking_type_idx}"
+					tasks.append(self._fetch(session, ranking_url))
+					
+			# Execute all requests concurrently
+			responses = await asyncio.gather(*tasks)
+
+			response_idx = 0
+			for stage_number in stages_numbers:
+				for ranking_type_name, ranking_type_idx in self._ranking_types.items():
+					rank_html = responses[response_idx]
+					response_idx += 1
+					rank_soup = BeautifulSoup(rank_html, "html.parser")
+					rankings: list[dict[str, str]] = []
+
+					# Get the ranking table
+					ranking_table = rank_soup.find("table", {"class": "rankingTable rtable js-extend-target"})
+					if not ranking_table:
+						logging.info(f"No ranking for {ranking_type_name} on stage {stage_number} (URL: {ranking_link}).")
+						continue
+					rows = ranking_table.find_all("tr")
+					if len(rows) <= 2:
+						# First case 1- just the header so no data; 2- header and one row of data so no data
+						logging.info(f"No ranking for {ranking_type_name} on stage {stage_number} (URL: {ranking_link}).")
+						continue
+
+					for row in rows[1:]:
+						cols = row.find_all("td")
+						if "ite" in ranking_type_idx:
+							ranking = {
+								"Rank": cols[0].text.strip(),
+								"Rider": cols[1].text.strip(),
+								"Team": cols[2].text.strip(),
+								"Times": cols[3].text.strip(),
+							}
+							if len(cols) > 4:
+								ranking["Gap"] = cols[4].text.strip()
+							if len(cols) > 5:
+								ranking["B"] = cols[5].text.strip()
+							if len(cols) > 6:
+								ranking["P"] = cols[6].text.strip()
+						elif "ipe" in ranking_type_idx:
+							checkpoint = None
+							if len(cols) == 1:
+								checkpoint = cols[0].text.strip()
+								continue
+							else:
+								ranking = {
+									"Rank": cols[0].text.strip(),
+									"Rider": cols[1].text.strip(),
+									"Team": cols[2].text.strip(),
+									"Points": cols[3].text.strip(),
+									"Checkpoint": checkpoint,
+								}
+								if len(cols) > 4:
+									ranking["B"] = cols[4].text.strip()
+						elif "ime" in ranking_type_idx:
+							checkpoint = None
+							if len(cols) == 1:
+								checkpoint = cols[0].text.strip()
+								continue
+							ranking = {
+								"Rank": cols[0].text.strip(),
+								"Rider": cols[1].text.strip(),
+								"Team": cols[2].text.strip(),
+								"Points": cols[3].text.strip(),
+								"Checkpoint": checkpoint,
+							}
+						elif "ije" in ranking_type_idx or "ice" in ranking_type_idx:
+							ranking = {
+								"Rank": cols[0].text.strip(),
+								"Rider": cols[1].text.strip(),
+								"Team": cols[2].text.strip(),
+								"Times": cols[3].text.strip(),
+							}
+							if len(cols) > 4:
+								ranking["Gap"] = cols[4].text.strip()
+						elif "ete" in ranking_type_idx:
+							ranking = {
+								"Rank": cols[0].text.strip(),
+								"Team": cols[1].text.strip(),
+								"Times": cols[2].text.strip(),
+							}
+							if len(cols) > 3:
+								ranking["Gap"] = cols[3].text.strip()
+						else:
+							raise NotImplementedError(
+								f"Ranking type {ranking_type_name} not implemented"
+							)
+
+						ranking["Stages"] = stage_number
+						ranking["Ranking type"] = ranking_type_name
+						rankings.append(ranking)
+					stages.append(rankings)
+
+		return pd.DataFrame(list(chain.from_iterable(stages)))
 
 	async def _fetch_yearly_tdf_urls(self, year_url: str) -> dict[str, str]:
 		session = AsyncHTMLSession()
@@ -270,124 +389,6 @@ class Downloader:
 
 		return selections_urls
 
-	async def _get_all_rankings(self, ranking_link: str, n_stages: int) -> pd.DataFrame:
-		"""Get all rankings for a given year. Currently implemented ranking types are 'Individual (Stage)', 'Points (Stage)', 'Climber (Stage)', 'Youth (Stage)', 'Combative (Stage)', 'Team (Stage)'
-
-		Args:
-				ranking_link (str): link to the ranking page
-				n_stages (int): number of stages in this edition of the Tour de France
-
-		Raises:
-				NotImplementedError: If the ranking type is not implemented
-
-		Returns:
-				pd.DataFrame: DataFrame containing all rankings for the given year
-		"""
-
-		df_all_stages = pd.DataFrame(
-			columns=[
-				"Stages",
-				"Ranking type",
-				"Checkpoint" "Rank",
-				"Rider",
-				"Team",
-				"Times",
-				"Points",
-				"Gap",
-				"B",
-				"P",
-			]
-		)
-
-		for stage_number in range(1, n_stages + 1):
-			for ranking_type_name, ranking_type_idx in self._ranking_types.items():
-				ranking_url = (
-					f"{ranking_link}?stage={stage_number}&type={ranking_type_idx}"
-				)
-
-				response = requests.get(ranking_url)
-				response.raise_for_status()
-				rank_html = response.content
-
-				rank_soup = BeautifulSoup(rank_html, "html.parser")
-
-				# Get the ranking table
-				ranking_table = rank_soup.find(
-					"table", {"class": "rankingTable rtable js-extend-target"}
-				)
-				rows = ranking_table.find_all("tr")
-				if len(rows) == 1:
-					print(f"No ranking for {ranking_type_name} on stage {stage_number}")
-					continue
-				rankings = []
-				for row in rows[1:]:
-					cols = row.find_all("td")
-					if "ite" in ranking_type_idx:
-						ranking = {
-							"Rank": cols[0].text.strip(),
-							"Rider": cols[1].text.strip(),
-							"Team": cols[2].text.strip(),
-							"Times": cols[3].text.strip(),
-							"Gap": cols[4].text.strip(),
-							"B": cols[5].text.strip(),
-							"P": cols[6].text.strip(),
-						}
-					elif "ipe" in ranking_type_idx:
-						checkpoint = None
-						if len(cols) == 1:
-							checkpoint = cols[0].text.strip()
-							continue
-						else:
-							ranking = {
-								"Rank": cols[0].text.strip(),
-								"Rider": cols[1].text.strip(),
-								"Team": cols[2].text.strip(),
-								"Points": cols[3].text.strip(),
-								"B": cols[4].text.strip(),
-								"Checkpoint": checkpoint,
-							}
-					elif "ime" in ranking_type_idx:
-						checkpoint = None
-						if len(cols) == 1:
-							checkpoint = cols[0].text.strip()
-							continue
-						ranking = {
-							"Rank": cols[0].text.strip(),
-							"Rider": cols[1].text.strip(),
-							"Team": cols[2].text.strip(),
-							"Points": cols[3].text.strip(),
-							"Checkpoint": checkpoint,
-						}
-					elif "ije" in ranking_type_idx or "ice" in ranking_type_idx:
-						ranking = {
-							"Rank": cols[0].text.strip(),
-							"Rider": cols[1].text.strip(),
-							"Team": cols[2].text.strip(),
-							"Times": cols[3].text.strip(),
-							"Gap": cols[4].text.strip(),
-						}
-					elif "ete" in ranking_type_idx:
-						ranking = {
-							"Rank": cols[0].text.strip(),
-							"Team": cols[1].text.strip(),
-							"Times": cols[2].text.strip(),
-							"Gap": cols[3].text.strip(),
-						}
-					else:
-						raise NotImplementedError(
-							f"Ranking type {ranking_type_name} not implemented"
-						)
-
-					rankings.append(ranking)
-				df_stage = pd.DataFrame(rankings)
-
-				df_stage["Stages"] = stage_number
-				df_stage["Ranking type"] = ranking_type_name
-
-				df_all_stages = pd.concat([df_all_stages, df_stage], ignore_index=True)
-
-		return df_all_stages
-
 	def _cleanup(
 		self,
 		df_stages: pd.DataFrame,
@@ -401,12 +402,6 @@ class Downloader:
 		point_years = [1907, 1909, 1910, 1911, 1912]
 		null_years = [1905, 1906, 1908]
 
-		df_rankings["TotalSeconds"] = df_rankings["Times"].apply(
-			lambda x: self._get_seconds(x, "Total")
-		)
-		df_rankings["GapSeconds"] = df_rankings["Gap"].apply(
-			lambda x: self._get_seconds(x, "Gap")
-		)
 
 		for df in [df_rankings, df_all_rankings]:
 			# Remainder of df_rankings.columns : 'Rank', 'Rider', 'Rider No.', 'Team', 'Times', 'Gap', 'B', 'P'
@@ -418,9 +413,29 @@ class Downloader:
 			df["ResultType"] = "time"
 			df.loc[df["Year"].isin(null_years), "ResultType"] = "null"
 			df.loc[df["Year"].isin(point_years), "ResultType"] = "points"
+			
+			if "Times" in df.columns:
+				df["TotalSeconds"] = df["Times"].apply(
+					lambda x: self._get_seconds(x, "Total")
+				)
+			else:
+				df["TotalSeconds"] = 0
+			if "Gap" in df.columns:
+				df["GapSeconds"] = df["Gap"].apply(
+					lambda x: self._get_seconds(x, "Gap")
+				)
+			else:
+				df["GapSeconds"] = 0
+			
+			df["TotalSeconds"] = df["TotalSeconds"].fillna(0).astype(int)
+			df["GapSeconds"] = df["GapSeconds"].fillna(0).astype(int)
 
 			if year in [2006, 1997]:
 				tmp = df[df["Year"] == year].reset_index()
+				if "TotalSeconds" not in df.columns:
+					df["TotalSeconds"] = 0
+				if "GapSeconds" not in df.columns:
+					df["GapSeconds"] = 0
 				ts = np.array(tmp["TotalSeconds"])
 				gs = np.array(tmp["GapSeconds"])
 				ts[1:] = ts[0] + gs[1:]
@@ -443,42 +458,54 @@ class Downloader:
 		return df_rankings, df_all_rankings, df_stages
 
 	def _get_seconds(self, row: str, mode: str) -> int:
-		val = sum(
-			to_seconds * int(t)
-			for to_seconds, t in zip(
-				[3600, 60, 1],
-				row.replace("h", ":")
-				.replace("'", ":")
-				.replace('"', ":")
-				.replace(" ", "")
-				.replace("+", "")
-				.replace("-", "0")
-				.split(":"),
+		if type(row) == float and np.isnan(row):
+			return 0
+		elif "h" in row:
+			val = sum(
+				to_seconds * int(t)
+				for to_seconds, t in zip(
+					[3600, 60, 1],
+					row.replace("h", ":")
+					.replace("'", ":")
+					.replace('"', ":")
+					.replace(" ", "")
+					.replace("+", "")
+					.replace("-", "0")
+					.split(":"),
+				)
 			)
-		)
+		else:
+			# Try using the library dateutil.parser to parse the time
+			try:
+				val = pd.to_datetime(row).hour * 3600 + pd.to_datetime(row).minute * 60 + pd.to_datetime(row).second
+			except:
+				val = 0
 
 		if (mode == "Gap") and val > 180000:
 			return 0
 		else:
 			return val
 
-
 async def main():
+	save_folder = '../data'
+	if not os.path.exists(save_folder):
+		os.makedirs(save_folder)
+	
 	# Men
 	downloader = Downloader(history_page="https://www.letour.fr/en/history")
 	df_stages, df_rankings, df_all_rankings = await downloader.run()
-	df_rankings.to_csv("data/TDF_Riders_History.csv")
-	df_stages.to_csv("data/TDF_Stages_History.csv")
-	df_all_rankings.to_csv("data/TDF_All_Rankings_History.csv")
-	Plotter().plot(df_rankings, saveas="data/TDF_Distance_And_Pace.png")
+	df_rankings.to_csv(os.path.join(save_folder, "TDF_Riders_History.csv"))
+	df_stages.to_csv(os.path.join(save_folder, "TDF_Stages_History.csv"))
+	df_all_rankings.to_csv(os.path.join(save_folder, "TDF_All_Rankings_History.csv"))
+	Plotter().plot(df_rankings, saveas=os.path.join(save_folder, "TDF_Distance_And_Pace.png"))
 
 	# Women
 	downloader = Downloader(history_page="https://www.letourfemmes.fr/en/history")
 	df_rankings, df_stages, df_all_rankings = await downloader.run()
-	df_rankings.to_csv("data/TDFF_Riders_History.csv")
-	df_stages.to_csv("data/TDFF_Stages_History.csv")
-	df_all_rankings.to_csv("data/TDFF_All_Rankings_History.csv")
-	Plotter().plot(df_rankings, saveas="data/TDFF_Distance_And_Pace.png")
+	df_rankings.to_csv(os.path.join(save_folder, "TDFF_Riders_History.csv"))
+	df_stages.to_csv(os.path.join(save_folder, "TDFF_Stages_History.csv"))
+	df_all_rankings.to_csv(os.path.join(save_folder, "TDFF_All_Rankings_History.csv"))
+	Plotter().plot(df_rankings, saveas=os.path.join(save_folder, "TDFF_Distance_And_Pace.png"))
 
 
 if __name__ == "__main__":
