@@ -1,5 +1,3 @@
-
-
 project:
   type: book
   output-dir: docs
@@ -19,13 +17,9 @@ execute:
 toc: true
 number-sections: false
 
-
 format:
   html:
     theme: mint
     page-layout: article
     code-fold: true
     code-line-numbers: true
-
-
-

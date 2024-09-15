@@ -1,18 +1,18 @@
 import logging
 import re
 
+import os
 import numpy as np
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Tag
 from Plotter import Plotter
+from rich.progress import track
 from requests_html import AsyncHTMLSession
+import aiohttp
 from io import StringIO
 from itertools import chain
 import asyncio
-import aiohttp
-from rich.progress import track
-import os
 
 class Downloader:
 	def __init__(
