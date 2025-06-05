@@ -499,9 +499,9 @@ async def main():
 	df_all_rankings.to_csv(os.path.join(save_folder, "TDF_All_Rankings_History.csv"))
 	Plotter().plot(df_rankings, saveas=os.path.join(save_folder, "TDF_Distance_And_Pace.png"))
 
-	# Women
-	downloader = Downloader(history_page="https://www.letourfemmes.fr/en/history")
-	df_rankings, df_stages, df_all_rankings = await downloader.run()
+        # Women
+        downloader = Downloader(history_page="https://www.letourfemmes.fr/en/history")
+        df_stages, df_rankings, df_all_rankings = await downloader.run()
 	df_rankings.to_csv(os.path.join(save_folder, "TDFF_Riders_History.csv"))
 	df_stages.to_csv(os.path.join(save_folder, "TDFF_Stages_History.csv"))
 	df_all_rankings.to_csv(os.path.join(save_folder, "TDFF_All_Rankings_History.csv"))
