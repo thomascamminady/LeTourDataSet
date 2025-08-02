@@ -56,7 +56,7 @@ class Scraper:
         )
         pattern = r'data-tabs-ajax="([^"]+)"'
         matches = re.findall(pattern, string)
-        matches = matches[::-1]
+        # Don't reverse - keep original order to get most recent years first
         logging.debug(
             "Matches found in the history page:\n{}".format("\n".join(matches))
         )
