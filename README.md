@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" alt="Le Tour de France Data Set Logo" width="200"/>
+  <img src="logo.png" alt="Le Tour de France Data Set Logo" width="400"/>
 </div>
 
 
