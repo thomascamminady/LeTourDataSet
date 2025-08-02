@@ -1,6 +1,5 @@
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 
 
@@ -11,10 +10,10 @@ class Visualizer:
     def plot(self, df: pd.DataFrame, saveas="data/TDF_Distance_And_Pace.png") -> None:
         last_year = 2030
 
-        year = np.unique(df["Year"])
+        year = df["Year"].unique()
         distance = df.groupby("Year")["Distance (km)"].mean(numeric_only=True).values
         df["PersonalAvgPace"] = df["Distance (km)"] / (df["TotalSeconds"] / 3600)
-        df.loc[df["Year"] < 1915, "PersonalAvgPace"] = np.nan
+        df.loc[df["Year"] < 1915, "PersonalAvgPace"] = pd.NA
         winnerpace = df.groupby("Year").first()["PersonalAvgPace"]
 
         matplotlib.rcParams.update({"font.size": 22})

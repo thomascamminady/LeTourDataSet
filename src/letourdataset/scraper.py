@@ -5,7 +5,6 @@ from io import StringIO
 from itertools import chain
 
 import aiohttp
-import numpy as np
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Tag
@@ -488,8 +487,8 @@ class Scraper:
                     df["TotalSeconds"] = 0
                 if "GapSeconds" not in df.columns:
                     df["GapSeconds"] = 0
-                ts = np.array(tmp["TotalSeconds"])
-                gs = np.array(tmp["GapSeconds"])
+                ts = tmp["TotalSeconds"].values
+                gs = tmp["GapSeconds"].values
                 ts[1:] = ts[0] + gs[1:]
                 df.loc[df["Year"] == year, "TotalSeconds"] = ts
 
@@ -510,7 +509,7 @@ class Scraper:
         return df_rankings, df_all_rankings, df_stages
 
     def _get_seconds(self, row: str, mode: str) -> int:
-        if isinstance(row, float) and np.isnan(row):
+        if isinstance(row, float) and pd.isna(row):
             return 0
         elif "h" in row:
             val = sum(
