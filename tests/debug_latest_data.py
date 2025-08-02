@@ -5,12 +5,6 @@ Debug script to investigate why 2025 men's and 2024 women's data isn't being ret
 
 import asyncio
 import logging
-import os
-import sys
-
-# Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-
 from letourdataset.scraper import Scraper
 
 

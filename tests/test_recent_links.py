@@ -5,12 +5,6 @@ Test the last few links to see what the most recent years are.
 
 import asyncio
 import logging
-import os
-import sys
-
-# Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-
 from letourdataset.scraper import Scraper
 
 
