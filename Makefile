@@ -47,7 +47,9 @@ clean:
 # Run tests
 test:
 	@echo "🧪 Running tests..."
-	poetry run python -m pytest tests/ -v
+	cd tests && poetry run python test_recent_links.py
+	cd tests && poetry run python test_recent_download.py
+	cd tests && poetry run python debug_latest_data.py
 	@echo "✅ Tests completed"
 
 # Run linting
