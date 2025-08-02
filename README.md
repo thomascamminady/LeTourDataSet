@@ -1,4 +1,4 @@
-# Le Tour de France Data Set & Le Tour de France Femmes avec Zwift Data Set
+# Le Tour de France Data Set & Le Tour de France Femmes Data Set
 
 ![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Distance_And_Pace.png)
 
