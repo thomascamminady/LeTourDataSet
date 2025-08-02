@@ -3,6 +3,7 @@
 </div>
 
 
+Every cyclist and stage of the Tour de France (up to including 2025) in four CSV files.
 
 ## TL;DR
 
