@@ -53,14 +53,14 @@ test:
 # Run linting
 lint:
 	@echo "🔍 Running linting checks..."
-	poetry run flake8 src/ scripts/ --max-line-length=88 --extend-ignore=E203,W503
+	poetry run flake8 src/ scripts/ tests/ --max-line-length=88 --extend-ignore=E203,W503
 	@echo "✅ Linting completed"
 
 # Format code
 format:
 	@echo "🎨 Formatting code..."
-	poetry run black src/ scripts/
-	poetry run isort src/ scripts/
+	poetry run black src/ scripts/ tests/
+	poetry run isort src/ scripts/ tests/
 	@echo "✅ Code formatting completed"
 
 # Check CSV integrity
