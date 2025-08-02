@@ -7,13 +7,13 @@
 If you use `pandas`, just get the data via:
 
 ```python
-import pandas as pd 
+import pandas as pd
 
 # Men's Tour de France data
 df_men_riders = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/men/TDF_Riders_History.csv")
 df_men_stages = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/men/TDF_Stages_History.csv")
 
-# Women's Tour de France data  
+# Women's Tour de France data
 df_women_riders = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/women/TDFF_Riders_History.csv")
 df_women_stages = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/women/TDFF_Stages_History.csv")
 ```
@@ -73,20 +73,22 @@ As of 2022, the women's Tour de France was relaunched as "Le Tour de France Femm
 
 ## Data Coverage
 
-- **Men's Tour de France**: 1903-2025 (complete historical coverage)
-- **Women's Tour de France**: 2022-2024 (complete since relaunch)
+-   **Men's Tour de France**: 1903-2025 (complete historical coverage)
+-   **Women's Tour de France**: 2022-2024 (complete since relaunch)
 
 ## Available Files
 
 ### Men's Data (`data/men/`)
-- `TDF_Riders_History.csv`: Every cyclist and winner data
-- `TDF_Stages_History.csv`: Stage-by-stage information  
-- `TDF_All_Rankings_History.csv`: Comprehensive rankings data
+
+-   `TDF_Riders_History.csv`: Every cyclist and winner data
+-   `TDF_Stages_History.csv`: Stage-by-stage information
+-   `TDF_All_Rankings_History.csv`: Comprehensive rankings data
 
 ### Women's Data (`data/women/`)
-- `TDFF_Riders_History.csv`: Every cyclist and winner data
-- `TDFF_Stages_History.csv`: Stage-by-stage information
-- `TDFF_All_Rankings_History.csv`: Comprehensive rankings data
+
+-   `TDFF_Riders_History.csv`: Every cyclist and winner data
+-   `TDFF_Stages_History.csv`: Stage-by-stage information
+-   `TDFF_All_Rankings_History.csv`: Comprehensive rankings data
 
 ## How to Run
 
@@ -96,7 +98,7 @@ As of 2022, the women's Tour de France was relaunched as "Le Tour de France Femm
 # Install dependencies
 make install
 
-# Download latest data 
+# Download latest data
 make update
 
 # Generate plots
@@ -118,7 +120,7 @@ poetry install
 # Download data
 cd scripts && poetry run python download_data.py
 
-# Generate plots  
+# Generate plots
 cd scripts && poetry run python generate_plots.py
 ```
 
@@ -145,20 +147,20 @@ make check-csv
 
 This repository includes automated data protection to ensure historical data integrity:
 
-- ✅ **Row Protection**: CSV files can only grow (no data deletion)
-- ✅ **Column Protection**: New columns allowed, existing columns protected
-- ✅ **Data Integrity**: Existing data cannot be modified
-- ✅ **Automatic Validation**: GitHub Actions check every pull request
+-   ✅ **Row Protection**: CSV files can only grow (no data deletion)
+-   ✅ **Column Protection**: New columns allowed, existing columns protected
+-   ✅ **Data Integrity**: Existing data cannot be modified
+-   ✅ **Automatic Validation**: GitHub Actions check every pull request
 
 ## Recent Updates (2025)
 
-- ✅ Added 2025 men's Tour de France data
-- ✅ Added 2024 women's Tour de France data  
-- ✅ Reorganized repository with modern Python packaging
-- ✅ Renamed classes: `Downloader` → `Scraper`, `Plotter` → `Visualizer`
-- ✅ Added comprehensive Makefile for easy data management
-- ✅ Implemented CSV data protection workflows
-- ✅ Organized data into men/women subfolders
+-   ✅ Added 2025 men's Tour de France data
+-   ✅ Added 2024 women's Tour de France data
+-   ✅ Reorganized repository with modern Python packaging
+-   ✅ Renamed classes: `Downloader` → `Scraper`, `Plotter` → `Visualizer`
+-   ✅ Added comprehensive Makefile for easy data management
+-   ✅ Implemented CSV data protection workflows
+-   ✅ Organized data into men/women subfolders
 
 ## Disclaimer
 
@@ -176,6 +178,7 @@ This code has been completely rewritten for 2025. The previous code and output a
 4. Submit a pull request
 
 The CSV data protection system will automatically verify that:
-- No historical data is deleted or modified
-- Only new data additions are permitted
-- Data integrity is maintained across all changes 
+
+-   No historical data is deleted or modified
+-   Only new data additions are permitted
+-   Data integrity is maintained across all changes

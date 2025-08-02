@@ -8,21 +8,21 @@ The CSV Data Protection workflow automatically checks that changes to CSV files 
 
 ## Files
 
-- `csv-data-protection.yml`: GitHub Actions workflow that triggers on changes to CSV files
-- `check_csv_integrity.py`: Python script that performs the actual integrity checks
+-   `csv-data-protection.yml`: GitHub Actions workflow that triggers on changes to CSV files
+-   `check_csv_integrity.py`: Python script that performs the actual integrity checks
 
 ## What it checks
 
 1. **Row Count**: Ensures the number of rows only increases or stays the same
-2. **Column Count**: Ensures the number of columns only increases or stays the same  
+2. **Column Count**: Ensures the number of columns only increases or stays the same
 3. **Column Names**: Ensures no existing columns are removed
 4. **Data Integrity**: Ensures existing data is not modified
 5. **New Content**: Allows addition of new rows and columns
 
 ## When it runs
 
-- On pull requests that modify files in `data/*.csv`
-- On pushes to `main`/`master` branch that modify files in `data/*.csv`
+-   On pull requests that modify files in `data/*.csv`
+-   On pushes to `main`/`master` branch that modify files in `data/*.csv`
 
 ## What happens if the check fails
 
@@ -45,6 +45,7 @@ If you need to legitimately modify historical data (e.g., fixing a critical erro
 ## Example output
 
 ### ✅ Successful check (additions only)
+
 ```
 🔍 Starting CSV Data Protection Check...
 Found 6 CSV file(s) to check:
@@ -53,13 +54,14 @@ Found 6 CSV file(s) to check:
   - TDFF_Riders_History.csv
 
 ✅ TDF_Riders_History.csv: 5 rows added
-✅ TDF_Stages_History.csv: 21 rows added  
+✅ TDF_Stages_History.csv: 21 rows added
 ✅ TDFF_Riders_History.csv: 1 rows added
 
 🎉 All CSV files passed integrity checks!
 ```
 
 ### ❌ Failed check (deletion detected)
+
 ```
 ❌ CSV integrity check failed!
 
@@ -76,8 +78,8 @@ The following issues were detected:
 
 The script compares CSV files between the current branch and the base branch (usually `main`/`master`) using:
 
-- Git commands to retrieve historical versions
-- Pandas for CSV analysis and comparison
-- Detailed row-by-row and column-by-column validation
+-   Git commands to retrieve historical versions
+-   Pandas for CSV analysis and comparison
+-   Detailed row-by-row and column-by-column validation
 
 This ensures that the Tour de France historical dataset maintains its integrity and continues to grow over time without losing valuable historical information.

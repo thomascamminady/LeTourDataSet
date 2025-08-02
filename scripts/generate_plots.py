@@ -9,9 +9,10 @@ import os
 import sys
 
 # Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 import pandas as pd
+
 from letourdataset.visualizer import Visualizer
 
 
@@ -21,13 +22,13 @@ def main():
     men_folder = os.path.join(base_folder, "men")
     women_folder = os.path.join(base_folder, "women")
     plots_folder = os.path.join(base_folder, "plots")
-    
+
     # Create plots directory if it doesn't exist
     if not os.path.exists(plots_folder):
         os.makedirs(plots_folder)
 
     print("Generating plots for Tour de France data...")
-    
+
     # Men's plots
     men_riders_file = os.path.join(men_folder, "TDF_Riders_History.csv")
     if os.path.exists(men_riders_file):

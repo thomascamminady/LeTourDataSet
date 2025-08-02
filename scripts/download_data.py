@@ -11,7 +11,7 @@ import os
 import sys
 
 # Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from letourdataset.scraper import Scraper
 
@@ -21,7 +21,7 @@ async def main():
     base_folder = "../data"
     men_folder = os.path.join(base_folder, "men")
     women_folder = os.path.join(base_folder, "women")
-    
+
     # Create directories if they don't exist
     for folder in [base_folder, men_folder, women_folder]:
         if not os.path.exists(folder):
@@ -33,15 +33,21 @@ async def main():
     df_stages, df_rankings, df_all_rankings = await scraper.run()
     df_rankings.to_csv(os.path.join(men_folder, "TDF_Riders_History.csv"), index=False)
     df_stages.to_csv(os.path.join(men_folder, "TDF_Stages_History.csv"), index=False)
-    df_all_rankings.to_csv(os.path.join(men_folder, "TDF_All_Rankings_History.csv"), index=False)
+    df_all_rankings.to_csv(
+        os.path.join(men_folder, "TDF_All_Rankings_History.csv"), index=False
+    )
 
     print("Downloading Tour de France Femmes (Women's) historical data...")
     # Women
     scraper = Scraper(history_page="https://www.letourfemmes.fr/en/history")
     df_stages, df_rankings, df_all_rankings = await scraper.run()
-    df_rankings.to_csv(os.path.join(women_folder, "TDFF_Riders_History.csv"), index=False)
+    df_rankings.to_csv(
+        os.path.join(women_folder, "TDFF_Riders_History.csv"), index=False
+    )
     df_stages.to_csv(os.path.join(women_folder, "TDFF_Stages_History.csv"), index=False)
-    df_all_rankings.to_csv(os.path.join(women_folder, "TDFF_All_Rankings_History.csv"), index=False)
+    df_all_rankings.to_csv(
+        os.path.join(women_folder, "TDFF_All_Rankings_History.csv"), index=False
+    )
 
     print("Data download and processing completed!")
 
