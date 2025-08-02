@@ -5,12 +5,7 @@ Post-process Tour de France data files.
 This script runs the postprocessor to sort and organize all CSV data files.
 """
 
-import sys
 import os
-
-# Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-
 from letourdataset.postprocessor import DataPostProcessor
 
 

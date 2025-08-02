@@ -6,11 +6,6 @@ This script creates visualizations for both men's and women's Tour de France dat
 """
 
 import os
-import sys
-
-# Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-
 import pandas as pd
 
 from letourdataset.visualizer import Visualizer

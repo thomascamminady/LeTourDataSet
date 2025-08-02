@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "LeTourDataSet"
+name = "letourdataset"
 version = "0.1.0"
-description = ""
+description = "Tour de France historical data scraper and analyzer"
 authors = ["Thomas Camminady <0milieux_member@icloud.com>"]
+packages = [{include = "letourdataset", from = "src"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
