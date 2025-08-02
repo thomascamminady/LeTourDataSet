@@ -1,5 +1,24 @@
 poetry.lock
 src/rawhtml/*
+
+# Large data files - All Rankings History
+*All_Rankings_History.csv
+
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
