@@ -3,13 +3,13 @@ name: CSV Data Protection
 on:
   pull_request:
     paths:
-      - 'data/*.csv'
+      - 'data/**/*.csv'
   push:
     branches:
       - main
       - master
     paths:
-      - 'data/*.csv'
+      - 'data/**/*.csv'
 
 jobs:
   check-csv-integrity:

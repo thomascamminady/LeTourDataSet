@@ -55,12 +55,17 @@ def get_base_branch():
 
 
 def get_csv_files_in_data():
-    """Get all CSV files in the data/ directory."""
+    """Get all CSV files in the data/ directory and subdirectories."""
     data_dir = Path("data")
     if not data_dir.exists():
         return []
     
-    return list(data_dir.glob("*.csv"))
+    # Get CSV files from data/ and its subdirectories
+    csv_files = []
+    csv_files.extend(data_dir.glob("*.csv"))  # Root level
+    csv_files.extend(data_dir.glob("*/*.csv"))  # Subdirectories (men/, women/)
+    
+    return csv_files
 
 
 def check_csv_integrity(csv_file, base_branch):
