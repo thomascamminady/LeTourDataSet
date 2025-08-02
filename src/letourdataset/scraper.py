@@ -158,7 +158,8 @@ class Scraper:
         distance = soup.select("[class~=statsInfos__number]")[1].contents
         distance_str = str(distance[0]).replace(" ", "").replace(",", "")
         # Handle decimal distances by converting to float first, then to int
-        distance = int(float(distance_str))
+        # Handle decimal distances by converting to float first, then round to nearest integer
+        distance = round(float(distance_str))
         return soup, year, distance
 
     def _get_stages(self, soup: Tag, year: int, distance: int) -> pd.DataFrame:
