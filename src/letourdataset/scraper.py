@@ -55,7 +55,30 @@ class Scraper:
         )
         pattern = r'data-tabs-ajax="([^"]+)"'
         matches = re.findall(pattern, string)
-        # Don't reverse - keep original order to get most recent years first
+        # Validate that the URLs are ordered by most recent year first
+        years = []
+        for url in matches:
+            # Try to extract a 4-digit year from the URL
+            year_match = re.search(r'(\d{4})', url)
+            if year_match:
+                years.append(int(year_match.group(1)))
+            else:
+                years.append(None)
+        # Check if years are in descending order (most recent first)
+        valid_order = all(
+            years[i] is None or years[i + 1] is None or years[i] >= years[i + 1]
+            for i in range(len(years) - 1)
+        )
+        if not valid_order:
+            logging.warning(
+                "Year order in URLs is not descending (most recent first). Reordering."
+            )
+            # Sort matches by year descending, keeping None years at the end
+            matches = [x for _, x in sorted(
+                ((y if y is not None else -1, u) for y, u in zip(years, matches)),
+                key=lambda t: t[0],
+                reverse=True
+            )]
         logging.debug(
             "Matches found in the history page:\n{}".format("\n".join(matches))
         )
