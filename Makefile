@@ -1,17 +1,18 @@
-.PHONY: help update plot clean test install lint format check-csv
+.PHONY: help update postprocess plot clean test install lint format check-csv
 
 # Default target
 help:
 	@echo "Available commands:"
-	@echo "  make install    - Install dependencies using Poetry"
-	@echo "  make update     - Download latest Tour de France data"
-	@echo "  make plot       - Generate plots from existing data"
-	@echo "  make all        - Run update and plot"
-	@echo "  make clean      - Clean temporary files and caches"
-	@echo "  make test       - Run tests"
-	@echo "  make lint       - Run linting checks"
-	@echo "  make format     - Format code"
-	@echo "  make check-csv  - Check CSV file integrity"
+	@echo "  make install     - Install dependencies using Poetry"
+	@echo "  make update      - Download latest Tour de France data (includes postprocessing)"
+	@echo "  make postprocess - Post-process and sort data files"
+	@echo "  make plot        - Generate plots from existing data"
+	@echo "  make all         - Run update and plot"
+	@echo "  make clean       - Clean temporary files and caches"
+	@echo "  make test        - Run tests"
+	@echo "  make lint        - Run linting checks"
+	@echo "  make format      - Format code"
+	@echo "  make check-csv   - Check CSV file integrity"
 
 # Install dependencies
 install:
@@ -23,7 +24,15 @@ install:
 update:
 	@echo "🔄 Downloading latest Tour de France data..."
 	cd scripts && poetry run python download_data.py
+	@echo "🔧 Post-processing data files..."
+	cd scripts && poetry run python postprocess_data.py
 	@echo "✅ Data update completed"
+
+# Post-process data files (sort and organize)
+postprocess:
+	@echo "🔧 Post-processing data files..."
+	cd scripts && poetry run python postprocess_data.py
+	@echo "✅ Post-processing completed"
 
 # Generate plots from existing data
 plot:
