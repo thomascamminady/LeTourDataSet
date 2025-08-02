@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="logo.png" alt="Le Tour de France Data Set Logo" width="200"/>
+</div>
+
 # Le Tour de France & Le Tour de France Femmes Data Set
 
 ![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Distance_And_Pace.png)
