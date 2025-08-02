@@ -19,8 +19,9 @@ jupyter = "^1.0.0"
 matplotlib = "^3.6.1"
 rich = "^12.6.0"
 requests-html = "^0.10.0"
+websockets = "~8.1"
 aiohttp = "^3.10.5"
-asyncio = "^1.6.0"  
+asyncio = "^3.4.3"
 
 [tool.poetry.dev-dependencies]
 

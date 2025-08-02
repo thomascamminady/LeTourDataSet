@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-class Plotter:
+class Visualizer:
     def __init__(self) -> None:
         pass
 
