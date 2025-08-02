@@ -9,7 +9,7 @@ class Visualizer:
         pass
 
     def plot(self, df: pd.DataFrame, saveas="data/TDF_Distance_And_Pace.png") -> None:
-        last_year = 2024
+        last_year = 2030
 
         year = np.unique(df["Year"])
         distance = df.groupby("Year")["Distance (km)"].mean(numeric_only=True).values
@@ -21,17 +21,19 @@ class Visualizer:
         _, ax = plt.subplots(1, 1, figsize=(15, 7))
         ax.scatter(year, distance)  # type:ignore
 
-        ax.set_title(f"Tour de France 1903 - {last_year}", fontsize=24, color="gray")
+        ax.set_title(
+            f"Tour de France 1903 - {df['Year'].max()}", fontsize=24, color="gray"
+        )
 
         ax.set_xlabel("Year", fontsize=20, color="gray")
         ax.set_xlim(1900, last_year + 1)
-        ax.set_xticks([1925, 1950, 1975, 2000])
-        ax.set_xticklabels([1925, 1950, 1975, 2000], color="gray")
+        ax.set_xticks([1925, 1950, 1975, 2000, 2025])
+        ax.set_xticklabels([1925, 1950, 1975, 2000, 2025], color="gray")
 
         ax.set_ylabel("Total distance (km)", fontsize=20, color="tab:blue")
-        ax.set_ylim(1000, 6000)
-        ax.set_yticks([2000, 3000, 4000, 5000])
-        ax.set_yticklabels([2000, 3000, 4000, 5000], color="tab:blue")
+        ax.set_ylim(0, 6000)
+        ax.set_yticks([0, 1000, 2000, 3000, 4000, 5000])
+        ax.set_yticklabels([0, 1000, 2000, 3000, 4000, 5000], color="tab:blue")
 
         for where in ["top", "right", "bottom", "left"]:
             ax.spines[where].set_visible(False)
@@ -50,9 +52,9 @@ class Visualizer:
         ax_twinx.set_xlim(1900, last_year + 1)
 
         ax_twinx.set_ylabel("Winner avg. pace (kph)", fontsize=20, color="tab:red")
-        ax_twinx.set_ylim(20, 45)
-        ax_twinx.set_yticks([25, 30, 35, 40])
-        ax_twinx.set_yticklabels([25, 30, 35, 40], color="tab:red")
+        ax_twinx.set_ylim(0, 60)
+        ax_twinx.set_yticks([0, 10, 20, 30, 40, 50])
+        ax_twinx.set_yticklabels([0, 10, 20, 30, 40, 50], color="tab:red")
 
         for where in ["top", "right", "bottom", "left"]:
             ax_twinx.spines[where].set_visible(False)
