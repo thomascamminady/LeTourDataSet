@@ -1,12 +1,9 @@
 <div align="center">
-  <img src="logo.png" alt="Le Tour de France Data Set Logo" width="200"/>
+  <img src="logo.png" alt="Le Tour de France Data Set Logo" width="350"/>
 </div>
 
-# Le Tour de France & Le Tour de France Femmes Data Set
 
-![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Distance_And_Pace.png)
-
-## TL;DR
+Every cyclist and stage of the Tour de France (up to including 2025) in four CSV files.
 
 If you use `pandas`, just get the data via:
 
@@ -21,6 +18,9 @@ df_men_stages = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/L
 df_women_riders = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/women/TDFF_Riders_History.csv")
 df_women_stages = pd.read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/women/TDFF_Stages_History.csv")
 ```
+
+![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Distance_And_Pace.png)
+
 
 If you use `R` instead of `python`, you can run:
 
