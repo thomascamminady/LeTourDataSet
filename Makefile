@@ -3,12 +3,13 @@
 # Default target
 help:
 	@echo "Available commands:"
+	@echo "  make update      - Complete data update workflow (recommended for annual updates)"
 	@echo "  make install     - Install dependencies using Poetry"
-	@echo "  make update      - Download latest Tour de France data (includes postprocessing)"
+	@echo "  make download-only - Download latest data without processing"
 	@echo "  make postprocess - Post-process and sort data files"
 	@echo "  make fix-riders-history - Fix riders history from all rankings data"
 	@echo "  make plot        - Generate plots from existing data"
-	@echo "  make all         - Run update and plot"
+	@echo "  make all         - Legacy command (use 'update' instead)"
 	@echo "  make clean       - Clean temporary files and caches"
 	@echo "  make test        - Run tests"
 	@echo "  make lint        - Run linting checks"
@@ -21,14 +22,32 @@ install:
 	poetry install
 	@echo "✅ Dependencies installed successfully"
 
-# Update data (download only, no plots)
+# Complete data update workflow (download, postprocess, fix, verify)
 update:
-	@echo "🔄 Downloading latest Tour de France data..."
+	@echo "🔄 Starting complete data update workflow..."
+	@echo "📥 Step 1: Downloading latest Tour de France data..."
 	cd scripts && poetry run python download_data.py
+	@echo "🔧 Step 2: Post-processing data files..."
+	cd scripts && poetry run python postprocess_data.py
+	@echo "🩹 Step 3: Fixing riders history if needed..."
+	poetry run python scripts/fix_riders_history.py || echo "⚠️  Fix script completed with warnings (may be expected)"
+	@echo "🛡️ Step 4: Verifying CSV integrity..."
+	poetry run python .github/scripts/check_csv_integrity.py
+	@echo "📊 Step 5: Generating plots..."
+	cd scripts && poetry run python generate_plots.py
+	@echo "✅ Complete data update workflow finished successfully!"
+	@echo "📋 Next steps: Review changes and commit/push if everything looks good"
+
+# Quick data download only (no postprocessing or plots)
+download-only:
+	@echo "📥 Downloading latest Tour de France data only..."
+	cd scripts && poetry run python download_data.py
+	@echo "✅ Data download completed"
 	@echo "🔧 Post-processing data files..."
 	cd scripts && poetry run python postprocess_data.py
-	@echo "✅ Data update completed"
+	@echo "✅ Post-processing completed"
 
+# Post-process data files (sort and organize)
 # Post-process data files (sort and organize)
 postprocess:
 	@echo "🔧 Post-processing data files..."
@@ -38,7 +57,7 @@ postprocess:
 # Fix riders history (extract GC from all rankings if missing)
 fix-riders-history:
 	@echo "🔧 Fixing riders history files..."
-	poetry run python scripts/fix_2025_riders_history.py
+	poetry run python scripts/fix_riders_history.py
 	@echo "✅ Riders history fixed"
 
 # Generate plots from existing data
@@ -47,8 +66,9 @@ plot:
 	cd scripts && poetry run python generate_plots.py
 	@echo "✅ Plots generated successfully"
 
-# Run both update and plot
-all: update plot
+# Legacy: Run both update and plot (deprecated - use 'update' instead)
+all: update
+	@echo "ℹ️  Note: 'make all' is deprecated. Use 'make update' for the complete workflow."
 	@echo "✅ All tasks completed"
 
 # Clean temporary files

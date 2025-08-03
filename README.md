@@ -170,6 +170,36 @@ This repository includes automated data protection to ensure historical data int
 
 For issues with this data set, see the [Issues tab](https://github.com/thomascamminady/LeTourDataSet/issues). Some entries may be incorrect due to source data issues on the official websites. When discrepancies are found, they typically stem from the original letour.fr or letourfemmes.fr websites.
 
+## Annual Update Workflow
+
+For maintainers updating the dataset with new Tour de France data:
+
+### Simple One-Command Update (Recommended)
+```bash
+make update
+```
+
+This comprehensive command will:
+1. 📥 Download the latest Tour de France data from official sources
+2. 🔧 Post-process and sort all data files  
+3. 🩹 Automatically fix any missing riders history data
+4. 🛡️ Verify CSV file integrity
+5. 📊 Generate updated plots and visualizations
+
+After running this command, simply review the changes and commit/push if everything looks correct.
+
+### Manual Step-by-Step (If Needed)
+```bash
+make install              # Install dependencies
+make download-only        # Download new data only
+make postprocess         # Sort and organize data
+make fix-riders-history  # Fix any missing general classification data
+make check-csv           # Verify data integrity
+make plot                # Generate plots
+```
+
+The workflow is designed to be robust and handle different data structures that may appear in future years.
+
 ## Legacy Code
 
 This code has been completely rewritten for 2025. The previous code and output are available in the [legacy repository](https://github.com/thomascamminady/LeTourDataSetLegacy). See `legacy/README.txt` for historical context.
