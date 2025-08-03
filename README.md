@@ -73,12 +73,12 @@ data/
 
 ## Le Tour de France Femmes avec Zwift
 
-As of 2022, the women's Tour de France was relaunched as "Le Tour de France Femmes avec Zwift". The data is available on the official [tour website](https://www.letourfemmes.fr/en) and is included in this dataset with complete coverage through 2024.
+As of 2022, the women's Tour de France was relaunched as "Le Tour de France Femmes avec Zwift". The data is available on the official [tour website](https://www.letourfemmes.fr/en) and is included in this dataset with complete coverage through 2025.
 
 ## Data Coverage
 
--   **Men's Tour de France**: 1903-2025 (complete historical coverage)
--   **Women's Tour de France**: 2022-2024 (complete since relaunch)
+-   **Men's Tour de France**: 1903-2024 (complete historical coverage)
+-   **Women's Tour de France**: 2022-2025 (complete since relaunch)
 
 ## Available Files
 

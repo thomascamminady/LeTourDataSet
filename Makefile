@@ -6,6 +6,7 @@ help:
 	@echo "  make install     - Install dependencies using Poetry"
 	@echo "  make update      - Download latest Tour de France data (includes postprocessing)"
 	@echo "  make postprocess - Post-process and sort data files"
+	@echo "  make fix-riders-history - Fix riders history from all rankings data"
 	@echo "  make plot        - Generate plots from existing data"
 	@echo "  make all         - Run update and plot"
 	@echo "  make clean       - Clean temporary files and caches"
@@ -33,6 +34,12 @@ postprocess:
 	@echo "🔧 Post-processing data files..."
 	cd scripts && poetry run python postprocess_data.py
 	@echo "✅ Post-processing completed"
+
+# Fix riders history (extract GC from all rankings if missing)
+fix-riders-history:
+	@echo "🔧 Fixing riders history files..."
+	poetry run python scripts/fix_2025_riders_history.py
+	@echo "✅ Riders history fixed"
 
 # Generate plots from existing data
 plot:
