@@ -9,12 +9,12 @@ This script downloads and processes historical data for both the Tour de France
 import asyncio
 import os
 
-from letourdataset.scraper import Scraper
+from src.letourdataset.scraper import Scraper
 
 
 async def main():
     """Download historical Tour de France data for both men's and women's races."""
-    base_folder = "../data"
+    base_folder = "data"
     men_folder = os.path.join(base_folder, "men")
     women_folder = os.path.join(base_folder, "women")
 
