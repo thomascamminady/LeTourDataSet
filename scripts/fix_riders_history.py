@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 """
 Fix riders history files by extracting general classification from all rankings data.
-
-This script checks if the latest year's data is missing from riders history files
-and extracts it from the all rankings data if needed. It's designed to be robust
-for future years and different data structures.
 """
 
 import pandas as pd
@@ -13,16 +9,6 @@ from pathlib import Path
 from datetime import datetime
 
 def fix_riders_history_file(data_dir: Path, competition: str) -> bool:
-    """
-    Fix riders history file for a given competition.
-    
-    Args:
-        data_dir: Path to the data directory (men/ or women/)
-        competition: Competition prefix (TDF or TDFF)
-    
-    Returns:
-        bool: True if fixes were applied, False if no fixes needed
-    """
     riders_file = data_dir / f"{competition}_Riders_History.csv"
     all_rankings_file = data_dir / f"{competition}_All_Rankings_History.csv"
     
@@ -31,14 +17,10 @@ def fix_riders_history_file(data_dir: Path, competition: str) -> bool:
         return False
     
     try:
-        # Read the data
         riders_df = pd.read_csv(riders_file)
-        all_rankings_df = pd.read_csv(all_rankings_file)
+        all_rankings_df = pd.read_csv(all_rankings_file, low_memory=False)
         
-        # Get the latest year in all rankings
         latest_year_all = all_rankings_df['Year'].max()
-        
-        # Get the latest year in riders history
         latest_year_riders = riders_df['Year'].max() if not riders_df.empty else 0
         
         print(f"📊 {competition}: Latest year in all rankings: {latest_year_all}")
@@ -48,99 +30,105 @@ def fix_riders_history_file(data_dir: Path, competition: str) -> bool:
             print(f"✅ {competition}: Riders history is up to date")
             return False
         
-        print(f"🔧 {competition}: Extracting {latest_year_all} data from all rankings...")
+        print(f"🔧 {competition}: Calculating GC from stage data for {latest_year_all}...")
         
-        # Extract the latest year's final classification
         latest_year_data = all_rankings_df[all_rankings_df['Year'] == latest_year_all]
+        individual_data = latest_year_data[latest_year_data['Ranking type'] == 'Individual (Stage)']
         
-        if latest_year_data.empty:
-            print(f"⚠️  {competition}: No data found for {latest_year_all}")
+        if individual_data.empty:
+            print(f"⚠️  {competition}: No individual stage data found for {latest_year_all}")
             return False
         
-        # Find the final stage (highest stage number)
-        final_stage = latest_year_data['Stage'].max()
-        final_stage_data = latest_year_data[latest_year_data['Stage'] == final_stage]
+        print(f"📈 {competition}: Found {len(individual_data)} individual stage results")
         
-        if final_stage_data.empty:
-            print(f"⚠️  {competition}: No final stage data found for {latest_year_all}")
-            return False
+        # Calculate general classification by summing stage times
+        # Only include riders who completed ALL stages (9 for 2025)
+        rider_stage_counts = individual_data['Rider'].value_counts()
+        complete_riders = rider_stage_counts[rider_stage_counts == 9].index.tolist()
         
-        print(f"📈 {competition}: Extracting from stage {final_stage} of {latest_year_all}")
+        print(f"📊 {competition}: {len(complete_riders)} riders completed all 9 stages")
         
-        # Create riders history format
-        # Sort by TotalSeconds (ascending) to get proper ranking
-        final_stage_data = final_stage_data.sort_values('TotalSeconds')
+        complete_data = individual_data[individual_data['Rider'].isin(complete_riders)]
         
-        # Remove duplicates (keep first occurrence of each rider)
-        final_stage_data = final_stage_data.drop_duplicates(subset=['RiderName'], keep='first')
+        gc_data = (
+            complete_data.groupby('Rider')
+            .agg({
+                'TotalSeconds': 'sum',
+                'Team': 'first',
+            })
+            .reset_index()
+        )
         
-        # Create new riders data in the correct format
+        gc_data = gc_data.sort_values('TotalSeconds')
+        winner_time = gc_data.iloc[0]['TotalSeconds']
+        gc_data['GapSeconds'] = gc_data['TotalSeconds'] - winner_time
+        
+        print(f"🏆 {competition}: Winner: {gc_data.iloc[0]['Rider']} with {gc_data.iloc[0]['TotalSeconds']/3600:.1f}h total time")
+        
+        # Remove existing data for this year
+        riders_df = riders_df[riders_df['Year'] != latest_year_all]
+        
+        # Create new riders data
         new_riders_data = []
-        for i, (_, row) in enumerate(final_stage_data.iterrows(), 1):
+        for i, (_, row) in enumerate(gc_data.iterrows(), 1):
+            total_seconds = int(row['TotalSeconds'])
+            hours = total_seconds // 3600
+            minutes = (total_seconds % 3600) // 60
+            seconds = total_seconds % 60
+            
+            if i == 1:
+                gap_str = "-"
+            else:
+                gap_seconds = int(row['GapSeconds'])
+                gap_hours = gap_seconds // 3600
+                gap_minutes = (gap_seconds % 3600) // 60
+                gap_secs = gap_seconds % 60
+                gap_str = f"+ {gap_hours:02d}h {gap_minutes:02d}' {gap_secs:02d}''"
+                
+            time_str = f"{hours:02d}h {minutes:02d}' {seconds:02d}''"
+
             new_rider = {
-                'Year': int(latest_year_all),
                 'Rank': i,
-                'RiderName': row['RiderName'],
-                'Team': row.get('Team', ''),
-                'TotalSeconds': row['TotalSeconds']
+                'Rider': row['Rider'],
+                'Rider No.': '',
+                'Team': row['Team'],
+                'Times': time_str,
+                'Gap': gap_str,
+                'B': '',
+                'P': '',
+                'Year': int(latest_year_all),
+                'Distance (km)': 0,
+                'Number of stages': 9,
+                'ResultType': 'time',
+                'TotalSeconds': int(row['TotalSeconds']),
+                'GapSeconds': int(row['GapSeconds']),
             }
             new_riders_data.append(new_rider)
         
-        # Convert to DataFrame
         new_riders_df = pd.DataFrame(new_riders_data)
-        
-        # Append to existing riders data
         updated_riders_df = pd.concat([riders_df, new_riders_df], ignore_index=True)
-        
-        # Sort by Year and then by Rank
         updated_riders_df = updated_riders_df.sort_values(['Year', 'Rank'])
-        
-        # Save the updated file
         updated_riders_df.to_csv(riders_file, index=False)
         
-        print(f"✅ {competition}: Added {len(new_riders_data)} riders from {latest_year_all}")
-        print(f"💾 {competition}: Updated {riders_file}")
-        
+        print(f"✅ {competition}: Added {len(new_riders_data)} riders with correct GC times")
         return True
         
     except Exception as e:
-        print(f"❌ {competition}: Error processing data: {e}")
+        print(f"❌ {competition}: Error: {e}")
         return False
 
 def main():
-    """Main function to fix both men's and women's riders history."""
     print("🔧 Starting riders history fix process...")
-    print(f"📅 Current year: {datetime.now().year}")
     
-    # Define data directories
     base_dir = Path(__file__).parent.parent / "data"
-    men_dir = base_dir / "men"
     women_dir = base_dir / "women"
     
-    fixes_applied = False
-    
-    # Fix men's data
-    if men_dir.exists():
-        print(f"\n🚹 Processing men's data in {men_dir}")
-        if fix_riders_history_file(men_dir, "TDF"):
-            fixes_applied = True
-    else:
-        print(f"⚠️  Men's data directory not found: {men_dir}")
-    
-    # Fix women's data
     if women_dir.exists():
         print(f"\n🚺 Processing women's data in {women_dir}")
-        if fix_riders_history_file(women_dir, "TDFF"):
-            fixes_applied = True
-    else:
-        print(f"⚠️  Women's data directory not found: {women_dir}")
+        fix_riders_history_file(women_dir, "TDFF")
     
-    if fixes_applied:
-        print("\n✅ Riders history fix completed with updates")
-        return 0
-    else:
-        print("\n✅ Riders history fix completed - no updates needed")
-        return 0
+    print("\n✅ Fix completed")
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())
