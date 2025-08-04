@@ -2,7 +2,6 @@
   <img src="logo.png" alt="Le Tour de France Data Set Logo" width="350"/>
 </div>
 
-
 Every cyclist and stage of the Tour de France (up to including 2025) in four CSV files.
 
 If you use `pandas`, just get the data via:
@@ -20,7 +19,6 @@ df_women_stages = pd.read_csv("https://raw.githubusercontent.com/thomascamminady
 ```
 
 ![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Distance_And_Pace.png)
-
 
 If you use `R` instead of `python`, you can run:
 
@@ -175,13 +173,15 @@ For issues with this data set, see the [Issues tab](https://github.com/thomascam
 For maintainers updating the dataset with new Tour de France data:
 
 ### Simple One-Command Update (Recommended)
+
 ```bash
 make update
 ```
 
 This comprehensive command will:
+
 1. 📥 Download the latest Tour de France data from official sources
-2. 🔧 Post-process and sort all data files  
+2. 🔧 Post-process and sort all data files
 3. 🩹 Automatically fix any missing riders history data
 4. 🛡️ Verify CSV file integrity
 5. 📊 Generate updated plots and visualizations
@@ -189,6 +189,7 @@ This comprehensive command will:
 After running this command, simply review the changes and commit/push if everything looks correct.
 
 ### Manual Step-by-Step (If Needed)
+
 ```bash
 make install              # Install dependencies
 make download-only        # Download new data only

@@ -42,11 +42,12 @@ def fix_riders_history_file(data_dir: Path, competition: str) -> bool:
         print(f"📈 {competition}: Found {len(individual_data)} individual stage results")
         
         # Calculate general classification by summing stage times
-        # Only include riders who completed ALL stages (9 for 2025)
+        # Only include riders who completed ALL stages - determine max stages dynamically
         rider_stage_counts = individual_data['Rider'].value_counts()
-        complete_riders = rider_stage_counts[rider_stage_counts == 9].index.tolist()
+        max_stages = rider_stage_counts.max()
+        complete_riders = rider_stage_counts[rider_stage_counts == max_stages].index.tolist()
         
-        print(f"📊 {competition}: {len(complete_riders)} riders completed all 9 stages")
+        print(f"📊 {competition}: {len(complete_riders)} riders completed all {max_stages} stages")
         
         complete_data = individual_data[individual_data['Rider'].isin(complete_riders)]
         
@@ -98,7 +99,7 @@ def fix_riders_history_file(data_dir: Path, competition: str) -> bool:
                 'P': '',
                 'Year': int(latest_year_all),
                 'Distance (km)': 0,
-                'Number of stages': 9,
+                'Number of stages': max_stages,
                 'ResultType': 'time',
                 'TotalSeconds': int(row['TotalSeconds']),
                 'GapSeconds': int(row['GapSeconds']),
@@ -121,13 +122,38 @@ def main():
     print("🔧 Starting riders history fix process...")
     
     base_dir = Path(__file__).parent.parent / "data"
+    men_dir = base_dir / "men"
     women_dir = base_dir / "women"
     
+    fixes_applied = False
+    
+    # Fix men's data
+    if men_dir.exists():
+        print(f"\n🚹 Processing men's data in {men_dir}")
+        try:
+            if fix_riders_history_file(men_dir, "TDF"):
+                fixes_applied = True
+        except Exception as e:
+            print(f"❌ Error processing men's data: {e}")
+    else:
+        print(f"⚠️  Men's data directory not found: {men_dir}")
+    
+    # Fix women's data
     if women_dir.exists():
         print(f"\n🚺 Processing women's data in {women_dir}")
-        fix_riders_history_file(women_dir, "TDFF")
+        try:
+            if fix_riders_history_file(women_dir, "TDFF"):
+                fixes_applied = True
+        except Exception as e:
+            print(f"❌ Error processing women's data: {e}")
+    else:
+        print(f"⚠️  Women's data directory not found: {women_dir}")
     
-    print("\n✅ Fix completed")
+    if fixes_applied:
+        print("\n✅ Riders history fix completed with updates")
+    else:
+        print("\n✅ Riders history fix completed - no updates needed")
+    
     return 0
 
 if __name__ == "__main__":
