@@ -8,78 +8,64 @@ The CSV Data Protection workflow automatically checks that changes to CSV files 
 
 ## Files
 
--   `csv-data-protection.yml`: GitHub Actions workflow that triggers on changes to CSV files
--   `check_csv_integrity.py`: Python script that performs the actual integrity checks
+-   `workflows/csv-data-protection.yml`: GitHub Actions workflow that triggers on changes to CSV files
+-   `scripts/check_csv_integrity.py`: Python script that performs the actual integrity checks
 
 ## What it checks
 
-1. **Row Count**: Ensures the number of rows only increases or stays the same
-2. **Column Count**: Ensures the number of columns only increases or stays the same
-3. **Column Names**: Ensures no existing columns are removed
-4. **Data Integrity**: Ensures existing data is not modified
-5. **New Content**: Allows addition of new rows and columns
+Rows are compared as **multisets of canonicalised values** between the base
+branch and the current version, so the check is robust against re-sorting a
+file and against pure formatting changes (`11.0` vs `11`):
+
+1. **Row protection**: every row present in the base version must still be
+   present (a modified row counts as a removed row plus an added row)
+2. **Column protection**: existing columns must not be removed
+3. **New content**: adding rows and columns is always allowed
 
 ## When it runs
 
--   On pull requests that modify files in `data/*.csv`
--   On pushes to `main`/`master` branch that modify files in `data/*.csv`
+-   On pull requests that modify files in `data/**/*.csv`
+-   On pushes to `main`/`master` that modify files in `data/**/*.csv`
+-   Locally via `make check-csv` (and as an informational step of `make update`)
 
-## What happens if the check fails
+## Fixing genuinely wrong data
 
-If the workflow detects data deletion or modification:
+Historical values sometimes need corrections (e.g. the source site fixed a
+result). To make such a change:
 
-1. The GitHub check will fail with a ❌ status
-2. Pull requests will be blocked from merging
-3. Detailed error messages will show exactly what data was deleted/modified
-4. Suggestions for fixing the issues will be provided
+1. Put the marker `[data-fix]` in the commit message
+2. Explain in the commit message why the data had to change
+3. The check will report the modified rows but pass
 
-## Bypassing the check
-
-If you need to legitimately modify historical data (e.g., fixing a critical error):
-
-1. Contact the repository maintainer
-2. Document the reason for the change
-3. Consider adding corrected data as new rows rather than modifying existing ones
-4. The maintainer can override the check if necessary
+Alternatively, run the script with `ALLOW_DATA_FIX=1` for local
+verification of a planned correction.
 
 ## Example output
 
 ### ✅ Successful check (additions only)
 
 ```
-🔍 Starting CSV Data Protection Check...
-Found 6 CSV file(s) to check:
-  - TDF_Riders_History.csv
-  - TDF_Stages_History.csv
-  - TDFF_Riders_History.csv
-
-✅ TDF_Riders_History.csv: 5 rows added
-✅ TDF_Stages_History.csv: 21 rows added
-✅ TDFF_Riders_History.csv: 1 rows added
+✅ data/men/TDF_Riders_History.csv: 160 row(s) added
+✅ data/men/TDF_Stages_History.csv: 21 row(s) added
+✅ data/women/TDFF_Riders_History.csv: no changes
 
 🎉 All CSV files passed integrity checks!
 ```
 
-### ❌ Failed check (deletion detected)
+### ❌ Failed check (deletion or modification detected)
 
 ```
-❌ CSV integrity check failed!
-
-The following issues were detected:
-  ❌ TDF_Riders_History.csv: Row count decreased from 115 to 114
-  ❌ TDF_Stages_History.csv: Columns removed: Distance_km
+❌ data/men/TDF_Riders_History.csv: 3 existing row(s) removed or modified (e.g. 1 | TADEJ POGACAR | ... )
 
 💡 To fix these issues:
    - Ensure you're only adding new data, not modifying existing data
-   - Add columns instead of removing them
+   - For legitimate corrections, include '[data-fix]' in the commit message
 ```
 
 ## Technical details
 
-The script compares CSV files between the current branch and the base branch (usually `main`/`master`) using:
-
--   Git commands to retrieve historical versions
--   Pandas for CSV analysis and comparison
--   Detailed row-by-row and column-by-column validation
-
-This ensures that the Tour de France historical dataset maintains its integrity and continues to grow over time without losing valuable historical information.
+The script compares each CSV file between the working tree and the base ref
+(the PR base branch, else `origin/main`/`origin/master`) using `git show`
+and pandas. Cell values are canonicalised (whitespace-trimmed, numbers
+normalised) and rows compared as multisets over the columns common to both
+versions, which makes the check independent of row order and column order.

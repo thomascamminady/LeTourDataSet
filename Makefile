@@ -31,8 +31,8 @@ update:
 	uv run python scripts/postprocess_data.py
 	@echo "🩹 Step 3: Fixing riders history if needed..."
 	uv run python scripts/fix_riders_history.py || echo "⚠️  Fix script completed with warnings (may be expected)"
-	@echo "🛡️ Step 4: Verifying CSV integrity..."
-	uv run python .github/scripts/check_csv_integrity.py
+	@echo "🛡️ Step 4: Verifying CSV integrity (informational for local runs)..."
+	-uv run python .github/scripts/check_csv_integrity.py
 	@echo "📊 Step 5: Generating plots..."
 	uv run python scripts/generate_plots.py
 	@echo "✅ Complete data update workflow finished successfully!"

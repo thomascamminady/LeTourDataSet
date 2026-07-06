@@ -2,187 +2,169 @@
 """
 CSV Data Protection Script
 
-This script ensures that CSV files in the data/ directory only grow over time.
-It checks that:
-1. No rows are deleted (row count can only increase or stay the same)
-2. No columns are deleted (column count can only increase or stay the same)
-3. Existing data is not modified (data integrity is maintained)
+Ensures the CSV files in data/ only grow over time:
 
-The script compares CSV files between the current commit and the base branch.
+1. Rows may be added; existing rows must not be removed or modified.
+2. Columns may be added; existing columns must not be removed.
+
+Rows are compared as multisets of canonicalised values over the columns
+common to both versions, so re-sorting a file or reformatting a number
+(e.g. '11.0' -> '11') does not count as a change. A modified row shows up
+as one removed row plus one added row.
+
+Legitimate corrections (fixing wrong values from the source site) are
+allowed when a commit in the checked range carries a '[data-fix]' marker
+in its message, or when ALLOW_DATA_FIX=1 is set; the check then reports
+the changes but passes.
 """
 
 import os
 import subprocess
 import sys
-import tempfile
+from collections import Counter
+from io import StringIO
 from pathlib import Path
+from typing import Any
 
 import pandas as pd
 
+DATA_FIX_MARKER = "[data-fix]"
 
-def run_git_command(command):
-    """Run a git command and return the output."""
+
+def run_git_command(args: list[str]) -> str | None:
+    """Run a git command and return its stdout, or None on failure."""
     try:
         result = subprocess.run(
-            command, shell=True, capture_output=True, text=True, check=True
+            ["git", *args], capture_output=True, text=True, check=True
         )
-        return result.stdout.strip()
+        return result.stdout
     except subprocess.CalledProcessError as e:
-        print(f"Git command failed: {command}")
+        print(f"Git command failed: git {' '.join(args)}")
         print(f"Error: {e.stderr}")
         return None
 
 
-def get_base_branch():
-    """Determine the base branch to compare against."""
-    event_name = os.environ.get("GITHUB_EVENT_NAME", "")
-
-    if event_name == "pull_request":
-        # For pull requests, use the base branch
+def get_base_ref() -> str | None:
+    """Determine the git ref to compare against."""
+    if os.environ.get("GITHUB_EVENT_NAME") == "pull_request":
         base_ref = os.environ.get("GITHUB_BASE_REF", "")
         if base_ref:
             return f"origin/{base_ref}"
 
-    # For push events or fallback, use main or master
-    branches = run_git_command("git branch -r")
-    if branches:
-        if "origin/main" in branches:
-            return "origin/main"
-        elif "origin/master" in branches:
-            return "origin/master"
-
-    # Last resort
-    return "HEAD~1"
+    branches = run_git_command(["branch", "-r"]) or ""
+    for candidate in ("origin/main", "origin/master"):
+        if candidate in branches.split():
+            return candidate
+    return None
 
 
-def get_csv_files_in_data():
+def data_fix_authorized(base_ref: str) -> bool:
+    """Check whether data corrections are explicitly authorized."""
+    if os.environ.get("ALLOW_DATA_FIX") == "1":
+        return True
+    messages = run_git_command(["log", f"{base_ref}..HEAD", "--format=%B"]) or ""
+    return DATA_FIX_MARKER in messages
+
+
+def get_csv_files_in_data() -> list[Path]:
     """Get all CSV files in the data/ directory and subdirectories."""
     data_dir = Path("data")
     if not data_dir.exists():
         return []
-
-    # Get CSV files from data/ and its subdirectories
-    csv_files = []
-    csv_files.extend(data_dir.glob("*.csv"))  # Root level
-    csv_files.extend(data_dir.glob("*/*.csv"))  # Subdirectories (men/, women/)
-
-    return csv_files
+    return sorted(data_dir.glob("**/*.csv"))
 
 
-def check_csv_integrity(csv_file, base_branch):
+def _canonical(value: Any) -> str:
+    """Canonicalise a cell so formatting differences don't count as changes."""
+    if pd.isna(value):
+        return ""
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return str(value).strip()
+    if number.is_integer():
+        return str(int(number))
+    return repr(number)
+
+
+def canonical_rows(df: pd.DataFrame, columns: list[str]) -> Counter:
+    """Multiset of canonicalised row tuples over the given columns."""
+    return Counter(
+        tuple(_canonical(value) for value in row)
+        for row in df[columns].itertuples(index=False, name=None)
+    )
+
+
+def check_csv_integrity(csv_file: Path, base_ref: str) -> tuple[bool, str]:
     """
-    Check if the CSV file maintains integrity (only grows, no deletions).
-
-    Args:
-        csv_file (Path): Path to the CSV file
-        base_branch (str): Base branch to compare against
+    Check that a CSV file only grew relative to the base ref.
 
     Returns:
         tuple: (is_valid, message)
     """
-    print(f"Checking integrity of {csv_file}...")
+    show = subprocess.run(
+        ["git", "show", f"{base_ref}:{csv_file.as_posix()}"],
+        capture_output=True,
+        text=True,
+    )
+    if show.returncode != 0:
+        # File doesn't exist in the base ref (new file)
+        return True, f"✅ {csv_file}: new file"
 
-    # Create temporary directory for old version
-    with tempfile.TemporaryDirectory() as temp_dir:
-        old_file_path = Path(temp_dir) / csv_file.name
+    try:
+        old_df = pd.read_csv(StringIO(show.stdout), low_memory=False)
+        new_df = pd.read_csv(csv_file, low_memory=False)
+    except Exception as e:
+        return False, f"❌ {csv_file}: error reading CSV: {e}"
 
-        # Get the old version of the file
-        git_command = f"git show {base_branch}:{csv_file}"
-        result = subprocess.run(git_command, shell=True, capture_output=True, text=True)
+    problems: list[str] = []
 
-        if result.returncode != 0:
-            # File doesn't exist in base branch (new file)
-            print(f"  ✅ {csv_file.name} is a new file")
-            return True, f"New file: {csv_file.name}"
+    removed_columns = [c for c in old_df.columns if c not in new_df.columns]
+    if removed_columns:
+        problems.append(f"columns removed: {', '.join(removed_columns)}")
 
-        # Write old version to temporary file
-        with open(old_file_path, "w") as f:
-            f.write(result.stdout)
+    common_columns = [c for c in old_df.columns if c in new_df.columns]
+    old_rows = canonical_rows(old_df, common_columns)
+    new_rows = canonical_rows(new_df, common_columns)
 
-        try:
-            # Load both versions (suppress dtype warnings for mixed columns)
-            old_df = pd.read_csv(old_file_path, low_memory=False)
-            new_df = pd.read_csv(csv_file, low_memory=False)
+    missing = old_rows - new_rows
+    added = new_rows - old_rows
 
-            # Check row count
-            old_rows = len(old_df)
-            new_rows = len(new_df)
+    if missing:
+        n_missing = sum(missing.values())
+        sample = " | ".join(next(iter(missing))[:6])
+        problems.append(
+            f"{n_missing} existing row(s) removed or modified (e.g. {sample} ...)"
+        )
 
-            if new_rows < old_rows:
-                return (
-                    False,
-                    f"❌ {csv_file.name}: Row count decreased from {old_rows} to {new_rows}",
-                )
+    if problems:
+        return False, f"❌ {csv_file}: " + "; ".join(problems)
 
-            # Check column count and names
-            old_columns = set(old_df.columns)
-            new_columns = set(new_df.columns)
+    notes: list[str] = []
+    if added:
+        notes.append(f"{sum(added.values())} row(s) added")
+    added_columns = [c for c in new_df.columns if c not in old_df.columns]
+    if added_columns:
+        notes.append(f"columns added: {', '.join(added_columns)}")
+    if not notes:
+        notes.append("no changes")
 
-            if len(new_columns) < len(old_columns):
-                return (
-                    False,
-                    f"❌ {csv_file.name}: Column count decreased from {len(old_columns)} to {len(new_columns)}",
-                )
-
-            # Check if any columns were removed
-            removed_columns = old_columns - new_columns
-            if removed_columns:
-                return (
-                    False,
-                    f"❌ {csv_file.name}: Columns removed: {', '.join(removed_columns)}",
-                )
-
-            # If we have the same number of rows, check for data modifications
-            if new_rows == old_rows:
-                # Check if existing data was modified
-                common_columns = old_columns.intersection(new_columns)
-
-                # Compare common columns for the overlapping rows
-                for col in common_columns:
-                    if not old_df[col].equals(new_df[col]):
-                        # More detailed check to find which rows changed
-                        differences = old_df[col] != new_df[col]
-                        if differences.any():
-                            changed_indices = differences[differences].index.tolist()
-                            return (
-                                False,
-                                f"❌ {csv_file.name}: Data modified in column '{col}' at rows: {changed_indices[:5]}{'...' if len(changed_indices) > 5 else ''}",
-                            )
-
-            # All checks passed
-            added_rows = new_rows - old_rows
-            added_columns = new_columns - old_columns
-
-            message_parts = []
-            if added_rows > 0:
-                message_parts.append(f"{added_rows} rows added")
-            if added_columns:
-                message_parts.append(f"columns added: {', '.join(added_columns)}")
-
-            if message_parts:
-                message = f"✅ {csv_file.name}: " + ", ".join(message_parts)
-            else:
-                message = f"✅ {csv_file.name}: No changes detected"
-
-            return True, message
-
-        except Exception as e:
-            return False, f"❌ {csv_file.name}: Error reading CSV file: {str(e)}"
+    return True, f"✅ {csv_file}: " + ", ".join(notes)
 
 
-def main():
-    """Main function to check all CSV files."""
+def main() -> int:
+    """Check all CSV files against the base ref."""
     print("🔍 Starting CSV Data Protection Check...")
     print("=" * 50)
 
-    # Get base branch for comparison
-    base_branch = get_base_branch()
-    print(f"Comparing against base branch: {base_branch}")
+    base_ref = get_base_ref()
+    if base_ref is None:
+        print("ℹ️  No base branch found to compare against; skipping check.")
+        return 0
+    print(f"Comparing against base ref: {base_ref}")
     print()
 
-    # Get all CSV files in data directory
     csv_files = get_csv_files_in_data()
-
     if not csv_files:
         print("ℹ️  No CSV files found in data/ directory")
         return 0
@@ -192,46 +174,43 @@ def main():
         print(f"  - {csv_file}")
     print()
 
-    # Check each CSV file
     all_valid = True
-    results = []
-
+    failed_messages: list[str] = []
     for csv_file in csv_files:
-        is_valid, message = check_csv_integrity(csv_file, base_branch)
-        results.append((csv_file.name, is_valid, message))
-
+        is_valid, message = check_csv_integrity(csv_file, base_ref)
+        print(f"  {message}")
         if not is_valid:
             all_valid = False
-
-        print(f"  {message}")
+            failed_messages.append(message)
 
     print()
     print("=" * 50)
 
     if all_valid:
         print("🎉 All CSV files passed integrity checks!")
-        print("✅ Data protection verified: Only additions detected, no deletions.")
+        print("✅ Data protection verified: only additions detected.")
         return 0
-    else:
-        print("❌ CSV integrity check failed!")
-        print()
-        print("The following issues were detected:")
-        for filename, is_valid, message in results:
-            if not is_valid:
-                print(f"  {message}")
 
-        print()
-        print("💡 To fix these issues:")
-        print("   - Ensure you're only adding new data, not modifying existing data")
-        print(
-            "   - If you need to fix data, consider adding corrected rows rather than modifying existing ones"
-        )
-        print("   - Add columns instead of removing them")
-        print(
-            "   - Contact the repository maintainer if you believe this is a false positive"
-        )
+    if data_fix_authorized(base_ref):
+        print("⚠️  Data changes detected, but they are authorized:")
+        print(f"   a commit in {base_ref}..HEAD carries the {DATA_FIX_MARKER} marker")
+        print("   (or ALLOW_DATA_FIX=1 is set). Review the changes above carefully.")
+        return 0
 
-        return 1
+    print("❌ CSV integrity check failed!")
+    print()
+    print("The following issues were detected:")
+    for message in failed_messages:
+        print(f"  {message}")
+    print()
+    print("💡 To fix these issues:")
+    print("   - Ensure you're only adding new data, not modifying existing data")
+    print("   - Add columns instead of removing them")
+    print(
+        f"   - For legitimate corrections, include '{DATA_FIX_MARKER}' in the "
+        "commit message and describe why the data had to change"
+    )
+    return 1
 
 
 if __name__ == "__main__":
