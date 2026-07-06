@@ -3,6 +3,7 @@ import logging
 import re
 from io import StringIO
 from itertools import chain
+from typing import Any
 
 import aiohttp
 import pandas as pd
@@ -10,26 +11,38 @@ import requests
 from bs4 import BeautifulSoup, Tag
 from rich.progress import track
 
+DEFAULT_HEADERS: dict[str, str] = {
+    "Accept": "text/html",
+    "User-Agent": "python-requests/1.2.0",
+    "Accept-Charset": "utf-8",
+    "accept-encoding": "deflate, br",
+}
+REQUEST_TIMEOUT_SECONDS = 30
+MAX_CONCURRENT_REQUESTS = 10
+
 
 class Scraper:
     def __init__(
         self,
-        history_page="https://www.letour.fr/en/history",
-        headers={
-            "Accept": "text/html",
-            "User-Agent": "python-requests/1.2.0",
-            "Accept-Charset": "utf-8",
-            "accept-encoding": "deflate, br",
-        },
+        history_page: str = "https://www.letour.fr/en/history",
+        headers: dict[str, str] | None = None,
     ) -> None:
+        self._headers = dict(DEFAULT_HEADERS) if headers is None else dict(headers)
+        # aiohttp must negotiate its own content encodings (brotli needs an
+        # optional extra), so it gets the headers without accept-encoding.
+        self._aio_headers = {
+            key: value
+            for key, value in self._headers.items()
+            if key.lower() != "accept-encoding"
+        }
         # Determine the correct prefix based on the history page
         if "letourfemmes.fr" in history_page:
-            self._prefix = "http://www.letourfemmes.fr"
+            self._prefix = "https://www.letourfemmes.fr"
             self._is_women = True
         else:
-            self._prefix = "http://www.letour.fr"
+            self._prefix = "https://www.letour.fr"
             self._is_women = False
-        self._links: list[str] = self._get_urls(history_page, headers)
+        self._links: list[str] = self._get_urls(history_page, self._headers)
         self._ranking_types = {
             # "Individual (General)": "itg",
             "Individual (Stage)": "ite",
@@ -46,27 +59,29 @@ class Scraper:
         }
 
     def _get_urls(self, history_page: str, headers: dict[str, str]) -> list[str]:
-        string = str(
-            BeautifulSoup(
-                requests.get(history_page, allow_redirects=True, headers=headers).text,
-                "html.parser",
-            )
+        response = requests.get(
+            history_page,
+            allow_redirects=True,
+            headers=headers,
+            timeout=REQUEST_TIMEOUT_SECONDS,
         )
+        response.raise_for_status()
+        string = str(BeautifulSoup(response.text, "html.parser"))
         pattern = r'data-tabs-ajax="([^"]+)"'
         matches = re.findall(pattern, string)
         # Validate that the URLs are ordered by most recent year first
-        years = []
+        years: list[int | None] = []
         for url in matches:
             # Try to extract a 4-digit year from the URL
             year_match = re.search(r'(\d{4})', url)
-            if year_match:
-                years.append(int(year_match.group(1)))
-            else:
-                years.append(None)
+            years.append(int(year_match.group(1)) if year_match else None)
+
+        def _is_descending(a: int | None, b: int | None) -> bool:
+            return a is None or b is None or a >= b
+
         # Check if years are in descending order (most recent first)
         valid_order = all(
-            years[i] is None or years[i + 1] is None or years[i] >= years[i + 1]
-            for i in range(len(years) - 1)
+            _is_descending(a, b) for a, b in zip(years, years[1:])
         )
         if not valid_order:
             logging.warning(
@@ -102,7 +117,6 @@ class Scraper:
                 selections_urls["Ranking"], list(stages["Stages"])
             )
             stages_winners = self._get_stages_winners(selections_urls["Stages winners"])
-            # teams = self._get_teams(selections_urls["Starters"])
             jersey_wearers = self._get_jersey_wearers(selections_urls["Jersey wearers"])
 
             # Update the dataframe stages by merging on 'Stages' using the stages_winners dataframe and the jersey_wearers dataframe
@@ -143,21 +157,26 @@ class Scraper:
         # for the df_all_rankings sort by Year, Stage, Rank
         return df_stages, df_rankings, df_all_rankings
 
-    def _get_soup_year_distance(self, link: str) -> tuple[Tag, int, int]:
-        result = requests.get(link, allow_redirects=True)
-        text = result.text
-        status = result.status_code
-        logging.info(link + " ==> HTTP STATUS = " + str(status))
+    def _get_soup_year_distance(self, link: str) -> tuple[BeautifulSoup, int, int]:
+        result = requests.get(
+            link,
+            allow_redirects=True,
+            headers=self._headers,
+            timeout=REQUEST_TIMEOUT_SECONDS,
+        )
+        result.raise_for_status()
+        logging.info("%s ==> HTTP STATUS = %s", link, result.status_code)
 
-        soup = BeautifulSoup(text, "html.parser")
+        soup = BeautifulSoup(result.text, "html.parser")
         year_tag = soup.find("h3")
         if year_tag is None:
-            raise Exception("Could not parse year.")
+            raise ValueError(f"Could not find the year heading (h3) on {link}.")
         year = int(year_tag.text[-4:])
-        distance = soup.select("[class~=statsInfos__number]")[1].contents
-        distance_str = str(distance[0]).replace(" ", "").replace(",", "")
-        # Handle decimal distances by converting to float first, then to int
-        # Handle decimal distances by converting to float first, then round to nearest integer
+        stats = soup.select("[class~=statsInfos__number]")
+        if len(stats) < 2:
+            raise ValueError(f"Could not find the total distance on {link}.")
+        distance_str = str(stats[1].contents[0]).replace(" ", "").replace(",", "")
+        # Decimal distances are rounded to the nearest integer kilometre
         distance = round(float(distance_str))
         return soup, year, distance
 
@@ -205,72 +224,28 @@ class Scraper:
         return df_stages
 
     def _get_stages_winners(self, winners_link: str) -> pd.DataFrame:
-        response = requests.get(winners_link)
+        response = requests.get(
+            winners_link, headers=self._headers, timeout=REQUEST_TIMEOUT_SECONDS
+        )
         response.raise_for_status()
-        rank_html = response.content
-        soup = BeautifulSoup(rank_html, "html.parser")
+        soup = BeautifulSoup(response.content, "html.parser")
         stages_winners = soup.find("table")
-        html_string = str(stages_winners)
-        html_io = StringIO(html_string)
-        df_stages_winners = pd.read_html(html_io)[0]
+        if stages_winners is None:
+            raise ValueError(f"No stage winners table found on {winners_link}.")
+        df_stages_winners = pd.read_html(StringIO(str(stages_winners)))[0]
         df_stages_winners.drop(columns="Last km", inplace=True)
         return df_stages_winners
 
-    def _get_teams(self, starters_link: str) -> pd.DataFrame:
-        response = requests.get(starters_link)
-        response.raise_for_status()
-        starter_html = response.content
-        soup = BeautifulSoup(starter_html, "html.parser")
-        competitors = []
-        team_blocks = soup.find("div", class_="list list--competitors").find_all(
-            "h3", class_="list__heading"
-        )
-
-        for team_block in team_blocks:
-            team_name = team_block.text.strip()
-            list_box = team_block.find_next_sibling("div", class_="list__box")
-            competitor_items = list_box.find_all("li", class_="list__box__item")
-
-            for item in competitor_items:
-                bib = (
-                    item.find("span", class_="bib").text
-                    if item.find("span", class_="bib")
-                    else None
-                )
-                name = (
-                    item.find("a", class_="runner__link").text.strip()
-                    if item.find("a", class_="runner__link")
-                    else None
-                )
-                country = (
-                    item.find("span", class_="flag js-display-lazy")[
-                        "data-class"
-                    ].split("--")[-1]
-                    if item.find("span", class_="flag js-display-lazy")
-                    else None
-                )
-
-                if bib and name:
-                    competitors.append(
-                        {
-                            "Team": team_name,
-                            "Bib": bib,
-                            "Name": name,
-                            "Country": country,
-                        }
-                    )
-
-        return pd.DataFrame(competitors)
-
     def _get_jersey_wearers(self, jersey_link: str) -> pd.DataFrame:
-        response = requests.get(jersey_link)
+        response = requests.get(
+            jersey_link, headers=self._headers, timeout=REQUEST_TIMEOUT_SECONDS
+        )
         response.raise_for_status()
-        jersey_html = response.content
-        soup = BeautifulSoup(jersey_html, "html.parser")
+        soup = BeautifulSoup(response.content, "html.parser")
         jersey_wearers = soup.find("table")
-        html_string = str(jersey_wearers)
-        html_io = StringIO(html_string)
-        df_jersey_wearers = pd.read_html(html_io)[0]
+        if jersey_wearers is None:
+            raise ValueError(f"No jersey wearers table found on {jersey_link}.")
+        df_jersey_wearers = pd.read_html(StringIO(str(jersey_wearers)))[0]
         df_jersey_wearers = df_jersey_wearers.dropna(axis=1, how="all")
         cols = [col for col in df_jersey_wearers.columns if "jersey" in col.lower()]
         # Convert the columns that contains 'jersey' in their names to string
@@ -279,9 +254,19 @@ class Scraper:
 
     def _add_bib_number(self, soup: Tag, df_rankings: pd.DataFrame) -> pd.DataFrame:
         # Manually add the bib numbers because they are not in the rankings table
-        bibs = re.findall(r'data-bib="([^"]+)"', str(soup))
-        bibs = [int(bib.replace("#", "")) for bib in bibs]
-        df_rankings.insert(2, "Rider No.", bibs)
+        bibs = [
+            int(bib.replace("#", ""))
+            for bib in re.findall(r'data-bib="([^"]+)"', str(soup))
+        ]
+        if len(bibs) == len(df_rankings):
+            df_rankings.insert(2, "Rider No.", bibs)
+        else:
+            logging.warning(
+                "Found %d bib numbers for %d ranking rows; leaving 'Rider No.' empty.",
+                len(bibs),
+                len(df_rankings),
+            )
+            df_rankings.insert(2, "Rider No.", None)
         return df_rankings
 
     def _get_rankings(self, soup: Tag) -> pd.DataFrame:
@@ -293,33 +278,40 @@ class Scraper:
         Returns:
                 pd.DataFrame: DataFrame containing the rankings for the given year
         """
-        rankingTable = soup.find("table")
-        html_string = str(rankingTable)
-        html_io = StringIO(html_string)
-        df_rankings = pd.read_html(html_io)[0]
+        ranking_table = soup.find("table")
+        if ranking_table is None:
+            raise ValueError("No ranking table found on the year page.")
+        df_rankings = pd.read_html(StringIO(str(ranking_table)))[0]
         self._add_bib_number(soup, df_rankings)
         return df_rankings
 
     @staticmethod
-    async def _fetch(session: aiohttp.ClientSession, url: str) -> str:
-        async with session.get(url) as response:
-            response.raise_for_status()
-            return await response.text()
+    async def _fetch(
+        session: aiohttp.ClientSession, url: str, semaphore: asyncio.Semaphore
+    ) -> str:
+        async with semaphore:
+            async with session.get(url) as response:
+                response.raise_for_status()
+                return await response.text()
 
     async def _get_all_rankings(
         self, ranking_link: str, stages_numbers: list[float]
     ) -> pd.DataFrame:
-        stages: list[list[dict[str, str]]] = []
-        async with aiohttp.ClientSession() as session:
+        stages: list[list[dict[str, Any]]] = []
+        semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
+        timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT_SECONDS * 4)
+        async with aiohttp.ClientSession(
+            timeout=timeout, headers=self._aio_headers
+        ) as session:
             tasks = []
             for stage_number in stages_numbers:
                 for ranking_type_name, ranking_type_idx in self._ranking_types.items():
                     ranking_url = (
                         f"{ranking_link}?stage={stage_number}&type={ranking_type_idx}"
                     )
-                    tasks.append(self._fetch(session, ranking_url))
+                    tasks.append(self._fetch(session, ranking_url, semaphore))
 
-            # Execute all requests concurrently
+            # Execute all requests concurrently (bounded by the semaphore)
             responses = await asyncio.gather(*tasks)
 
             response_idx = 0
@@ -328,7 +320,7 @@ class Scraper:
                     rank_html = responses[response_idx]
                     response_idx += 1
                     rank_soup = BeautifulSoup(rank_html, "html.parser")
-                    rankings: list[dict[str, str]] = []
+                    rankings: list[dict[str, Any]] = []
 
                     # Get the ranking table
                     ranking_table = rank_soup.find(
@@ -347,40 +339,26 @@ class Scraper:
                         )
                         continue
 
+                    # Points/climber tables interleave single-cell rows naming
+                    # the checkpoint the following rows belong to.
+                    checkpoint: str | None = None
                     for row in rows[1:]:
                         cols = row.find_all("td")
-                        if "ite" in ranking_type_idx:
-                            ranking = {
-                                "Rank": cols[0].text.strip(),
-                                "Rider": cols[1].text.strip(),
-                                "Team": cols[2].text.strip(),
-                                "Times": cols[3].text.strip(),
-                            }
-                            if len(cols) > 4:
-                                ranking["Gap"] = cols[4].text.strip()
-                            if len(cols) > 5:
-                                ranking["B"] = cols[5].text.strip()
-                            if len(cols) > 6:
-                                ranking["P"] = cols[6].text.strip()
-                        elif "ipe" in ranking_type_idx:
-                            checkpoint = None
+                        if not cols:
+                            # Header-only rows (th cells) carry no ranking data
+                            continue
+                        ranking: dict[str, Any]
+                        if ranking_type_idx in ("ipe", "ime"):
                             if len(cols) == 1:
                                 checkpoint = cols[0].text.strip()
                                 continue
-                            else:
-                                ranking = {
-                                    "Rank": cols[0].text.strip(),
-                                    "Rider": cols[1].text.strip(),
-                                    "Team": cols[2].text.strip(),
-                                    "Points": cols[3].text.strip(),
-                                    "Checkpoint": checkpoint,
-                                }
-                                if len(cols) > 4:
-                                    ranking["B"] = cols[4].text.strip()
-                        elif "ime" in ranking_type_idx:
-                            checkpoint = None
-                            if len(cols) == 1:
-                                checkpoint = cols[0].text.strip()
+                            if len(cols) < 4:
+                                logging.warning(
+                                    "Skipping malformed %s row on stage %s (%d cells).",
+                                    ranking_type_name,
+                                    stage_number,
+                                    len(cols),
+                                )
                                 continue
                             ranking = {
                                 "Rank": cols[0].text.strip(),
@@ -389,7 +367,17 @@ class Scraper:
                                 "Points": cols[3].text.strip(),
                                 "Checkpoint": checkpoint,
                             }
-                        elif "ije" in ranking_type_idx or "ice" in ranking_type_idx:
+                            if ranking_type_idx == "ipe" and len(cols) > 4:
+                                ranking["B"] = cols[4].text.strip()
+                        elif ranking_type_idx in ("ite", "ije", "ice"):
+                            if len(cols) < 4:
+                                logging.warning(
+                                    "Skipping malformed %s row on stage %s (%d cells).",
+                                    ranking_type_name,
+                                    stage_number,
+                                    len(cols),
+                                )
+                                continue
                             ranking = {
                                 "Rank": cols[0].text.strip(),
                                 "Rider": cols[1].text.strip(),
@@ -398,7 +386,20 @@ class Scraper:
                             }
                             if len(cols) > 4:
                                 ranking["Gap"] = cols[4].text.strip()
-                        elif "ete" in ranking_type_idx:
+                            if ranking_type_idx == "ite":
+                                if len(cols) > 5:
+                                    ranking["B"] = cols[5].text.strip()
+                                if len(cols) > 6:
+                                    ranking["P"] = cols[6].text.strip()
+                        elif ranking_type_idx == "ete":
+                            if len(cols) < 3:
+                                logging.warning(
+                                    "Skipping malformed %s row on stage %s (%d cells).",
+                                    ranking_type_name,
+                                    stage_number,
+                                    len(cols),
+                                )
+                                continue
                             ranking = {
                                 "Rank": cols[0].text.strip(),
                                 "Team": cols[1].text.strip(),
@@ -419,7 +420,10 @@ class Scraper:
         return pd.DataFrame(list(chain.from_iterable(stages)))
 
     async def _fetch_yearly_tdf_urls(self, year_url: str) -> dict[str, str]:
-        async with aiohttp.ClientSession() as session:
+        timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT_SECONDS)
+        async with aiohttp.ClientSession(
+            timeout=timeout, headers=self._aio_headers
+        ) as session:
             async with session.get(year_url) as response:
                 response.raise_for_status()
                 html_content = await response.text()
@@ -485,12 +489,8 @@ class Scraper:
 
             if year in [2006, 1997]:
                 tmp = df[df["Year"] == year].reset_index()
-                if "TotalSeconds" not in df.columns:
-                    df["TotalSeconds"] = 0
-                if "GapSeconds" not in df.columns:
-                    df["GapSeconds"] = 0
-                ts = tmp["TotalSeconds"].values
-                gs = tmp["GapSeconds"].values
+                ts = tmp["TotalSeconds"].to_numpy().copy()
+                gs = tmp["GapSeconds"].to_numpy()
                 ts[1:] = ts[0] + gs[1:]
                 df.loc[df["Year"] == year, "TotalSeconds"] = ts
 
@@ -510,35 +510,46 @@ class Scraper:
 
         return df_rankings, df_all_rankings, df_stages
 
-    def _get_seconds(self, row: str, mode: str) -> int:
+    def _get_seconds(self, row: str | float, mode: str) -> int:
         if isinstance(row, float) and pd.isna(row):
             return 0
-        elif "h" in row:
-            val = sum(
-                to_seconds * int(t)
-                for to_seconds, t in zip(
-                    [3600, 60, 1],
-                    row.replace("h", ":")
-                    .replace("'", ":")
-                    .replace('"', ":")
-                    .replace(" ", "")
-                    .replace("+", "")
-                    .replace("-", "0")
-                    .split(":"),
-                )
-            )
-        else:
-            # Try using the library dateutil.parser to parse the time
+        text = str(row)
+        if "h" in text:
             try:
-                val = (
-                    pd.to_datetime(row).hour * 3600
-                    + pd.to_datetime(row).minute * 60
-                    + pd.to_datetime(row).second
+                val = sum(
+                    to_seconds * int(t)
+                    for to_seconds, t in zip(
+                        [3600, 60, 1],
+                        text.replace("h", ":")
+                        .replace("'", ":")
+                        .replace('"', ":")
+                        .replace(" ", "")
+                        .replace("+", "")
+                        .replace("-", "0")
+                        .split(":"),
+                    )
                 )
+            except ValueError:
+                logging.warning(
+                    "Could not parse %s value '%s'; treating as 0 seconds.",
+                    mode,
+                    text,
+                )
+                return 0
+        else:
+            try:
+                parsed = pd.to_datetime(text)
+                val = parsed.hour * 3600 + parsed.minute * 60 + parsed.second
             except Exception:
-                val = 0
+                logging.debug(
+                    "Could not parse %s value '%s'; treating as 0 seconds.",
+                    mode,
+                    text,
+                )
+                return 0
 
         if (mode == "Gap") and val > 180000:
+            # Gaps above 50 hours are parsing artefacts on the source pages
+            logging.debug("Ignoring implausible %s value '%s'.", mode, text)
             return 0
-        else:
-            return val
+        return val
