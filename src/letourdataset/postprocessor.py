@@ -2,267 +2,133 @@
 """
 Post-processor for Tour de France data files.
 
-This module handles the final sorting and organization of CSV data files
-to ensure consistent structure and ordering across all datasets.
+Sorts the CSV data files numerically and normalises integer column
+representations (e.g. rider numbers written as '11', not '11.0') without
+changing any values or the column order.
 """
 
-import pandas as pd
-from pathlib import Path
-from typing import List
 import logging
+from dataclasses import dataclass
+from pathlib import Path
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+import pandas as pd
+
 logger = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class FileSpec:
+    """Sorting and typing rules for one CSV data file."""
+
+    sort_columns: tuple[str, ...]
+    integer_columns: tuple[str, ...] = ()
+    # Stage numbers are integers except for split stages (e.g. 13.1, 13.2),
+    # so they get a mixed int/float representation instead of Int64.
+    stage_number_columns: tuple[str, ...] = ()
+
+
+RIDERS_SPEC = FileSpec(
+    sort_columns=("Year", "Rank"),
+    integer_columns=("Year", "Rank", "Rider No."),
+)
+STAGES_SPEC = FileSpec(
+    sort_columns=("Year", "Stages"),
+    integer_columns=("Year",),
+    stage_number_columns=("Stages",),
+)
+ALL_RANKINGS_SPEC = FileSpec(
+    sort_columns=("Year", "Stages", "Rank"),
+    integer_columns=("Year",),
+    stage_number_columns=("Stages",),
+)
+
+
+def _format_stage_number(value: float) -> int | float | None:
+    if pd.isna(value):
+        return None
+    if float(value).is_integer():
+        return int(value)
+    return value
 
 
 class DataPostProcessor:
     """Post-processor for Tour de France CSV data files."""
-    
-    def __init__(self, data_root: str = "data"):
-        """
-        Initialize the post-processor.
-        
-        Args:
-            data_root: Root directory containing the data folders
-        """
+
+    def __init__(self, data_root: str | Path = "data") -> None:
         self.data_root = Path(data_root)
         self.men_dir = self.data_root / "men"
         self.women_dir = self.data_root / "women"
-    
-    def _cast_numeric_columns(self, df: pd.DataFrame, columns: List[str]) -> pd.DataFrame:
-        """
-        Cast specified columns to numeric, handling errors gracefully.
-        
-        Args:
-            df: DataFrame to process
-            columns: List of column names to cast to numeric
-            
-        Returns:
-            DataFrame with numeric columns
-        """
-        df_copy = df.copy()
-        for col in columns:
-            if col in df_copy.columns:
-                # Convert to numeric, coercing errors to NaN
-                df_copy[col] = pd.to_numeric(df_copy[col], errors='coerce')
-                logger.debug(f"Cast column '{col}' to numeric")
-        return df_copy
-    
-    def _reorder_columns(self, df: pd.DataFrame, priority_columns: List[str]) -> pd.DataFrame:
-        """
-        Reorder DataFrame columns with priority columns first.
-        
-        Args:
-            df: DataFrame to reorder
-            priority_columns: Columns to place first (in order)
-            
-        Returns:
-            DataFrame with reordered columns
-        """
-        # Get existing priority columns (in case some don't exist)
-        existing_priority = [col for col in priority_columns if col in df.columns]
-        
-        # Get remaining columns
-        remaining_columns = [col for col in df.columns if col not in existing_priority]
-        
-        # Create new column order
-        new_order = existing_priority + remaining_columns
-        
-        return df[new_order]
-    
-    def process_all_rankings_history(self, file_path: Path) -> None:
-        """
-        Process TDFF_All_Rankings_History.csv file.
-        
-        Sorts by: Year (numeric), Stages (numeric), Rank (numeric)
-        Priority columns: Year, Stages, Rank
-        
-        Args:
-            file_path: Path to the CSV file
-        """
-        logger.info(f"Processing All Rankings History: {file_path.name}")
-        
+
+    def process_file(self, file_path: Path, spec: FileSpec) -> None:
+        """Sort and normalise a single CSV file in place."""
         if not file_path.exists():
-            logger.warning(f"File not found: {file_path}")
+            logger.warning("File not found: %s", file_path)
             return
-        
-        try:
-            # Read CSV
-            df = pd.read_csv(file_path)
-            original_shape = df.shape
-            logger.debug(f"Original shape: {original_shape}")
-            
-            # Cast numeric columns
-            numeric_columns = ["Year", "Stages", "Rank"]
-            df = self._cast_numeric_columns(df, numeric_columns)
-            
-            # Reorder columns (Year, Stages, Rank first)
-            priority_columns = ["Year", "Stages", "Rank"]
-            df = self._reorder_columns(df, priority_columns)
-            
-            # Sort by Year, then Stages, then Rank
-            sort_columns = []
-            for col in ["Year", "Stages", "Rank"]:
-                if col in df.columns:
-                    sort_columns.append(col)
-            
-            if sort_columns:
-                df = df.sort_values(sort_columns, ascending=True)
-                logger.debug(f"Sorted by: {sort_columns}")
-            
-            # Reset index
-            df = df.reset_index(drop=True)
-            
-            # Save back to file
-            df.to_csv(file_path, index=False)
-            logger.info(f"✅ Processed {file_path.name}: {original_shape[0]} rows, sorted by {sort_columns}")
-            
-        except Exception as e:
-            logger.error(f"Error processing {file_path.name}: {e}")
-    
-    def process_riders_history(self, file_path: Path) -> None:
-        """
-        Process TDFF_Riders_History.csv file.
-        
-        Sorts by: Year (numeric), Rank (numeric)
-        Priority columns: Year, Rank
-        
-        Args:
-            file_path: Path to the CSV file
-        """
-        logger.info(f"Processing Riders History: {file_path.name}")
-        
-        if not file_path.exists():
-            logger.warning(f"File not found: {file_path}")
-            return
-        
-        try:
-            # Read CSV
-            df = pd.read_csv(file_path)
-            original_shape = df.shape
-            logger.debug(f"Original shape: {original_shape}")
-            
-            # Cast numeric columns
-            numeric_columns = ["Year", "Rank"]
-            df = self._cast_numeric_columns(df, numeric_columns)
-            
-            # Reorder columns (Year, Rank first)
-            priority_columns = ["Year", "Rank"]
-            df = self._reorder_columns(df, priority_columns)
-            
-            # Sort by Year, then Rank
-            sort_columns = []
-            for col in ["Year", "Rank"]:
-                if col in df.columns:
-                    sort_columns.append(col)
-            
-            if sort_columns:
-                df = df.sort_values(sort_columns, ascending=True)
-                logger.debug(f"Sorted by: {sort_columns}")
-            
-            # Reset index
-            df = df.reset_index(drop=True)
-            
-            # Save back to file
-            df.to_csv(file_path, index=False)
-            logger.info(f"✅ Processed {file_path.name}: {original_shape[0]} rows, sorted by {sort_columns}")
-            
-        except Exception as e:
-            logger.error(f"Error processing {file_path.name}: {e}")
-    
-    def process_stages_history(self, file_path: Path) -> None:
-        """
-        Process TDFF_Stages_History.csv file.
-        
-        Sorts by: Year (numeric), Rank (numeric)
-        Priority columns: Year, Rank
-        
-        Args:
-            file_path: Path to the CSV file
-        """
-        logger.info(f"Processing Stages History: {file_path.name}")
-        
-        if not file_path.exists():
-            logger.warning(f"File not found: {file_path}")
-            return
-        
-        try:
-            # Read CSV
-            df = pd.read_csv(file_path)
-            original_shape = df.shape
-            logger.debug(f"Original shape: {original_shape}")
-            
-            # Cast numeric columns
-            numeric_columns = ["Year", "Rank"]
-            df = self._cast_numeric_columns(df, numeric_columns)
-            
-            # Reorder columns (Year, Rank first)
-            priority_columns = ["Year", "Rank"]
-            df = self._reorder_columns(df, priority_columns)
-            
-            # Sort by Year, then Rank
-            sort_columns = []
-            for col in ["Year", "Rank"]:
-                if col in df.columns:
-                    sort_columns.append(col)
-            
-            if sort_columns:
-                df = df.sort_values(sort_columns, ascending=True)
-                logger.debug(f"Sorted by: {sort_columns}")
-            
-            # Reset index
-            df = df.reset_index(drop=True)
-            
-            # Save back to file
-            df.to_csv(file_path, index=False)
-            logger.info(f"✅ Processed {file_path.name}: {original_shape[0]} rows, sorted by {sort_columns}")
-            
-        except Exception as e:
-            logger.error(f"Error processing {file_path.name}: {e}")
-    
+
+        df = pd.read_csv(file_path, low_memory=False)
+
+        for col in spec.integer_columns:
+            if col not in df.columns:
+                continue
+            numeric = pd.to_numeric(df[col], errors="coerce")
+            coercion_lossless = numeric.notna().eq(df[col].notna()).all()
+            if coercion_lossless and (numeric.dropna() % 1 == 0).all():
+                df[col] = numeric.astype("Int64")
+            else:
+                logger.warning(
+                    "Column '%s' in %s contains non-integer values; left as is.",
+                    col,
+                    file_path.name,
+                )
+
+        for col in spec.stage_number_columns:
+            if col not in df.columns:
+                continue
+            df[col] = pd.to_numeric(df[col], errors="coerce").map(
+                _format_stage_number
+            )
+
+        # Sort on numeric keys so e.g. rank 10 comes after rank 2 even if a
+        # column arrives as strings; the original values stay untouched.
+        sort_columns = [col for col in spec.sort_columns if col in df.columns]
+        if sort_columns:
+            key_names = [f"__sort_{col}" for col in sort_columns]
+            for col, key in zip(sort_columns, key_names):
+                df[key] = pd.to_numeric(df[col], errors="coerce")
+            df = (
+                df.sort_values(key_names, ascending=True, kind="stable")
+                .drop(columns=key_names)
+                .reset_index(drop=True)
+            )
+
+        df.to_csv(file_path, index=False)
+        logger.info(
+            "✅ Processed %s: %d rows, sorted by %s",
+            file_path.name,
+            len(df),
+            sort_columns,
+        )
+
     def process_all_files(self) -> None:
         """Process all data files in both men's and women's directories."""
         logger.info("🔄 Starting post-processing of all data files...")
-        
-        # Process women's files (main focus based on user request)
-        women_files = {
-            "TDFF_All_Rankings_History.csv": self.process_all_rankings_history,
-            "TDFF_Riders_History.csv": self.process_riders_history,
-            "TDFF_Stages_History.csv": self.process_stages_history,
+
+        file_specs = {
+            "{}_Riders_History.csv": RIDERS_SPEC,
+            "{}_Stages_History.csv": STAGES_SPEC,
+            "{}_All_Rankings_History.csv": ALL_RANKINGS_SPEC,
         }
-        
-        for filename, processor_func in women_files.items():
-            file_path = self.women_dir / filename
-            processor_func(file_path)
-        
-        # Process men's files with same logic (adapt naming)
-        men_files = {
-            "TDF_All_Rankings_History.csv": self.process_all_rankings_history,
-            "TDF_Riders_History.csv": self.process_riders_history,
-            "TDF_Stages_History.csv": self.process_stages_history,
-        }
-        
-        for filename, processor_func in men_files.items():
-            file_path = self.men_dir / filename
-            processor_func(file_path)
-        
+
+        failures: list[str] = []
+        for directory, prefix in ((self.men_dir, "TDF"), (self.women_dir, "TDFF")):
+            for pattern, spec in file_specs.items():
+                file_path = directory / pattern.format(prefix)
+                try:
+                    self.process_file(file_path, spec)
+                except Exception:
+                    logger.exception("Error processing %s", file_path)
+                    failures.append(str(file_path))
+
+        if failures:
+            raise RuntimeError(f"Post-processing failed for: {', '.join(failures)}")
         logger.info("✅ Post-processing completed for all data files!")
-
-
-def main():
-    """Main entry point for the post-processor."""
-    import sys
-    
-    # Set up argument parsing for data directory
-    data_root = "data"
-    if len(sys.argv) > 1:
-        data_root = sys.argv[1]
-    
-    # Initialize and run post-processor
-    processor = DataPostProcessor(data_root)
-    processor.process_all_files()
-
-
-if __name__ == "__main__":
-    main()

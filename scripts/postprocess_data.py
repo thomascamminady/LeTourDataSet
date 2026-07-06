@@ -5,23 +5,22 @@ Post-process Tour de France data files.
 This script runs the postprocessor to sort and organize all CSV data files.
 """
 
-import os
+import logging
+from pathlib import Path
+
 from letourdataset.postprocessor import DataPostProcessor
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
 
-def main():
+
+def main() -> None:
     """Run the data post-processor."""
+    logging.basicConfig(
+        level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+    )
     print("🔄 Post-processing Tour de France data files...")
-    
-    # Change to project root directory
-    script_dir = os.path.dirname(__file__)
-    project_root = os.path.join(script_dir, "..")
-    data_root = os.path.join(project_root, "data")
-    
-    # Initialize and run post-processor
-    processor = DataPostProcessor(data_root)
+    processor = DataPostProcessor(REPO_ROOT / "data")
     processor.process_all_files()
-    
     print("✅ Post-processing completed!")
 
 
