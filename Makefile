@@ -26,32 +26,28 @@ install:
 update:
 	@echo "🔄 Starting complete data update workflow..."
 	@echo "📥 Step 1: Downloading latest Tour de France data..."
-	cd scripts && poetry run python download_data.py
+	poetry run python scripts/download_data.py
 	@echo "🔧 Step 2: Post-processing data files..."
-	cd scripts && poetry run python postprocess_data.py
+	poetry run python scripts/postprocess_data.py
 	@echo "🩹 Step 3: Fixing riders history if needed..."
 	poetry run python scripts/fix_riders_history.py || echo "⚠️  Fix script completed with warnings (may be expected)"
 	@echo "🛡️ Step 4: Verifying CSV integrity..."
 	poetry run python .github/scripts/check_csv_integrity.py
 	@echo "📊 Step 5: Generating plots..."
-	cd scripts && poetry run python generate_plots.py
+	poetry run python scripts/generate_plots.py
 	@echo "✅ Complete data update workflow finished successfully!"
 	@echo "📋 Next steps: Review changes and commit/push if everything looks good"
 
 # Quick data download only (no postprocessing or plots)
 download-only:
 	@echo "📥 Downloading latest Tour de France data only..."
-	cd scripts && poetry run python download_data.py
+	poetry run python scripts/download_data.py
 	@echo "✅ Data download completed"
-	@echo "🔧 Post-processing data files..."
-	cd scripts && poetry run python postprocess_data.py
-	@echo "✅ Post-processing completed"
 
-# Post-process data files (sort and organize)
 # Post-process data files (sort and organize)
 postprocess:
 	@echo "🔧 Post-processing data files..."
-	cd scripts && poetry run python postprocess_data.py
+	poetry run python scripts/postprocess_data.py
 	@echo "✅ Post-processing completed"
 
 # Fix riders history (extract GC from all rankings if missing)
@@ -63,7 +59,7 @@ fix-riders-history:
 # Generate plots from existing data
 plot:
 	@echo "📊 Generating plots..."
-	cd scripts && poetry run python generate_plots.py
+	poetry run python scripts/generate_plots.py
 	@echo "✅ Plots generated successfully"
 
 # Legacy: Run both update and plot (deprecated - use 'update' instead)
@@ -83,9 +79,9 @@ clean:
 # Run tests
 test:
 	@echo "🧪 Running tests..."
-	cd tests && poetry run python test_recent_links.py
-	cd tests && poetry run python test_recent_download.py
-	cd tests && poetry run python debug_latest_data.py
+	poetry run python tests/test_recent_links.py
+	poetry run python tests/test_recent_download.py
+	poetry run python tests/debug_latest_data.py
 	@echo "✅ Tests completed"
 
 # Run linting
