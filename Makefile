@@ -88,6 +88,7 @@ test:
 lint:
 	@echo "🔍 Running linting checks..."
 	uv run ruff check src/ scripts/ tests/ .github/scripts/
+	uv run ty check src/
 	@echo "✅ Linting completed"
 
 # Format code

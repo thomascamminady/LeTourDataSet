@@ -42,7 +42,12 @@ def main() -> None:
         print("Creating women's distance and pace plot...")
         df_women = pd.read_csv(women_riders_file)
         Visualizer().plot(
-            df_women, saveas=str(plots_folder / "TDFF_Distance_And_Pace.png")
+            df_women,
+            saveas=str(plots_folder / "TDFF_Distance_And_Pace.png"),
+            title=(
+                "Tour de France Femmes "
+                f"{df_women['Year'].min()} - {df_women['Year'].max()}"
+            ),
         )
     else:
         print(f"Warning: {women_riders_file} not found. Run 'make update' first.")
