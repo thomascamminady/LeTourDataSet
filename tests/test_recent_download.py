@@ -4,7 +4,7 @@ Quick test to download just the most recent year for both men and women.
 """
 
 import asyncio
-import os
+
 from letourdataset.scraper import Scraper
 
 
@@ -26,7 +26,7 @@ async def test_recent_download():
 
         df_stages, df_rankings, df_all_rankings = await men_scraper.run()
 
-        print(f"✅ Men's data downloaded successfully!")
+        print("✅ Men's data downloaded successfully!")
         print(f"   - Stages: {len(df_stages)} rows")
         print(f"   - Rankings: {len(df_rankings)} rows")
         print(f"   - All Rankings: {len(df_all_rankings)} rows")
@@ -54,7 +54,7 @@ async def test_recent_download():
 
         df_stages, df_rankings, df_all_rankings = await women_scraper.run()
 
-        print(f"✅ Women's data downloaded successfully!")
+        print("✅ Women's data downloaded successfully!")
         print(f"   - Stages: {len(df_stages)} rows")
         print(f"   - Rankings: {len(df_rankings)} rows")
         print(f"   - All Rankings: {len(df_all_rankings)} rows")

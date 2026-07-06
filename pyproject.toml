@@ -1,28 +1,37 @@
-[tool.poetry]
+[project]
 name = "letourdataset"
-version = "0.1.0"
+version = "0.2.0"
 description = "Tour de France historical data scraper and analyzer"
-authors = ["Thomas Camminady <0milieux_member@icloud.com>"]
-packages = [{include = "letourdataset", from = "src"}]
+authors = [{ name = "Thomas Camminady", email = "0milieux_member@icloud.com" }]
+readme = "README.md"
+license = { file = "LICENSE.md" }
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.32",
+    "beautifulsoup4>=4.12",
+    "pandas>=2.2",
+    "matplotlib>=3.8",
+    "aiohttp>=3.10",
+    "rich>=13.0",
+    "lxml>=5.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-requests = "^2.28.1"
-beautifulsoup4 = "^4.11.1"
-pandas = "^2.3.1"
-matplotlib = "^3.6.1"
-requests-html = "^0.10.0"
-websockets = "~8.1"
-aiohttp = "^3.10.5"
-rich = "^12.6.0"
-lxml-html-clean = "^0.4.2"
-
-[tool.poetry.group.dev.dependencies]
-ipykernel = "^6.15.1"
-jupyter = "^1.0.0"
-
-[tool.poetry.dev-dependencies]
+[dependency-groups]
+dev = [
+    "ruff>=0.8",
+    "ty>=0.0.1a5",
+    "pytest>=8.0",
+]
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/letourdataset"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

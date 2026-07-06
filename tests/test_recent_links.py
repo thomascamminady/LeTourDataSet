@@ -4,7 +4,7 @@ Test the last few links to see what the most recent years are.
 """
 
 import asyncio
-import logging
+
 from letourdataset.scraper import Scraper
 
 

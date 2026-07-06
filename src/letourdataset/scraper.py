@@ -8,7 +8,6 @@ import aiohttp
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup, Tag
-from requests_html import AsyncHTMLSession
 from rich.progress import track
 
 
@@ -420,40 +419,12 @@ class Scraper:
         return pd.DataFrame(list(chain.from_iterable(stages)))
 
     async def _fetch_yearly_tdf_urls(self, year_url: str) -> dict[str, str]:
-        # Try using regular requests first (without JavaScript rendering)
-        try:
-            async with aiohttp.ClientSession() as session:
-                async with session.get(year_url) as response:
-                    response.raise_for_status()
-                    html_content = await response.text()
+        async with aiohttp.ClientSession() as session:
+            async with session.get(year_url) as response:
+                response.raise_for_status()
+                html_content = await response.text()
 
-            soup = BeautifulSoup(html_content, "html.parser")
-
-            buttons = soup.find_all(
-                "button", class_="tabs__item btn js-tabs-nested"
-            ) + soup.find_all(
-                "button", class_="tabs__item btn js-tabs-nested is-active"
-            )
-
-            selections_urls = {
-                button.get_text(strip=True): f"{self._prefix}{button['data-tabs-ajax']}"
-                for button in buttons
-                if button.get("data-tabs-ajax")
-            }
-
-            # If we got results, return them
-            if selections_urls:
-                return selections_urls
-
-        except Exception as e:
-            logging.warning(f"Failed to fetch URLs without JavaScript rendering: {e}")
-
-        # Fallback to JavaScript rendering if the above fails
-        session = AsyncHTMLSession()
-        response = await session.get(year_url)
-        await response.html.arender(timeout=20)
-
-        soup = BeautifulSoup(response.html.html, "html.parser")
+        soup = BeautifulSoup(html_content, "html.parser")
 
         buttons = soup.find_all(
             "button", class_="tabs__item btn js-tabs-nested"
@@ -462,7 +433,14 @@ class Scraper:
         selections_urls = {
             button.get_text(strip=True): f"{self._prefix}{button['data-tabs-ajax']}"
             for button in buttons
+            if button.get("data-tabs-ajax")
         }
+
+        if not selections_urls:
+            raise RuntimeError(
+                f"No selection tabs (Ranking, Stages winners, ...) found on "
+                f"{year_url}; the page layout may have changed."
+            )
 
         return selections_urls
 

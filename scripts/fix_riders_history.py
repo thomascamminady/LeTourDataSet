@@ -4,7 +4,6 @@ Fix riders history files by extracting general classification from all rankings 
 """
 
 import sys
-from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
