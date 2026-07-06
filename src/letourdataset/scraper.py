@@ -456,7 +456,10 @@ class Scraper:
         year: int,
         distance: int,
     ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-        # Odd years
+        # Odd years: some early editions were decided on points, and for a
+        # few the source has no result values at all. "no-results" is used
+        # instead of "null" because pandas parses the literal string "null"
+        # as NaN, so it would not survive a CSV round-trip.
         point_years = [1907, 1909, 1910, 1911, 1912]
         null_years = [1905, 1906, 1908]
 
@@ -468,7 +471,7 @@ class Scraper:
             df["Number of stages"] = len(df_stages)
 
             df["ResultType"] = "time"
-            df.loc[df["Year"].isin(null_years), "ResultType"] = "null"
+            df.loc[df["Year"].isin(null_years), "ResultType"] = "no-results"
             df.loc[df["Year"].isin(point_years), "ResultType"] = "points"
 
             if "Times" in df.columns:
