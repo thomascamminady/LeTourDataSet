@@ -3,7 +3,32 @@ import pandas as pd
 
 DISTANCE_COLOR = "tab:blue"
 PACE_COLOR = "tab:red"
+MARGIN_COLOR = "tab:red"
 WAR_PERIODS = ((1914.5, 1918.5, "WWI"), (1939.5, 1946.5, "WWII"))
+
+# (value in minutes, human-readable label) candidates for the log axis
+MARGIN_TICKS = (
+    (10 / 60, "10 s"),
+    (1, "1 min"),
+    (10, "10 min"),
+    (60, "1 h"),
+    (600, "10 h"),
+    (3000, "50 h"),
+)
+
+
+def _format_margin(gap_seconds: int) -> str:
+    if gap_seconds < 120:
+        return f"{gap_seconds} seconds"
+    return f"{gap_seconds // 60} minutes"
+
+
+def _format_margin_short(gap_seconds: int) -> str:
+    """Cycling-style compact notation, e.g. 3'48'' or 8''."""
+    minutes, seconds = divmod(gap_seconds, 60)
+    if minutes == 0:
+        return f"{seconds}''"
+    return f"{minutes}'{seconds:02d}''"
 
 
 class Visualizer:
@@ -81,6 +106,93 @@ class Visualizer:
                     axis.spines[side].set_visible(False)
             # Only one y-grid; two would draw near-duplicate lines
             ax.grid(which="major", axis="y", linestyle="-")
+
+            fig.savefig(saveas, dpi=100)
+            plt.close(fig)
+
+    def plot_winning_margin(
+        self, df: pd.DataFrame, saveas: str, title: str | None = None
+    ) -> None:
+        """Plot the winner's margin over the runner-up per year (log scale).
+
+        Args:
+            df: A riders-history dataframe (one row per rider and year).
+            saveas: Path of the PNG file to write.
+            title: Plot title; derived from the year range if omitted.
+        """
+        data = df.copy()
+        data["Rank"] = pd.to_numeric(data["Rank"], errors="coerce")
+        runner_up = data[
+            (data["ResultType"] == "time")
+            & (data["Rank"] == 2)
+            & (data["GapSeconds"] > 0)
+        ]
+        margin_minutes = (
+            runner_up.groupby("Year")["GapSeconds"].min().sort_index() / 60.0
+        )
+
+        year_min = int(margin_minutes.index.min())
+        year_max = int(margin_minutes.index.max())
+        if title is None:
+            title = f"Winning margin, {year_min} - {year_max}"
+
+        with plt.rc_context({"font.size": 22}):
+            fig, ax = plt.subplots(1, 1, figsize=(15, 7))
+            ax.scatter(
+                margin_minutes.index, margin_minutes.to_numpy(), color=MARGIN_COLOR
+            )
+            ax.set_yscale("log")
+
+            low = float(margin_minutes.min())
+            high = float(margin_minutes.max())
+            ticks = [
+                (value, label)
+                for value, label in MARGIN_TICKS
+                if low * 0.5 <= value <= high * 2
+            ]
+            ax.set_yticks([value for value, _ in ticks])
+            ax.set_yticklabels([label for _, label in ticks])
+            ax.tick_params(axis="y", colors="gray", which="both")
+            ax.set_yticks([], minor=True)
+
+            ax.set_title(title, fontsize=24, color="gray")
+            ax.set_xlabel("Year", fontsize=20, color="gray")
+            ax.set_xlim(year_min - 2, year_max + 2)
+            ax.tick_params(axis="x", colors="gray")
+
+            if len(margin_minutes) <= 10:
+                # Sparse data: log ticks don't bracket a handful of points
+                # well, so label every point directly instead
+                for year, value in margin_minutes.items():
+                    ax.annotate(
+                        _format_margin_short(int(round(value * 60))),
+                        xy=(year, value),
+                        xytext=(0, 14),
+                        textcoords="offset points",
+                        ha="center",
+                        color="darkgray",
+                        fontsize=14,
+                    )
+                ax.set_ylim(float(margin_minutes.min()) * 0.4,
+                            float(margin_minutes.max()) * 3)
+
+            # Call out the closest race on record (only when there is room)
+            if year_max - year_min >= 20:
+                closest_year = int(margin_minutes.idxmin())
+                closest = margin_minutes.min()
+                gap_seconds = int(round(closest * 60))
+                ax.annotate(
+                    f"{closest_year}: {_format_margin(gap_seconds)}",
+                    xy=(closest_year, closest),
+                    xytext=(closest_year - (year_max - year_min) * 0.12, closest * 3),
+                    color="darkgray",
+                    fontsize=13,
+                    arrowprops={"arrowstyle": "->", "color": "darkgray"},
+                )
+
+            for side in ("top", "right", "bottom", "left"):
+                ax.spines[side].set_visible(False)
+            ax.grid(which="major", axis="y", linestyle="-", alpha=0.5)
 
             fig.savefig(saveas, dpi=100)
             plt.close(fig)

@@ -25,6 +25,8 @@ df_women_stages = pd.read_csv("https://raw.githubusercontent.com/thomascamminady
 
 ![Distance and winner average pace](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Distance_And_Pace.png)
 
+![Winning margin](https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/plots/TDF_Winning_Margin.png)
+
 If you use `R` instead of `python`, you can run:
 
 ```R

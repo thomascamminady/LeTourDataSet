@@ -33,6 +33,15 @@ def main() -> None:
         Visualizer().plot(
             df_men, saveas=str(plots_folder / "TDF_Distance_And_Pace.png")
         )
+        print("Creating men's winning margin plot...")
+        Visualizer().plot_winning_margin(
+            df_men,
+            saveas=str(plots_folder / "TDF_Winning_Margin.png"),
+            title=(
+                "How close was the race? Winning margin, "
+                f"{df_men['Year'].min()} - {df_men['Year'].max()}"
+            ),
+        )
     else:
         print(f"Warning: {men_riders_file} not found. Run 'make update' first.")
 
@@ -46,6 +55,15 @@ def main() -> None:
             saveas=str(plots_folder / "TDFF_Distance_And_Pace.png"),
             title=(
                 "Tour de France Femmes "
+                f"{df_women['Year'].min()} - {df_women['Year'].max()}"
+            ),
+        )
+        print("Creating women's winning margin plot...")
+        Visualizer().plot_winning_margin(
+            df_women,
+            saveas=str(plots_folder / "TDFF_Winning_Margin.png"),
+            title=(
+                "Tour de France Femmes winning margin, "
                 f"{df_women['Year'].min()} - {df_women['Year'].max()}"
             ),
         )
