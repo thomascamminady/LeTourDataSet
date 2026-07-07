@@ -84,8 +84,14 @@ class DataPostProcessor:
         for col in spec.stage_number_columns:
             if col not in df.columns:
                 continue
-            df[col] = pd.to_numeric(df[col], errors="coerce").map(
-                _format_stage_number
+            # The explicit object dtype keeps the mixed int/float values;
+            # letting pandas infer would coerce the ints back to floats and
+            # write '1.0' again.
+            numeric = pd.to_numeric(df[col], errors="coerce")
+            df[col] = pd.Series(
+                [_format_stage_number(value) for value in numeric],
+                index=df.index,
+                dtype=object,
             )
 
         # Sort on numeric keys so e.g. rank 10 comes after rank 2 even if a

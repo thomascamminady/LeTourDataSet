@@ -79,10 +79,15 @@ clean:
 # Run tests
 test:
 	@echo "🧪 Running tests..."
-	uv run python tests/test_recent_links.py
-	uv run python tests/test_recent_download.py
-	uv run python tests/debug_latest_data.py
+	uv run pytest
 	@echo "✅ Tests completed"
+
+# Manual diagnostics against the live letour.fr / letourfemmes.fr sites
+diagnose:
+	@echo "🌐 Running live-site diagnostics (requires network)..."
+	uv run python scripts/diagnostics/test_recent_links.py
+	uv run python scripts/diagnostics/test_recent_download.py
+	@echo "✅ Diagnostics completed"
 
 # Run linting
 lint:

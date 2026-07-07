@@ -21,6 +21,29 @@ REQUEST_TIMEOUT_SECONDS = 30
 MAX_CONCURRENT_REQUESTS = 10
 
 
+def parse_stage_number(stage_str: str, year: int) -> int | float | None:
+    """Parse the stage number out of e.g. 'Stage 1 : Paris > Lyon'.
+
+    Early editions ran some stages in two parts, which yields fractional
+    numbers such as 13.1 and 13.2; a prologue is stage 0.
+    """
+    token_parts = stage_str.split(":")[0].split(" ")
+    try:
+        return int(token_parts[1])
+    except (IndexError, ValueError):
+        if "Prologue" in stage_str:
+            return 0
+        try:
+            return float(token_parts[1])
+        except (IndexError, ValueError):
+            logging.warning(
+                "Could not parse stage number from '%s' in year %d.",
+                stage_str,
+                year,
+            )
+            return None
+
+
 class Scraper:
     def __init__(
         self,
@@ -183,35 +206,18 @@ class Scraper:
     def _get_stages(self, soup: Tag, year: int, distance: int) -> pd.DataFrame:
         select_tag = soup.find("select")
         if not isinstance(select_tag, Tag):
-            raise Exception("Can't find `select`.")
+            raise ValueError("Can't find the stage `select` element.")
 
         df_stages = pd.DataFrame(
             [[year, distance, option.text] for option in select_tag.find_all("option")],
             columns=["Year", "TotalTDFDistance", "Stage"],
         )
 
-        # For the column Stage, it is formated like 'Stage 1 : Paris > Lyon' (so "Stage [Number of stage] : [Start city] > [End city]")
-        # We will split this column into 'Stage number', 'Start city' and 'End city'
-        def extract_stage_number(stage_str):
-            try:
-                return int(
-                    stage_str.split(":")[0].split(" ")[1]
-                )  # Here we use flot since in the early editions of the TDF some stages are played two times which gives for example stages 13.1 and 13.2; without this, the column should be int
-            except (IndexError, ValueError):
-                if "Prologue" in stage_str:
-                    return (
-                        0  # There is a case where the stage 0 is in fact a 'prologue'
-                    )
-                else:
-                    try:
-                        return float(stage_str.split(":")[0].split(" ")[1])
-                    except (IndexError, ValueError):
-                        logging.warning(
-                            f"Could not parse stage number from '{stage_str}' in year {year}."
-                        )
-                        return None
-
-        df_stages["Stage number"] = df_stages["Stage"].apply(extract_stage_number)
+        # The Stage column is formatted like 'Stage 1 : Paris > Lyon', i.e.
+        # "Stage [number] : [start city] > [end city]"; split it apart.
+        df_stages["Stage number"] = df_stages["Stage"].apply(
+            lambda stage_str: parse_stage_number(stage_str, year)
+        )
         df_stages["Start"] = df_stages["Stage"].apply(
             lambda x: x.split(":")[1].split(">")[0].strip()
         )
@@ -319,105 +325,118 @@ class Scraper:
                 for ranking_type_name, ranking_type_idx in self._ranking_types.items():
                     rank_html = responses[response_idx]
                     response_idx += 1
-                    rank_soup = BeautifulSoup(rank_html, "html.parser")
-                    rankings: list[dict[str, Any]] = []
-
-                    # Get the ranking table
-                    ranking_table = rank_soup.find(
-                        "table", {"class": "rankingTable rtable js-extend-target"}
+                    rankings = self._parse_ranking_rows(
+                        rank_html, stage_number, ranking_type_name, ranking_type_idx
                     )
-                    if not ranking_table:
+                    if not rankings:
                         logging.info(
-                            f"No ranking for {ranking_type_name} on stage {stage_number} (URL: {ranking_link})."
+                            "No ranking for %s on stage %s (URL: %s).",
+                            ranking_type_name,
+                            stage_number,
+                            ranking_link,
                         )
                         continue
-                    rows = ranking_table.find_all("tr")
-                    if len(rows) <= 2:
-                        # First case 1- just the header so no data; 2- header and one row of data so no data
-                        logging.info(
-                            f"No ranking for {ranking_type_name} on stage {stage_number} (URL: {ranking_link})."
-                        )
-                        continue
-
-                    # Points/climber tables interleave single-cell rows naming
-                    # the checkpoint the following rows belong to.
-                    checkpoint: str | None = None
-                    for row in rows[1:]:
-                        cols = row.find_all("td")
-                        if not cols:
-                            # Header-only rows (th cells) carry no ranking data
-                            continue
-                        ranking: dict[str, Any]
-                        if ranking_type_idx in ("ipe", "ime"):
-                            if len(cols) == 1:
-                                checkpoint = cols[0].text.strip()
-                                continue
-                            if len(cols) < 4:
-                                logging.warning(
-                                    "Skipping malformed %s row on stage %s (%d cells).",
-                                    ranking_type_name,
-                                    stage_number,
-                                    len(cols),
-                                )
-                                continue
-                            ranking = {
-                                "Rank": cols[0].text.strip(),
-                                "Rider": cols[1].text.strip(),
-                                "Team": cols[2].text.strip(),
-                                "Points": cols[3].text.strip(),
-                                "Checkpoint": checkpoint,
-                            }
-                            if ranking_type_idx == "ipe" and len(cols) > 4:
-                                ranking["B"] = cols[4].text.strip()
-                        elif ranking_type_idx in ("ite", "ije", "ice"):
-                            if len(cols) < 4:
-                                logging.warning(
-                                    "Skipping malformed %s row on stage %s (%d cells).",
-                                    ranking_type_name,
-                                    stage_number,
-                                    len(cols),
-                                )
-                                continue
-                            ranking = {
-                                "Rank": cols[0].text.strip(),
-                                "Rider": cols[1].text.strip(),
-                                "Team": cols[2].text.strip(),
-                                "Times": cols[3].text.strip(),
-                            }
-                            if len(cols) > 4:
-                                ranking["Gap"] = cols[4].text.strip()
-                            if ranking_type_idx == "ite":
-                                if len(cols) > 5:
-                                    ranking["B"] = cols[5].text.strip()
-                                if len(cols) > 6:
-                                    ranking["P"] = cols[6].text.strip()
-                        elif ranking_type_idx == "ete":
-                            if len(cols) < 3:
-                                logging.warning(
-                                    "Skipping malformed %s row on stage %s (%d cells).",
-                                    ranking_type_name,
-                                    stage_number,
-                                    len(cols),
-                                )
-                                continue
-                            ranking = {
-                                "Rank": cols[0].text.strip(),
-                                "Team": cols[1].text.strip(),
-                                "Times": cols[2].text.strip(),
-                            }
-                            if len(cols) > 3:
-                                ranking["Gap"] = cols[3].text.strip()
-                        else:
-                            raise NotImplementedError(
-                                f"Ranking type {ranking_type_name} not implemented"
-                            )
-
-                        ranking["Stages"] = stage_number
-                        ranking["Ranking type"] = ranking_type_name
-                        rankings.append(ranking)
                     stages.append(rankings)
 
         return pd.DataFrame(list(chain.from_iterable(stages)))
+
+    @staticmethod
+    def _parse_ranking_rows(
+        rank_html: str,
+        stage_number: float,
+        ranking_type_name: str,
+        ranking_type_idx: str,
+    ) -> list[dict[str, Any]]:
+        """Parse one ranking page into row dicts; empty list when no data."""
+        rank_soup = BeautifulSoup(rank_html, "html.parser")
+        ranking_table = rank_soup.find(
+            "table", {"class": "rankingTable rtable js-extend-target"}
+        )
+        if not isinstance(ranking_table, Tag):
+            return []
+        rows = ranking_table.find_all("tr")
+        if len(rows) <= 2:
+            # Just a header, or a header plus a single placeholder row
+            return []
+
+        rankings: list[dict[str, Any]] = []
+        # Points/climber tables interleave single-cell rows naming the
+        # checkpoint the following rows belong to.
+        checkpoint: str | None = None
+        for row in rows[1:]:
+            cols = row.find_all("td")
+            if not cols:
+                # Header-only rows (th cells) carry no ranking data
+                continue
+            ranking: dict[str, Any]
+            if ranking_type_idx in ("ipe", "ime"):
+                if len(cols) == 1:
+                    checkpoint = cols[0].text.strip()
+                    continue
+                if len(cols) < 4:
+                    logging.warning(
+                        "Skipping malformed %s row on stage %s (%d cells).",
+                        ranking_type_name,
+                        stage_number,
+                        len(cols),
+                    )
+                    continue
+                ranking = {
+                    "Rank": cols[0].text.strip(),
+                    "Rider": cols[1].text.strip(),
+                    "Team": cols[2].text.strip(),
+                    "Points": cols[3].text.strip(),
+                    "Checkpoint": checkpoint,
+                }
+                if ranking_type_idx == "ipe" and len(cols) > 4:
+                    ranking["B"] = cols[4].text.strip()
+            elif ranking_type_idx in ("ite", "ije", "ice"):
+                if len(cols) < 4:
+                    logging.warning(
+                        "Skipping malformed %s row on stage %s (%d cells).",
+                        ranking_type_name,
+                        stage_number,
+                        len(cols),
+                    )
+                    continue
+                ranking = {
+                    "Rank": cols[0].text.strip(),
+                    "Rider": cols[1].text.strip(),
+                    "Team": cols[2].text.strip(),
+                    "Times": cols[3].text.strip(),
+                }
+                if len(cols) > 4:
+                    ranking["Gap"] = cols[4].text.strip()
+                if ranking_type_idx == "ite":
+                    if len(cols) > 5:
+                        ranking["B"] = cols[5].text.strip()
+                    if len(cols) > 6:
+                        ranking["P"] = cols[6].text.strip()
+            elif ranking_type_idx == "ete":
+                if len(cols) < 3:
+                    logging.warning(
+                        "Skipping malformed %s row on stage %s (%d cells).",
+                        ranking_type_name,
+                        stage_number,
+                        len(cols),
+                    )
+                    continue
+                ranking = {
+                    "Rank": cols[0].text.strip(),
+                    "Team": cols[1].text.strip(),
+                    "Times": cols[2].text.strip(),
+                }
+                if len(cols) > 3:
+                    ranking["Gap"] = cols[3].text.strip()
+            else:
+                raise NotImplementedError(
+                    f"Ranking type {ranking_type_name} not implemented"
+                )
+
+            ranking["Stages"] = stage_number
+            ranking["Ranking type"] = ranking_type_name
+            rankings.append(ranking)
+        return rankings
 
     async def _fetch_yearly_tdf_urls(self, year_url: str) -> dict[str, str]:
         timeout = aiohttp.ClientTimeout(total=REQUEST_TIMEOUT_SECONDS)
@@ -513,7 +532,8 @@ class Scraper:
 
         return df_rankings, df_all_rankings, df_stages
 
-    def _get_seconds(self, row: str | float, mode: str) -> int:
+    @staticmethod
+    def _get_seconds(row: str | float, mode: str) -> int:
         if isinstance(row, float) and pd.isna(row):
             return 0
         text = str(row)
