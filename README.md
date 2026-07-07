@@ -2,7 +2,12 @@
   <img src="logo.png" alt="Le Tour de France Data Set Logo" width="350"/>
 </div>
 
-Every cyclist and stage of the Tour de France (up to including 2025) in four CSV files.
+Every cyclist and stage of the Tour de France in four CSV files.
+
+**Data coverage**
+
+-   **Men's Tour de France**: 1903 - 2025 (all 112 editions)
+-   **Women's Tour de France (Tour de France Femmes avec Zwift)**: 2022 - 2025 (all editions since the relaunch)
 
 If you use `pandas`, just get the data via:
 
@@ -34,186 +39,124 @@ df_women_riders <- read_csv("https://raw.githubusercontent.com/thomascamminady/L
 df_women_stages <- read_csv("https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data/women/TDFF_Stages_History.csv")
 ```
 
-## Quick Start
-
-```bash
-# Install dependencies
-make install
-
-# Download latest data (2025 men's and 2024 women's included)
-make update
-
-# Generate plots
-make plot
-
-# Or do both
-make all
-```
-
 ## Data Structure
-
-The repository is organized as follows:
 
 ```
 data/
 ├── men/                    # Men's Tour de France data
-│   ├── TDF_Riders_History.csv
-│   ├── TDF_Stages_History.csv
-│   └── TDF_All_Rankings_History.csv
+│   ├── TDF_Riders_History.csv    # one row per rider and edition (final GC)
+│   └── TDF_Stages_History.csv    # one row per stage
 ├── women/                  # Women's Tour de France data
 │   ├── TDFF_Riders_History.csv
-│   ├── TDFF_Stages_History.csv
-│   └── TDFF_All_Rankings_History.csv
+│   └── TDFF_Stages_History.csv
 └── plots/                  # Generated visualizations
     ├── TDF_Distance_And_Pace.png
     └── TDFF_Distance_And_Pace.png
 ```
 
-## Le Tour de France Femmes avec Zwift
+Running the update pipeline additionally produces
+`TDF_All_Rankings_History.csv` / `TDFF_All_Rankings_History.csv`
+(per-stage rankings for every classification). These files are large and
+are **not** committed to the repository; run `make update` to generate
+them locally.
 
-As of 2022, the women's Tour de France was relaunched as "Le Tour de France Femmes avec Zwift". The data is available on the official [tour website](https://www.letourfemmes.fr/en) and is included in this dataset with complete coverage through 2025.
+### Notes on the data
 
-## Data Coverage
+-   `ResultType` in the riders files is `time` (normal editions), `points`
+    (1907-1912, when the race was decided on points), or `no-results`
+    (1905, 1906, 1908, for which the source has no usable values).
+    `TotalSeconds`/`GapSeconds` are 0 for non-`time` editions.
+-   Stage numbers are integers; split stages of early editions appear as
+    e.g. `13.1` and `13.2`, and a prologue is stage `0`.
+-   Some early editions genuinely had very small classified fields
+    (e.g. 10 finishers in 1919).
 
--   **Men's Tour de France**: 1903-2024 (complete historical coverage)
--   **Women's Tour de France**: 2022-2025 (complete since relaunch)
+### Known source-data limitations
 
-## Available Files
+The data mirrors letour.fr / letourfemmes.fr, including some flaws of the
+source itself:
 
-### Men's Data (`data/men/`)
+-   **1966** only lists the podium (3 riders); the full classification is
+    not available on letour.fr (verified against all its ranking endpoints).
+-   1967 rank 78 and 1982 rank 86 each list two riders with different
+    times; ties with identical times (e.g. 1958, 1959, 1975) are real.
+-   A few stages have no recorded stage winner, and the `Leader` column of
+    the men's stages file is only populated for some editions.
 
--   `TDF_Riders_History.csv`: Every cyclist and winner data
--   `TDF_Stages_History.csv`: Stage-by-stage information
--   `TDF_All_Rankings_History.csv`: Comprehensive rankings data
-
-### Women's Data (`data/women/`)
-
--   `TDFF_Riders_History.csv`: Every cyclist and winner data
--   `TDFF_Stages_History.csv`: Stage-by-stage information
--   `TDFF_All_Rankings_History.csv`: Comprehensive rankings data
+For other issues, see the [Issues tab](https://github.com/thomascamminady/LeTourDataSet/issues).
 
 ## How to Run
 
-### Using Make (Recommended)
+Requires [uv](https://docs.astral.sh/uv/).
 
 ```bash
-# Install dependencies
-make install
+make install    # Install dependencies (uv sync)
+make update     # Complete data update workflow (recommended for annual updates)
+make plot       # Generate plots from existing data
+make test       # Run the test suite (pytest, offline)
+make lint       # ruff + ty
+make format     # ruff format
+make check-csv  # Check CSV data integrity against origin/master
+make diagnose   # Manual checks against the live letour.fr pages
+make help       # See all available commands
+```
 
-# Download latest data
+### Annual update workflow
+
+```bash
 make update
-
-# Generate plots
-make plot
-
-# Run everything
-make all
-
-# See all available commands
-make help
 ```
 
-### Manual Execution
+This will:
 
-```bash
-# Install environment
-poetry install
+1. 📥 Download the latest Tour de France data from the official sites
+2. 🔧 Post-process and sort all data files
+3. 🩹 Reconstruct the newest general classification if the site does not
+   publish one yet (a stopgap that excludes time bonuses; replace it with
+   official data once available)
+4. 🛡️ Report CSV integrity (informational locally)
+5. 📊 Regenerate the plots
 
-# Download data
-cd scripts && poetry run python download_data.py
-
-# Generate plots
-cd scripts && poetry run python generate_plots.py
-```
-
-## Development
-
-```bash
-# Install development dependencies
-make install
-
-# Run tests
-make test
-
-# Format code
-make format
-
-# Check code quality
-make lint
-
-# Check CSV data integrity
-make check-csv
-```
+Then review the changes and commit. The individual steps are available as
+`make download-only`, `make postprocess`, `make fix-riders-history`,
+`make check-csv`, and `make plot`.
 
 ## Data Protection
 
-This repository includes automated data protection to ensure historical data integrity:
+A GitHub Actions check compares every data CSV against the base branch
+and fails when existing rows or columns disappear or change. Rows are
+compared order-independently with normalised values, so re-sorting or
+reformatting does not trip it, and modifications are detected even when
+rows are added at the same time.
 
--   ✅ **Row Protection**: CSV files can only grow (no data deletion)
--   ✅ **Column Protection**: New columns allowed, existing columns protected
--   ✅ **Data Integrity**: Existing data cannot be modified
--   ✅ **Automatic Validation**: GitHub Actions check every pull request
+Genuine corrections (e.g. the source site fixed a result) are allowed:
+put the marker `[data-fix]` in the commit message together with an
+explanation. See `.github/INFOS.md` for details.
 
-## Recent Updates (2025)
+## Le Tour de France Femmes avec Zwift
 
--   ✅ Added 2025 men's Tour de France data
--   ✅ Added 2024 women's Tour de France data
--   ✅ Reorganized repository with modern Python packaging
--   ✅ Renamed classes: `Downloader` → `Scraper`, `Plotter` → `Visualizer`
--   ✅ Added comprehensive Makefile for easy data management
--   ✅ Implemented CSV data protection workflows
--   ✅ Organized data into men/women subfolders
+As of 2022, the women's Tour de France was relaunched as "Le Tour de
+France Femmes avec Zwift". The data comes from the official
+[letourfemmes.fr](https://www.letourfemmes.fr/en) site and is complete
+since the relaunch. (Note: the source site reports a total distance of
+0 km for 2025; the dataset carries the official route total of 1169 km
+instead.)
 
 ## Disclaimer
 
-For issues with this data set, see the [Issues tab](https://github.com/thomascamminady/LeTourDataSet/issues). Some entries may be incorrect due to source data issues on the official websites. When discrepancies are found, they typically stem from the original letour.fr or letourfemmes.fr websites.
-
-## Annual Update Workflow
-
-For maintainers updating the dataset with new Tour de France data:
-
-### Simple One-Command Update (Recommended)
-
-```bash
-make update
-```
-
-This comprehensive command will:
-
-1. 📥 Download the latest Tour de France data from official sources
-2. 🔧 Post-process and sort all data files
-3. 🩹 Automatically fix any missing riders history data
-4. 🛡️ Verify CSV file integrity
-5. 📊 Generate updated plots and visualizations
-
-After running this command, simply review the changes and commit/push if everything looks correct.
-
-### Manual Step-by-Step (If Needed)
-
-```bash
-make install              # Install dependencies
-make download-only        # Download new data only
-make postprocess         # Sort and organize data
-make fix-riders-history  # Fix any missing general classification data
-make check-csv           # Verify data integrity
-make plot                # Generate plots
-```
-
-The workflow is designed to be robust and handle different data structures that may appear in future years.
+Some entries may be incorrect due to source data issues on the official
+websites. When discrepancies are found, they typically stem from the
+original letour.fr or letourfemmes.fr data. If you spot one, please open
+an issue.
 
 ## Legacy Code
 
-This code has been completely rewritten for 2025. The previous code and output are available in the [legacy repository](https://github.com/thomascamminady/LeTourDataSetLegacy). See `legacy/README.txt` for historical context.
+This code has been completely rewritten. The previous code and output are
+available in the [legacy repository](https://github.com/thomascamminady/LeTourDataSetLegacy).
 
 ## Contributing
 
 1. Fork the repository
 2. Create a feature branch
-3. Make your changes (data will be automatically validated)
+3. Make your changes (CI runs linting, tests, and the data-protection check)
 4. Submit a pull request
-
-The CSV data protection system will automatically verify that:
-
--   No historical data is deleted or modified
--   Only new data additions are permitted
--   Data integrity is maintained across all changes

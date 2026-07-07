@@ -1,4 +1,4 @@
-.PHONY: help update postprocess plot clean test install lint format check-csv
+.PHONY: help update download-only postprocess fix-riders-history plot clean test diagnose install lint format check-csv dev ci
 
 # Default target
 help:
@@ -7,13 +7,13 @@ help:
 	@echo "  make install     - Install dependencies using uv"
 	@echo "  make download-only - Download latest data without processing"
 	@echo "  make postprocess - Post-process and sort data files"
-	@echo "  make fix-riders-history - Fix riders history from all rankings data"
+	@echo "  make fix-riders-history - Reconstruct a missing GC from all rankings data"
 	@echo "  make plot        - Generate plots from existing data"
-	@echo "  make all         - Legacy command (use 'update' instead)"
 	@echo "  make clean       - Clean temporary files and caches"
-	@echo "  make test        - Run tests"
-	@echo "  make lint        - Run linting checks"
-	@echo "  make format      - Format code"
+	@echo "  make test        - Run the test suite (pytest, offline)"
+	@echo "  make diagnose    - Manual checks against the live letour.fr pages"
+	@echo "  make lint        - Run linting checks (ruff + ty)"
+	@echo "  make format      - Format code (ruff)"
 	@echo "  make check-csv   - Check CSV file integrity"
 
 # Install dependencies
@@ -30,7 +30,7 @@ update:
 	@echo "🔧 Step 2: Post-processing data files..."
 	uv run python scripts/postprocess_data.py
 	@echo "🩹 Step 3: Fixing riders history if needed..."
-	uv run python scripts/fix_riders_history.py || echo "⚠️  Fix script completed with warnings (may be expected)"
+	uv run python scripts/fix_riders_history.py
 	@echo "🛡️ Step 4: Verifying CSV integrity (informational for local runs)..."
 	-uv run python .github/scripts/check_csv_integrity.py
 	@echo "📊 Step 5: Generating plots..."
@@ -61,11 +61,6 @@ plot:
 	@echo "📊 Generating plots..."
 	uv run python scripts/generate_plots.py
 	@echo "✅ Plots generated successfully"
-
-# Legacy: Run both update and plot (deprecated - use 'update' instead)
-all: update
-	@echo "ℹ️  Note: 'make all' is deprecated. Use 'make update' for the complete workflow."
-	@echo "✅ All tasks completed"
 
 # Clean temporary files
 clean:
@@ -115,16 +110,3 @@ dev: install lint test
 # CI workflow
 ci: install lint test check-csv
 	@echo "✅ CI pipeline completed"
-
-# Move existing CSV files to new structure (one-time migration)
-migrate-data:
-	@echo "📁 Migrating data to new folder structure..."
-	@if [ -f "data/TDF_Riders_History.csv" ]; then \
-		mkdir -p data/men data/women data/plots; \
-		mv data/TDF_*.csv data/men/ 2>/dev/null || true; \
-		mv data/TDFF_*.csv data/women/ 2>/dev/null || true; \
-		mv data/*.png data/plots/ 2>/dev/null || true; \
-		echo "✅ Data migration completed"; \
-	else \
-		echo "ℹ️  No legacy data files found to migrate"; \
-	fi
