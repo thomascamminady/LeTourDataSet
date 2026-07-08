@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Tour de France as CSV — 122 years of race data</title>
+<meta name="description" content="Every rider and every stage of the Tour de France (1903–2025) and the Tour de France Femmes (2022–2025) in four CSV files. Explore the data live.">
+<meta property="og:title" content="Le Tour de France as CSV">
+<meta property="og:description" content="Every rider, every stage, since 1903 — one open dataset.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --jaune: #FFD23F;
+  --jaune-deep: #B98A00;
+  --ink: #16130F;
+  --paper: #FAF7EF;
+  --card: #FFFFFF;
+  --muted: #6B655C;
+  --line: #E4DFD3;
+  --blue: #1F77B4;
+  --red: #D62728;
+  --orange: #E8720C;
+  --grid: #ECE7DB;
+  --tooltip-bg: #16130F;
+  --tooltip-ink: #FAF7EF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --jaune: #FFD23F;
+    --jaune-deep: #FFD23F;
+    --ink: #F2EDE2;
+    --paper: #16130F;
+    --card: #201C15;
+    --muted: #A39B8B;
+    --line: #353026;
+    --blue: #3E93D9;
+    --red: #E85D5D;
+    --orange: #CC722A;
+    --grid: #2A251D;
+    --tooltip-bg: #F2EDE2;
+    --tooltip-ink: #16130F;
+  }
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  font-family: "Barlow", system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.55;
+  font-size: 17px;
+  overflow-x: clip;
+}
+.display { font-family: "Barlow Condensed", "Arial Narrow", sans-serif; }
+
+/* ---------- masthead ---------- */
+.hero { background: var(--jaune); color: #16130F; padding-bottom: 90px; }
+@media (prefers-color-scheme: dark) {
+  .hero { background: #0E0C08; color: var(--jaune); border-bottom: 1px solid #353026; }
+}
+.masthead {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: 2px 16px;
+  padding: 18px 24px 14px;
+  border-bottom: 2px solid currentColor;
+  max-width: 1100px; margin: 0 auto;
+}
+.masthead .name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900; font-size: 24px; letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.masthead .edition {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600; font-size: 16px; letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; padding: 64px 24px 0; }
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: clamp(46px, 9vw, 118px);
+  line-height: .92;
+  text-transform: uppercase;
+  letter-spacing: -.005em;
+}
+.hero-sub {
+  margin-top: 26px; font-size: 19px; max-width: 52ch; font-weight: 500;
+}
+.hero-actions { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-block; text-decoration: none; cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .08em; font-size: 17px;
+  padding: 12px 26px; border: 2px solid #16130F; color: #16130F;
+  background: transparent; border-radius: 0;
+}
+.btn.solid { background: #16130F; color: var(--jaune); }
+@media (prefers-color-scheme: dark) {
+  .btn { border-color: var(--jaune); color: var(--jaune); }
+  .btn.solid { background: var(--jaune); color: #16130F; }
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--blue); outline-offset: 2px;
+}
+.stat-row {
+  margin-top: 56px; display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 42%), 1fr));
+  border-top: 2px solid currentColor;
+}
+.stat { padding: 14px 4px 0; border-left: 1px solid currentColor; padding-left: 16px; }
+.stat:first-child { border-left: none; padding-left: 0; }
+.stat .v {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 900;
+  font-size: clamp(30px, 4vw, 46px); line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.stat .l {
+  font-size: 13px; text-transform: uppercase; letter-spacing: .1em;
+  font-weight: 600; margin-top: 4px; opacity: .75;
+}
+
+/* ---------- sections ---------- */
+main { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; }
+section { margin-top: 90px; }
+.eyebrow {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .16em; font-size: 15px;
+  color: var(--jaune-deep);
+}
+h2 {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 900;
+  font-size: clamp(32px, 4.5vw, 52px); text-transform: uppercase;
+  line-height: 1; margin-top: 6px;
+}
+.section-sub { color: var(--muted); max-width: 62ch; margin-top: 10px; }
+
+/* the signature card that breaks out of the yellow hero */
+.breakout { margin-top: -90px; }
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  box-shadow: 0 18px 40px rgba(22,19,15,.10);
+  padding: 26px 26px 18px;
+}
+.card h2 { font-size: clamp(26px, 3.4vw, 38px); }
+.chart-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.toggle { display: inline-flex; border: 2px solid var(--ink); }
+.toggle button {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 16px;
+  text-transform: uppercase; letter-spacing: .07em;
+  background: transparent; color: var(--ink); border: none;
+  padding: 7px 18px; cursor: pointer;
+}
+.toggle button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.chart-wrap { position: relative; margin-top: 14px; }
+.chart-wrap svg { display: block; width: 100%; height: auto; }
+.legend { display: flex; gap: 18px; margin-top: 10px; font-size: 14px; color: var(--muted); flex-wrap: wrap; }
+.legend .chip { display: inline-flex; align-items: center; gap: 7px; }
+.legend .sw { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.tooltip {
+  position: absolute; pointer-events: none; z-index: 5;
+  background: var(--tooltip-bg); color: var(--tooltip-ink);
+  font-size: 14px; line-height: 1.4; padding: 8px 12px;
+  max-width: 260px; opacity: 0; transition: opacity .12s;
+}
+.tooltip .t-year {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 17px;
+}
+.loading { color: var(--muted); font-size: 15px; padding: 40px 0 30px; text-align: center; }
+.axis-note { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+/* ---------- rider search ---------- */
+.search-box { position: relative; margin-top: 22px; max-width: 460px; }
+.search-box input {
+  width: 100%; font: inherit; font-size: 18px; padding: 13px 16px;
+  border: 2px solid var(--ink); background: var(--card); color: var(--ink);
+}
+.search-box input::placeholder { color: var(--muted); }
+.suggestions {
+  position: absolute; top: calc(100% - 2px); left: 0; right: 0; z-index: 10;
+  background: var(--card); border: 2px solid var(--ink); border-top: none;
+  list-style: none; max-height: 320px; overflow-y: auto;
+}
+.suggestions li { padding: 9px 16px; cursor: pointer; display: flex; justify-content: space-between; gap: 12px; }
+.suggestions li .meta { color: var(--muted); font-size: 14px; white-space: nowrap; }
+.suggestions li:hover, .suggestions li[aria-selected="true"] { background: var(--jaune); color: #16130F; }
+.suggestions li:hover .meta, .suggestions li[aria-selected="true"] .meta { color: #16130F; }
+.rider-card { margin-top: 26px; display: none; }
+.rider-card.visible { display: block; }
+.rider-name {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 900;
+  font-size: clamp(30px, 4vw, 44px); text-transform: uppercase; line-height: 1;
+}
+.rider-summary { color: var(--muted); margin-top: 6px; }
+.rider-grid { display: grid; grid-template-columns: 1fr; gap: 26px; margin-top: 18px; }
+@media (min-width: 760px) { .rider-grid { grid-template-columns: 3fr 2fr; } }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
+th {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 14px;
+  text-transform: uppercase; letter-spacing: .09em; text-align: left;
+  padding: 8px 14px 8px 0; border-bottom: 2px solid var(--ink); white-space: nowrap;
+}
+td { padding: 8px 14px 8px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.num, th.num { text-align: right; padding-right: 0; padding-left: 14px; }
+
+/* ---------- data section ---------- */
+.data-section { background: var(--card); border: 1px solid var(--line); padding: 34px 30px; }
+.tabs { display: flex; gap: 0; margin-top: 20px; border-bottom: 2px solid var(--ink); flex-wrap: wrap; }
+.tabs button {
+  font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 16px;
+  text-transform: uppercase; letter-spacing: .07em; border: none; cursor: pointer;
+  background: transparent; color: var(--muted); padding: 8px 18px;
+}
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+pre {
+  background: #16130F; color: #F2EDE2; font-size: 13.5px; line-height: 1.6;
+  padding: 18px 20px; overflow-x: auto; margin-top: 0;
+}
+pre .c { color: #8F887A; }
+pre .s { color: #FFD23F; }
+.file-list { margin-top: 22px; display: grid; gap: 8px; }
+.file-list a {
+  color: var(--ink); text-decoration: none; font-variant-numeric: tabular-nums;
+  display: flex; justify-content: space-between; gap: 4px 14px; flex-wrap: wrap;
+  padding: 9px 2px; border-bottom: 1px solid var(--line); font-size: 15.5px;
+  overflow-wrap: anywhere;
+}
+.file-list a:hover { background: var(--jaune); color: #16130F; }
+.file-list .d { color: var(--muted); font-size: 14px; }
+.file-list a:hover .d { color: #16130F; }
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 100px; background: var(--jaune); color: #16130F;
+  font-size: 15px;
+}
+@media (prefers-color-scheme: dark) {
+  footer { background: #0E0C08; color: var(--jaune); border-top: 1px solid #353026; }
+}
+.foot-inner {
+  max-width: 1100px; margin: 0 auto; padding: 34px 24px 40px;
+  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+footer a { color: inherit; font-weight: 600; }
+.foot-note { max-width: 46ch; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .dot-in { animation: pop .5s ease-out backwards; }
+  @keyframes pop { from { opacity: 0; } to { opacity: 1; } }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="masthead">
+    <span class="name">Le Tour Data Set</span>
+    <span class="edition">Free &amp; open · MIT</span>
+  </div>
+  <div class="hero-inner">
+    <h1>Every rider.<br>Every stage.<br>Since&nbsp;1903.</h1>
+    <p class="hero-sub">The complete history of the Tour de France — and the Tour de
+      France Femmes — as four CSV files you can load in one line of pandas or R.
+      This page reads them live, so what you see is exactly what you download.</p>
+    <div class="hero-actions">
+      <a class="btn solid" href="#data">Get the data</a>
+      <a class="btn" href="https://github.com/thomascamminady/LeTourDataSet">View on GitHub</a>
+    </div>
+    <div class="stat-row" id="stat-row">
+      <div class="stat"><div class="v" id="stat-editions">–</div><div class="l">Editions</div></div>
+      <div class="stat"><div class="v" id="stat-riders">–</div><div class="l">Rider results</div></div>
+      <div class="stat"><div class="v" id="stat-stages">–</div><div class="l">Stages</div></div>
+      <div class="stat"><div class="v" id="stat-closest">–</div><div class="l" id="stat-closest-l">Closest win</div></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="breakout" aria-labelledby="margin-title">
+    <div class="card">
+      <div class="chart-head">
+        <div>
+          <div class="eyebrow">Winning margin, log scale</div>
+          <h2 id="margin-title">How close was the race?</h2>
+        </div>
+        <div class="toggle" role="group" aria-label="Choose race" id="margin-toggle">
+          <button aria-pressed="true" data-race="men">Men</button>
+          <button aria-pressed="false" data-race="women">Femmes</button>
+        </div>
+      </div>
+      <div class="chart-wrap" id="margin-chart"><div class="loading">Loading 122 years of results…</div></div>
+      <p class="axis-note">Gap between the winner and the runner-up, every edition decided on time. Hover a point for the story.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="rider-title">
+    <div class="eyebrow">10,000+ careers</div>
+    <h2 id="rider-title">Look up a rider</h2>
+    <p class="section-sub">Every finisher in the dataset, from Maurice Garin to Pauline
+      Ferrand-Prévot. Type a name.</p>
+    <div class="search-box">
+      <input id="rider-input" type="text" placeholder="e.g. Merckx, Pogacar, Vollering…"
+             autocomplete="off" aria-label="Search riders" disabled>
+      <ul class="suggestions" id="rider-suggestions" hidden></ul>
+    </div>
+    <div class="rider-card card" id="rider-card">
+      <div class="rider-name" id="rider-name"></div>
+      <div class="rider-summary" id="rider-summary"></div>
+      <div class="rider-grid">
+        <div class="table-scroll"><table id="rider-table"></table></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:6px">Final rank by year</div>
+          <div class="chart-wrap" id="rider-spark"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="peloton-title">
+    <div class="eyebrow">Field size</div>
+    <h2 id="peloton-title">The peloton, counted</h2>
+    <p class="section-sub">Riders classified per edition. Twenty-one pioneers finished in
+      1903; modern Tours classify around 150. The gaps are the wars.</p>
+    <div class="chart-wrap" id="peloton-chart"><div class="loading">Loading…</div></div>
+    <div class="legend" id="peloton-legend"></div>
+  </section>
+
+  <section aria-labelledby="stagewins-title">
+    <div class="chart-head">
+      <div>
+        <div class="eyebrow">All-time leaderboard</div>
+        <h2 id="stagewins-title">Stage hunters</h2>
+      </div>
+      <div class="toggle" role="group" aria-label="Choose race" id="stage-toggle">
+        <button aria-pressed="true" data-race="men">Men</button>
+        <button aria-pressed="false" data-race="women">Femmes</button>
+      </div>
+    </div>
+    <p class="section-sub">Most stage wins across all editions.</p>
+    <div class="chart-wrap" id="stagewin-chart"><div class="loading">Loading…</div></div>
+  </section>
+
+  <section id="data" aria-labelledby="data-title">
+    <div class="data-section">
+      <div class="eyebrow">Four files, no API key</div>
+      <h2 id="data-title">Get the data</h2>
+      <div class="tabs" role="tablist" id="code-tabs">
+        <button role="tab" aria-selected="true" data-tab="pandas">pandas</button>
+        <button role="tab" aria-selected="false" data-tab="r">R</button>
+        <button role="tab" aria-selected="false" data-tab="curl">curl</button>
+      </div>
+<pre id="code-pandas"><code>import pandas as pd
+
+base = <span class="s">"https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data"</span>
+
+men_riders   = pd.read_csv(f<span class="s">"{base}/men/TDF_Riders_History.csv"</span>)
+men_stages   = pd.read_csv(f<span class="s">"{base}/men/TDF_Stages_History.csv"</span>)
+women_riders = pd.read_csv(f<span class="s">"{base}/women/TDFF_Riders_History.csv"</span>)
+women_stages = pd.read_csv(f<span class="s">"{base}/women/TDFF_Stages_History.csv"</span>)</code></pre>
+<pre id="code-r" hidden><code>library(readr)
+
+base &lt;- <span class="s">"https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data"</span>
+
+men_riders   &lt;- read_csv(paste0(base, <span class="s">"/men/TDF_Riders_History.csv"</span>))
+men_stages   &lt;- read_csv(paste0(base, <span class="s">"/men/TDF_Stages_History.csv"</span>))
+women_riders &lt;- read_csv(paste0(base, <span class="s">"/women/TDFF_Riders_History.csv"</span>))
+women_stages &lt;- read_csv(paste0(base, <span class="s">"/women/TDFF_Stages_History.csv"</span>))</code></pre>
+<pre id="code-curl" hidden><code><span class="c"># grab everything</span>
+base=<span class="s">https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data</span>
+curl -O $base/men/TDF_Riders_History.csv \
+     -O $base/men/TDF_Stages_History.csv \
+     -O $base/women/TDFF_Riders_History.csv \
+     -O $base/women/TDFF_Stages_History.csv</code></pre>
+      <div class="file-list" id="file-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-note">
+      <strong>Why yellow?</strong> L'Auto, the newspaper that invented the Tour in 1903,
+      printed on yellow newsprint — that is why the leader's jersey is yellow, and why
+      this page is too.
+    </div>
+    <div>
+      Data scraped from letour.fr &amp; letourfemmes.fr ·
+      <a href="https://github.com/thomascamminady/LeTourDataSet">Source &amp; docs</a> ·
+      <a href="https://github.com/thomascamminady/LeTourDataSet#known-source-data-limitations">Known limitations</a><br>
+      MIT licensed · Built by <a href="https://github.com/thomascamminady">Thomas Camminady</a>
+    </div>
+  </div>
+</footer>
+
+<div class="tooltip" id="tooltip" role="status"></div>
+
+<script>
+"use strict";
+
+const BASE = "https://raw.githubusercontent.com/thomascamminady/LeTourDataSet/master/data";
+const FILES = {
+  menRiders:   BASE + "/men/TDF_Riders_History.csv",
+  menStages:   BASE + "/men/TDF_Stages_History.csv",
+  womenRiders: BASE + "/women/TDFF_Riders_History.csv",
+  womenStages: BASE + "/women/TDFF_Stages_History.csv",
+};
+
+/* ---------- tiny CSV parser (quoted fields, commas, newlines) ---------- */
+function parseCSV(text) {
+  const rows = [];
+  let row = [], field = "", inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (text[i + 1] === '"') { field += '"'; i++; }
+        else inQuotes = false;
+      } else field += c;
+    } else if (c === '"') inQuotes = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
+    else if (c !== "\r") field += c;
+  }
+  if (field.length || row.length) { row.push(field); rows.push(row); }
+  const header = rows.shift();
+  return rows
+    .filter((r) => r.length === header.length)
+    .map((r) => Object.fromEntries(header.map((h, i) => [h, r[i]])));
+}
+
+function titleCase(name) {
+  return name.toLowerCase().replace(/(^|[\s\-'])\S/g, (m) => m.toUpperCase());
+}
+function fmtGap(sec) {
+  const m = Math.floor(sec / 60), s = sec % 60;
+  if (sec < 60) return `${s}''`;
+  if (m < 60) return `${m}'${String(s).padStart(2, "0")}''`;
+  const h = Math.floor(m / 60);
+  return `${h}h ${String(m % 60).padStart(2, "0")}'${String(s).padStart(2, "0")}''`;
+}
+function fmtInt(n) { return n.toLocaleString("en-US"); }
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+const svgNS = "http://www.w3.org/2000/svg";
+function el(tag, attrs) {
+  const node = document.createElementNS(svgNS, tag);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  return node;
+}
+
+/* ---------- tooltip ---------- */
+const tooltip = document.getElementById("tooltip");
+function showTooltip(html, x, y) {
+  tooltip.innerHTML = html;
+  tooltip.style.opacity = 1;
+  const w = tooltip.offsetWidth, pageW = document.documentElement.clientWidth;
+  let left = x + 14;
+  if (left + w > pageW - 8) left = x - w - 14;
+  tooltip.style.left = left + window.scrollX + "px";
+  tooltip.style.top = y + window.scrollY - 12 + "px";
+}
+function hideTooltip() { tooltip.style.opacity = 0; }
+
+/* ---------- generic scatter-by-year chart ---------- */
+function drawYearChart(container, series, opts) {
+  container.innerHTML = "";
+  const width = container.clientWidth || 900;
+  const height = Math.max(300, Math.min(430, width * 0.42));
+  const m = { top: 16, right: 18, bottom: 34, left: 58 };
+  const svg = el("svg", { viewBox: `0 0 ${width} ${height}`, role: "img",
+    "aria-label": opts.ariaLabel });
+
+  const allPts = series.flatMap((s) => s.points);
+  const x0 = Math.min(...allPts.map((p) => p.x)) - 2;
+  const x1 = Math.max(...allPts.map((p) => p.x)) + 2;
+  const xs = (v) => m.left + ((v - x0) / (x1 - x0)) * (width - m.left - m.right);
+
+  let ys, yTicks;
+  if (opts.log) {
+    const lo = Math.min(...allPts.map((p) => p.y));
+    const hi = Math.max(...allPts.map((p) => p.y));
+    const y0 = Math.log10(lo) - 0.15, y1 = Math.log10(hi) + 0.15;
+    ys = (v) => height - m.bottom - ((Math.log10(v) - y0) / (y1 - y0)) * (height - m.top - m.bottom);
+    yTicks = opts.yTicks.filter(([v]) => Math.log10(v) >= y0 && Math.log10(v) <= y1);
+  } else {
+    const hi = Math.max(...allPts.map((p) => p.y)) * 1.12;
+    ys = (v) => height - m.bottom - (v / hi) * (height - m.top - m.bottom);
+    const step = hi > 120 ? 50 : hi > 40 ? 25 : 10;
+    yTicks = [];
+    for (let v = 0; v <= hi; v += step) yTicks.push([v, fmtInt(v)]);
+  }
+
+  const ink = cssVar("--muted"), grid = cssVar("--grid");
+  for (const [v, label] of yTicks) {
+    const y = ys(v);
+    svg.appendChild(el("line", { x1: m.left, x2: width - m.right, y1: y, y2: y,
+      stroke: grid, "stroke-width": 1 }));
+    const t = el("text", { x: m.left - 10, y: y + 4, "text-anchor": "end",
+      fill: ink, "font-size": 13 });
+    t.textContent = label;
+    svg.appendChild(t);
+  }
+  const xStep = x1 - x0 > 60 ? 20 : x1 - x0 > 12 ? 5 : 1;
+  for (let yr = Math.ceil(x0 / xStep) * xStep; yr <= x1; yr += xStep) {
+    const t = el("text", { x: xs(yr), y: height - 10, "text-anchor": "middle",
+      fill: ink, "font-size": 13 });
+    t.textContent = yr;
+    svg.appendChild(t);
+  }
+
+  const dots = [];
+  series.forEach((s, si) => {
+    s.points.forEach((p, i) => {
+      const c = el("circle", { cx: xs(p.x), cy: ys(p.y), r: width < 560 ? 3 : 4.2,
+        fill: s.color, class: "dot-in" });
+      c.style.animationDelay = `${(i / s.points.length) * 0.6 + si * 0.1}s`;
+      svg.appendChild(c);
+      dots.push({ px: xs(p.x), py: ys(p.y), p, s });
+    });
+  });
+
+  if (opts.annotateMin) {
+    const s = series[0];
+    const p = s.points.reduce((a, b) => (b.y < a.y ? b : a));
+    const nearLeft = xs(p.x) < m.left + (width - m.left - m.right) * 0.2;
+    const t = el("text", {
+      x: xs(p.x) + (nearLeft ? 10 : -10),
+      y: ys(p.y) - 10,
+      "text-anchor": nearLeft ? "start" : "end",
+      fill: cssVar("--muted"), "font-size": 13, "font-weight": 600,
+    });
+    t.textContent = opts.annotateMin(p);
+    svg.appendChild(t);
+  }
+
+  svg.addEventListener("pointermove", (ev) => {
+    const rect = svg.getBoundingClientRect();
+    const sx = ((ev.clientX - rect.left) / rect.width) * width;
+    const sy = ((ev.clientY - rect.top) / rect.height) * height;
+    let best = null, bestD = 28 * 28;
+    for (const d of dots) {
+      const dd = (d.px - sx) ** 2 + (d.py - sy) ** 2;
+      if (dd < bestD) { bestD = dd; best = d; }
+    }
+    if (best) showTooltip(best.s.tooltip(best.p), ev.clientX, ev.clientY);
+    else hideTooltip();
+  });
+  svg.addEventListener("pointerleave", hideTooltip);
+  container.appendChild(svg);
+}
+
+/* ---------- horizontal bar chart ---------- */
+function drawBars(container, items, color) {
+  container.innerHTML = "";
+  const width = container.clientWidth || 900;
+  const rowH = 34, m = { top: 4, right: 60, bottom: 4, left: 8 };
+  const labelW = Math.min(220, width * 0.32);
+  const height = m.top + m.bottom + items.length * rowH;
+  const svg = el("svg", { viewBox: `0 0 ${width} ${height}`, role: "img",
+    "aria-label": "Most stage wins" });
+  const maxV = Math.max(...items.map((d) => d.value));
+  const ink = cssVar("--ink"), muted = cssVar("--muted");
+
+  items.forEach((d, i) => {
+    const y = m.top + i * rowH;
+    const barW = Math.max(3, (d.value / maxV) * (width - labelW - m.right - m.left - 12));
+    const name = el("text", { x: m.left, y: y + rowH / 2 + 5, fill: ink,
+      "font-size": 15, "font-weight": 500 });
+    name.textContent = d.label;
+    svg.appendChild(name);
+    svg.appendChild(el("rect", { x: m.left + labelW, y: y + 6, width: barW,
+      height: rowH - 12, fill: color }));
+    const v = el("text", { x: m.left + labelW + barW + 8, y: y + rowH / 2 + 5,
+      fill: muted, "font-size": 14, "font-variant-numeric": "tabular-nums" });
+    v.textContent = d.value;
+    svg.appendChild(v);
+  });
+  container.appendChild(svg);
+}
+
+/* ---------- data assembly ---------- */
+const state = { margin: "men", stage: "men" };
+let DATA = null;
+
+function marginSeries(riders, color) {
+  const byYear = new Map();
+  for (const r of riders) {
+    const year = +r.Year;
+    if (!byYear.has(year)) byYear.set(year, {});
+    const e = byYear.get(year);
+    if (+r.Rank === 1) e.winner = r.Rider;
+    if (+r.Rank === 2 && r.ResultType === "time" && +r.GapSeconds > 0) {
+      if (e.gap === undefined || +r.GapSeconds < e.gap) {
+        e.gap = +r.GapSeconds;
+        e.runnerUp = r.Rider;
+      }
+    }
+  }
+  const points = [...byYear.entries()]
+    .filter(([, e]) => e.gap !== undefined)
+    .map(([year, e]) => ({ x: year, y: e.gap / 60, e }))
+    .sort((a, b) => a.x - b.x);
+  return {
+    color, points,
+    tooltip: (p) => `<div class="t-year">${p.x}</div>` +
+      `${titleCase(p.e.winner)} beat ${titleCase(p.e.runnerUp)}<br>by <strong>${fmtGap(Math.round(p.y * 60))}</strong>`,
+  };
+}
+
+function drawMargin() {
+  const riders = state.margin === "men" ? DATA.menRiders : DATA.womenRiders;
+  const color = state.margin === "men" ? cssVar("--red") : cssVar("--orange");
+  drawYearChart(document.getElementById("margin-chart"),
+    [marginSeries(riders, color)],
+    { log: true, ariaLabel: "Winning margin per year, log scale",
+      yTicks: [[10 / 60, "10 s"], [1, "1 min"], [10, "10 min"], [60, "1 h"], [600, "10 h"]],
+      annotateMin: (p) => `${p.x} · ${fmtGap(Math.round(p.y * 60))}` });
+}
+
+function drawPeloton() {
+  const count = (riders) => {
+    const byYear = new Map();
+    for (const r of riders) byYear.set(+r.Year, (byYear.get(+r.Year) || 0) + 1);
+    return [...byYear.entries()].map(([x, y]) => ({ x, y })).sort((a, b) => a.x - b.x);
+  };
+  const men = { color: cssVar("--blue"), points: count(DATA.menRiders),
+    tooltip: (p) => `<div class="t-year">${p.x}</div><strong>${p.y}</strong> men classified` };
+  const women = { color: cssVar("--orange"), points: count(DATA.womenRiders),
+    tooltip: (p) => `<div class="t-year">${p.x}</div><strong>${p.y}</strong> women classified` };
+  drawYearChart(document.getElementById("peloton-chart"), [men, women],
+    { log: false, ariaLabel: "Riders classified per edition" });
+  document.getElementById("peloton-legend").innerHTML =
+    `<span class="chip"><span class="sw" style="background:${men.color}"></span>Tour de France</span>` +
+    `<span class="chip"><span class="sw" style="background:${women.color}"></span>Tour de France Femmes</span>`;
+}
+
+function drawStageWins() {
+  const stages = state.stage === "men" ? DATA.menStages : DATA.womenStages;
+  const counts = new Map();
+  for (const s of stages) {
+    const w = (s["Winner of stage"] || "").replace(/\s*\(.*\)\s*$/, "").trim();
+    if (w) counts.set(w, (counts.get(w) || 0) + 1);
+  }
+  const top = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12)
+    .map(([label, value]) => ({ label, value }));
+  drawBars(document.getElementById("stagewin-chart"), top, cssVar("--blue"));
+}
+
+/* ---------- hero stats ---------- */
+function fillStats() {
+  const editionsMen = new Set(DATA.menRiders.map((r) => r.Year)).size;
+  const editionsWomen = new Set(DATA.womenRiders.map((r) => r.Year)).size;
+  document.getElementById("stat-editions").textContent = editionsMen + editionsWomen;
+  document.getElementById("stat-riders").textContent =
+    fmtInt(DATA.menRiders.length + DATA.womenRiders.length);
+  document.getElementById("stat-stages").textContent =
+    fmtInt(DATA.menStages.length + DATA.womenStages.length);
+
+  let closest = null;
+  for (const [riders, race] of [[DATA.menRiders, "men"], [DATA.womenRiders, "Femmes"]]) {
+    for (const r of riders) {
+      if (+r.Rank === 2 && r.ResultType === "time" && +r.GapSeconds > 0) {
+        if (!closest || +r.GapSeconds < closest.gap)
+          closest = { gap: +r.GapSeconds, year: r.Year, race };
+      }
+    }
+  }
+  if (closest) {
+    document.getElementById("stat-closest").textContent = fmtGap(closest.gap);
+    document.getElementById("stat-closest-l").textContent =
+      `Closest win (${closest.race === "Femmes" ? "Femmes " : ""}${closest.year})`;
+  }
+}
+
+/* ---------- rider search ---------- */
+let riderIndex = null;
+function buildRiderIndex() {
+  riderIndex = new Map();
+  for (const [riders, race] of [[DATA.menRiders, "TDF"], [DATA.womenRiders, "TDFF"]]) {
+    for (const r of riders) {
+      const key = r.Rider + "|" + race;
+      if (!riderIndex.has(key))
+        riderIndex.set(key, { name: r.Rider, race, entries: [] });
+      riderIndex.get(key).entries.push(r);
+    }
+  }
+  for (const rec of riderIndex.values())
+    rec.entries.sort((a, b) => +a.Year - +b.Year);
+}
+
+function searchRiders(q) {
+  q = q.trim().toLowerCase();
+  if (q.length < 2) return [];
+  const out = [];
+  for (const rec of riderIndex.values()) {
+    if (rec.name.toLowerCase().includes(q)) out.push(rec);
+    if (out.length >= 200) break;
+  }
+  out.sort((a, b) => b.entries.length - a.entries.length);
+  return out.slice(0, 8);
+}
+
+function showRider(rec) {
+  const card = document.getElementById("rider-card");
+  card.classList.add("visible");
+  document.getElementById("rider-name").textContent = titleCase(rec.name);
+  const best = Math.min(...rec.entries.map((e) => +e.Rank));
+  const wins = rec.entries.filter((e) => +e.Rank === 1).length;
+  const raceName = rec.race === "TDF" ? "Tour de France" : "Tour de France Femmes";
+  document.getElementById("rider-summary").textContent =
+    `${raceName} · ${rec.entries.length} edition${rec.entries.length > 1 ? "s" : ""}` +
+    ` · best final rank ${best}` + (wins ? ` · ${wins} overall win${wins > 1 ? "s" : ""} 🏆` : "");
+
+  const table = document.getElementById("rider-table");
+  table.innerHTML = "<tr><th>Year</th><th class='num'>Rank</th><th>Time</th><th>Gap</th><th>Team</th></tr>" +
+    rec.entries.map((e) =>
+      `<tr><td>${e.Year}</td><td class="num">${e.Rank}</td><td>${e.Times || "–"}</td>` +
+      `<td>${e.Gap || "–"}</td><td>${titleCase(e.Team || "–")}</td></tr>`).join("");
+
+  const spark = document.getElementById("rider-spark");
+  const pts = rec.entries.map((e) => ({ x: +e.Year, y: +e.Rank, e }));
+  drawSpark(spark, pts);
+  card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function drawSpark(container, pts) {
+  container.innerHTML = "";
+  const width = container.clientWidth || 380, height = 190;
+  const m = { top: 14, right: 16, bottom: 26, left: 40 };
+  const svg = el("svg", { viewBox: `0 0 ${width} ${height}`, role: "img",
+    "aria-label": "Final rank per year (lower is better)" });
+  const x0 = Math.min(...pts.map((p) => p.x)) - 1, x1 = Math.max(...pts.map((p) => p.x)) + 1;
+  const yMax = Math.max(...pts.map((p) => p.y), 5);
+  const xs = (v) => m.left + ((v - x0) / (x1 - x0 || 1)) * (width - m.left - m.right);
+  const ys = (v) => m.top + ((v - 1) / (yMax - 1 || 1)) * (height - m.top - m.bottom);
+  const muted = cssVar("--muted");
+
+  for (const v of [1, yMax]) {
+    svg.appendChild(el("line", { x1: m.left, x2: width - m.right, y1: ys(v), y2: ys(v),
+      stroke: cssVar("--grid") }));
+    const t = el("text", { x: m.left - 8, y: ys(v) + 4, "text-anchor": "end",
+      fill: muted, "font-size": 12 });
+    t.textContent = v;
+    svg.appendChild(t);
+  }
+  for (const p of [pts[0], pts[pts.length - 1]]) {
+    const t = el("text", { x: xs(p.x), y: height - 6, "text-anchor": "middle",
+      fill: muted, "font-size": 12 });
+    t.textContent = p.x;
+    svg.appendChild(t);
+  }
+  if (pts.length > 1) {
+    const d = pts.map((p, i) => (i ? "L" : "M") + xs(p.x) + " " + ys(p.y)).join(" ");
+    svg.appendChild(el("path", { d, fill: "none", stroke: cssVar("--blue"),
+      "stroke-width": 2 }));
+  }
+  for (const p of pts) {
+    const c = el("circle", { cx: xs(p.x), cy: ys(p.y), r: 4,
+      fill: +p.e.Rank === 1 ? cssVar("--jaune-deep") : cssVar("--blue") });
+    svg.appendChild(c);
+  }
+  svg.addEventListener("pointermove", (ev) => {
+    const rect = svg.getBoundingClientRect();
+    const sx = ((ev.clientX - rect.left) / rect.width) * width;
+    let best = pts[0];
+    for (const p of pts) if (Math.abs(xs(p.x) - sx) < Math.abs(xs(best.x) - sx)) best = p;
+    showTooltip(`<div class="t-year">${best.x}</div>Final rank <strong>${best.y}</strong>`,
+      ev.clientX, ev.clientY);
+  });
+  svg.addEventListener("pointerleave", hideTooltip);
+  container.appendChild(svg);
+}
+
+function wireSearch() {
+  const input = document.getElementById("rider-input");
+  const list = document.getElementById("rider-suggestions");
+  input.disabled = false;
+  input.placeholder = "e.g. Merckx, Pogacar, Vollering…";
+  let items = [], sel = -1;
+
+  function render() {
+    if (!items.length) { list.hidden = true; return; }
+    list.hidden = false;
+    list.innerHTML = items.map((rec, i) =>
+      `<li role="option" aria-selected="${i === sel}" data-i="${i}">` +
+      `<span>${titleCase(rec.name)}</span>` +
+      `<span class="meta">${rec.race === "TDF" ? "Men" : "Femmes"} · ${rec.entries[0].Year}–${rec.entries[rec.entries.length - 1].Year}</span></li>`).join("");
+  }
+  input.addEventListener("input", () => { items = searchRiders(input.value); sel = -1; render(); });
+  input.addEventListener("keydown", (ev) => {
+    if (ev.key === "ArrowDown") { sel = Math.min(sel + 1, items.length - 1); render(); ev.preventDefault(); }
+    else if (ev.key === "ArrowUp") { sel = Math.max(sel - 1, 0); render(); ev.preventDefault(); }
+    else if (ev.key === "Enter" && items.length) { showRider(items[Math.max(sel, 0)]); list.hidden = true; }
+    else if (ev.key === "Escape") { list.hidden = true; }
+  });
+  list.addEventListener("click", (ev) => {
+    const li = ev.target.closest("li");
+    if (li) { showRider(items[+li.dataset.i]); list.hidden = true; }
+  });
+  document.addEventListener("click", (ev) => {
+    if (!ev.target.closest(".search-box")) list.hidden = true;
+  });
+}
+
+/* ---------- toggles & tabs ---------- */
+function wireToggle(id, key, redraw) {
+  document.getElementById(id).addEventListener("click", (ev) => {
+    const btn = ev.target.closest("button");
+    if (!btn) return;
+    state[key] = btn.dataset.race;
+    for (const b of ev.currentTarget.querySelectorAll("button"))
+      b.setAttribute("aria-pressed", b === btn);
+    redraw();
+  });
+}
+document.getElementById("code-tabs").addEventListener("click", (ev) => {
+  const btn = ev.target.closest("button");
+  if (!btn) return;
+  for (const b of document.querySelectorAll("#code-tabs button"))
+    b.setAttribute("aria-selected", b === btn);
+  for (const p of ["pandas", "r", "curl"])
+    document.getElementById("code-" + p).hidden = p !== btn.dataset.tab;
+});
+
+/* ---------- file list ---------- */
+const fileMeta = [
+  ["men/TDF_Riders_History.csv", "every finisher, every men's edition"],
+  ["men/TDF_Stages_History.csv", "every men's stage with winner & jerseys"],
+  ["women/TDFF_Riders_History.csv", "every finisher, every women's edition"],
+  ["women/TDFF_Stages_History.csv", "every women's stage with winner & jerseys"],
+];
+document.getElementById("file-list").innerHTML = fileMeta.map(([f, d]) =>
+  `<a href="${BASE}/${f}"><span>${f}</span><span class="d">${d}</span></a>`).join("");
+
+/* ---------- boot ---------- */
+async function boot() {
+  try {
+    const [menRiders, menStages, womenRiders, womenStages] = await Promise.all(
+      Object.values(FILES).map((u) => fetch(u).then((r) => {
+        if (!r.ok) throw new Error(`HTTP ${r.status} for ${u}`);
+        return r.text();
+      })));
+    DATA = {
+      menRiders: parseCSV(menRiders),
+      menStages: parseCSV(menStages),
+      womenRiders: parseCSV(womenRiders),
+      womenStages: parseCSV(womenStages),
+    };
+    fillStats();
+    drawMargin();
+    drawPeloton();
+    drawStageWins();
+    buildRiderIndex();
+    wireSearch();
+    wireToggle("margin-toggle", "margin", drawMargin);
+    wireToggle("stage-toggle", "stage", drawStageWins);
+
+    let t;
+    window.addEventListener("resize", () => {
+      clearTimeout(t);
+      t = setTimeout(() => { drawMargin(); drawPeloton(); drawStageWins(); }, 200);
+    });
+    if (window.matchMedia) {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",
+        () => { drawMargin(); drawPeloton(); drawStageWins(); });
+    }
+  } catch (err) {
+    for (const id of ["margin-chart", "peloton-chart", "stagewin-chart"]) {
+      document.getElementById(id).innerHTML =
+        `<div class="loading">Could not load the data (${err.message}). ` +
+        `Get the CSVs directly on <a href="https://github.com/thomascamminady/LeTourDataSet">GitHub</a>.</div>`;
+    }
+  }
+}
+boot();
+</script>
+</body>
+</html>

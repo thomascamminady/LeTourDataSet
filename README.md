@@ -4,6 +4,8 @@
 
 Every cyclist and stage of the Tour de France in four CSV files.
 
+**🟡 Explore the data live: [camminady.dev/LeTourDataSet](https://camminady.dev/LeTourDataSet/)** — interactive charts and a rider lookup, reading these CSVs directly.
+
 **Data coverage**
 
 -   **Men's Tour de France**: 1903 - 2025 (all 112 editions)

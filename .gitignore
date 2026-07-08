@@ -178,5 +178,4 @@ cython_debug/
 #.idea/
 
 /.quarto/
-docs/
 /_site/
