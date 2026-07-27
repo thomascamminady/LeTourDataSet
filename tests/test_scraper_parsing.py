@@ -1,11 +1,21 @@
 """Unit tests for the scraper's pure parsing logic (no network access)."""
 
+from types import SimpleNamespace
 from typing import Callable
 
+import pandas as pd
 import pytest
 from bs4 import BeautifulSoup
 
 from letourdataset.scraper import Scraper, parse_stage_number
+
+
+def _as_all_rankings(rankings: "pd.DataFrame") -> "pd.DataFrame":
+    """Add the columns _cleanup sorts the all-rankings frame by."""
+    df = rankings.copy()
+    df["Stages"] = 1
+    df["Ranking type"] = "Individual (Stage)"
+    return df
 
 
 def make_scraper() -> Scraper:
@@ -88,9 +98,7 @@ class TestYearPageParsing:
 
 
 class TestParseRankingRows:
-    def test_individual_stage_ranking(
-        self, load_fixture: Callable[[str], str]
-    ) -> None:
+    def test_individual_stage_ranking(self, load_fixture: Callable[[str], str]) -> None:
         rows = Scraper._parse_ranking_rows(
             load_fixture("women_2025_stage5_individual.html.gz"),
             5,
@@ -123,3 +131,107 @@ class TestParseRankingRows:
 
     def test_empty_page_gives_no_rows(self) -> None:
         assert Scraper._parse_ranking_rows("<html></html>", 1, "x", "ite") == []
+
+
+class TestFinalGeneralClassificationFallback:
+    """A just-finished edition has an empty GC table on its year page, so the
+    GC is read off the general ranking after the final stage instead."""
+
+    def test_year_page_gc_table_is_empty(
+        self, load_fixture: Callable[[str], str]
+    ) -> None:
+        soup = BeautifulSoup(load_fixture("men_2026_year_page.html.gz"), "html.parser")
+        assert make_scraper()._get_rankings(soup).empty
+
+    def test_fallback_reads_the_official_gc(
+        self,
+        load_fixture: Callable[[str], str],
+        monkeypatch: pytest.MonkeyPatch,
+    ) -> None:
+        scraper = make_scraper()
+        scraper._headers = {}
+        requested: list[str] = []
+
+        def fake_get(url: str, **kwargs: object) -> SimpleNamespace:
+            requested.append(url)
+            return SimpleNamespace(
+                text=load_fixture("men_2026_final_general.html.gz"),
+                raise_for_status=lambda: None,
+            )
+
+        monkeypatch.setattr("letourdataset.scraper.requests.get", fake_get)
+
+        stages = pd.DataFrame({"Stages": [0, 1, 2, 21]})
+        df = scraper._get_general_classification("http://x/ranking", stages, 2026)
+
+        # The last stage is queried, as an integer and as the general ranking
+        assert requested == ["http://x/ranking?stage=21&type=itg"]
+        assert list(df.columns) == [
+            "Rank",
+            "Rider",
+            "Rider No.",
+            "Team",
+            "Times",
+            "Gap",
+            "B",
+            "P",
+        ]
+        assert len(df) == 158
+        winner = df.iloc[0]
+        assert winner["Rank"] == 1
+        assert winner["Rider"] == "TADEJ POGACAR"
+        assert winner["Times"] == "73h 56' 26''"
+        # Bib numbers only exist on the ranking rows, not in the table cells
+        assert winner["Rider No."] == 1
+
+    def test_no_stages_gives_empty_frame(self) -> None:
+        scraper = make_scraper()
+        empty = pd.DataFrame({"Stages": pd.Series(dtype=float)})
+        assert scraper._get_general_classification("http://x", empty, 2026).empty
+
+
+class TestNonTimeEditionsHaveZeroedSeconds:
+    """1907-1912 were decided on points and the source prints placeholder
+    times (47h, 66h, 74h, ... for a race that actually took ~158h), so the
+    derived seconds must stay 0 while the raw strings are kept."""
+
+    def test_points_edition_seconds_are_zeroed(self) -> None:
+        scraper = make_scraper()
+        rankings = pd.DataFrame(
+            {
+                "Rank": [1, 2],
+                "Rider": ["A", "B"],
+                "Times": ["47h 00' 00''", "66h 00' 00''"],
+                "Gap": ["-", "+ 19h 00' 00''"],
+            }
+        )
+        stages = pd.DataFrame(
+            {"Year": [1907], "Stages": [1], "Start": ["x"], "End": ["y"]}
+        )
+        out, _, _ = scraper._cleanup(
+            stages, rankings, _as_all_rankings(rankings), 1907, 4488
+        )
+        assert (out["ResultType"] == "points").all()
+        assert (out["TotalSeconds"] == 0).all()
+        assert (out["GapSeconds"] == 0).all()
+        # The scraped strings are left untouched
+        assert out["Times"].tolist() == ["47h 00' 00''", "66h 00' 00''"]
+
+    def test_time_edition_seconds_are_kept(self) -> None:
+        scraper = make_scraper()
+        rankings = pd.DataFrame(
+            {
+                "Rank": [1],
+                "Rider": ["A"],
+                "Times": ["73h 56' 26''"],
+                "Gap": ["-"],
+            }
+        )
+        stages = pd.DataFrame(
+            {"Year": [2026], "Stages": [1], "Start": ["x"], "End": ["y"]}
+        )
+        out, _, _ = scraper._cleanup(
+            stages, rankings, _as_all_rankings(rankings), 2026, 3333
+        )
+        assert out["ResultType"].iloc[0] == "time"
+        assert out["TotalSeconds"].iloc[0] == 73 * 3600 + 56 * 60 + 26
