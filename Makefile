@@ -1,4 +1,4 @@
-.PHONY: help update download-only postprocess fix-riders-history plot clean test diagnose install lint format check-csv dev ci
+.PHONY: help update download-only postprocess fix-riders-history docs check-docs plot clean test diagnose install lint format check-csv dev ci
 
 # Default target
 help:
@@ -8,6 +8,8 @@ help:
 	@echo "  make download-only - Download latest data without processing"
 	@echo "  make postprocess - Post-process and sort data files"
 	@echo "  make fix-riders-history - Reconstruct a missing GC from all rankings data"
+	@echo "  make docs        - Sync documented year ranges to the data"
+	@echo "  make check-docs  - Fail if the docs drifted from the data"
 	@echo "  make plot        - Generate plots from existing data"
 	@echo "  make clean       - Clean temporary files and caches"
 	@echo "  make test        - Run the test suite (pytest, offline)"
@@ -33,7 +35,9 @@ update:
 	uv run python scripts/fix_riders_history.py
 	@echo "🛡️ Step 4: Verifying CSV integrity (informational for local runs)..."
 	-uv run python .github/scripts/check_csv_integrity.py
-	@echo "📊 Step 5: Generating plots..."
+	@echo "📝 Step 5: Syncing the documented year ranges to the data..."
+	uv run python scripts/update_docs.py
+	@echo "📊 Step 6: Generating plots..."
 	uv run python scripts/generate_plots.py
 	@echo "✅ Complete data update workflow finished successfully!"
 	@echo "📋 Next steps: Review changes and commit/push if everything looks good"
@@ -55,6 +59,18 @@ fix-riders-history:
 	@echo "🔧 Fixing riders history files..."
 	uv run python scripts/fix_riders_history.py
 	@echo "✅ Riders history fixed"
+
+# Sync the year ranges in README.md and docs/index.html to the data
+docs:
+	@echo "📝 Syncing documented year ranges to the data..."
+	uv run python scripts/update_docs.py
+	@echo "✅ Docs synced"
+
+# Verify the docs match the data (used by CI)
+check-docs:
+	@echo "🔍 Checking that the docs match the data..."
+	uv run python scripts/update_docs.py --check
+	@echo "✅ Docs are up to date"
 
 # Generate plots from existing data
 plot:
@@ -108,5 +124,5 @@ dev: install lint test
 	@echo "✅ Development setup completed"
 
 # CI workflow
-ci: install lint test check-csv
+ci: install lint test check-docs check-csv
 	@echo "✅ CI pipeline completed"
