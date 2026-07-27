@@ -21,6 +21,8 @@ dev = [
     "ruff>=0.8",
     "ty>=0.0.1a5",
     "pytest>=8.0",
+    # Used by scripts/, which is tooling and not part of the wheel
+    "fire>=0.6",
 ]
 
 [build-system]

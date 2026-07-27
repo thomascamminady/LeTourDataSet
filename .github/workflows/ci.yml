@@ -31,3 +31,6 @@ jobs:
 
     - name: Run tests
       run: uv run pytest
+
+    - name: Check the docs match the data
+      run: uv run python scripts/update_docs.py --check

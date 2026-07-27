@@ -8,8 +8,10 @@ Every cyclist and stage of the Tour de France in four CSV files.
 
 **Data coverage**
 
+<!-- coverage:start -->
 -   **Men's Tour de France**: 1903 - 2026 (all 113 editions)
 -   **Women's Tour de France (Tour de France Femmes avec Zwift)**: 2022 - 2025 (all editions since the relaunch)
+<!-- coverage:end -->
 
 If you use `pandas`, just get the data via:
 
@@ -115,6 +117,7 @@ Requires [uv](https://docs.astral.sh/uv/).
 make install    # Install dependencies (uv sync)
 make update     # Complete data update workflow (recommended for annual updates)
 make plot       # Generate plots from existing data
+make docs       # Sync the documented year ranges to the data
 make test       # Run the test suite (pytest, offline)
 make lint       # ruff + ty
 make format     # ruff format
@@ -137,7 +140,21 @@ This will:
    publish one yet (a stopgap that excludes time bonuses; replace it with
    official data once available)
 4. 🛡️ Report CSV integrity (informational locally)
-5. 📊 Regenerate the plots
+5. 📝 Sync the documented year ranges to the data
+6. 📊 Regenerate the plots
+
+**There is no year to bump anywhere.** The scraper discovers the editions
+from the source sites, and the CSVs are then the single source of truth for
+which years the dataset covers: `letourdataset.coverage` derives the first
+year, the latest year and the edition count per race from the riders files,
+and everything that names a year reads from it — the coverage list at the
+top of this README, the `<title>` and description of the docs page, and
+every plot title. Adding an edition is therefore just `make update`.
+
+The generated prose sits between `<!-- coverage:start -->` and
+`<!-- coverage:end -->` markers in `README.md` and `docs/index.html`; don't
+edit it by hand, run `make docs`. CI runs `make check-docs`, so a README
+that drifts from the data fails the build.
 
 A freshly finished edition keeps an empty general-classification table on
 its year page for a while. The scraper then falls back to the *general*
@@ -146,7 +163,7 @@ bonuses, so step 3 only has to reconstruct anything if that is missing too.
 
 Then review the changes and commit. The individual steps are available as
 `make download-only`, `make postprocess`, `make fix-riders-history`,
-`make check-csv`, and `make plot`.
+`make check-csv`, `make docs`, and `make plot`.
 
 ## Data Protection
 
