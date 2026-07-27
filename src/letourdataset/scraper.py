@@ -20,6 +20,12 @@ DEFAULT_HEADERS: dict[str, str] = {
 REQUEST_TIMEOUT_SECONDS = 30
 MAX_CONCURRENT_REQUESTS = 10
 
+# Editions for which the source site reports a total distance of 0 km.
+# The official route totals are used instead, keyed by (is_women, year).
+DISTANCE_OVERRIDES: dict[tuple[bool, int], int] = {
+    (True, 2025): 1169,
+}
+
 
 def parse_stage_number(stage_str: str, year: int) -> int | float | None:
     """Parse the stage number out of e.g. 'Stage 1 : Paris > Lyon'.
@@ -96,26 +102,27 @@ class Scraper:
         years: list[int | None] = []
         for url in matches:
             # Try to extract a 4-digit year from the URL
-            year_match = re.search(r'(\d{4})', url)
+            year_match = re.search(r"(\d{4})", url)
             years.append(int(year_match.group(1)) if year_match else None)
 
         def _is_descending(a: int | None, b: int | None) -> bool:
             return a is None or b is None or a >= b
 
         # Check if years are in descending order (most recent first)
-        valid_order = all(
-            _is_descending(a, b) for a, b in zip(years, years[1:])
-        )
+        valid_order = all(_is_descending(a, b) for a, b in zip(years, years[1:]))
         if not valid_order:
             logging.warning(
                 "Year order in URLs is not descending (most recent first). Reordering."
             )
             # Sort matches by year descending, keeping None years at the end
-            matches = [x for _, x in sorted(
-                ((y if y is not None else -1, u) for y, u in zip(years, matches)),
-                key=lambda t: t[0],
-                reverse=True
-            )]
+            matches = [
+                x
+                for _, x in sorted(
+                    ((y if y is not None else -1, u) for y, u in zip(years, matches)),
+                    key=lambda t: t[0],
+                    reverse=True,
+                )
+            ]
         logging.debug(
             "Matches found in the history page:\n{}".format("\n".join(matches))
         )
@@ -136,6 +143,10 @@ class Scraper:
 
             logging.info("Fetching yearly TDF URLs from {}".format(self._prefix + link))
             selections_urls = await self._fetch_yearly_tdf_urls(self._prefix + link)
+            if final_rankings.empty:
+                final_rankings = self._get_general_classification(
+                    selections_urls["Ranking"], stages, year
+                )
             intermediate_rankings = await self._get_all_rankings(
                 selections_urls["Ranking"], list(stages["Stages"])
             )
@@ -201,6 +212,14 @@ class Scraper:
         distance_str = str(stats[1].contents[0]).replace(" ", "").replace(",", "")
         # Decimal distances are rounded to the nearest integer kilometre
         distance = round(float(distance_str))
+        override = DISTANCE_OVERRIDES.get((self._is_women, year))
+        if distance == 0 and override is not None:
+            logging.info(
+                "Source reports 0 km for %d; using the official route total %d km.",
+                year,
+                override,
+            )
+            distance = override
         return soup, year, distance
 
     def _get_stages(self, soup: Tag, year: int, distance: int) -> pd.DataFrame:
@@ -289,6 +308,49 @@ class Scraper:
             raise ValueError("No ranking table found on the year page.")
         df_rankings = pd.read_html(StringIO(str(ranking_table)))[0]
         self._add_bib_number(soup, df_rankings)
+        return df_rankings
+
+    def _get_general_classification(
+        self, ranking_link: str, df_stages: pd.DataFrame, year: int
+    ) -> pd.DataFrame:
+        """Read the final GC off the last stage's general ranking page.
+
+        The year page only gains its own general classification table some
+        time after the edition has finished. Until then the general ranking
+        after the last stage is the official final result (time bonuses
+        included), so it is used instead of leaving the year unranked.
+        """
+        stage_numbers = [
+            stage
+            for stage in df_stages["Stages"]
+            if stage is not None and pd.notna(stage)
+        ]
+        if not stage_numbers:
+            logging.warning("No stages known for %d; cannot read a final GC.", year)
+            return pd.DataFrame()
+
+        last_stage = max(stage_numbers)
+        stage_param = (
+            int(last_stage) if float(last_stage).is_integer() else float(last_stage)
+        )
+        url = f"{ranking_link}?stage={stage_param}&type=itg"
+        logging.info("Year page for %d has no GC table; falling back to %s", year, url)
+
+        response = requests.get(
+            url, headers=self._headers, timeout=REQUEST_TIMEOUT_SECONDS
+        )
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, "html.parser")
+        ranking_table = soup.find(
+            "table", {"class": "rankingTable rtable js-extend-target"}
+        )
+        if not isinstance(ranking_table, Tag) or len(ranking_table.find_all("tr")) <= 1:
+            logging.warning("No final general classification available for %d.", year)
+            return pd.DataFrame()
+
+        df_rankings = pd.read_html(StringIO(str(ranking_table)))[0]
+        self._add_bib_number(ranking_table, df_rankings)
+        logging.info("Recovered %d GC rows for %d.", len(df_rankings), year)
         return df_rankings
 
     @staticmethod
@@ -508,6 +570,15 @@ class Scraper:
 
             df["TotalSeconds"] = df["TotalSeconds"].fillna(0).astype(int)
             df["GapSeconds"] = df["GapSeconds"].fillna(0).astype(int)
+
+            # Editions not decided on time carry no meaningful cumulative
+            # time, but the source still prints placeholder values (1907
+            # runs 47h, 66h, 74h, ... while the race actually took ~158h).
+            # The Times/Gap strings are kept as scraped; only the derived
+            # seconds are zeroed.
+            non_time = df["ResultType"] != "time"
+            df.loc[non_time, "TotalSeconds"] = 0
+            df.loc[non_time, "GapSeconds"] = 0
 
             if year in [2006, 1997]:
                 tmp = df[df["Year"] == year].reset_index()
